@@ -1,0 +1,142 @@
+site_name: Amplitude Audio SDK
+site_description: A cross-platform audio engine designed with the needs of games in mind.
+repo_url: https://github.com/AmplitudeAudio/sdk
+repo_name: AmplitudeAudio/sdk
+copyright: >
+  Copyright (c) 2024 Sparky Studios. All Rights Reserved.
+  <a href="#__consent">Change cookie settings</a>
+site_url: https://docs.amplitudeaudiosdk.com/
+edit_uri: edit/main/docs/
+
+extra:
+  homepage: https://amplitudeaudiosdk.com
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences. We use tools such as
+      Google Analytics and Microsoft Clarity to measure the effectiveness of our documentation
+      and whether users find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    actions:
+      - manage
+      - accept
+    cookies:
+      clarity: Microsoft Clarity
+      analytics: Google Analytics
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/AmplitudeAudio
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/@amaudiosdk
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/QR2uBpzJ5f
+    - icon: material/web
+      link: https://amplitudeaudiosdk.com
+    - icon: material/email
+      link: mailto:support@amplitudeaudiosdk.com
+  analytics:
+    provider: google
+    property: G-CWEKF29VMQ
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >-
+            Thanks for your feedback! Help us improve this page by
+            creating a <a href="https://github.com/AmplitudeAudio/doc-sdk/issues/new/?title=[Feedback]+{title}+-+{url}" target="_blank" rel="noopener">GitHub issue</a>.
+  version:
+    provider: mike
+    alias: true
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: static/logo_white.svg
+  favicon: static/favicon.svg
+  features:
+    - announce.dismiss
+    - content.code.copy
+    - navigation.indexes
+    - navigation.footer
+    - navigation.path
+    - navigation.tabs
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - toc.follow
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: cyan
+      accent: red
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: cyan
+      accent: red
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  font:
+    text: Jolt
+    code: Jetbrains Mono
+  icon:
+    repo: fontawesome/brands/github
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+  - privacy
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - literate-nav:
+      nav_file: SUMMARY.md
+
+extra_css:
+  - static/doxide.css
+
+extra_javascript:
+  - static/consent.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
