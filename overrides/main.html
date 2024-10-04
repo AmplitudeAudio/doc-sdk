@@ -10,3 +10,10 @@
 </script>
 {{ super() }}
 {% endblock %}
+
+{% block outdated %}
+You're not viewing the documentation for the stable version.
+<a href="{{ '../' ~ base_url }}">
+    <strong>Switch to the stable version.</strong>
+</a>
+{% endblock %}

@@ -54,6 +54,7 @@ extra:
   version:
     provider: mike
     alias: true
+    default: stable
 
 theme:
   name: material
@@ -90,7 +91,7 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
   font:
-    text: Jolt
+    text: DM Sans
     code: Jetbrains Mono
   icon:
     repo: fontawesome/brands/github
@@ -132,6 +133,14 @@ plugins:
       enable_creation_date: true
   - literate-nav:
       nav_file: SUMMARY.md
+  - mike:
+      alias_type: symlink
+      redirect_template: null
+      deploy_prefix: ""
+      canonical_version: null
+      version_selector: true
+      css_dir: static
+      javascript_dir: static
 
 extra_css:
   - static/doxide.css
@@ -140,3 +149,6 @@ extra_javascript:
   - static/consent.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+exclude_docs: |
+  SUMMARY.md
