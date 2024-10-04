@@ -14,10 +14,8 @@ generator: doxide
 | Name | Description |
 | ---- | ----------- |
 | [Amplimix](Amplimix/index.md) | Amplitude Audio Mixer. |
-| [AmplimixLayer](AmplimixLayer/index.md) | Called just before the mixer process audio data. Called just after the mixer process audio data.  |
 | [Attenuation](Attenuation/index.md) | Amplitude Attenuation. |
 | [AttenuationZone](AttenuationZone/index.md) | The propagation shape for positional sounds. |
-| [AudioConverter](AudioConverter/index.md) | Allow converting audio buffers between different sample rates and channel counts. |
 | [BarycentricCoordinates](BarycentricCoordinates/index.md) | Represents barycentric coordinates between a point and 3 vertices of a triangle.  |
 | [BoxShape](BoxShape/index.md) | A box shape, defined by a width, an height, and a depth.  |
 | [CapsuleShape](CapsuleShape/index.md) | A capsule shape, defined by a radius and an height.  |
@@ -28,8 +26,6 @@ generator: doxide
 | [Curve](Curve/index.md) | A Curve which describe the variation of a value (on the Y-axis) according to another (on the X-axis).  |
 | [CurvePart](CurvePart/index.md) | A part of a Curve. |
 | [CurvePoint](CurvePoint/index.md) | A single point in a Curve.  |
-| [DiskFile](DiskFile/index.md) | A File implementation that reads and writes a file on disk.  |
-| [DiskFileSystem](DiskFileSystem/index.md) | A FileSystem implementation that reads and write files * from disk.  |
 | [Edge](Edge/index.md) | Represents an edge.  |
 | [Effect](Effect/index.md) | Amplitude Effect. |
 | [EffectInstance](EffectInstance/index.md) | An instance of an Effect asset. |
@@ -37,30 +33,15 @@ generator: doxide
 | [Face](Face/index.md) | Represents a triangulated face.  |
 | [Fader](Fader/index.md) | Helper class to process faders. |
 | [FaderInstance](FaderInstance/index.md) | A Fader instance. An object of this class will be created each time a `Fader` is requested.  |
-| [File](File/index.md) | Base class for a file in a FileSystem.  |
-| [FileOpenKind](FileOpenKind/index.md) | The type of file being opened.  |
-| [FileOpenMode](FileOpenMode/index.md) | Describes the mode in which open the file.  |
-| [FileSeekOrigin](FileSeekOrigin/index.md) | Defines from where to seek in the file.  |
-| [FileSystem](FileSystem/index.md) | Base class for files and resources loaders. |
-| [Filter](Filter/index.md) | Helper class to manage filters. |
-| [FilterInstance](FilterInstance/index.md) | A Filter instance. |
 | [InputNodeInstance](InputNodeInstance/index.md) | Class used to marks the input of the pipeline. |
-| [MemoryFile](MemoryFile/index.md) | A File implementation that reads and writes a memory buffer.  |
 | [MixerNodeInstance](MixerNodeInstance/index.md) | Base class for Amplimix pipeline nodes that can mix * audio data from multiple input buffers, and outputs the result * of the mix.  |
 | [Node](Node/index.md) | Base class for Amplimix pipeline nodes. |
 | [NodeInstance](NodeInstance/index.md) | An instance of an Amplimix pipeline node. |
 | [Orientation](Orientation/index.md) | Represents an orientation in 3D space. |
 | [OutputNodeInstance](OutputNodeInstance/index.md) | Class used to marks the output of the pipeline. |
-| [PackageFileCompressionAlgorithm](PackageFileCompressionAlgorithm/index.md) | Defines the compression algorithms a package file can be compressed with.  |
-| [PackageFileHeaderDescription](PackageFileHeaderDescription/index.md) | Provides metadata about the package file.  |
-| [PackageFileItemDescription](PackageFileItemDescription/index.md) | Describes an item in the package file. |
-| [PackageFileSystem](PackageFileSystem/index.md) | A FileSystem implementation that provides access * to an Amplitude package file.  |
-| [PackageItemFile](PackageItemFile/index.md) | A File implementation that provides access to an item in an * Amplitude package file.  |
 | [Pipeline](Pipeline/index.md) | A pipeline assembles a set of nodes to process audio data. |
 | [ProcessorNodeInstance](ProcessorNodeInstance/index.md) | Base class for Amplimix pipeline nodes that can process * audio data in-place.  |
 | [ProviderNodeInstance](ProviderNodeInstance/index.md) | Interface for Amplimix pipeline nodes that can provide * audio data to an output buffer.  |
-| [ResamplerInstance](ResamplerInstance/index.md) | A Resampler instance. |
-| [Resource](Resource/index.md) | An Amplitude resource in a FileSystem. |
 | [Rtpc](Rtpc/index.md) | Amplitude Real-Time Parameter Control. |
 | [RtpcValue](RtpcValue/index.md) | A RTPC compatible value is used as a wrapper to hold propertiy values * that can be linked to RTPCs. |
 | [Shape](Shape/index.md) | A Shape. |
@@ -80,12 +61,33 @@ generator: doxide
 
 | Name | Description |
 | ---- | ----------- |
+| [AM_CALLBACK](#AM_CALLBACK) | Called just before the mixer process audio data.  |
+| [AM_CALLBACK](#AM_CALLBACK) | Called just after the mixer process audio data.  |
 | [FindGCD](#FindGCD) | Finds the greatest common divisor (GCD) of two integers. |
 | [GetRelativeDirection](#GetRelativeDirection) | Returns a direction vector relative to a given position and rotation. |
 | [IntegerPow](#IntegerPow) | Computes the value base^exp using the squared exponentiation method. |
 | [NextPowerOf2](#NextPowerOf2) | Returns the next power of 2 of a given number. |
 
 ## Function Details
+
+### AM_CALLBACK<a name="AM_CALLBACK"></a>
+!!! function "AM_CALLBACK(void, BeforeMixCallback)(Amplimix&#42; mixer, AmVoidPtr buffer, AmUInt32 frames)"
+
+    
+    Called just before the mixer process audio data.
+         
+    
+    
+    
+
+!!! function "AM_CALLBACK(void, AfterMixCallback)(Amplimix&#42; mixer, AmVoidPtr buffer, AmUInt32 frames)"
+
+    
+    Called just after the mixer process audio data.
+         
+    
+    
+    
 
 ### FindGCD<a name="FindGCD"></a>
 !!! function "inline AmInt64 FindGCD(AmInt64 a, AmInt64 b)"

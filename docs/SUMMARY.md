@@ -5,6 +5,7 @@
 - [API Reference](api/index.md)
     - [Assets](api/assets/)
     - [Core](api/core/)
+    - [DSP](api/dsp/)
     - [Engine](api/engine/)
     - [IO](api/io/)
     - [Math](api/math/)

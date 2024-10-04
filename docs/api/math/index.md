@@ -13,7 +13,6 @@ Math libraries and utilities
 
 | Name | Description |
 | ---- | ----------- |
-| [Convolver](Convolver/index.md) | Implementation of a partitioned FFT convolution algorithm with uniform block size. |
 | [eFaderState](eFaderState/index.md) | Enumerates the list of states in a fader. |
 
 ## Macros

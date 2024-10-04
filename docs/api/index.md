@@ -27,6 +27,9 @@ Amplitude Audio SDK public API reference and documentation.
 :material-format-section: [Memory](memory/index.md)
 :   Memory management and allocation
 
+:material-format-section: [DSP](dsp/index.md)
+:   Digital Signal Processing (DSP) API
+
 :material-package: [SparkyStudios](SparkyStudios/index.md)
 :   
 

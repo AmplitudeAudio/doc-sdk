@@ -51,8 +51,9 @@ Engine-specific functionalities
 
 | Name | Description |
 | ---- | ----------- |
+| [AM_CALLBACK](#AM_CALLBACK) | The device notification callback. |
 | [CallDeviceNotificationCallback](#CallDeviceNotificationCallback) | Calls the registered device notification callback. |
-| [RegisterDeviceNotificationCallback](#RegisterDeviceNotificationCallback) | The device notification callback.Registers a callback to listen to device state changes. |
+| [RegisterDeviceNotificationCallback](#RegisterDeviceNotificationCallback) | Registers a callback to listen to device state changes. |
 
 ## Macro Details
 
@@ -110,6 +111,26 @@ Engine-specific functionalities
 
 ## Function Details
 
+### AM_CALLBACK<a name="AM_CALLBACK"></a>
+!!! function "AM_CALLBACK(void, DeviceNotificationCallback)(DeviceNotification notification, const DeviceDescription&amp; device, Driver&#42; driver)"
+
+    
+    The device notification callback.
+    
+    
+    :material-location-enter: **Parameter** `notification`
+    :    The notification type.
+        
+    :material-location-enter: **Parameter** `device`
+    :    The device description.
+        
+    :material-location-enter: **Parameter** `driver`
+    :    The driver which triggered the device notification.
+    
+    
+        
+    
+
 ### CallDeviceNotificationCallback<a name="CallDeviceNotificationCallback"></a>
 !!! function "void CallDeviceNotificationCallback(DeviceNotification notification, const DeviceDescription&amp; device, Driver&#42; driver)"
 
@@ -133,21 +154,6 @@ Engine-specific functionalities
 ### RegisterDeviceNotificationCallback<a name="RegisterDeviceNotificationCallback"></a>
 !!! function "void RegisterDeviceNotificationCallback(DeviceNotificationCallback callback)"
 
-    
-    The device notification callback.
-    
-    
-    :material-location-enter: **Parameter** `notification`
-    :    The notification type.
-        
-    :material-location-enter: **Parameter** `device`
-    :    The device description.
-        
-    :material-location-enter: **Parameter** `driver`
-    :    The driver which triggered the device notification.
-    
-    
-        
     
     Registers a callback to listen to device state changes.
     
