@@ -113,60 +113,60 @@ amEngine->Deinitialize();
 | [FindBus](#FindBus) | Returns the `Bus` with the specified name. |
 | [FindBus](#FindBus) | Returns the `Bus` with the given ID. |
 | [Play](#Play) | Plays a switch container associated with the given handle in the World scope. |
-| [Play](#Play) | Plays a switch container associated with the given handle in the World scope at the given location. |
-| [Play](#Play) | Plays a switch container associated with the given handle in the World scope at the * given location with the given gain. |
+| [Play](#Play) | Plays a switch container associated with the given handle in the World scope. |
+| [Play](#Play) | Plays a switch container associated with the given handle in the World scope. |
 | [Play](#Play) | Plays a switch container associated with the given handle in an Entity scope. |
-| [Play](#Play) | Plays a switch container associated with the given handle in an Entity scope with the * given gain. |
+| [Play](#Play) | Plays a switch container associated with the given handle in an Entity scope. |
 | [Play](#Play) | Plays a collection associated with the given handle in the World scope. |
-| [Play](#Play) | Plays a collection associated with the given handle in the World scope at * the given location. |
-| [Play](#Play) | Plays a collection associated with the given handle in the location with * the given gain. |
+| [Play](#Play) | Plays a collection associated with the given handle in the World scope. |
+| [Play](#Play) | Plays a collection associated with the given handle in the World scope. |
 | [Play](#Play) | Plays a collection associated with the given handle in the Entity scope. |
-| [Play](#Play) | Plays a collection associated with the given handle in an Entity scope * with the given gain. |
+| [Play](#Play) | Plays a collection associated with the given handle in an Entity scope. |
 | [Play](#Play) | Plays a sound associated with the given handle in the World scope. |
-| [Play](#Play) | Plays a sound associated with the given handle in the World scope * at the given location. |
-| [Play](#Play) | Plays a sound associated with the given handle in the World scope * at the given location with the given gain. |
+| [Play](#Play) | Plays a sound associated with the given handle in the World scope. |
+| [Play](#Play) | Plays a sound associated with the given handle in the World scope. |
 | [Play](#Play) | Plays a sound associated with the given sound handle in an Entity scope. |
-| [Play](#Play) | Plays a sound associated with the given sound handle in an Entity * scope with the given gain. |
+| [Play](#Play) | Plays a sound associated with the given sound handle in an Entity. |
 | [Play](#Play) | Plays a sound object associated with the given name in the World scope. |
 | [Play](#Play) | Plays a sound object associated with the given name in the World scope. |
 | [Play](#Play) | Plays a sound object associated with the given name in the World scope. |
 | [Play](#Play) | Plays a sound object associated with the given name in an Entity scope. |
 | [Play](#Play) | Plays a sound object associated with the given name in an Entity scope. |
-| [Play](#Play) | Plays a sound object associated with the given ID in the * World scope, at the origin of the world. |
-| [Play](#Play) | Plays a sound object associated with the given ID in the * World scope, at the given location. |
-| [Play](#Play) | Plays a sound object associated with the given ID in the * World scope, at the given location, and with the given gain. |
-| [Play](#Play) | Plays a sound or a collection associated with the given ID in an Entity scope. |
-| [Play](#Play) | Plays a sound object associated with the given ID in an Entity * scope with the given gain. |
-| [StopAll](#StopAll) | Stops all playing sound objects.  |
+| [Play](#Play) | Plays a sound object associated with the given ID in the  World scope. |
+| [Play](#Play) | Plays a sound object associated with the given ID in the World scope. |
+| [Play](#Play) | Plays a sound object associated with the given ID in the World scope. |
+| [Play](#Play) | Plays a sound object associated with the given ID in an Entity scope. |
+| [Play](#Play) | Plays a sound object associated with the given ID in an Entity scope. |
+| [StopAll](#StopAll) | Stops all playing sound objects. |
 | [Trigger](#Trigger) | Triggers the event associated to the given handle. |
 | [Trigger](#Trigger) | Triggers the event associated to the given handle. |
-| [SetSwitchState](#SetSwitchState) | Set the active state of the defined @c Switch. |
-| [SetSwitchState](#SetSwitchState) | Set the active state of the defined @c Switch. |
-| [SetSwitchState](#SetSwitchState) | Set the active state of the defined @c Switch. |
-| [SetSwitchState](#SetSwitchState) | Set the active state of the defined @c Switch. |
-| [SetSwitchState](#SetSwitchState) | Set the active state of the defined @c Switch. |
-| [SetSwitchState](#SetSwitchState) | Set the active state of the defined @c Switch. |
-| [SetSwitchState](#SetSwitchState) | Set the active state of the defined @c Switch. |
-| [SetSwitchState](#SetSwitchState) | Set the active state of the defined @c Switch. |
-| [SetSwitchState](#SetSwitchState) | Set the active state of the defined @c Switch. |
-| [SetRtpcValue](#SetRtpcValue) | Set the value of a @c RTPC. |
-| [SetRtpcValue](#SetRtpcValue) | Set the value of a @c RTPC. |
-| [SetRtpcValue](#SetRtpcValue) | Set the value of a @c RTPC. |
-| [GetDriver](#GetDriver) | Gets the audio driver used by this Engine. |
+| [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
+| [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
+| [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
+| [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
+| [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
+| [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
+| [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
+| [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
+| [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
+| [SetRtpcValue](#SetRtpcValue) | Sets the value of a `RTPC`. |
+| [SetRtpcValue](#SetRtpcValue) | Sets the value of a `RTPC`. |
+| [SetRtpcValue](#SetRtpcValue) | Sets the value of a `RTPC`. |
+| [GetDriver](#GetDriver) | Gets the audio driver used by the Engine. |
 | [GetMixer](#GetMixer) | Gets the mixer instance. |
-| [GetSoundSpeed](#GetSoundSpeed) | Get the current speed of sound. |
-| [GetDopplerFactor](#GetDopplerFactor) | Get the engine Doppler factor. |
-| [GetSamplesPerStream](#GetSamplesPerStream) | Get the number of samples to process in one stream. |
-| [IsGameTrackingEnvironmentAmounts](#IsGameTrackingEnvironmentAmounts) | Checks whether the game is tracking environment amounts * himself. This is useful for engines like O3DE. |
+| [GetSoundSpeed](#GetSoundSpeed) | Gets the speed of sound, as set in the loaded engine configuration file. |
+| [GetDopplerFactor](#GetDopplerFactor) | Get the Doppler factor, as set in the loaded engine configuration file. |
+| [GetSamplesPerStream](#GetSamplesPerStream) | Get the number of samples to process in one stream, as set in the loaded engine configuration file. |
+| [IsGameTrackingEnvironmentAmounts](#IsGameTrackingEnvironmentAmounts) | Checks whether the game is tracking environment amounts himself. |
 | [GetMaxListenersCount](#GetMaxListenersCount) | Gets the maximum number of listeners handled by the engine. |
-| [GetMaxEntitiesCount](#GetMaxEntitiesCount) | Gets the maximum number of game entities handled by the engine. This value * does not reflect the maximum number of simultaneous sound handled by the engine. |
-| [GetOcclusionCoefficientCurve](#GetOcclusionCoefficientCurve) | Gets the occlusion coefficient curve defined in the loaded engine configuration. |
-| [GetOcclusionGainCurve](#GetOcclusionGainCurve) | Gets the occlusion gain curve defined in the loaded engine configuration. |
-| [GetObstructionCoefficientCurve](#GetObstructionCoefficientCurve) | Gets the obstruction low pass curve defined in the loaded engine configuration. |
-| [GetObstructionGainCurve](#GetObstructionGainCurve) | Gets the obstruction gain curve defined in the loaded engine configuration. |
+| [GetMaxEntitiesCount](#GetMaxEntitiesCount) | Gets the maximum number of game entities handled by the engine. |
+| [GetOcclusionCoefficientCurve](#GetOcclusionCoefficientCurve) | Gets the occlusion coefficient curve, as set in the loaded engine configuration file. |
+| [GetOcclusionGainCurve](#GetOcclusionGainCurve) | Gets the occlusion gain curve, as set in the loaded engine configuration file. |
+| [GetObstructionCoefficientCurve](#GetObstructionCoefficientCurve) | Gets the obstruction coefficient curve, as set in the loaded engine configuration file. |
+| [GetObstructionGainCurve](#GetObstructionGainCurve) | Gets the obstruction gain curve, as set in the loaded engine configuration file. |
 | [GetPanningMode](#GetPanningMode) | Gets the panning mode defined in the loaded engine configuration. |
-| [GetHRIRSphereSamplingMode](#GetHRIRSphereSamplingMode) |  Gets the HRIR sphere sampling mode defined in the loaded engine configuration. |
-| [GetHRIRSphere](#GetHRIRSphere) |  Gets the HRIR sphere defined in the loaded engine configuration. |
+| [GetHRIRSphereSamplingMode](#GetHRIRSphereSamplingMode) | Gets the HRIR sphere sampling mode defined in the loaded engine configuration. |
+| [GetHRIRSphere](#GetHRIRSphere) | Gets the HRIR sphere defined in the loaded engine configuration. |
 | [LoadPlugin](#LoadPlugin) | Loads a plugin library from the given path. |
 | [AddPluginSearchPath](#AddPluginSearchPath) | Adds a path in the plugins search paths list. |
 | [RemovePluginSearchPath](#RemovePluginSearchPath) | Removes a path from the plugins search paths list. |
@@ -469,7 +469,7 @@ amEngine->Deinitialize();
 !!! function "[[nodiscard]] virtual AmReal32 GetDopplerFactor() const = 0"
 
     
-    Get the engine Doppler factor.
+    Get the Doppler factor, as set in the loaded engine configuration file.
     
     
     :material-keyboard-return: **Return**
@@ -481,7 +481,7 @@ amEngine->Deinitialize();
 !!! function "&#42; GetDriver() const"
 
     
-    Gets the audio driver used by this Engine.
+    Gets the audio driver used by the Engine.
     
     
     :material-keyboard-return: **Return**
@@ -670,7 +670,7 @@ amEngine->Deinitialize();
     
     
     :material-keyboard-return: **Return**
-    :    The HRIR sphere. If no HRIR sphere is defined, returns nullptr.
+    :    The HRIR sphere. If no HRIR sphere is defined, returns `nullptr`.
     
     
     !!! note
@@ -738,8 +738,9 @@ amEngine->Deinitialize();
 !!! function "[[nodiscard]] virtual AmUInt32 GetMaxEntitiesCount() const = 0"
 
     
-    Gets the maximum number of game entities handled by the engine. This value
-             * does not reflect the maximum number of simultaneous sound handled by the engine.
+    Gets the maximum number of game entities handled by the engine.
+    
+    This value does not reflect the maximum number of simultaneous sound handled by the engine.
     
     
     :material-keyboard-return: **Return**
@@ -767,7 +768,7 @@ amEngine->Deinitialize();
     
     
     :material-keyboard-return: **Return**
-    :    The Amplimix mixer instance.
+    :    The `Amplimix` mixer instance.
             
     
 
@@ -775,11 +776,11 @@ amEngine->Deinitialize();
 !!! function "[[nodiscard]] virtual const Curve&amp; GetObstructionCoefficientCurve() const = 0"
 
     
-    Gets the obstruction low pass curve defined in the loaded engine configuration.
+    Gets the obstruction coefficient curve, as set in the loaded engine configuration file.
     
     
     :material-keyboard-return: **Return**
-    :    The obstruction low pass curve.
+    :    The obstruction coefficient curve.
             
     
 
@@ -787,7 +788,7 @@ amEngine->Deinitialize();
 !!! function "[[nodiscard]] virtual const Curve&amp; GetObstructionGainCurve() const = 0"
 
     
-    Gets the obstruction gain curve defined in the loaded engine configuration.
+    Gets the obstruction gain curve, as set in the loaded engine configuration file.
     
     
     :material-keyboard-return: **Return**
@@ -799,7 +800,7 @@ amEngine->Deinitialize();
 !!! function "[[nodiscard]] virtual const Curve&amp; GetOcclusionCoefficientCurve() const = 0"
 
     
-    Gets the occlusion coefficient curve defined in the loaded engine configuration.
+    Gets the occlusion coefficient curve, as set in the loaded engine configuration file.
     
     
     :material-keyboard-return: **Return**
@@ -811,7 +812,7 @@ amEngine->Deinitialize();
 !!! function "[[nodiscard]] virtual const Curve&amp; GetOcclusionGainCurve() const = 0"
 
     
-    Gets the occlusion gain curve defined in the loaded engine configuration.
+    Gets the occlusion gain curve, as set in the loaded engine configuration file.
     
     
     :material-keyboard-return: **Return**
@@ -932,7 +933,7 @@ amEngine->Deinitialize();
 !!! function "[[nodiscard]] virtual AmUInt32 GetSamplesPerStream() const = 0"
 
     
-    Get the number of samples to process in one stream.
+    Get the number of samples to process in one stream, as set in the loaded engine configuration file.
     
     
     :material-keyboard-return: **Return**
@@ -1084,7 +1085,7 @@ amEngine->Deinitialize();
 !!! function "[[nodiscard]] virtual AmReal32 GetSoundSpeed() const = 0"
 
     
-    Get the current speed of sound.
+    Gets the speed of sound, as set in the loaded engine configuration file.
     
     
     :material-keyboard-return: **Return**
@@ -1250,8 +1251,7 @@ amEngine->Deinitialize();
 !!! function "[[nodiscard]] virtual bool IsGameTrackingEnvironmentAmounts() const = 0"
 
     
-    Checks whether the game is tracking environment amounts
-             * himself. This is useful for engines like O3DE.
+    Checks whether the game is tracking environment amounts himself.
     
     
     :material-keyboard-return: **Return**
@@ -1519,7 +1519,7 @@ amEngine->Deinitialize();
     
     
     :material-keyboard-return: **Return**
-    :    The channel the switch container is played on. If the switch container could not be
+    :    The channel the switch container is being played on. If the switch container could not be
     played, or the given handle is invalid, an invalid `Channel` is returned.
             
     
@@ -1527,42 +1527,46 @@ amEngine->Deinitialize();
 !!! function "[[nodiscard]] virtual Channel Play(SwitchContainerHandle handle, const AmVec3&amp; location) const = 0"
 
     
-    Plays a switch container associated with the given handle in the World scope at the given location.
+    Plays a switch container associated with the given handle in the World scope.
     
     
     :material-location-enter: **Parameter** `handle`
     :    A handle to the switch container to play.
         
     :material-location-enter: **Parameter** `location`
-    :    The location on which play the switch container.
+    :    The location at which switch container should be played.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the switch container is played on. If the switch container could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the switch container is being played on. If the switch container could not be
+    played, or the given handle is invalid, an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(SwitchContainerHandle handle, const AmVec3&amp; location, AmReal32 userGain) const = 0"
 
     
-    Plays a switch container associated with the given handle in the World scope at the
-             * given location with the given gain.
+    Plays a switch container associated with the given handle in the World scope.
     
     
     :material-location-enter: **Parameter** `handle`
     :    A handle to the switch container to play.
         
     :material-location-enter: **Parameter** `location`
-    :    The location on which play the switch container.
+    :    The location at which the switch container should be played.
         
     :material-location-enter: **Parameter** `userGain`
-    :    The gain of the sound.
+    :    The gain of the sound. Must be in the range [0, 1].
+    
+    
+    !!! note
+         The `userGain` parameter will not be used directly, but instead, it will be used in the final
+        gain computation, which may include other factors like the attenuation and the master gain.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the switch container is played on. If the switch container could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the switch container is being played on. If the switch container could not be
+    played, or the given handle is invalid, an invalid `Channel` is returned.
             
     
 
@@ -1572,39 +1576,53 @@ amEngine->Deinitialize();
     Plays a switch container associated with the given handle in an Entity scope.
     
     
+    !!! note
+         Switch containers played using this method should have been set in the `Entity` scope
+        from their asset file. See more [here](/project/sound-objects/#scope).
+    
+    
     :material-location-enter: **Parameter** `handle`
     :    A handle to the switch container to play.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity which is playing the switch container.
+    :    The entity on which the switch container should be played.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the switch container is played on. If the switch container could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the switch container is being played on. If the switch container could not be
+    played, the given handle is invalid, or the given entity is invalid, an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(SwitchContainerHandle handle, const Entity&amp; entity, AmReal32 userGain) const = 0"
 
     
-    Plays a switch container associated with the given handle in an Entity scope with the
-             * given gain.
+    Plays a switch container associated with the given handle in an Entity scope.
+    
+    
+    !!! note
+         Switch containers played using this method should have been set in the `Entity` scope
+        from their asset file. See more [here](/project/sound-objects/#scope).
     
     
     :material-location-enter: **Parameter** `handle`
     :    A handle to the switch container to play.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity which is playing the switch container.
+    :    The entity on which the switch container should be played.
         
     :material-location-enter: **Parameter** `userGain`
-    :    The gain of the sound.
+    :    The gain of the sound. Must be in the range [0, 1].
+    
+    
+    !!! note
+         The `userGain` parameter will not be used directly, but instead, it will be used in the final
+        gain computation, which may include other factors like the attenuation and the master gain.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the switch container is played on. If the switch container could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the switch container is being played on. If the switch container could not be
+    played, the given handle is invalid, or the given entity is invalid, an invalid `Channel` is returned.
             
     
 
@@ -1619,51 +1637,54 @@ amEngine->Deinitialize();
     
     
     :material-keyboard-return: **Return**
-    :    The channel the collection is played on. If the collection could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the collection is being played on. If the collection could not be
+    played, or the handle is invalid, an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(CollectionHandle handle, const AmVec3&amp; location) const = 0"
 
     
-    Plays a collection associated with the given handle in the World scope at
-             * the given location.
+    Plays a collection associated with the given handle in the World scope.
     
     
     :material-location-enter: **Parameter** `handle`
     :    A handle to the collection to play.
         
     :material-location-enter: **Parameter** `location`
-    :    The location on which play the collection.
+    :    The location at which the collection should be played.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the collection is played on. If the collection could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the collection is being played on. If the collection could not be
+    played, or the handle is invalid, an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(CollectionHandle handle, const AmVec3&amp; location, AmReal32 userGain) const = 0"
 
     
-    Plays a collection associated with the given handle in the location with
-             * the given gain.
+    Plays a collection associated with the given handle in the World scope.
     
     
     :material-location-enter: **Parameter** `handle`
     :    A handle to the collection to play.
         
     :material-location-enter: **Parameter** `location`
-    :    The location on which play the collection.
+    :    The location at which the collection should be played.
         
     :material-location-enter: **Parameter** `userGain`
-    :    The gain of the sound.
+    :    The gain of the sound. Must be in the range [0, 1].
+    
+    
+    !!! note
+         The `userGain` parameter will not be used directly, but instead, it will be used in the final
+        gain computation, which may include other factors like the attenuation and the master gain.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the collection is played on. If the collection could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the collection is being played on. If the collection could not be
+    played, or the handle is invalid, an invalid `Channel` is returned.
             
     
 
@@ -1673,39 +1694,53 @@ amEngine->Deinitialize();
     Plays a collection associated with the given handle in the Entity scope.
     
     
+    !!! note
+         Collections played using this method should have been set in the `Entity` scope
+        from their asset file. See more [here](/project/sound-objects/#scope).
+    
+    
     :material-location-enter: **Parameter** `handle`
     :    A handle to the collection to play.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity which is playing the collection.
+    :    The entity on which the collection should be played.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the collection is played on. If the collection could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the collection is being played on. If the collection could not be
+    played, the given handle is invalid, or the given entity is invalid, an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(CollectionHandle handle, const Entity&amp; entity, AmReal32 userGain) const = 0"
 
     
-    Plays a collection associated with the given handle in an Entity scope
-             * with the given gain.
+    Plays a collection associated with the given handle in an Entity scope.
+    
+    
+    !!! note
+         Collections played using this method should have been set in the `Entity` scope
+        from their asset file. See more [here](/project/sound-objects/#scope).
     
     
     :material-location-enter: **Parameter** `handle`
     :    A handle to the collection to play.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity which is playing the collection.
+    :    The entity on which the collection should be played.
         
     :material-location-enter: **Parameter** `userGain`
-    :    The gain of the sound.
+    :    The gain of the sound. Must be in the range [0, 1].
+    
+    
+    !!! note
+         The `userGain` parameter will not be used directly, but instead, it will be used in the final
+        gain computation, which may include other factors like the attenuation and the master gain.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the collection is played on. If the collection could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the collection is being played on. If the collection could not be
+    played, the given handle is invalid, or the given entity is invalid, an invalid `Channel` is returned.
             
     
 
@@ -1720,51 +1755,54 @@ amEngine->Deinitialize();
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the sound could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound is being played on. If the sound could not be
+    played, the given handle is invalid, an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(SoundHandle handle, const AmVec3&amp; location) const = 0"
 
     
-    Plays a sound associated with the given handle in the World scope
-             * at the given location.
+    Plays a sound associated with the given handle in the World scope.
     
     
     :material-location-enter: **Parameter** `handle`
     :    A handle to the sound to play.
         
     :material-location-enter: **Parameter** `location`
-    :    The location on which play the sound.
+    :    The location at which the sound should be played.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the sound could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound is being played on. If the sound could not be
+    played, the given handle is invalid, an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(SoundHandle handle, const AmVec3&amp; location, AmReal32 userGain) const = 0"
 
     
-    Plays a sound associated with the given handle in the World scope
-             * at the given location with the given gain.
+    Plays a sound associated with the given handle in the World scope.
     
     
     :material-location-enter: **Parameter** `handle`
     :    A handle to the sound to play.
         
     :material-location-enter: **Parameter** `location`
-    :    The location on which play the sound.
+    :    The location at which the sound should be played.
         
     :material-location-enter: **Parameter** `userGain`
-    :    The gain of the sound.
+    :    The gain of the sound. Must be in the range [0, 1].
+    
+    
+    !!! note
+         The `userGain` parameter will not be used directly, but instead, it will be used in the final
+        gain computation, which may include other factors like the attenuation and the master gain.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the sound could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound is being played on. If the sound could not be
+    played, the given handle is invalid, an invalid `Channel` is returned.
             
     
 
@@ -1774,39 +1812,53 @@ amEngine->Deinitialize();
     Plays a sound associated with the given sound handle in an Entity scope.
     
     
+    !!! note
+         Sounds played using this method should have been set in the `Entity` scope
+        from their asset file. See more [here](/project/sound-objects/#scope).
+    
+    
     :material-location-enter: **Parameter** `handle`
     :    A handle to the sound to play.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity which is playing the sound.
+    :    The entity on which the sound should be played.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the sound could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound is being played on. If the sound could not be
+    played, the given handle is invalid, or the given entity is invalid, an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(SoundHandle handle, const Entity&amp; entity, AmReal32 userGain) const = 0"
 
     
-    Plays a sound associated with the given sound handle in an Entity
-             * scope with the given gain.
+    Plays a sound associated with the given sound handle in an Entity.
+    
+    
+    !!! note
+         Sounds played using this method should have been set in the `Entity` scope
+        from their asset file. See more [here](/project/sound-objects/#scope).
     
     
     :material-location-enter: **Parameter** `handle`
     :    A handle to the sound to play.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity which is playing the sound.
+    :    The entity on which the sound should be played.
         
     :material-location-enter: **Parameter** `userGain`
-    :    The gain of the sound.
+    :    The gain of the sound. Must be in the range [0, 1].
+    
+    
+    !!! note
+         The `userGain` parameter will not be used directly, but instead, it will be used in the final
+        gain computation, which may include other factors like the attenuation and the master gain.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the sound could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound is being played on. If the sound could not be
+    played, the given handle is invalid, or the given entity is invalid, an invalid `Channel` is returned.
             
     
 
@@ -1816,9 +1868,9 @@ amEngine->Deinitialize();
     Plays a sound object associated with the given name in the World scope.
     
     
-    !!! note
+    !!! tip
          Playing a sound object with its handle is faster than using the
-        name as using the name requires a map lookup internally.
+        name as using the name requires an internal lookup.
     
     
     :material-location-enter: **Parameter** `name`
@@ -1826,8 +1878,8 @@ amEngine->Deinitialize();
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the object could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound object is being played on. If the object could not be
+    played, or an object with the given name was not found, an invalid `Channel` is returned.
             
     
 
@@ -1837,21 +1889,21 @@ amEngine->Deinitialize();
     Plays a sound object associated with the given name in the World scope.
     
     
-    !!! note
+    !!! tip
          Playing a sound object with its handle is faster than using the
-        name as using the name requires a map lookup internally.
+        name as using the name requires an internal lookup.
     
     
     :material-location-enter: **Parameter** `name`
     :    The name of the sound object to play.
         
     :material-location-enter: **Parameter** `location`
-    :    The location of the sound.
+    :    The location at which the sound should be played.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the object could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound object is being played on. If the object could not be
+    played, or an object with the given name was not found, an invalid `Channel` is returned.
             
     
 
@@ -1861,24 +1913,29 @@ amEngine->Deinitialize();
     Plays a sound object associated with the given name in the World scope.
     
     
-    !!! note
+    !!! tip
          Playing a sound object with its handle is faster than using the
-        name as using the name requires a map lookup internally.
+        name as using the name requires an internal lookup.
     
     
     :material-location-enter: **Parameter** `name`
     :    The name of the sound object to play.
         
     :material-location-enter: **Parameter** `location`
-    :    The location of the sound.
+    :    The location at which the sound should be played.
         
     :material-location-enter: **Parameter** `userGain`
-    :    The gain of the sound.
+    :    The gain of the sound. Must be in the range [0, 1].
+    
+    
+    !!! note
+         The `userGain` parameter will not be used directly, but instead, it will be used in the final
+        gain computation, which may include other factors like the attenuation and the master gain.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the object could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound object is being played on. If the object could not be
+    played, or an object with the given name was not found, an invalid `Channel` is returned.
             
     
 
@@ -1888,21 +1945,27 @@ amEngine->Deinitialize();
     Plays a sound object associated with the given name in an Entity scope.
     
     
-    !!! note
+    !!! tip
          Playing a sound object with its handle is faster than using the
-        name as using the name requires a map lookup internally.
+        name as using the name requires an internal lookup.
+    
+    
+    !!! note
+         Sound objects played using this method should have been set in the `Entity` scope
+        from their asset file. See more [here](/project/sound-objects/#scope).
     
     
     :material-location-enter: **Parameter** `name`
     :    The name of the sound object to play.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity which is playing the sound.
+    :    The entity on which the sound object should be played.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the object could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound object is being played on. If the object could not be
+    played, an object with the given name was not found, or the entity is invalid,
+    an invalid `Channel` is returned.
             
     
 
@@ -1912,37 +1975,47 @@ amEngine->Deinitialize();
     Plays a sound object associated with the given name in an Entity scope.
     
     
-    !!! note
+    !!! tip
          Playing a sound object with its handle is faster than using the
-        name as using the name requires a map lookup internally.
+        name as using the name requires an internal lookup.
+    
+    
+    !!! note
+         Sound objects played using this method should have been set in the `Entity` scope
+        from their asset file. See more [here](/project/sound-objects/#scope).
     
     
     :material-location-enter: **Parameter** `name`
     :    The name of the sound object to play.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity which is playing the sound.
+    :    The entity on which the sound object should be played.
         
     :material-location-enter: **Parameter** `userGain`
-    :    The gain of the sound.
+    :    The gain of the sound. Must be in the range [0, 1].
+    
+    
+    !!! note
+         The `userGain` parameter will not be used directly, but instead, it will be used in the final
+        gain computation, which may include other factors like the attenuation and the master gain.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the object could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound object is being played on. If the object could not be
+    played, an object with the given name was not found, or the entity is invalid,
+    an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(AmObjectID id) const = 0"
 
     
-    Plays a sound object associated with the given ID in the
-             * World scope, at the origin of the world.
+    Plays a sound object associated with the given ID in the  World scope.
     
     
-    !!! note
+    !!! tip
          Playing a sound object with its handle is faster than using the
-        ID as using the ID requires a map lookup internally.
+        ID as using the ID requires an internal lookup.
     
     
     :material-location-enter: **Parameter** `id`
@@ -1950,113 +2023,132 @@ amEngine->Deinitialize();
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the object could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound object is being played on. If the object could not be
+    played, or an object with the given ID was not found, an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(AmObjectID id, const AmVec3&amp; location) const = 0"
 
     
-    Plays a sound object associated with the given ID in the
-             * World scope, at the given location.
+    Plays a sound object associated with the given ID in the World scope.
     
     
-    !!! note
+    !!! tip
          Playing a sound object with its handle is faster than using the
-        ID as using the ID requires a map lookup internally.
+        ID as using the ID requires an internal lookup.
     
     
     :material-location-enter: **Parameter** `id`
     :    The ID of the sound object to play.
         
     :material-location-enter: **Parameter** `location`
-    :    The location of the sound.
+    :    The location at which the sound object should be played.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the sound could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound object is being played on. If the object could not be
+    played, or an object with the given ID was not found, an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(AmObjectID id, const AmVec3&amp; location, AmReal32 userGain) const = 0"
 
     
-    Plays a sound object associated with the given ID in the
-             * World scope, at the given location, and with the given gain.
+    Plays a sound object associated with the given ID in the World scope.
     
     
-    !!! note
-         Playing an object with its handle is faster than using the
-        ID as using the ID requires a map lookup internally.
+    !!! tip
+         Playing a sound object with its handle is faster than using the
+        ID as using the ID requires an internal lookup.
     
     
     :material-location-enter: **Parameter** `id`
     :    The ID of the sound object to play.
         
     :material-location-enter: **Parameter** `location`
-    :    The location of the sound.
+    :    The location at which the sound object should be played.
         
     :material-location-enter: **Parameter** `userGain`
-    :    The gain of the sound.
+    :    The gain of the sound. Must be in the range [0, 1].
+    
+    
+    !!! note
+         The `userGain` parameter will not be used directly, but instead, it will be used in the final
+        gain computation, which may include other factors like the attenuation and the master gain.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the sound could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound object is being played on. If the object could not be
+    played, or an object with the given ID was not found, an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(AmObjectID id, const Entity&amp; entity) const = 0"
 
     
-    Plays a sound or a collection associated with the given ID in an Entity scope.
+    Plays a sound object associated with the given ID in an Entity scope.
+    
+    
+    !!! tip
+         Playing a sound object with its handle is faster than using the
+        ID as using the ID requires an internal lookup.
     
     
     !!! note
-         Playing an object with its handle is faster than using the
-        ID as using the ID requires a map lookup internally.
+         Sound objects played using this method should have been set in the `Entity` scope
+        from their asset file. See more [here](/project/sound-objects/#scope).
     
     
     :material-location-enter: **Parameter** `id`
     :    The ID of the sound object to play.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity which is playing the sound.
+    :    The entity on which the sound object should be played.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the sound could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound object is being played on. If the object could not be
+    played, an object with the given ID was not found, or the entity is invalid,
+    an invalid `Channel` is returned.
             
     
 
 !!! function "[[nodiscard]] virtual Channel Play(AmObjectID id, const Entity&amp; entity, AmReal32 userGain) const = 0"
 
     
-    Plays a sound object associated with the given ID in an Entity
-             * scope with the given gain.
+    Plays a sound object associated with the given ID in an Entity scope.
+    
+    
+    !!! tip
+         Playing a sound object with its handle is faster than using the
+        ID as using the ID requires an internal lookup.
     
     
     !!! note
-         Playing an object with its handle is faster than using the
-        ID as using the ID requires a map lookup internally.
+         Sound objects played using this method should have been set in the `Entity` scope
+        from their asset file. See more [here](/project/sound-objects/#scope).
     
     
     :material-location-enter: **Parameter** `id`
     :    The ID of the sound object to play.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity which is playing the sound.
+    :    The entity on which the sound object should be played.
         
     :material-location-enter: **Parameter** `userGain`
-    :    The gain of the sound.
+    :    The gain of the sound. Must be in the range [0, 1].
+    
+    
+    !!! note
+         The `userGain` parameter will not be used directly, but instead, it will be used in the final
+        gain computation, which may include other factors like the attenuation and the master gain.
     
     
     :material-keyboard-return: **Return**
-    :    The channel the sound is played on. If the sound could not be
-    played, an invalid `Channel` is returned.
+    :    The channel the sound object is being played on. If the object could not be
+    played, an object with the given ID was not found, or the entity is invalid,
+    an invalid `Channel` is returned.
             
     
 
@@ -2253,42 +2345,42 @@ amEngine->Deinitialize();
 !!! function "virtual void SetRtpcValue(RtpcHandle handle, double value) const = 0"
 
     
-    Set the value of a @c RTPC.
+    Sets the value of a `RTPC`.
     
     
     :material-location-enter: **Parameter** `handle`
-    :    The `RTPC` handle to update.
+    :    The handle of the `RTPC` to update.
         
     :material-location-enter: **Parameter** `value`
-    :    The value to set to the `RTPC.`
+    :    The value to set to the `RTPC`.
                 
     
 
 !!! function "virtual void SetRtpcValue(AmRtpcID id, double value) const = 0"
 
     
-    Set the value of a @c RTPC.
+    Sets the value of a `RTPC`.
     
     
     :material-location-enter: **Parameter** `id`
     :    The ID of the `RTPC` to update.
         
     :material-location-enter: **Parameter** `value`
-    :    The value to set to the `RTPC.`
+    :    The value to set to the `RTPC`.
                 
     
 
 !!! function "virtual void SetRtpcValue(const AmString&amp; name, double value) const = 0"
 
     
-    Set the value of a @c RTPC.
+    Sets the value of a `RTPC`.
     
     
     :material-location-enter: **Parameter** `name`
     :    THe name of the `RTPC` to update.
         
     :material-location-enter: **Parameter** `value`
-    :    The value to set to the `RTPC.`
+    :    The value to set to the `RTPC`.
                 
     
 
@@ -2296,11 +2388,11 @@ amEngine->Deinitialize();
 !!! function "virtual void SetSwitchState(SwitchHandle handle, AmObjectID stateId) const = 0"
 
     
-    Set the active state of the defined @c Switch.
+    Sets the active state of the defined `Switch`.
     
     
     :material-location-enter: **Parameter** `handle`
-    :    The handle of the `Switch.`
+    :    The handle of the `Switch`.
         
     :material-location-enter: **Parameter** `stateId`
     :    The ID of the active state to set.
@@ -2310,11 +2402,11 @@ amEngine->Deinitialize();
 !!! function "virtual void SetSwitchState(SwitchHandle handle, const AmString&amp; stateName) const = 0"
 
     
-    Set the active state of the defined @c Switch.
+    Sets the active state of the defined `Switch`.
     
     
     :material-location-enter: **Parameter** `handle`
-    :    The handle of the `Switch.`
+    :    The handle of the `Switch`.
         
     :material-location-enter: **Parameter** `stateName`
     :    The name of the active state to set.
@@ -2324,11 +2416,11 @@ amEngine->Deinitialize();
 !!! function "virtual void SetSwitchState(SwitchHandle handle, const SwitchState&amp; state) const = 0"
 
     
-    Set the active state of the defined @c Switch.
+    Sets the active state of the defined `Switch`.
     
     
     :material-location-enter: **Parameter** `handle`
-    :    The handle of the `Switch.`
+    :    The handle of the `Switch`.
         
     :material-location-enter: **Parameter** `state`
     :    The active state to set.
@@ -2338,7 +2430,7 @@ amEngine->Deinitialize();
 !!! function "virtual void SetSwitchState(AmSwitchID id, AmObjectID stateId) const = 0"
 
     
-    Set the active state of the defined @c Switch.
+    Sets the active state of the defined `Switch`.
     
     
     :material-location-enter: **Parameter** `id`
@@ -2352,7 +2444,7 @@ amEngine->Deinitialize();
 !!! function "virtual void SetSwitchState(AmSwitchID id, const AmString&amp; stateName) const = 0"
 
     
-    Set the active state of the defined @c Switch.
+    Sets the active state of the defined `Switch`.
     
     
     :material-location-enter: **Parameter** `id`
@@ -2366,7 +2458,7 @@ amEngine->Deinitialize();
 !!! function "virtual void SetSwitchState(AmSwitchID id, const SwitchState&amp; state) const = 0"
 
     
-    Set the active state of the defined @c Switch.
+    Sets the active state of the defined `Switch`.
     
     
     :material-location-enter: **Parameter** `id`
@@ -2380,7 +2472,7 @@ amEngine->Deinitialize();
 !!! function "virtual void SetSwitchState(const AmString&amp; name, AmObjectID stateId) const = 0"
 
     
-    Set the active state of the defined @c Switch.
+    Sets the active state of the defined `Switch`.
     
     
     :material-location-enter: **Parameter** `name`
@@ -2394,7 +2486,7 @@ amEngine->Deinitialize();
 !!! function "virtual void SetSwitchState(const AmString&amp; name, const AmString&amp; stateName) const = 0"
 
     
-    Set the active state of the defined @c Switch.
+    Sets the active state of the defined `Switch`.
     
     
     :material-location-enter: **Parameter** `name`
@@ -2408,7 +2500,7 @@ amEngine->Deinitialize();
 !!! function "virtual void SetSwitchState(const AmString&amp; name, const SwitchState&amp; state) const = 0"
 
     
-    Set the active state of the defined @c Switch.
+    Sets the active state of the defined `Switch`.
     
     
     :material-location-enter: **Parameter** `name`
@@ -2455,9 +2547,9 @@ amEngine->Deinitialize();
 
     
     Stops all playing sound objects.
-             
     
-    
+    This is the equivalent of calling `Stop()` on all generated channels.
+            
     
 
 ### Trigger<a name="Trigger"></a>
@@ -2471,11 +2563,11 @@ amEngine->Deinitialize();
     :    The handle of the event to trigger.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity in which trigger the event.
+    :    The entity on which trigger the event.
     
     
     :material-keyboard-return: **Return**
-    :    An `EventCanceler` object which may be used to cancel the execution of the event..
+    :    An `EventCanceler` object which may be used to cancel the execution of the event.
             
     
 
@@ -2485,20 +2577,20 @@ amEngine->Deinitialize();
     Triggers the event associated to the given handle.
     
     
-    !!! note
-         Triggering an event with its EventHandle is faster than using the
-        event name as using the name requires a map lookup internally.
+    !!! tip
+         Triggering an event with its `EventHandle` is faster than using the
+        event name as using the name requires an internal lookup.
     
     
     :material-location-enter: **Parameter** `name`
     :    The name of event to trigger.
         
     :material-location-enter: **Parameter** `entity`
-    :    The entity in which trigger the event.
+    :    The entity on which trigger the event.
     
     
     :material-keyboard-return: **Return**
-    :    An `EventCanceler` object which may be used to cancel the execution of the event..
+    :    An `EventCanceler` object which may be used to cancel the execution of the event.
             
     
 

@@ -14,7 +14,7 @@ Welcome to the official Amplitude Audio SDK documentation.
 
     ---
 
-    Overview of basic concepts of the C++ SDK, and the installation process.
+    C++ SDK features, basic concepts and installation process overview.
 
     [:octicons-arrow-right-24: Getting started](getting-started)
 
@@ -22,7 +22,7 @@ Welcome to the official Amplitude Audio SDK documentation.
 
     ---
 
-    Step-by-step usage and integrate guide of the C++ SDK in your projects.
+    C++ SDK step-by-step usage and integration guide in your projects.
 
     [:octicons-arrow-right-24: Engine Integration](integration)
 
@@ -38,7 +38,7 @@ Welcome to the official Amplitude Audio SDK documentation.
 
     ---
 
-    Public C++ API reference and documentation.
+    C++ SDK public API reference and documentation.
 
     [:octicons-arrow-right-24: API Reference](api)
 

@@ -79,7 +79,6 @@ underlying data.
     
     Note that this does not stop the audio or destroy the internal
     state it references, it just removes this reference to it.
-    To stop the Channel, use `Channel::Stop()`.
             
     
 
@@ -202,7 +201,11 @@ underlying data.
     
     :material-keyboard-return: **Return**
     :    The internal state of this Channel.
-            
+    
+    
+    !!! warning
+         This method is for internal usage only.
+                
     
 
 ### On<a name="On"></a>

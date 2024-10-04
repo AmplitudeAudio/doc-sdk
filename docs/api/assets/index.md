@@ -14,4 +14,5 @@ Assets API
 | Name | Description |
 | ---- | ----------- |
 | [Asset](Asset/index.md) | Amplitude Asset. |
+| [Event](Event/index.md) | Amplitude Event Asset. |
 

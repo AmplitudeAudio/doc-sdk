@@ -9,14 +9,10 @@ generator: doxide
 
 
 
-:material-package: [Thread](Thread/index.md)
-:   
-
 ## Types
 
 | Name | Description |
 | ---- | ----------- |
-| [AmThreadHandle](AmThreadHandle/index.md) | The AmThreadFunction signature is used to create threads.  |
 | [Amplimix](Amplimix/index.md) | Amplitude Audio Mixer. |
 | [AmplimixLayer](AmplimixLayer/index.md) | Called just before the mixer process audio data. Called just after the mixer process audio data.  |
 | [Attenuation](Attenuation/index.md) | Amplitude Attenuation. |
@@ -28,7 +24,6 @@ generator: doxide
 | [CartesianCoordinateSystem](CartesianCoordinateSystem/index.md) | A class representing a cartesian coordinate system. |
 | [Collection](Collection/index.md) | Amplitude Collection. |
 | [ConeShape](ConeShape/index.md) | A cone shape, defined by a radius and an height.  |
-| [ConsoleLogger](ConsoleLogger/index.md) | The console logger class. |
 | [ConsumerNodeInstance](ConsumerNodeInstance/index.md) | Interface for Amplimix pipeline nodes that can consume * audio data from an input buffer.  |
 | [Curve](Curve/index.md) | A Curve which describe the variation of a value (on the Y-axis) according to another (on the X-axis).  |
 | [CurvePart](CurvePart/index.md) | A part of a Curve. |
@@ -38,11 +33,6 @@ generator: doxide
 | [Edge](Edge/index.md) | Represents an edge.  |
 | [Effect](Effect/index.md) | Amplitude Effect. |
 | [EffectInstance](EffectInstance/index.md) | An instance of an Effect asset. |
-| [Entity](Entity/index.md) | An Entity represent an object in the game. |
-| [Environment](Environment/index.md) | An Environment is a zone where every spatialized audio playing inside him got * applied a specific effect. |
-| [Event](Event/index.md) | An event is mainly used to apply a set of actions at a given time in game. |
-| [EventCanceler](EventCanceler/index.md) | A class which can cancel a triggered Event.  |
-| [EventInstance](EventInstance/index.md) | A triggered event. |
 | [FFT](FFT/index.md) | The Fast Fourier Transform (FFT) class. |
 | [Face](Face/index.md) | Represents a triangulated face.  |
 | [Fader](Fader/index.md) | Helper class to process faders. |
@@ -55,14 +45,7 @@ generator: doxide
 | [Filter](Filter/index.md) | Helper class to manage filters. |
 | [FilterInstance](FilterInstance/index.md) | A Filter instance. |
 | [InputNodeInstance](InputNodeInstance/index.md) | Class used to marks the input of the pipeline. |
-| [Listener](Listener/index.md) | An object whose distance from sounds determines their gain. |
-| [LogMessageLevel](LogMessageLevel/index.md) | The level of a log message. |
-| [Logger](Logger/index.md) | The logger class. |
 | [MemoryFile](MemoryFile/index.md) | A File implementation that reads and writes a memory buffer.  |
-| [MemoryManager](MemoryManager/index.md) | Manages memory allocations inside the engine.  |
-| [MemoryManagerConfig](MemoryManagerConfig/index.md) | Configures the memory management system.  |
-| [MemoryPoolKind](MemoryPoolKind/index.md) | Available memory pools.  |
-| [MemoryPoolStats](MemoryPoolStats/index.md) | Collects the statistics about the memory allocations * for a specific pool  |
 | [MixerNodeInstance](MixerNodeInstance/index.md) | Base class for Amplimix pipeline nodes that can mix * audio data from multiple input buffers, and outputs the result * of the mix.  |
 | [Node](Node/index.md) | Base class for Amplimix pipeline nodes. |
 | [NodeInstance](NodeInstance/index.md) | An instance of an Amplimix pipeline node. |
@@ -76,16 +59,10 @@ generator: doxide
 | [Pipeline](Pipeline/index.md) | A pipeline assembles a set of nodes to process audio data. |
 | [ProcessorNodeInstance](ProcessorNodeInstance/index.md) | Base class for Amplimix pipeline nodes that can process * audio data in-place.  |
 | [ProviderNodeInstance](ProviderNodeInstance/index.md) | Interface for Amplimix pipeline nodes that can provide * audio data to an output buffer.  |
-| [RefCounter](RefCounter/index.md) | Holds the number of references to an object.  |
 | [ResamplerInstance](ResamplerInstance/index.md) | A Resampler instance. |
 | [Resource](Resource/index.md) | An Amplitude resource in a FileSystem. |
-| [Room](Room/index.md) | The absorption coefficients of the material. Represents a physical space where sound waves can propagate. Any sound source within the room will be affected * by the room's properties, and got applied early reflections and reverberation effects. |
-| [RoomMaterial](RoomMaterial/index.md) | Represents the material of a @c Room wall.  |
-| [RoomMaterialType](RoomMaterialType/index.md) | Defines the material type of a @c Room wall. |
-| [RoomWall](RoomWall/index.md) | Enumerates the walls of a @c Room.  |
 | [Rtpc](Rtpc/index.md) | Amplitude Real-Time Parameter Control. |
 | [RtpcValue](RtpcValue/index.md) | A RTPC compatible value is used as a wrapper to hold propertiy values * that can be linked to RTPCs. |
-| [ScopedMemoryAllocation](ScopedMemoryAllocation/index.md) | Allocates a block of memory with the given size in the given pool. |
 | [Shape](Shape/index.md) | A Shape. |
 | [Sound](Sound/index.md) | Amplitude Sound. |
 | [SoundBank](SoundBank/index.md) | Amplitude Sound Bank |

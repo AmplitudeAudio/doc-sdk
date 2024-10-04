@@ -26,8 +26,17 @@ Engine-specific functionalities
 | [DeviceState](DeviceState/index.md) | The device state. |
 | [Driver](Driver/index.md) | Base class for audio device driver implementations. |
 | [Engine](Engine/index.md) | The Amplitude Engine. |
+| [Entity](Entity/index.md) | An Entity represents a spatially positioned object in the game. |
+| [Environment](Environment/index.md) | An Environment is a zone where every spatialized audio playing inside him got * applied a specific effect. |
+| [EventCanceler](EventCanceler/index.md) | An helper class used to cancel a running `Event`. |
+| [EventInstance](EventInstance/index.md) | A triggered event. |
+| [Listener](Listener/index.md) | A object which can render sound sources. |
 | [PlaybackOutputChannels](PlaybackOutputChannels/index.md) | The playback output channel layout of the device. |
 | [PlaybackOutputFormat](PlaybackOutputFormat/index.md) | The playback output format of the device. |
+| [Room](Room/index.md) | The absorption coefficients of the material. Represents a physical space where sound waves can propagate. |
+| [RoomMaterial](RoomMaterial/index.md) | Represents the material of a `Room` wall. |
+| [RoomMaterialType](RoomMaterialType/index.md) | Defines the material type of a `Room` wall. |
+| [RoomWall](RoomWall/index.md) | Enumerates the walls of a `Room`. |
 
 ## Macros
 
