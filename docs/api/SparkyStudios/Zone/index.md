@@ -1,0 +1,190 @@
+---
+title: Zone
+description: A shape that represents a zone in the world.
+generator: doxide
+---
+
+
+# Zone
+
+**class  Zone**
+
+
+A shape that represents a zone in the world.
+
+This shape is mainly used by attenuations and environments. It's composed of an inner shape and an outer shape.
+The inner shape is the zone where the factor is equal to one all the time. The outer shape is the zone where the
+factor increase or decrease according to the shortest distance of the game object from the outer edge.
+
+If the game object is outside the outer shape (thus, outside the zone), the factor is zero.
+    
+
+
+## Variables
+
+| Name | Description |
+| ---- | ----------- |
+| [m_innerShape](#m_innerShape) | The inner shape of the zone.  |
+| [m_outerShape](#m_outerShape) | The outer shape of the zone.  |
+
+## Functions
+
+| Name | Description |
+| ---- | ----------- |
+| [GetFactor](#GetFactor) | Gets the factor (a value in the range [0, 1]) according to the position * of the given entity in the zone. |
+| [GetFactor](#GetFactor) | Gets the factor (a value in the range [0, 1]) according to the position * of the given listener in the zone. |
+| [GetFactor](#GetFactor) | Gets the factor (a value in the range [0, 1]) according to the given * position in the zone. |
+| [SetLocation](#SetLocation) | Sets the location of this zone in the 3D environment. |
+| [GetLocation](#GetLocation) | Gets the current location of this zone. |
+| [SetOrientation](#SetOrientation) | Sets the orientation of this zone. |
+| [GetOrientation](#GetOrientation) | Gets the orientation of this zone. |
+| [GetDirection](#GetDirection) | Get the direction vector of the zone. |
+| [GetUp](#GetUp) | Get the up vector of the zone. |
+
+## Variable Details
+
+### m_innerShape<a name="m_innerShape"></a>
+
+!!! variable "Shape&#42; m_innerShape"
+
+    
+    The inner shape of the zone.
+             
+    
+    
+    
+
+### m_outerShape<a name="m_outerShape"></a>
+
+!!! variable "Shape&#42; m_outerShape"
+
+    
+    The outer shape of the zone.
+             
+    
+    
+    
+
+## Function Details
+
+### GetDirection<a name="GetDirection"></a>
+!!! function "[[nodiscard]] AmVec3 GetDirection() const"
+
+    
+    Get the direction vector of the zone.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The direction vector.
+            
+    
+
+### GetFactor<a name="GetFactor"></a>
+!!! function "[[nodiscard]] virtual AmReal32 GetFactor(const Entity&amp; entity)"
+
+    
+    Gets the factor (a value in the range [0, 1]) according to the position
+             * of the given entity in the zone.
+    
+    
+    :material-location-enter: **Parameter** `entity`
+    :    The entity to get the factor for.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The factor.
+            
+    
+
+!!! function "[[nodiscard]] virtual AmReal32 GetFactor(const Listener&amp; listener)"
+
+    
+    Gets the factor (a value in the range [0, 1]) according to the position
+             * of the given listener in the zone.
+    
+    
+    :material-location-enter: **Parameter** `listener`
+    :    The listener to get the factor for.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The factor.
+            
+    
+
+!!! function "[[nodiscard]] virtual AmReal32 GetFactor(const AmVec3&amp; position) = 0"
+
+    
+    Gets the factor (a value in the range [0, 1]) according to the given
+             * position in the zone.
+    
+    
+    :material-location-enter: **Parameter** `position`
+    :    The position in the zone to get the factor for.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The factor.
+            
+    
+
+### GetLocation<a name="GetLocation"></a>
+!!! function "[[nodiscard]] const AmVec3&amp; GetLocation() const"
+
+    
+    Gets the current location of this zone.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The current location of this zone.
+            
+    
+
+### GetOrientation<a name="GetOrientation"></a>
+!!! function "[[nodiscard]] const Orientation&amp; GetOrientation() const"
+
+    
+    Gets the orientation of this zone.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The orientation of this zone.
+            
+    
+
+### GetUp<a name="GetUp"></a>
+!!! function "[[nodiscard]] AmVec3 GetUp() const"
+
+    
+    Get the up vector of the zone.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The up vector.
+            
+    
+
+### SetLocation<a name="SetLocation"></a>
+!!! function "void SetLocation(const AmVec3&amp; location)"
+
+    
+    Sets the location of this zone in the 3D environment.
+    
+    
+    :material-location-enter: **Parameter** `location`
+    :    The zone location.
+                
+    
+
+### SetOrientation<a name="SetOrientation"></a>
+!!! function "void SetOrientation(const Orientation&amp; orientation)"
+
+    
+    Sets the orientation of this zone.
+    
+    
+    :material-location-enter: **Parameter** `orientation`
+    :    The new orientation.
+                
+    
+
