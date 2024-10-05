@@ -18,7 +18,7 @@ access to the internal state of the engine through the public API.
 
 The `Engine` is a singleton class and you can access it using the `amEngine` macro. Before
 using most of the methods of the engine, you need to [initialize the
-engine](https://amplitudeaudiosdk.com/docs/integration/initializing-the-engine/) first, for example:
+engine](../../../integration/initializing-the-engine.md) first, for example:
 ```cpp
 amEngine->Initialize("config.amconfig");
 //...
@@ -841,7 +841,7 @@ amEngine->Deinitialize();
     
     !!! note
          Only one pipeline can be loaded at a time. The loaded pipeline asset is defined in the
-        [engine configuration file](https://amplitudeaudiosdk.com/docs/project-setup/engine-configuration/#pipeline).
+        [engine configuration file](../../../project/engine-config.md#pipeline).
     
     
     :material-keyboard-return: **Return**
@@ -1578,7 +1578,7 @@ amEngine->Deinitialize();
     
     !!! note
          Switch containers played using this method should have been set in the `Entity` scope
-        from their asset file. See more [here](/project/sound-objects/#scope).
+        from their asset file. See more [here](../../../project/sound-object.md#scope).
     
     
     :material-location-enter: **Parameter** `handle`
@@ -1602,7 +1602,7 @@ amEngine->Deinitialize();
     
     !!! note
          Switch containers played using this method should have been set in the `Entity` scope
-        from their asset file. See more [here](/project/sound-objects/#scope).
+        from their asset file. See more [here](../../../project/sound-object.md#scope).
     
     
     :material-location-enter: **Parameter** `handle`
@@ -1696,7 +1696,7 @@ amEngine->Deinitialize();
     
     !!! note
          Collections played using this method should have been set in the `Entity` scope
-        from their asset file. See more [here](/project/sound-objects/#scope).
+        from their asset file. See more [here](../../../project/sound-object.md#scope).
     
     
     :material-location-enter: **Parameter** `handle`
@@ -1720,7 +1720,7 @@ amEngine->Deinitialize();
     
     !!! note
          Collections played using this method should have been set in the `Entity` scope
-        from their asset file. See more [here](/project/sound-objects/#scope).
+        from their asset file. See more [here](../../../project/sound-object.md#scope).
     
     
     :material-location-enter: **Parameter** `handle`
@@ -1814,7 +1814,7 @@ amEngine->Deinitialize();
     
     !!! note
          Sounds played using this method should have been set in the `Entity` scope
-        from their asset file. See more [here](/project/sound-objects/#scope).
+        from their asset file. See more [here](../../../project/sound-object.md#scope).
     
     
     :material-location-enter: **Parameter** `handle`
@@ -1838,7 +1838,7 @@ amEngine->Deinitialize();
     
     !!! note
          Sounds played using this method should have been set in the `Entity` scope
-        from their asset file. See more [here](/project/sound-objects/#scope).
+        from their asset file. See more [here](../../../project/sound-object.md#scope).
     
     
     :material-location-enter: **Parameter** `handle`
@@ -1952,7 +1952,7 @@ amEngine->Deinitialize();
     
     !!! note
          Sound objects played using this method should have been set in the `Entity` scope
-        from their asset file. See more [here](/project/sound-objects/#scope).
+        from their asset file. See more [here](../../../project/sound-object.md#scope).
     
     
     :material-location-enter: **Parameter** `name`
@@ -1982,7 +1982,7 @@ amEngine->Deinitialize();
     
     !!! note
          Sound objects played using this method should have been set in the `Entity` scope
-        from their asset file. See more [here](/project/sound-objects/#scope).
+        from their asset file. See more [here](../../../project/sound-object.md#scope).
     
     
     :material-location-enter: **Parameter** `name`
@@ -2097,7 +2097,7 @@ amEngine->Deinitialize();
     
     !!! note
          Sound objects played using this method should have been set in the `Entity` scope
-        from their asset file. See more [here](/project/sound-objects/#scope).
+        from their asset file. See more [here](../../../project/sound-object.md#scope).
     
     
     :material-location-enter: **Parameter** `id`
@@ -2127,7 +2127,7 @@ amEngine->Deinitialize();
     
     !!! note
          Sound objects played using this method should have been set in the `Entity` scope
-        from their asset file. See more [here](/project/sound-objects/#scope).
+        from their asset file. See more [here](../../../project/sound-object.md#scope).
     
     
     :material-location-enter: **Parameter** `id`
@@ -2277,7 +2277,7 @@ amEngine->Deinitialize();
     
     !!! note
          This method takes effect only if the
-        [`listener_fetch_mode`](https://amplitudeaudiosdk.com/docs/project-setup/engine-configuration/#listener_fetch_mode)
+        [`listener_fetch_mode`](../../../project/engine-config.md#listener_fetch_mode)
         engine setting is set to `Default`.
     
     
@@ -2296,7 +2296,7 @@ amEngine->Deinitialize();
     
     !!! note
          This method takes effect only if the
-        [`listener_fetch_mode`](https://amplitudeaudiosdk.com/docs/project-setup/engine-configuration/#listener_fetch_mode)
+        [`listener_fetch_mode`](../../../project/engine-config.md#listener_fetch_mode)
         engine setting is set to `Default`.
     
     

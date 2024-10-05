@@ -6,7 +6,7 @@ description: Sound banks are units storing the data your game will need to play 
 !!! danger Incomplete Documentation
     This documentation page is WIP and not yet complete. You can have a complete demo on how to interact with the engine through the official [sample projects](https://github.com/AmplitudeAudio/sdk/blob/develop/samples).
 
-When the engine is [fully initialized](./initializing-the-engine.md), you have to load a [sound bank](../project/soundbank.md) to be able to play any sound or interact with your Amplitude project at runtime.
+When the engine is [fully initialized](./initializing-the-engine.md), you have to load a [sound bank](../project/sound-bank.md) to be able to play any sound or interact with your Amplitude project at runtime.
 
 By loading a sound bank, the engine will also load all the associated data (effects, attenuation, events, etc.).
 

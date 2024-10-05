@@ -67,7 +67,7 @@ The `rtpc` directory stores the configuration files to create [RTPC] values. Eac
 
 ## soundbanks/
 
-The `soundbanks` directory is the place where you define all of your game [SoundBank]s. Each `.json` file of this directory should match this [flatbuffers schema](https://github.com/AmplitudeAudio/sdk/blob/main/schemas/sound_bank_definition.fbs). Learn more about sound banks in the [Sound Banks](./soundbank.md) page.
+The `soundbanks` directory is the place where you define all of your game [SoundBank]s. Each `.json` file of this directory should match this [flatbuffers schema](https://github.com/AmplitudeAudio/sdk/blob/main/schemas/sound_bank_definition.fbs). Learn more about sound banks in the [Sound Banks](./sound-bank.md) page.
 
 ## sounds/
 

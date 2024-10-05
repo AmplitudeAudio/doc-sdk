@@ -27,6 +27,8 @@ Class that handles aligned allocations to support vectorized operations.
 
 | Name | Description |
 | ---- | ----------- |
+| [AmAlignedReal32Buffer](#AmAlignedReal32Buffer) | Constructs an empty buffer.  |
+| [~AmAlignedReal32Buffer](#_u007eAmAlignedReal32Buffer) | Destructs the buffer and deallocates the memory.  |
 | [Init](#Init) | Allocates and align buffer. |
 | [Clear](#Clear) | Clears all data.  |
 | [Release](#Release) | Releases the allocated buffer.  |
@@ -72,6 +74,16 @@ Class that handles aligned allocations to support vectorized operations.
     
 
 ## Function Details
+
+### AmAlignedReal32Buffer<a name="AmAlignedReal32Buffer"></a>
+!!! function "AmAlignedReal32Buffer()"
+
+    
+    Constructs an empty buffer.
+             
+    
+    
+    
 
 ### Clear<a name="Clear"></a>
 !!! function "void Clear() const"
@@ -183,11 +195,21 @@ Class that handles aligned allocations to support vectorized operations.
     Swaps two buffers.
     
     
-    :material-location-enter: **Parameter** `a`
+    :material-location-enter::material-location-exit: **Parameter** `a`
     :    The first buffer.
         
-    :material-location-enter: **Parameter** `b`
+    :material-location-enter::material-location-exit: **Parameter** `b`
     :    The second buffer.
                 
+    
+
+### ~AmAlignedReal32Buffer<a name="_u007eAmAlignedReal32Buffer"></a>
+!!! function "~AmAlignedReal32Buffer()"
+
+    
+    Destructs the buffer and deallocates the memory.
+             
+    
+    
     
 

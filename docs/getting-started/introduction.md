@@ -14,7 +14,7 @@ Amplitude can play audio sources in 2D environments, as well in 3D environments 
 
 ## Data-driven Development
 
-Uses `.json` files to define everything, from a simple sound file to a complex switch container. Each `.json` file is in a dedicated directory according to its usage (`events`, `effects`, `sounds`, `collections`, etc.). Amplitude will compile them into binary files, which can now be registered into [sound banks](#soundbanks-management) and loaded in the game at runtime.
+Uses `.json` files to define everything, from a simple sound file to a complex switch container. Each `.json` file is in a dedicated directory according to its usage (`events`, `effects`, `sounds`, `collections`, etc.). Amplitude will compile them into binary files, which can now be registered into [sound banks](#sound-banks-management) and loaded in the game at runtime.
 
 ## Plugin Architecture
 
