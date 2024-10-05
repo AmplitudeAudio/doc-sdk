@@ -12,10 +12,15 @@ generator: doxide
 
 Base class for Amplimix pipeline nodes.
 
-This class presents the basic structure to create Amplimix
-pipeline nodes. Each `Node` must be derived from this class
-and implement the `Node::CreateInstance()` and
-`Node::DestroyInstance()` methods.
+This class presents the basic structure to create Amplimix pipeline nodes. Each
+`Node` of your pipelines must be derived from this class and implement the [`CreateInstance()`](#CreateInstance)
+and [`DestroyInstance()`](#DestroyInstance) methods.
+
+
+:material-eye-outline: **See**
+:    [NodeInstance](../NodeInstance/index.md)
+
+
     
 
 
@@ -70,7 +75,7 @@ and implement the `Node::CreateInstance()` and
     
     
     :material-keyboard-return: **Return**
-    :    The node with the given name, or NULL if none.
+    :    The node with the given name, or `nullptr` if none.
             
     
 
@@ -151,10 +156,12 @@ and implement the `Node::CreateInstance()` and
     
     Locks the nodes registry.
     
-    This function is mainly used for internal purposes. Its
-    called before the Engine initialization, to discard the
-    registration of new nodes after the engine is fully loaded.
-            
+    
+    !!! warning
+         This function is mainly used for internal purposes. It's
+        called before the `Engine` initialization, to discard the registration
+        of new nodes after the engine is fully loaded.
+                
     
 
 ### Node<a name="Node"></a>
@@ -187,10 +194,12 @@ and implement the `Node::CreateInstance()` and
     
     Unlocks the nodes registry.
     
-    This function is mainly used for internal purposes. Its
-    called after the Engine deinitialization, to allow the
-    registration of new divers after the engine is fully unloaded.
-            
+    
+    !!! warning
+         This function is mainly used for internal purposes. It's
+        called after the `Engine` deinitialization, to allow the registration
+        of new nodes after the engine is fully unloaded.
+                
     
 
 ### Unregister<a name="Unregister"></a>

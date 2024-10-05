@@ -15,8 +15,16 @@ Buffer for split-complex representation of FFT results.
 The split-complex representation stores the real and imaginary parts
 of FFT results in two different memory buffers which is useful e.g. for
 SIMD optimizations.
+
+
     
 
+
+## Operators
+
+| Name | Description |
+| ---- | ----------- |
+| [operator[]](#operator_u005b_u005d) | Gets the complex value at the given index. |
 
 ## Functions
 
@@ -33,6 +41,25 @@ SIMD optimizations.
 | [re](#re) | Gets the real part of the split-complex buffer. |
 | [im](#im) | Gets the imaginary part of the split-complex buffer. |
 | [im](#im) | Gets the imaginary part of the split-complex buffer. |
+
+## Operator Details
+
+### operator[]<a name="operator_u005b_u005d"></a>
+
+!!! function "[[nodiscard]] std::complex&lt;AmAudioSample&gt; operator[](AmSize index) const"
+
+    
+    Gets the complex value at the given index.
+    
+    
+    :material-location-enter: **Parameter** `index`
+    :    The index of the complex value.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The complex value at the given index.
+            
+    
 
 ## Function Details
 
@@ -91,10 +118,7 @@ SIMD optimizations.
     :    The new size of the split-complex buffer.
         
     :material-location-enter: **Parameter** `clear`
-    :   
-        
-    :material-location-enter: **Parameter** `clear`
-    :   
+    :    Whether to clear the buffer after resizing.
                 
     
 

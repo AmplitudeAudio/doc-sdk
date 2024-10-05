@@ -36,3 +36,4 @@
     - [IO](api/io/)
     - [Math](api/math/)
     - [Memory](api/memory/)
+    - [Mixer](api/mixer/)

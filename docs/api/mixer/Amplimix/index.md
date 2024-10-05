@@ -14,6 +14,12 @@ Amplitude Audio Mixer.
 
 This class handles processing of audio data by mixing multiple audio sources.
 The resulting audio stream are next handled by the `Driver` for playback or recording.
+
+
+:material-eye-outline: **See**
+:    [Driver](../../engine/Driver/index.md)
+
+
     
 
 
@@ -21,6 +27,7 @@ The resulting audio stream are next handled by the `Driver` for playback or reco
 
 | Name | Description |
 | ---- | ----------- |
+| [~Amplimix](#_u007eAmplimix) | Default Destructor.  |
 | [UpdateDevice](#UpdateDevice) | Saves the information about the rendering audio device. |
 | [IsInitialized](#IsInitialized) | Checks if the mixer is initialized. |
 | [Mix](#Mix) | Processes the audio data by mixing multiple audio sources for the specified number of frames. |
@@ -59,7 +66,7 @@ The resulting audio stream are next handled by the `Driver` for playback or reco
     Processes the audio data by mixing multiple audio sources for the specified number of frames.
     
     
-    :material-location-enter: **Parameter** `outBuffer`
+    :material-location-exit: **Parameter** `outBuffer`
     :    The buffer to store the mixed audio data.
         
     :material-location-enter: **Parameter** `frameCount`
@@ -67,7 +74,7 @@ The resulting audio stream are next handled by the `Driver` for playback or reco
     
     
     :material-keyboard-return: **Return**
-    :    The number of frames actually mixed.
+    :    The number of processed frames.
             
     
 
@@ -93,5 +100,15 @@ The resulting audio stream are next handled by the `Driver` for playback or reco
     :material-location-enter: **Parameter** `deviceOutputFormat`
     :    The format of the audio device's output.
                 
+    
+
+### ~Amplimix<a name="_u007eAmplimix"></a>
+!!! function "virtual ~Amplimix() = default"
+
+    
+    Default Destructor.
+             
+    
+    
     
 

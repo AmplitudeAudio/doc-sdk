@@ -1,6 +1,6 @@
 ---
 title: ProcessorNodeInstance
-description: Base class for Amplimix pipeline nodes that can process * audio data in-place. 
+description: Base class for Amplimix pipeline nodes that can process audio data in-place.
 generator: doxide
 ---
 
@@ -10,24 +10,43 @@ generator: doxide
 **class  ProcessorNodeInstance : public NodeInstance , public ConsumerNodeInstance , public ProviderNodeInstance**
 
 
-Base class for Amplimix pipeline nodes that can process
-     * audio data in-place.
-     
+Base class for Amplimix pipeline nodes that can process audio data in-place.
 
 
+:material-eye-outline: **See**
+:    [NodeInstance](../NodeInstance/index.md), [ConsumerNodeInstance](../ConsumerNodeInstance/index.md),
+[ProviderNodeInstance](../ProviderNodeInstance/index.md)
 
+
+    
+
+
+## Variables
+
+| Name | Description |
+| ---- | ----------- |
+| [m_provider](#m_provider) | The ID of the input provider node. |
 
 ## Functions
 
 | Name | Description |
 | ---- | ----------- |
 | [ProcessorNodeInstance](#ProcessorNodeInstance) | PropertyNodeInstance constructor. |
-| [~ProcessorNodeInstance](#_u007eProcessorNodeInstance) | ProcessorNodeInstance destructor.  |
-| [Process](#Process) | Process input audio data and returns the output audio data. |
-| [Consume](#Consume) |  @copydoc ConsumerNodeInstance::Consume()  |
-| [Connect](#Connect) |  @copydoc ConsumerNodeInstance::Connect()  |
-| [Provide](#Provide) |  @copydoc ProviderNodeInstance::Provide()  |
-| [Reset](#Reset) |  @copydoc NodeInstance::Reset()  |
+| [~ProcessorNodeInstance](#_u007eProcessorNodeInstance) | Default destructor.  |
+| [Process](#Process) | Processes input audio data and returns the output audio data. |
+| [Consume](#Consume) |  @inherit  |
+| [Connect](#Connect) |  @inherit  |
+| [Provide](#Provide) |  @inherit  |
+| [Reset](#Reset) |  @inherit  |
+
+## Variable Details
+
+### m_provider<a name="m_provider"></a>
+
+!!! variable "AmObjectID m_provider"
+
+    The ID of the input provider node.
+    
 
 ## Function Details
 
@@ -35,7 +54,7 @@ Base class for Amplimix pipeline nodes that can process
 !!! function "void Connect(AmObjectID provider) final"
 
     
-    @copydoc ConsumerNodeInstance::Connect()
+    @inherit
             
     
 
@@ -43,7 +62,7 @@ Base class for Amplimix pipeline nodes that can process
 !!! function "void Consume() final"
 
     
-    @copydoc ConsumerNodeInstance::Consume()
+    @inherit
             
     
 
@@ -51,7 +70,7 @@ Base class for Amplimix pipeline nodes that can process
 !!! function "&#42; Process(const AudioBuffer&#42; input)"
 
     
-    Process input audio data and returns the output audio data.
+    Processes input audio data and returns the output audio data.
     
     
     :material-location-enter: **Parameter** `input`
@@ -71,8 +90,8 @@ Base class for Amplimix pipeline nodes that can process
     
     
     :material-location-enter: **Parameter** `processOnEmptyBuffer`
-    :    If true, the node will execute the Process() method
-        even if the input buffer is `nullptr.`
+    :    If `true`, the node will execute the [`Process()`](#Process) method
+        even if the input buffer is `nullptr`.
                 
     
 
@@ -80,7 +99,7 @@ Base class for Amplimix pipeline nodes that can process
 !!! function "const AudioBuffer&#42; Provide() final"
 
     
-    @copydoc ProviderNodeInstance::Provide()
+    @inherit
             
     
 
@@ -88,7 +107,7 @@ Base class for Amplimix pipeline nodes that can process
 !!! function "void Reset() override"
 
     
-    @copydoc NodeInstance::Reset()
+    @inherit
             
     
 
@@ -96,7 +115,7 @@ Base class for Amplimix pipeline nodes that can process
 !!! function "~ProcessorNodeInstance() override = default"
 
     
-    ProcessorNodeInstance destructor.
+    Default destructor.
              
     
     

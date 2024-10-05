@@ -20,4 +20,5 @@ Digital Signal Processing (DSP) API
 | [FilterInstance](FilterInstance/index.md) | A Filter instance. |
 | [Resampler](Resampler/index.md) | Base class to manage resamplers. |
 | [ResamplerInstance](ResamplerInstance/index.md) | A Resampler instance. |
+| [SplitComplex](SplitComplex/index.md) | Buffer for split-complex representation of FFT results. |
 

@@ -1,6 +1,6 @@
 ---
 title: InputNodeInstance
-description: Class used to marks the input of the pipeline.
+description: Class used to mark the input of the pipeline.
 generator: doxide
 ---
 
@@ -10,10 +10,18 @@ generator: doxide
 **class  InputNodeInstance final : public NodeInstance , public ProviderNodeInstance**
 
 
-Class used to marks the input of the pipeline.
+Class used to mark the input of the pipeline.
 
-This node is automatically added to the pipeline when created. And thus
-should not be manually added to the pipeline asset.
+
+!!! warning
+     This node is automatically added to the pipeline when created. And thus
+    should not be manually added to the pipeline asset.
+
+
+:material-eye-outline: **See**
+:    [ProviderNodeInstance](../ProviderNodeInstance/index.md)
+
+
     
 
 
@@ -22,10 +30,10 @@ should not be manually added to the pipeline asset.
 | Name | Description |
 | ---- | ----------- |
 | [InputNodeInstance](#InputNodeInstance) | InputNodeInstance constructor.  |
-| [~InputNodeInstance](#_u007eInputNodeInstance) | InputNodeInstance destructor.  |
-| [SetInput](#SetInput) | Set the input of the pipeline. |
-| [Provide](#Provide) |  @copydoc ProviderNodeInstance::Provide()  |
-| [Reset](#Reset) |  @copydoc NodeInstance::Reset()  |
+| [~InputNodeInstance](#_u007eInputNodeInstance) | Default destructor.  |
+| [SetInput](#SetInput) | Sets the input of the pipeline. |
+| [Provide](#Provide) |  @inherit  |
+| [Reset](#Reset) |  @inherit  |
 
 ## Function Details
 
@@ -43,7 +51,7 @@ should not be manually added to the pipeline asset.
 !!! function "const AudioBuffer&#42; Provide() override"
 
     
-    @copydoc ProviderNodeInstance::Provide()
+    @inherit
             
     
 
@@ -51,7 +59,7 @@ should not be manually added to the pipeline asset.
 !!! function "void Reset() override"
 
     
-    @copydoc NodeInstance::Reset()
+    @inherit
             
     
 
@@ -59,7 +67,7 @@ should not be manually added to the pipeline asset.
 !!! function "void SetInput(AudioBuffer&#42; buffer)"
 
     
-    Set the input of the pipeline.
+    Sets the input of the pipeline.
     
     
     :material-location-enter: **Parameter** `buffer`
@@ -71,7 +79,7 @@ should not be manually added to the pipeline asset.
 !!! function "~InputNodeInstance() override = default"
 
     
-    InputNodeInstance destructor.
+    Default destructor.
              
     
     

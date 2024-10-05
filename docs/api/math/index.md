@@ -53,6 +53,7 @@ Math libraries and utilities
 | [CatmullRom](#CatmullRom) | Computes the Catmull-Rom interpolation value at a given time `t` between four points. |
 | [ComputeDopplerFactor](#ComputeDopplerFactor) | Computes the Doppler factor for a sound source at a given location. |
 | [FindGCD](#FindGCD) | Finds the greatest common divisor (GCD) of two integers. |
+| [GetRelativeDirection](#GetRelativeDirection) | Returns a direction vector relative to a given position and rotation. |
 | [IntegerPow](#IntegerPow) | Computes the value base^exp using the squared exponentiation method. |
 | [NextPowerOf2](#NextPowerOf2) | Returns the next power of 2 of a given number. |
 
@@ -297,6 +298,30 @@ Math libraries and utilities
     
     :material-keyboard-return: **Return**
     :    The greatest common divisor of a and b.
+    
+    
+        
+    
+
+### GetRelativeDirection<a name="GetRelativeDirection"></a>
+!!! function "inline AmVec3 GetRelativeDirection(const AmVec3&amp; originPosition, const AmQuat&amp; originRotation, const AmVec3&amp; position)"
+
+    
+    Returns a direction vector relative to a given position and rotation.
+    
+    
+    :material-location-enter: **Parameter** `originPosition`
+    :    Origin position of the direction.
+        
+    :material-location-enter: **Parameter** `originRotation`
+    :    Origin rotation of the direction.
+        
+    :material-location-enter: **Parameter** `position`
+    :    Target position of the direction.
+    
+    
+    :material-keyboard-return: **Return**
+    :    A relative direction vector (not normalized).
     
     
         

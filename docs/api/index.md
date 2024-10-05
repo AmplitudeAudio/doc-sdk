@@ -30,6 +30,9 @@ Amplitude Audio SDK public API reference and documentation.
 :material-format-section: [DSP](dsp/index.md)
 :   Digital Signal Processing (DSP) API
 
+:material-format-section: [Mixer](mixer/index.md)
+:   Mixer & Pipeline API
+
 :material-package: [SparkyStudios](SparkyStudios/index.md)
 :   
 

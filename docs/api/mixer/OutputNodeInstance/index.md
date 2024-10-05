@@ -1,6 +1,6 @@
 ---
 title: OutputNodeInstance
-description: Class used to marks the output of the pipeline.
+description: Class used to mark the output of the pipeline.
 generator: doxide
 ---
 
@@ -10,10 +10,18 @@ generator: doxide
 **class  OutputNodeInstance final : public NodeInstance , public ConsumerNodeInstance**
 
 
-Class used to marks the output of the pipeline.
+Class used to mark the output of the pipeline.
 
-This node is automatically added to the pipeline when created. And thus
-should not be manually added to the pipeline asset.
+
+!!! warning
+     This node is automatically added to the pipeline when created. And thus
+    should not be manually added to the pipeline asset.
+
+
+:material-eye-outline: **See**
+:    [ConsumerNodeInstance](../ConsumerNodeInstance/index.md)
+
+
     
 
 
@@ -22,11 +30,11 @@ should not be manually added to the pipeline asset.
 | Name | Description |
 | ---- | ----------- |
 | [OutputNodeInstance](#OutputNodeInstance) | OutputNodeInstance constructor.  |
-| [~OutputNodeInstance](#_u007eOutputNodeInstance) | OutputNodeInstance destructor.  |
-| [SetOutput](#SetOutput) | Set the output of the pipeline. |
-| [Consume](#Consume) |  @copydoc ConsumerNodeInstance::Consume()  |
-| [Connect](#Connect) |  @copydoc ConsumerNodeInstance::Connect()  |
-| [Reset](#Reset) |  @copydoc NodeInstance::Reset()  |
+| [~OutputNodeInstance](#_u007eOutputNodeInstance) | Default destructor.  |
+| [SetOutput](#SetOutput) | Sets the output of the pipeline. |
+| [Consume](#Consume) |  @inherit  |
+| [Connect](#Connect) |  @inherit  |
+| [Reset](#Reset) |  @inherit  |
 
 ## Function Details
 
@@ -34,7 +42,7 @@ should not be manually added to the pipeline asset.
 !!! function "void Connect(AmObjectID provider) override"
 
     
-    @copydoc ConsumerNodeInstance::Connect()
+    @inherit
             
     
 
@@ -42,7 +50,7 @@ should not be manually added to the pipeline asset.
 !!! function "void Consume() override"
 
     
-    @copydoc ConsumerNodeInstance::Consume()
+    @inherit
             
     
 
@@ -60,7 +68,7 @@ should not be manually added to the pipeline asset.
 !!! function "void Reset() override"
 
     
-    @copydoc NodeInstance::Reset()
+    @inherit
             
     
 
@@ -68,7 +76,7 @@ should not be manually added to the pipeline asset.
 !!! function "void SetOutput(AudioBuffer&#42; buffer)"
 
     
-    Set the output of the pipeline.
+    Sets the output of the pipeline.
     
     
     :material-location-enter: **Parameter** `buffer`
@@ -80,7 +88,7 @@ should not be manually added to the pipeline asset.
 !!! function "~OutputNodeInstance() override = default"
 
     
-    OutputNodeInstance destructor.
+    Default destructor.
              
     
     

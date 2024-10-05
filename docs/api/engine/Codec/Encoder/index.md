@@ -15,7 +15,7 @@ Audio file writer.
 The `Encoder` is built by a `Codec` instance. It's used to write
 data to an audio file.
 
-The `Write()` methods of an encoder implementation must be thread safe.
+The [`Write()`](#Write) methods of an encoder implementation must be thread safe.
         
 
 

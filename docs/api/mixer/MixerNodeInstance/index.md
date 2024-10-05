@@ -1,6 +1,6 @@
 ---
 title: MixerNodeInstance
-description: Base class for Amplimix pipeline nodes that can mix * audio data from multiple input buffers, and outputs the result * of the mix. 
+description: Base class for Amplimix pipeline nodes that can mix audio data from multiple input buffers.
 generator: doxide
 ---
 
@@ -10,25 +10,43 @@ generator: doxide
 **class  MixerNodeInstance : public NodeInstance , public ConsumerNodeInstance , public ProviderNodeInstance**
 
 
-Base class for Amplimix pipeline nodes that can mix
-     * audio data from multiple input buffers, and outputs the result
-     * of the mix.
-     
+Base class for Amplimix pipeline nodes that can mix audio data from multiple input buffers.
 
 
+:material-eye-outline: **See**
+:    [NodeInstance](../NodeInstance/index.md), [ConsumerNodeInstance](../ConsumerNodeInstance/index.md),
+[ProviderNodeInstance](../ProviderNodeInstance/index.md)
 
+
+    
+
+
+## Variables
+
+| Name | Description |
+| ---- | ----------- |
+| [m_providers](#m_providers) | The IDs of the input provider nodes. |
 
 ## Functions
 
 | Name | Description |
 | ---- | ----------- |
 | [MixerNodeInstance](#MixerNodeInstance) | MixerNodeInstance constructor.  |
-| [~MixerNodeInstance](#_u007eMixerNodeInstance) | MixerNodeInstance destructor.  |
-| [Consume](#Consume) |  @copydoc ConsumerNodeInstance::Consume()  |
-| [Connect](#Connect) |  @copydoc ConsumerNodeInstance::Connect() !!! note This method appends the given provider to the list of input provider nodes. If the provider node already exists in the list, it will not be added again.  |
-| [Connect](#Connect) | Set the input provider nodes for this mixer node. |
-| [Provide](#Provide) |  @copydoc ProviderNodeInstance::Provide()  |
-| [Reset](#Reset) |  @copydoc NodeInstance::Reset()  |
+| [~MixerNodeInstance](#_u007eMixerNodeInstance) | Default destructor.  |
+| [Consume](#Consume) |  @inherit  |
+| [Connect](#Connect) |  @inherit ! |
+| [Connect](#Connect) | Sets the input provider nodes for this mixer node. |
+| [Provide](#Provide) |  @inherit  |
+| [Reset](#Reset) |  @inherit  |
+
+## Variable Details
+
+### m_providers<a name="m_providers"></a>
+
+!!! variable "std::vector&lt;AmObjectID&gt; m_providers"
+
+    The IDs of the input provider nodes.
+    
 
 ## Function Details
 
@@ -36,7 +54,7 @@ Base class for Amplimix pipeline nodes that can mix
 !!! function "void Connect(AmObjectID provider) final"
 
     
-    @copydoc ConsumerNodeInstance::Connect()
+    @inherit
     
     
     !!! note
@@ -49,7 +67,7 @@ Base class for Amplimix pipeline nodes that can mix
 !!! function "void Connect(const std::vector&lt;AmObjectID&gt;&amp; providers)"
 
     
-    Set the input provider nodes for this mixer node.
+    Sets the input provider nodes for this mixer node.
     
     
     :material-location-enter: **Parameter** `providers`
@@ -66,7 +84,7 @@ Base class for Amplimix pipeline nodes that can mix
 !!! function "void Consume() final"
 
     
-    @copydoc ConsumerNodeInstance::Consume()
+    @inherit
             
     
 
@@ -84,7 +102,7 @@ Base class for Amplimix pipeline nodes that can mix
 !!! function "const AudioBuffer&#42; Provide() final"
 
     
-    @copydoc ProviderNodeInstance::Provide()
+    @inherit
             
     
 
@@ -92,7 +110,7 @@ Base class for Amplimix pipeline nodes that can mix
 !!! function "void Reset() override"
 
     
-    @copydoc NodeInstance::Reset()
+    @inherit
             
     
 
@@ -100,7 +118,7 @@ Base class for Amplimix pipeline nodes that can mix
 !!! function "~MixerNodeInstance() override = default"
 
     
-    MixerNodeInstance destructor.
+    Default destructor.
              
     
     

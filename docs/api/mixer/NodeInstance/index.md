@@ -15,6 +15,8 @@ An instance of an Amplimix pipeline node.
 This class represents the actual node executed within the
 Amplimix pipeline. Each node instance has a unique ID assigned
 to it, that matches the one provided in the pipeline asset.
+
+
     
 
 
@@ -31,9 +33,9 @@ to it, that matches the one provided in the pipeline asset.
 | Name | Description |
 | ---- | ----------- |
 | [Initialize](#Initialize) | Initializes the node instance. |
-| [~NodeInstance](#_u007eNodeInstance) | NodeInstance destructor.  |
-| [GetId](#GetId) | Returns the unique identifier for the node instance.  |
-| [GetLayer](#GetLayer) | Gets the Amplimix layer this node instance is currently associated with.  |
+| [~NodeInstance](#_u007eNodeInstance) | Default destructor.  |
+| [GetId](#GetId) | Gets the unique identifier for the node instance. |
+| [GetLayer](#GetLayer) | Gets the Amplimix layer this node instance is currently associated with. |
 | [Reset](#Reset) | Resets the node instance's internal state. |
 
 ## Variable Details
@@ -65,10 +67,12 @@ to it, that matches the one provided in the pipeline asset.
 !!! function "[[nodiscard]] AmObjectID GetId() const"
 
     
-    Returns the unique identifier for the node instance.
-             
+    Gets the unique identifier for the node instance.
     
     
+    :material-keyboard-return: **Return**
+    :    The unique identifier for the node instance.
+            
     
 
 ### GetLayer<a name="GetLayer"></a>
@@ -76,9 +80,15 @@ to it, that matches the one provided in the pipeline asset.
 
     
     Gets the Amplimix layer this node instance is currently associated with.
-             
     
     
+    :material-keyboard-return: **Return**
+    :    The Amplimix layer this node instance is currently associated with.
+    
+    
+    :material-eye-outline: **See**
+    :    [AmplimixLayer](../AmplimixLayer/index.md)
+            
     
 
 ### Initialize<a name="Initialize"></a>
@@ -105,16 +115,18 @@ to it, that matches the one provided in the pipeline asset.
     
     Resets the node instance's internal state.
     
-    This function should be called automatically by Amplimix, each time the pipeline is
-    about to be executed. Call it manually only if you know what you're doing.
-            
+    
+    !!! warning
+         This function should be called automatically by Amplimix, each time the pipeline is
+        about to be executed. Call it manually only if you know what you're doing.
+                
     
 
 ### ~NodeInstance<a name="_u007eNodeInstance"></a>
 !!! function "virtual ~NodeInstance() = default"
 
     
-    NodeInstance destructor.
+    Default destructor.
              
     
     

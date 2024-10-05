@@ -17,7 +17,7 @@ an audio file and process its data. Each implementation should
 allow to [load](#Load) the entire file into memory or [stream](#Stream)
 it from the file system.
 
-The `Stream()` method of a decoder implementation must be thread-safe.
+The [`Stream()`](#Stream) method of a decoder implementation must be thread-safe.
         
 
 
