@@ -130,12 +130,10 @@ plugins:
   - search
   - social:
       cards_dir: static/cards
-      cards_layout: default
       cards_layout_options:
         background_color: rgb(116,208,241)
         color: "#ffffff"
         font_family: DM Sans
-  - privacy
   - git-revision-date-localized:
       enable_creation_date: true
   - literate-nav:
@@ -144,10 +142,16 @@ plugins:
       alias_type: symlink
       redirect_template: null
       deploy_prefix: ""
-      canonical_version: null
+      canonical_version: nightly
       version_selector: true
       css_dir: static
       javascript_dir: static
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+        remove_comments: true
 
 extra_css:
   - static/doxide.css
