@@ -27,6 +27,7 @@
     - [Sound bank](project/sound-bank.md)
     - [Pipeline](project/pipeline.md)
     - [API](project/api.md)
+- [Tutorials](tutorials/)
 - [API Reference](api/index.md)
     - [Assets](api/assets/)
     - [Core](api/core/)
