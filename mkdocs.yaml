@@ -128,6 +128,13 @@ markdown_extensions:
 
 plugins:
   - search
+  - social:
+      cards_dir: static/cards
+      cards_layout: default
+      cards_layout_options:
+        background_color: rgb(116,208,241)
+        color: "#ffffff"
+        font_family: DM Sans
   - privacy
   - git-revision-date-localized:
       enable_creation_date: true
