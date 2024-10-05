@@ -33,7 +33,6 @@ Math libraries and utilities
 | [SphereZone](SphereZone/index.md) | A `Zone` built with an inner `SphereShape` and an outer `SphereShape`. |
 | [SphericalPosition](SphericalPosition/index.md) | Spherical coordinates representation. |
 | [Zone](Zone/index.md) | A tuple of shapes that represents a zone in the world. |
-| [eFaderState](eFaderState/index.md) | Enumerates the list of states in a fader. |
 
 ## Macros
 

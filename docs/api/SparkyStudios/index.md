@@ -20,8 +20,6 @@ generator: doxide
 | [ConsumerNodeInstance](ConsumerNodeInstance/index.md) | Interface for Amplimix pipeline nodes that can consume * audio data from an input buffer.  |
 | [Effect](Effect/index.md) | Amplitude Effect. |
 | [EffectInstance](EffectInstance/index.md) | An instance of an Effect asset. |
-| [Fader](Fader/index.md) | Helper class to process faders. |
-| [FaderInstance](FaderInstance/index.md) | A Fader instance. An object of this class will be created each time a `Fader` is requested.  |
 | [InputNodeInstance](InputNodeInstance/index.md) | Class used to marks the input of the pipeline. |
 | [MixerNodeInstance](MixerNodeInstance/index.md) | Base class for Amplimix pipeline nodes that can mix * audio data from multiple input buffers, and outputs the result * of the mix.  |
 | [Node](Node/index.md) | Base class for Amplimix pipeline nodes. |

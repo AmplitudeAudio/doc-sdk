@@ -30,6 +30,8 @@ Engine-specific functionalities
 | [Environment](Environment/index.md) | An Environment is a zone where every spatialized audio playing inside him got * applied a specific effect. |
 | [EventCanceler](EventCanceler/index.md) | An helper class used to cancel a running `Event`. |
 | [EventInstance](EventInstance/index.md) | A triggered event. |
+| [Fader](Fader/index.md) | Helper class to process faders. |
+| [FaderInstance](FaderInstance/index.md) | A Fader instance. An object of this class will be created each time a `Fader` is requested. |
 | [Listener](Listener/index.md) | A object which can render sound sources. |
 | [PlaybackOutputChannels](PlaybackOutputChannels/index.md) | The playback output channel layout of the device. |
 | [PlaybackOutputFormat](PlaybackOutputFormat/index.md) | The playback output format of the device. |
@@ -37,6 +39,7 @@ Engine-specific functionalities
 | [RoomMaterial](RoomMaterial/index.md) | Represents the material of a `Room` wall. |
 | [RoomMaterialType](RoomMaterialType/index.md) | Defines the material type of a `Room` wall. |
 | [RoomWall](RoomWall/index.md) | Enumerates the walls of a `Room`. |
+| [eFaderState](eFaderState/index.md) | Enumerates the list of states in a fader. |
 
 ## Macros
 

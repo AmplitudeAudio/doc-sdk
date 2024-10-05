@@ -32,7 +32,7 @@ Welcome to the official Amplitude Audio SDK documentation.
 
     Detailed reference documentation and usage guides for Amplitude projects.
 
-    [:octicons-arrow-right-24: Project Reference](project)
+    [:octicons-arrow-right-24: Project Reference](./project/project-architecture.md)
 
 -   :material-api:{ .lg .middle } __API Reference__
 
@@ -40,6 +40,14 @@ Welcome to the official Amplitude Audio SDK documentation.
 
     C++ SDK public API reference and documentation.
 
-    [:octicons-arrow-right-24: API Reference](api)
+    [:octicons-arrow-right-24: API Reference](./api/index.md)
+
+-   :material-school:{ .lg .middle } __Tutorials__
+
+    ---
+
+    C++ SDK use case guides and implementation tutorials.
+
+    [:octicons-arrow-right-24: Tutorials](#)
 
 </div>

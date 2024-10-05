@@ -14,6 +14,8 @@ Helper class to process faders.
 
 A fader is used to move a value to a specific target value
 during an amount of time and according to a fading algorithm.
+
+
     
 
 

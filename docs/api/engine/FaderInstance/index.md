@@ -1,6 +1,6 @@
 ---
 title: FaderInstance
-description: A Fader instance. An object of this class will be created each time a `Fader` is requested. 
+description: A Fader instance. An object of this class will be created each time a `Fader` is requested.
 generator: doxide
 ---
 
@@ -11,9 +11,9 @@ generator: doxide
 
 
 A Fader instance. An object of this class will be created each time a `Fader` is requested.
-     
 
 
+    
 
 
 ## Types
