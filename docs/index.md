@@ -16,7 +16,7 @@ Welcome to the official Amplitude Audio SDK documentation.
 
     C++ SDK features, basic concepts and installation process overview.
 
-    [:octicons-arrow-right-24: Getting started](getting-started)
+    [:octicons-arrow-right-24: Getting started](./getting-started/introduction.md)
 
 -   :material-package-variant:{ .lg .middle } __Integration__
 
@@ -24,7 +24,7 @@ Welcome to the official Amplitude Audio SDK documentation.
 
     C++ SDK step-by-step usage and integration guide in your projects.
 
-    [:octicons-arrow-right-24: Engine Integration](integration)
+    [:octicons-arrow-right-24: Engine Integration](./integration/cmake-setup.md)
 
 -   :material-code-json:{ .lg .middle } __Project Reference__
 

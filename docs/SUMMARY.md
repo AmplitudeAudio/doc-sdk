@@ -1,11 +1,16 @@
 - [Home](index.md)
-- [Getting Started](getting-started/index.md)
+- Getting Started
     - [Introduction](getting-started/introduction.md)
     - [Concepts](getting-started/concepts.md)
     - [Installation](getting-started/installation.md)
     - [Integrations](getting-started/official-integrations.md)
     - [Amplitude Studio](getting-started/studio.md)
-- [Integration](integration/index.md)
+- Integration
+    - [CMake Setup](integration/cmake-setup.md)
+    - [Compiling Amplitude Project](integration/compiling-amplitude-project.md)
+    - [Initializing the Engine](integration/initializing-the-engine.md)
+    - [Loading Sound Banks](integration/loading-sound-banks.md)
+    - [Interacting with the Engine](integration/interacting-with-the-engine.md)
 - [Project Reference](project/index.md)
 - [API Reference](api/index.md)
     - [Assets](api/assets/)
