@@ -1,6 +1,6 @@
 ---
 title: Rtpc
-description: Amplitude Real-Time Parameter Control.
+description: Amplitude Real-Time Parameter Control Asset.
 generator: doxide
 ---
 
@@ -10,12 +10,14 @@ generator: doxide
 **class  Rtpc : public Asset&lt;AmRtpcID&gt;**
 
 
-Amplitude Real-Time Parameter Control.
+Amplitude Real-Time Parameter Control Asset.
 
 A RTPC is a value that is updated by the game. Any update to the RTPC is
 listened by the engine to propagate the changes to other parameters linked to it.
 
 A Rtpc object is shared between any objects and values linked to it.
+
+
     
 
 
@@ -24,11 +26,11 @@ A Rtpc object is shared between any objects and values linked to it.
 | Name | Description |
 | ---- | ----------- |
 | [Update](#Update) | Updates the value of the RTPC. |
-| [GetMinValue](#GetMinValue) | Get the minimum value of this RTPC. |
-| [GetMaxValue](#GetMaxValue) | Get the maximum value of this RTPC. |
-| [GetValue](#GetValue) | Get the current value of this RTPC. |
-| [SetValue](#SetValue) | Set the current value of this RTPC. |
-| [GetDefaultValue](#GetDefaultValue) | Get the default value of this RTPC. |
+| [GetMinValue](#GetMinValue) | Gets the minimum value of this RTPC. |
+| [GetMaxValue](#GetMaxValue) | Gets the maximum value of this RTPC. |
+| [GetValue](#GetValue) | Gets the current value of this RTPC. |
+| [SetValue](#SetValue) | Sets the current value of this RTPC. |
+| [GetDefaultValue](#GetDefaultValue) | Gets the default value of this RTPC. |
 | [Reset](#Reset) | Resets the current RTPC value to the default value.  |
 
 ## Function Details
@@ -37,7 +39,7 @@ A Rtpc object is shared between any objects and values linked to it.
 !!! function "[[nodiscard]] virtual AmReal64 GetDefaultValue() const = 0"
 
     
-    Get the default value of this RTPC.
+    Gets the default value of this RTPC.
     
     
     :material-keyboard-return: **Return**
@@ -49,7 +51,7 @@ A Rtpc object is shared between any objects and values linked to it.
 !!! function "[[nodiscard]] virtual AmReal64 GetMaxValue() const = 0"
 
     
-    Get the maximum value of this RTPC.
+    Gets the maximum value of this RTPC.
     
     
     :material-keyboard-return: **Return**
@@ -61,7 +63,7 @@ A Rtpc object is shared between any objects and values linked to it.
 !!! function "[[nodiscard]] virtual AmReal64 GetMinValue() const = 0"
 
     
-    Get the minimum value of this RTPC.
+    Gets the minimum value of this RTPC.
     
     
     :material-keyboard-return: **Return**
@@ -73,7 +75,7 @@ A Rtpc object is shared between any objects and values linked to it.
 !!! function "[[nodiscard]] virtual AmReal64 GetValue() const = 0"
 
     
-    Get the current value of this RTPC.
+    Gets the current value of this RTPC.
     
     
     :material-keyboard-return: **Return**
@@ -95,7 +97,7 @@ A Rtpc object is shared between any objects and values linked to it.
 !!! function "virtual void SetValue(AmReal64 value) = 0"
 
     
-    Set the current value of this RTPC.
+    Sets the current value of this RTPC.
     
     
     :material-location-enter: **Parameter** `value`

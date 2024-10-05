@@ -1,6 +1,6 @@
 ---
 title: Collection
-description: Amplitude Collection.
+description: Amplitude Collection Asset.
 generator: doxide
 ---
 
@@ -10,11 +10,17 @@ generator: doxide
 **class  Collection : public SoundObject , public Asset&lt;AmCollectionID&gt;**
 
 
-Amplitude Collection.
+Amplitude Collection Asset.
 
-A Collection is a container sound object that group multiple sounds over the same name. Only
+A `Collection` is a container sound object that group multiple sounds over the same name. Only
 one sound can be playing at a time in the same collection, and the sound picked for playback
-is chosen by the collection's Scheduler.
+is chosen by the collection's `Scheduler`.
+
+
+:material-eye-outline: **See**
+:    [SoundObject](../../engine/SoundObject/index.md)
+
+
     
 
 

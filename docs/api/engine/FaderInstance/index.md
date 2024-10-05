@@ -26,14 +26,15 @@ A Fader instance. An object of this class will be created each time a `Fader` is
 
 | Name | Description |
 | ---- | ----------- |
-| [FaderInstance](#FaderInstance) | Construct a new FaderInstance object. |
+| [FaderInstance](#FaderInstance) | Constructs a new FaderInstance object. |
+| [~FaderInstance](#_u007eFaderInstance) | Default destructor.  |
 | [Set](#Set) | Set up fader. |
 | [Set](#Set) | Set up fader. |
-| [SetDuration](#SetDuration) | Set the duration of the transition. |
-| [GetFromTime](#GetFromTime) | Get the current fading value. |
-| [GetFromPercentage](#GetFromPercentage) | Get the current fading value. |
-| [GetState](#GetState) | Get the state of this Fader. |
-| [SetState](#SetState) | Set the state of this Fader. |
+| [SetDuration](#SetDuration) | Sets the duration of the transition. |
+| [GetFromTime](#GetFromTime) | Gets the current fading value. |
+| [GetFromPercentage](#GetFromPercentage) | Gets the current fading value. |
+| [GetState](#GetState) | Gets the state of this Fader. |
+| [SetState](#SetState) | Sets the state of this Fader. |
 | [Start](#Start) | Sets the fading start time. |
 
 ## Function Details
@@ -42,7 +43,7 @@ A Fader instance. An object of this class will be created each time a `Fader` is
 !!! function "FaderInstance()"
 
     
-    Construct a new FaderInstance object.
+    Constructs a new FaderInstance object.
     
     This will initialize the fader instance state to default values.
             
@@ -52,7 +53,7 @@ A Fader instance. An object of this class will be created each time a `Fader` is
 !!! function "virtual AmReal64 GetFromPercentage(AmReal64 percentage)"
 
     
-    Get the current fading value.
+    Gets the current fading value.
     
     
     :material-location-enter: **Parameter** `percentage`
@@ -68,10 +69,10 @@ A Fader instance. An object of this class will be created each time a `Fader` is
 !!! function "virtual AmReal64 GetFromTime(AmTime time)"
 
     
-    Get the current fading value.
+    Gets the current fading value.
     
-    To use this method you firstly need to define the fading start time using
-    <code>Fader::Start()</code>.
+    To use this method you first need to define the fading start time using
+    [`Start()`.](#Start)
     
     
     :material-location-enter: **Parameter** `time`
@@ -87,7 +88,7 @@ A Fader instance. An object of this class will be created each time a `Fader` is
 !!! function "[[nodiscard]] inline eFaderState GetState() const"
 
     
-    Get the state of this Fader.
+    Gets the state of this Fader.
     
     
     :material-keyboard-return: **Return**
@@ -131,7 +132,7 @@ A Fader instance. An object of this class will be created each time a `Fader` is
 !!! function "void SetDuration(AmTime duration)"
 
     
-    Set the duration of the transition.
+    Sets the duration of the transition.
     
     
     :material-location-enter: **Parameter** `duration`
@@ -143,7 +144,7 @@ A Fader instance. An object of this class will be created each time a `Fader` is
 !!! function "inline void SetState(eFaderState state)"
 
     
-    Set the state of this Fader.
+    Sets the state of this Fader.
     
     
     :material-location-enter: **Parameter** `state`
@@ -161,5 +162,15 @@ A Fader instance. An object of this class will be created each time a `Fader` is
     :material-location-enter: **Parameter** `time`
     :    The fading start time.
                 
+    
+
+### ~FaderInstance<a name="_u007eFaderInstance"></a>
+!!! function "virtual ~FaderInstance() = default"
+
+    
+    Default destructor.
+             
+    
+    
     
 

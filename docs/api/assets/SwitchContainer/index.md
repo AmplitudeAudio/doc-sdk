@@ -1,6 +1,6 @@
 ---
 title: SwitchContainer
-description: Amplitude Switch Container.
+description: Amplitude Switch Container Asset.
 generator: doxide
 ---
 
@@ -10,11 +10,17 @@ generator: doxide
 **class  SwitchContainer : public SoundObject , public Asset&lt;AmSwitchContainerID&gt;**
 
 
-Amplitude Switch Container.
+Amplitude Switch Container Asset.
 
 A switch container is a container sound object where sounds and collections can be registered on
 one or multiple switches. Only one switch can be active at a time in a switch container. When a
 switch is active, all the sounds and collections that are registered on it will be played.
+
+
+:material-eye-outline: **See**
+:    [SoundObject](../../engine/SoundObject/index.md)
+
+
     
 
 

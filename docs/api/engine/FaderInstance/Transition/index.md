@@ -29,8 +29,8 @@ and (1,1) respectively.
 
 | Name | Description |
 | ---- | ----------- |
-| [Transition](#Transition) | Construct a new Transition curve. |
-| [Transition](#Transition) | Construct a new Transition curve. |
+| [Transition](#Transition) | Constructs a new Transition curve. |
+| [Transition](#Transition) | Constructs a new Transition curve. |
 | [Ease](#Ease) | Given an animation duration percentage (in the range [0, 1]), * it calculates the animation progression percentage from the configured curve. |
 
 ## Variable Details
@@ -69,7 +69,7 @@ and (1,1) respectively.
 !!! function "Transition(AmReal32 x1, AmReal32 y1, AmReal32 x2, AmReal32 y2)"
 
     
-    Construct a new Transition curve.
+    Constructs a new Transition curve.
     
     
     :material-location-enter: **Parameter** `x1`
@@ -89,7 +89,7 @@ and (1,1) respectively.
 !!! function "Transition(const BeizerCurveControlPoints&amp; controlPoints)"
 
     
-    Construct a new Transition curve.
+    Constructs a new Transition curve.
     
     
     :material-location-enter: **Parameter** `controlPoints`

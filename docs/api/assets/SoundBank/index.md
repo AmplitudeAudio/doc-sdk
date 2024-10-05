@@ -1,6 +1,6 @@
 ---
 title: SoundBank
-description: Amplitude Sound Bank
+description: Amplitude Sound Bank Asset.
 generator: doxide
 ---
 
@@ -10,17 +10,15 @@ generator: doxide
 **class  SoundBank**
 
 
-Amplitude Sound Bank
+Amplitude Sound Bank Asset.
 
-A Sound Bank is a group of Amplitude assets, packed in a single binary. This way allows
+A Sound Bank is a group of Amplitude assets, registered in a single binary. This way allows
 you to pack the needed data for your game as you want (ie. sound banks per levels). A sound bank
-need to be loaded by the Engine using 
-``` Engine::LoadSoundBank() 
-``` before to play sounds and
+need to be loaded by the Engine using `#!cpp Engine::LoadSoundBank()` before to play sounds and
 trigger events inside it. When the sound bank data should be released (ie. changing the level, closing
-the game, etc.), you need to unload the sound bank using 
-``` Engine::UnloadSoundBank() 
-```.
+the game, etc.), you need to unload the sound bank using `#!cpp Engine::UnloadSoundBank()`.
+
+
     
 
 
@@ -28,13 +26,15 @@ the game, etc.), you need to unload the sound bank using
 
 | Name | Description |
 | ---- | ----------- |
+| [SoundBank](#SoundBank) | Creates an uninitialized `SoundBank`.  |
+| [SoundBank](#SoundBank) | Creates a sound bank from the given source file. |
 | [Initialize](#Initialize) | Initializes the sound bank by loading all the packed data. |
 | [InitializeFromMemory](#InitializeFromMemory) | Initializes the sound bank by loading all the packed data. |
 | [Deinitialize](#Deinitialize) | Unloads the sound bank from the Engine. |
 | [GetId](#GetId) | Returns the unique ID of this SoundBank. |
 | [GetName](#GetName) | Returns the name of this SoundBank. |
 | [GetSoundBankDefinition](#GetSoundBankDefinition) | Returns the definition data used to initialize this SoundBank. |
-| [GetRefCounter](#GetRefCounter) | Get the references counter of this instance. |
+| [GetRefCounter](#GetRefCounter) | Gets the references counter of this instance. |
 | [LoadSoundFiles](#LoadSoundFiles) | Load the sound files referenced in the sound bank. |
 
 ## Function Details
@@ -79,7 +79,7 @@ the game, etc.), you need to unload the sound bank using
 !!! function "RefCounter&#42; GetRefCounter()"
 
     
-    Get the references counter of this instance.
+    Gets the references counter of this instance.
     
     
     :material-keyboard-return: **Return**
@@ -114,7 +114,7 @@ the game, etc.), you need to unload the sound bank using
     
     
     :material-keyboard-return: **Return**
-    :    true when the operation succeeds, false otherwise.
+    :    `true` when the operation succeeds, `false` otherwise.
             
     
 
@@ -133,7 +133,7 @@ the game, etc.), you need to unload the sound bank using
     
     
     :material-keyboard-return: **Return**
-    :    true when the operation succeeds, false otherwise.
+    :    `true` when the operation succeeds, `false` otherwise.
             
     
 
@@ -143,10 +143,35 @@ the game, etc.), you need to unload the sound bank using
     
     Load the sound files referenced in the sound bank.
     
-    This method should usually not be called directly. It is called automatically by the Engine with
-    the 
-    ``` Engine::StartLoadSoundFiles() 
-    ``` method.
-            
+    
+    :material-location-enter: **Parameter** `engine`
+    :    The engine instance from which load the sound files.
+    
+    
+    !!! warning
+         This method should not be called directly. It is called automatically by the `Engine` with
+        the `#!cpp Engine::StartLoadSoundFiles()` method.
+                
+    
+
+### SoundBank<a name="SoundBank"></a>
+!!! function "SoundBank()"
+
+    
+    Creates an uninitialized `SoundBank`.
+             
+    
+    
+    
+
+!!! function "explicit SoundBank(const AmString&amp; source)"
+
+    
+    Creates a sound bank from the given source file.
+    
+    
+    !!! warning
+         This constructor is for internal usage only.
+                
     
 

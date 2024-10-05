@@ -50,6 +50,7 @@ Core functionalities of the SDK
 | [amLogInfo](#amLogInfo) | Logs an informational message. |
 | [amLogWarning](#amLogWarning) | Logs a warning message. |
 | [amLogger](#amLogger) | The global logger instance. |
+| [amVersion](#amVersion) | Gets the current Amplitude SDK version. |
 
 ## Variables
 
@@ -247,6 +248,17 @@ Core functionalities of the SDK
 
     
     The global logger instance.
+    
+    
+    
+    
+
+### amVersion<a name="amVersion"></a>
+
+!!! macro "#define amVersion"
+
+    
+    Gets the current Amplitude SDK version.
     
     
     

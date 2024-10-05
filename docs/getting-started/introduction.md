@@ -37,7 +37,7 @@ A sound bank is a unit where all the data you need for your game is loaded. The 
 Amplitude supports a variety of sound objects which have different properties and use cases:
 
 - **Sound**: The most basic sound object. It represents a single audio file played in the game.
-- **Collection**: The collection is, like its name says, a collection of Sounds. The collection has the particularity to pick and play a single Sound through its [Scheduler](../api/engine/Scheduler/index.md) each time it receives a play request.
+- **Collection**: The collection is, like its name says, a collection of Sounds. The collection has the particularity to pick and play a single Sound through its Scheduler each time it receives a play request.
 - **SwitchContainer**: The switch container mixes and play Sounds or Collections according to switch states. Sound objects registered inside a switch container for a specific switch state are played only when this switch state is active. Unlike collections, switch containers always play all sound objects registered for the active switch state at the same time.
 
 ## Game and Engine Synchronization

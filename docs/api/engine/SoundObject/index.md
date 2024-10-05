@@ -1,6 +1,6 @@
 ---
 title: SoundObject
-description: The SoundObject class is the base class for all sound objects. 
+description: Base class for Amplitude sound objects.
 generator: doxide
 ---
 
@@ -10,22 +10,23 @@ generator: doxide
 **class  SoundObject**
 
 
-The SoundObject class is the base class for all sound objects.
-     
+Base class for Amplitude sound objects.
 
 
+    
 
 
 ## Functions
 
 | Name | Description |
 | ---- | ----------- |
+| [~SoundObject](#_u007eSoundObject) | Default destructor.  |
 | [GetGain](#GetGain) | Gets the linear gain of the sound object. |
 | [GetPitch](#GetPitch) | Gets the actual pitch of the sound object. |
 | [GetPriority](#GetPriority) | Gets the actual priority of the sound object. |
-| [GetEffect](#GetEffect) | Get the Effect object associated with this sound object. |
-| [GetAttenuation](#GetAttenuation) | Get the Attenuation object associated with this sound object. |
-| [GetBus](#GetBus) | Return the bus this sound object will play on. |
+| [GetEffect](#GetEffect) | Gets the Effect object associated with this sound object. |
+| [GetAttenuation](#GetAttenuation) | Gets the Attenuation object associated with this sound object. |
+| [GetBus](#GetBus) | Returns the bus this sound object will play on. |
 
 ## Function Details
 
@@ -33,7 +34,7 @@ The SoundObject class is the base class for all sound objects.
 !!! function "&#42; GetAttenuation() const"
 
     
-    Get the Attenuation object associated with this sound object.
+    Gets the Attenuation object associated with this sound object.
     
     
     :material-keyboard-return: **Return**
@@ -45,7 +46,7 @@ The SoundObject class is the base class for all sound objects.
 !!! function "[[nodiscard]] virtual Bus GetBus() const = 0"
 
     
-    Return the bus this sound object will play on.
+    Returns the bus this sound object will play on.
     
     
     :material-keyboard-return: **Return**
@@ -57,7 +58,7 @@ The SoundObject class is the base class for all sound objects.
 !!! function "&#42; GetEffect() const"
 
     
-    Get the Effect object associated with this sound object.
+    Gets the Effect object associated with this sound object.
     
     
     :material-keyboard-return: **Return**
@@ -99,5 +100,15 @@ The SoundObject class is the base class for all sound objects.
     :material-keyboard-return: **Return**
     :    The sound object priority.
             
+    
+
+### ~SoundObject<a name="_u007eSoundObject"></a>
+!!! function "virtual ~SoundObject() = default"
+
+    
+    Default destructor.
+             
+    
+    
     
 

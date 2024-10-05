@@ -1,6 +1,6 @@
 ---
 title: Sound
-description: Amplitude Sound.
+description: Amplitude Sound Asset.
 generator: doxide
 ---
 
@@ -10,13 +10,19 @@ generator: doxide
 **class  Sound : public SoundObject , public Resource , public Asset&lt;AmSoundID&gt;**
 
 
-Amplitude Sound.
+Amplitude Sound Asset.
 
-A Sound is the most basic sound object in Amplitude. It can be used to directly play an audio file,
-or can be contained in a *SwitchContainer* or a *Collection* for a fine-grained control.
+A `Sound` is the most basic sound object in Amplitude. It can be used to directly play an audio file,
+or can be contained in a `SwitchContainer` or a `Collection` for a fine-grained control.
 
-Effects can be attached to a Sound, which will be applied to all instances of the sound in the EffectProcessor
-of the Amplimix pipeline.
+Effects can be attached to a `Sound`, which will be applied to all instances of the sound in the Amplimix pipeline.
+
+
+:material-eye-outline: **See**
+:    [SwitchContainer](../SwitchContainer/index.md), [Collection](../Collection/index.md),
+[SoundObject](../../engine/SoundObject/index.md)
+
+
     
 
 
@@ -50,7 +56,7 @@ of the Amplimix pipeline.
     
     
     :material-keyboard-return: **Return**
-    :    true if looping is enabled, false otherwise.
+    :    `true` if looping is enabled, `false` otherwise.
             
     
 
@@ -62,7 +68,7 @@ of the Amplimix pipeline.
     
     
     :material-keyboard-return: **Return**
-    :    true if streaming is enabled, false otherwise.
+    :    `true` if streaming is enabled, `false` otherwise.
             
     
 

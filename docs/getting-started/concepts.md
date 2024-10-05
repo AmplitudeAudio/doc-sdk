@@ -87,7 +87,7 @@ flowchart TB
   bus1 -.->|RealChannel| mixer_layer1
   bus1 -.->|RealChannel| mixer_layer2
   bus1 -.->|RealChannel| mixer_layer3
-  bus1 -.->|RealChannel| mixer_layer4
+  bus2 -.->|RealChannel| mixer_layer4
   bus2 -.->|RealChannel| mixer_layer5
   mixer_layer1 --> pipeline
   mixer_layer2 --> pipeline
@@ -206,15 +206,15 @@ The audio Device renders audio. Amplitude has a copy of the current audio device
 Amplimix will process the audio using the user requested format, and let to the driver the responsibility to convert the data to the device audio format.
 
 [SwitchState]: ../api/engine/SwitchState/index.md
-[RTPC]: ../api/engine/RTPC/index.md
+[RTPC]: ../api/assets/Rtpc/index.md
 [Entity]: ../api/engine/Entity/index.md
 [Listener]: ../api/engine/Listener/index.md
-[SoundInstance]: ../api/engine/SoundInstance/index.md
-[Sound]: ../api/engine/Sound/index.md
-[Collection]: ../api/engine/Collection/index.md
-[Scheduler]: ../api/engine/Scheduler/index.md
+[SoundInstance]: #
+[Sound]: ../api/assets/Sound/index.md
+[Collection]: ../api/assets/Collection/index.md
+[Scheduler]: #
 [Bus]: ../api/engine/Bus/index.md
-[SwitchContainer]: ../api/engine/SwitchContainer/index.md
+[SwitchContainer]: ../api/assets/SwitchContainer/index.md
 [DeviceDescription]: ../api/engine/DeviceDescription/index.md
 [Driver]: ../api/engine/Driver/index.md
 [Node]: ../api/mixer/Node/index.md

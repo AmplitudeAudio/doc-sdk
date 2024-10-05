@@ -33,9 +33,6 @@ Amplitude Audio SDK public API reference and documentation.
 :material-format-section: [Mixer](mixer/index.md)
 :   Mixer & Pipeline API
 
-:material-package: [SparkyStudios](SparkyStudios/index.md)
-:   
-
 ## Macros
 
 | Name | Description |
@@ -45,21 +42,11 @@ Amplitude Audio SDK public API reference and documentation.
 | [AM_OS_CHAR_FMT](#AM_OS_CHAR_FMT) | Defines the format used to print AmOsString text  |
 | [AM_OS_STRING](#AM_OS_STRING) | Macro used to convert a string literal to an AmOsString string at compile-time  |
 | [AM_OS_STRING_TO_STRING](#AM_OS_STRING_TO_STRING) | Conversion between OS strings and default strings  |
-| [amVersion](#amVersion) | Gets the current Amplitude SDK version.  |
 | [AM_ID_CHAR_FMT](#AM_ID_CHAR_FMT) | Compiling for an Apple platform Compiling for iOS or tvOS (iPhone, iPad, iPod, Apple TV. |
 | [M_PI](#M_PI) | Define the value of Pi if the platform doesn't do that  |
-| [AM_FILTERS_PER_STREAM](#AM_FILTERS_PER_STREAM) | Maximum number of filters per stream  |
 | [AM_MAX_THREAD_POOL_TASKS](#AM_MAX_THREAD_POOL_TASKS) | Maximum number of tasks in a single pool  |
-| [amEngine](#amEngine) | Macro to get the current Amplitude engine instance.  |
 
 ## Macro Details
-
-### AM_FILTERS_PER_STREAM<a name="AM_FILTERS_PER_STREAM"></a>
-
-!!! macro "#define AM_FILTERS_PER_STREAM"
-
-    Maximum number of filters per stream
-    
 
 ### AM_ID_CHAR_FMT<a name="AM_ID_CHAR_FMT"></a>
 
@@ -119,27 +106,5 @@ Amplitude Audio SDK public API reference and documentation.
 !!! macro "#define M_PI"
 
     Define the value of Pi if the platform doesn't do that
-    
-
-### amEngine<a name="amEngine"></a>
-
-!!! macro "#define amEngine"
-
-    
-    Macro to get the current Amplitude engine instance.
-     
-    
-    
-    
-
-### amVersion<a name="amVersion"></a>
-
-!!! macro "#define amVersion"
-
-    
-    Gets the current Amplitude SDK version.
-     
-    
-    
     
 

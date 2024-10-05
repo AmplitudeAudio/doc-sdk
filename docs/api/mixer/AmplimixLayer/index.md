@@ -17,7 +17,7 @@ to a single `SoundInstance`, and manage its life cycle inside `Amplimix`.
 
 
 :material-eye-outline: **See**
-:    [SoundInstance](../../engine/SoundInstance/index.md), [Amplimix](../Amplimix/index.md)
+:    [Amplimix](../Amplimix/index.md)
 
 
     

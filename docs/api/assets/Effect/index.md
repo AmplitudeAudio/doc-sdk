@@ -1,6 +1,6 @@
 ---
 title: Effect
-description: Amplitude Effect.
+description: Amplitude Effect Asset.
 generator: doxide
 ---
 
@@ -10,13 +10,19 @@ generator: doxide
 **class  Effect : public Asset&lt;AmEffectID&gt;**
 
 
-Amplitude Effect.
+Amplitude Effect Asset.
 
 An effect is a sound filter applied to one or more sound objects
 (sounds, collections, or switch containers) during playback.
 
 Effects are customized using parameters and each parameters can be
-updated at runtime using a `RTPC.`
+updated at runtime using a `Rtpc`.
+
+
+:material-eye-outline: **See**
+:    [Rtpc](../Rtpc/index.md), [EffectInstance](../../engine/EffectInstance/index.md)
+
+
     
 
 

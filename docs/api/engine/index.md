@@ -13,6 +13,7 @@ Engine-specific functionalities
 
 | Name | Description |
 | ---- | ----------- |
+| [AttenuationZone](AttenuationZone/index.md) | The propagation shape for positional sounds. |
 | [Bus](Bus/index.md) | An object representing one node in the tree of buses. Buses are used to adjust a set of channel gains in tandem. |
 | [Channel](Channel/index.md) | An object that represents a single channel of audio. |
 | [ChannelEvent](ChannelEvent/index.md) | Enumerates the events triggered by a `Channel` during playback. |
@@ -25,6 +26,7 @@ Engine-specific functionalities
 | [DeviceNotification](DeviceNotification/index.md) | The possible device notification types. |
 | [DeviceState](DeviceState/index.md) | The device state. |
 | [Driver](Driver/index.md) | Base class for audio device driver implementations. |
+| [EffectInstance](EffectInstance/index.md) | An instance of an `Effect` asset. |
 | [Engine](Engine/index.md) | The Amplitude Engine. |
 | [Entity](Entity/index.md) | An Entity represents a spatially positioned object in the game. |
 | [Environment](Environment/index.md) | An Environment is a zone where every spatialized audio playing inside him got * applied a specific effect. |
@@ -39,6 +41,10 @@ Engine-specific functionalities
 | [RoomMaterial](RoomMaterial/index.md) | Represents the material of a `Room` wall. |
 | [RoomMaterialType](RoomMaterialType/index.md) | Defines the material type of a `Room` wall. |
 | [RoomWall](RoomWall/index.md) | Enumerates the walls of a `Room`. |
+| [RtpcValue](RtpcValue/index.md) | A RTPC compatible value is used as a wrapper to hold property values * that can be linked to RTPCs. |
+| [SoundObject](SoundObject/index.md) | Base class for Amplitude sound objects. |
+| [SwitchContainerItem](SwitchContainerItem/index.md) | Describes a single item within a `SwitchContainer`. |
+| [SwitchState](SwitchState/index.md) | A switch state. |
 | [eFaderState](eFaderState/index.md) | Enumerates the list of states in a fader. |
 
 ## Macros
@@ -49,6 +55,7 @@ Engine-specific functionalities
 | [AM_AUDIO_SAMPLE_MIN](#AM_AUDIO_SAMPLE_MIN) | The minimum value for an audio sample. |
 | [AM_INVALID_HANDLE](#AM_INVALID_HANDLE) | Define an invalid object handle. |
 | [AM_IS_VALID_HANDLE](#AM_IS_VALID_HANDLE) | Checks if a handle is valid |
+| [amEngine](#amEngine) | Macro to get the current Amplitude engine instance. |
 
 ## Functions
 
@@ -107,6 +114,17 @@ Engine-specific functionalities
     
     :material-keyboard-return: **Return**
     :    `true` if the handle is valid, `false` otherwise.
+    
+    
+    
+    
+
+### amEngine<a name="amEngine"></a>
+
+!!! macro "#define amEngine"
+
+    
+    Macro to get the current Amplitude engine instance.
     
     
     

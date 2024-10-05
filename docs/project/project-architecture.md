@@ -85,7 +85,7 @@ The `switches` directory contains configuration files for [Switch] objects, that
 [Collection]: ../api/assets/Collection/index.md
 [Effect]: ../api/assets/Effect/index.md
 [Event]: ../api/assets/Event/index.md
-[RTPC]: ../api/assets/RTPC/index.md
+[RTPC]: ../api/assets/Rtpc/index.md
 [Sound]: ../api/assets/Sound/index.md
 [SwitchContainer]: ../api/assets/SwitchContainer/index.md
 [Switch]: ../api/assets/Switch/index.md

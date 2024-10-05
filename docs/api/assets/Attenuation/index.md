@@ -1,6 +1,6 @@
 ---
 title: Attenuation
-description: Amplitude Attenuation.
+description: Amplitude Attenuation Asset.
 generator: doxide
 ---
 
@@ -10,14 +10,16 @@ generator: doxide
 **class  Attenuation : public Asset&lt;AmAttenuationID&gt;**
 
 
-Amplitude Attenuation.
+Amplitude Attenuation Asset.
 
-An Attenuation materializes how the sound volume and other distance-based
+An `Attenuation` materializes how the sound volume and other distance-based
 parameters are calculated following the distance of the sound source to the listener.
 
-The Attenuation is a shared object between sound sources. They are used only
-when the sound need to adjust his volume due to the distance of from the listener,
+The `Attenuation` is a shared object between sound sources. They are used only
+when the sound need to adjust its volume due to the distance of from the listener,
 and many other parameters.
+
+
     
 
 
@@ -57,8 +59,7 @@ and many other parameters.
     
     
     :material-keyboard-return: **Return**
-    :    The air absorption attenuation factor for the given frequency band.
-    The returned value is in decibels (dB).
+    :    The air absorption attenuation factor in decibels (dB) for the given frequency band.
             
     
 

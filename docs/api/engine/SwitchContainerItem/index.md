@@ -1,6 +1,6 @@
 ---
 title: SwitchContainerItem
-description: Describes a single item within a SwitchContainer. 
+description: Describes a single item within a `SwitchContainer`.
 generator: doxide
 ---
 
@@ -10,10 +10,14 @@ generator: doxide
 **struct SwitchContainerItem**
 
 
-Describes a single item within a SwitchContainer.
-     
+Describes a single item within a `SwitchContainer`.
 
 
+:material-eye-outline: **See**
+:    [SwitchContainer](../../assets/SwitchContainer/index.md)
+
+
+    
 
 
 ## Variables
@@ -21,7 +25,7 @@ Describes a single item within a SwitchContainer.
 | Name | Description |
 | ---- | ----------- |
 | [m_id](#m_id) | The object ID of the item. |
-| [m_continueBetweenStates](#m_continueBetweenStates) | Whether to continue playing this item when the SwitchContainer * changes its state between one of the values where this item is registered. |
+| [m_continueBetweenStates](#m_continueBetweenStates) | Whether to continue playing this item when the `SwitchContainer` * changes its state between one of the values where this item is registered. |
 | [m_fadeInDuration](#m_fadeInDuration) | The fade duration in milliseconds when this item starts playing.  |
 | [m_fadeInAlgorithm](#m_fadeInAlgorithm) | The name of the fading algorithm to use when this item starts playing.  |
 | [m_fadeOutDuration](#m_fadeOutDuration) | The fade duration in milliseconds when this item stops playing.  |
@@ -36,10 +40,10 @@ Describes a single item within a SwitchContainer.
 !!! variable "bool m_continueBetweenStates"
 
     
-    Whether to continue playing this item when the SwitchContainer
+    Whether to continue playing this item when the `SwitchContainer`
              * changes its state between one of the values where this item is registered.
     
-    If this value is set to `false,` each the sound will be stopped and played again
+    If this value is set to `false`, each sound will be stopped and played again
     from the beginning.
             
     
@@ -107,7 +111,7 @@ Describes a single item within a SwitchContainer.
     
     The object ID of the item.
     
-    May be a *AmSoundID* or a *AmCollectionID.*
+    May be a `AmSoundID` or a `AmCollectionID`.
             
     
 

@@ -45,7 +45,6 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
 | [Destruct](#Destruct) | Destroys the given node instance. |
 | [LockRegistry](#LockRegistry) | Locks the nodes registry. |
 | [UnlockRegistry](#UnlockRegistry) | Unlocks the nodes registry. |
-| [Find](#Find) | Look up a node by name. |
 
 ## Variable Details
 
@@ -126,18 +125,6 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
     :material-location-enter: **Parameter** `instance`
     :    The node instance to destroy.
                 
-    
-
-### Find<a name="Find"></a>
-!!! function "static Node&#42; Find(const AmString&amp; name)"
-
-    
-    Look up a node by name.
-    
-    
-    :material-keyboard-return: **Return**
-    :    The node with the given name, or NULL if none.
-            
     
 
 ### GetName<a name="GetName"></a>

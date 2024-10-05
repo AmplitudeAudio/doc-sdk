@@ -14,6 +14,8 @@ The propagation shape for positional sounds.
 
 This allows to increase the attenuation according to the shape of
 the sound propagation.
+
+
     
 
 
@@ -21,6 +23,7 @@ the sound propagation.
 
 | Name | Description |
 | ---- | ----------- |
+| [~AttenuationZone](#_u007eAttenuationZone) | Default destructor.  |
 | [GetAttenuationFactor](#GetAttenuationFactor) | Returns the attenuation factor. |
 | [GetAttenuationFactor](#GetAttenuationFactor) | Returns the attenuation factor. |
 
@@ -71,5 +74,15 @@ the sound propagation.
     :material-keyboard-return: **Return**
     :    The attenuation factor.
             
+    
+
+### ~AttenuationZone<a name="_u007eAttenuationZone"></a>
+!!! function "virtual ~AttenuationZone() = default"
+
+    
+    Default destructor.
+             
+    
+    
     
 
