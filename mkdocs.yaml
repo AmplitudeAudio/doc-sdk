@@ -131,7 +131,6 @@ plugins:
   - social:
       cards_dir: static/cards
       cards_layout_options:
-        background_color: rgb(116,208,241)
         color: "#ffffff"
         font_family: DM Sans
   - git-revision-date-localized:
