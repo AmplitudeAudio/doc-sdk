@@ -569,6 +569,10 @@
          <lastmod>2024-10-05</lastmod>
     </url>
     <url>
+         <loc>https://docs.amplitudeaudiosdk.com/nightly/getting-started/</loc>
+         <lastmod>2024-10-05</lastmod>
+    </url>
+    <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/getting-started/concepts/</loc>
          <lastmod>2024-10-05</lastmod>
     </url>
@@ -589,6 +593,10 @@
          <lastmod>2024-10-05</lastmod>
     </url>
     <url>
+         <loc>https://docs.amplitudeaudiosdk.com/nightly/integration/</loc>
+         <lastmod>2024-10-05</lastmod>
+    </url>
+    <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/integration/cmake-setup/</loc>
          <lastmod>2024-10-05</lastmod>
     </url>
@@ -606,6 +614,10 @@
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/integration/loading-sound-banks/</loc>
+         <lastmod>2024-10-05</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.amplitudeaudiosdk.com/nightly/project/</loc>
          <lastmod>2024-10-05</lastmod>
     </url>
     <url>

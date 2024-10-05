@@ -260,7 +260,7 @@ You're not viewing the documentation for the stable version.
     
     
       <li class="md-tabs__item">
-        <a href="../../getting-started/introduction/" class="md-tabs__link">
+        <a href="../../getting-started/" class="md-tabs__link">
           
   
     
@@ -282,7 +282,7 @@ You're not viewing the documentation for the stable version.
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../cmake-setup/" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -302,7 +302,7 @@ You're not viewing the documentation for the stable version.
     
     
       <li class="md-tabs__item">
-        <a href="../../project/project-architecture/" class="md-tabs__link">
+        <a href="../../project/" class="md-tabs__link">
           
   
     
@@ -429,6 +429,10 @@ You're not viewing the documentation for the stable version.
     
       
         
+          
+        
+      
+        
       
         
       
@@ -451,16 +455,24 @@ You're not viewing the documentation for the stable version.
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Getting Started
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
@@ -468,6 +480,8 @@ You're not viewing the documentation for the stable version.
             Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -593,6 +607,10 @@ You're not viewing the documentation for the stable version.
     
       
         
+          
+        
+      
+        
       
         
       
@@ -618,16 +636,24 @@ You're not viewing the documentation for the stable version.
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Integration
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
@@ -635,6 +661,8 @@ You're not viewing the documentation for the stable version.
             Integration
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -766,6 +794,10 @@ You're not viewing the documentation for the stable version.
     
       
         
+          
+        
+      
+        
       
         
       
@@ -808,16 +840,24 @@ You're not viewing the documentation for the stable version.
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../project/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Project Reference
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
@@ -825,6 +865,8 @@ You're not viewing the documentation for the stable version.
             Project Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -8156,7 +8198,7 @@ You're not viewing the documentation for the stable version.
 <p class="admonition-title">Danger</p>
 <p>This documentation page is WIP and not yet complete. You can have a complete demo on how to interact with the engine through the official <a href="https://github.com/AmplitudeAudio/sdk/blob/develop/samples">sample projects</a>.</p>
 </div>
-<p>When the engine is <a href="../initializing-the-engine/">fully initialized</a>, you have to load a <a href="../project/soundbank.md">sound bank</a> to be able to play any sound or interact with your Amplitude project at runtime.</p>
+<p>When the engine is <a href="../initializing-the-engine/">fully initialized</a>, you have to load a <a href="../../project/sound-bank/">sound bank</a> to be able to play any sound or interact with your Amplitude project at runtime.</p>
 <p>By loading a sound bank, the engine will also load all the associated data (effects, attenuation, events, etc.).</p>
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">AmBankID</span><span class="w"> </span><span class="n">bankId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">kAmInvalidObjectId</span><span class="p">;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>

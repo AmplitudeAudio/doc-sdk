@@ -265,7 +265,7 @@ You're not viewing the documentation for the stable version.
     
     
       <li class="md-tabs__item">
-        <a href="../../../getting-started/introduction/" class="md-tabs__link">
+        <a href="../../../getting-started/" class="md-tabs__link">
           
   
     
@@ -285,7 +285,7 @@ You're not viewing the documentation for the stable version.
     
     
       <li class="md-tabs__item">
-        <a href="../../../integration/cmake-setup/" class="md-tabs__link">
+        <a href="../../../integration/" class="md-tabs__link">
           
   
     
@@ -305,7 +305,7 @@ You're not viewing the documentation for the stable version.
     
     
       <li class="md-tabs__item">
-        <a href="../../../project/project-architecture/" class="md-tabs__link">
+        <a href="../../../project/" class="md-tabs__link">
           
   
     
@@ -434,6 +434,10 @@ You're not viewing the documentation for the stable version.
     
       
         
+          
+        
+      
+        
       
         
       
@@ -456,16 +460,24 @@ You're not viewing the documentation for the stable version.
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../getting-started/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Getting Started
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
@@ -473,6 +485,8 @@ You're not viewing the documentation for the stable version.
             Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -596,6 +610,10 @@ You're not viewing the documentation for the stable version.
     
       
         
+          
+        
+      
+        
       
         
       
@@ -618,16 +636,24 @@ You're not viewing the documentation for the stable version.
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../integration/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Integration
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -635,6 +661,8 @@ You're not viewing the documentation for the stable version.
             Integration
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -758,6 +786,10 @@ You're not viewing the documentation for the stable version.
     
       
         
+          
+        
+      
+        
       
         
       
@@ -800,16 +832,24 @@ You're not viewing the documentation for the stable version.
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../project/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Project Reference
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
@@ -817,6 +857,8 @@ You're not viewing the documentation for the stable version.
             Project Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -8975,7 +9017,7 @@ You're not viewing the documentation for the stable version.
 and provides methods to create, destroy, and manipulate them. You can also
 access to the internal state of the engine through the public API.</p>
 <p>The <code>Engine</code> is a singleton class and you can access it using the <code>amEngine</code> macro. Before
-using most of the methods of the engine, you need to <a href="https://amplitudeaudiosdk.com/docs/integration/initializing-the-engine/">initialize the
+using most of the methods of the engine, you need to <a href="../../../integration/initializing-the-engine/">initialize the
 engine</a> first, for example:
 <div class="language-cpp highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">amEngine</span><span class="o">-&gt;</span><span class="n">Initialize</span><span class="p">(</span><span class="s">&quot;config.amconfig&quot;</span><span class="p">);</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="c1">//...</span>
@@ -10053,7 +10095,7 @@ otherwise an uninitialized <code>Listener</code>.</dd>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Only one pipeline can be loaded at a time. The loaded pipeline asset is defined in the
-<a href="https://amplitudeaudiosdk.com/docs/project-setup/engine-configuration/#pipeline">engine configuration file</a>.</p>
+<a href="../../../project/engine-config/#pipeline">engine configuration file</a>.</p>
 </div>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7z"/></svg></span> <strong>Return</strong></dt>
@@ -10620,7 +10662,7 @@ played, or the given handle is invalid, an invalid <code>Channel</code> is retur
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Switch containers played using this method should have been set in the <code>Entity</code> scope
-from their asset file. See more <a href="/project/sound-objects/#scope">here</a>.</p>
+from their asset file. See more <a href="../../../project/sound-object/#scope">here</a>.</p>
 </div>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <strong>Parameter</strong> <code>handle</code></dt>
@@ -10638,7 +10680,7 @@ played, the given handle is invalid, or the given entity is invalid, an invalid 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Switch containers played using this method should have been set in the <code>Entity</code> scope
-from their asset file. See more <a href="/project/sound-objects/#scope">here</a>.</p>
+from their asset file. See more <a href="../../../project/sound-object/#scope">here</a>.</p>
 </div>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <strong>Parameter</strong> <code>handle</code></dt>
@@ -10711,7 +10753,7 @@ played, or the handle is invalid, an invalid <code>Channel</code> is returned.</
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Collections played using this method should have been set in the <code>Entity</code> scope
-from their asset file. See more <a href="/project/sound-objects/#scope">here</a>.</p>
+from their asset file. See more <a href="../../../project/sound-object/#scope">here</a>.</p>
 </div>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <strong>Parameter</strong> <code>handle</code></dt>
@@ -10729,7 +10771,7 @@ played, the given handle is invalid, or the given entity is invalid, an invalid 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Collections played using this method should have been set in the <code>Entity</code> scope
-from their asset file. See more <a href="/project/sound-objects/#scope">here</a>.</p>
+from their asset file. See more <a href="../../../project/sound-object/#scope">here</a>.</p>
 </div>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <strong>Parameter</strong> <code>handle</code></dt>
@@ -10802,7 +10844,7 @@ played, the given handle is invalid, an invalid <code>Channel</code> is returned
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Sounds played using this method should have been set in the <code>Entity</code> scope
-from their asset file. See more <a href="/project/sound-objects/#scope">here</a>.</p>
+from their asset file. See more <a href="../../../project/sound-object/#scope">here</a>.</p>
 </div>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <strong>Parameter</strong> <code>handle</code></dt>
@@ -10820,7 +10862,7 @@ played, the given handle is invalid, or the given entity is invalid, an invalid 
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Sounds played using this method should have been set in the <code>Entity</code> scope
-from their asset file. See more <a href="/project/sound-objects/#scope">here</a>.</p>
+from their asset file. See more <a href="../../../project/sound-object/#scope">here</a>.</p>
 </div>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <strong>Parameter</strong> <code>handle</code></dt>
@@ -10913,7 +10955,7 @@ name as using the name requires an internal lookup.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Sound objects played using this method should have been set in the <code>Entity</code> scope
-from their asset file. See more <a href="/project/sound-objects/#scope">here</a>.</p>
+from their asset file. See more <a href="../../../project/sound-object/#scope">here</a>.</p>
 </div>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <strong>Parameter</strong> <code>name</code></dt>
@@ -10937,7 +10979,7 @@ name as using the name requires an internal lookup.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Sound objects played using this method should have been set in the <code>Entity</code> scope
-from their asset file. See more <a href="/project/sound-objects/#scope">here</a>.</p>
+from their asset file. See more <a href="../../../project/sound-object/#scope">here</a>.</p>
 </div>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <strong>Parameter</strong> <code>name</code></dt>
@@ -11031,7 +11073,7 @@ ID as using the ID requires an internal lookup.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Sound objects played using this method should have been set in the <code>Entity</code> scope
-from their asset file. See more <a href="/project/sound-objects/#scope">here</a>.</p>
+from their asset file. See more <a href="../../../project/sound-object/#scope">here</a>.</p>
 </div>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <strong>Parameter</strong> <code>id</code></dt>
@@ -11055,7 +11097,7 @@ ID as using the ID requires an internal lookup.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Sound objects played using this method should have been set in the <code>Entity</code> scope
-from their asset file. See more <a href="/project/sound-objects/#scope">here</a>.</p>
+from their asset file. See more <a href="../../../project/sound-object/#scope">here</a>.</p>
 </div>
 <dl>
 <dt><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14 12-4-4v3H2v2h8v3m12-4a10 10 0 0 1-19.54 3h2.13a8 8 0 1 0 0-6H2.46A10 10 0 0 1 22 12"/></svg></span> <strong>Parameter</strong> <code>id</code></dt>
@@ -11167,7 +11209,7 @@ an invalid <code>Channel</code> is returned.</dd>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This method takes effect only if the
-<a href="https://amplitudeaudiosdk.com/docs/project-setup/engine-configuration/#listener_fetch_mode"><code>listener_fetch_mode</code></a>
+<a href="../../../project/engine-config/#listener_fetch_mode"><code>listener_fetch_mode</code></a>
 engine setting is set to <code>Default</code>.</p>
 </div>
 <dl>
@@ -11182,7 +11224,7 @@ engine setting is set to <code>Default</code>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>This method takes effect only if the
-<a href="https://amplitudeaudiosdk.com/docs/project-setup/engine-configuration/#listener_fetch_mode"><code>listener_fetch_mode</code></a>
+<a href="../../../project/engine-config/#listener_fetch_mode"><code>listener_fetch_mode</code></a>
 engine setting is set to <code>Default</code>.</p>
 </div>
 <dl>
@@ -11520,7 +11562,7 @@ can use this method to wait until the file system is fully loaded before using i
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 4, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 5, 2024</span>
   </span>
 
     

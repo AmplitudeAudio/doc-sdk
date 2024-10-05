@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://docs.amplitudeaudiosdk.com/nightly/getting-started/introduction/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../">
       
       
         <link rel="next" href="../concepts/">
@@ -267,7 +267,7 @@ You're not viewing the documentation for the stable version.
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -287,7 +287,7 @@ You're not viewing the documentation for the stable version.
     
     
       <li class="md-tabs__item">
-        <a href="../../integration/cmake-setup/" class="md-tabs__link">
+        <a href="../../integration/" class="md-tabs__link">
           
   
     
@@ -307,7 +307,7 @@ You're not viewing the documentation for the stable version.
     
     
       <li class="md-tabs__item">
-        <a href="../../project/project-architecture/" class="md-tabs__link">
+        <a href="../../project/" class="md-tabs__link">
           
   
     
@@ -436,6 +436,10 @@ You're not viewing the documentation for the stable version.
     
       
         
+          
+        
+      
+        
       
         
       
@@ -461,16 +465,24 @@ You're not viewing the documentation for the stable version.
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Getting Started
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
@@ -478,6 +490,8 @@ You're not viewing the documentation for the stable version.
             Getting Started
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -781,6 +795,10 @@ You're not viewing the documentation for the stable version.
     
       
         
+          
+        
+      
+        
       
         
       
@@ -803,16 +821,24 @@ You're not viewing the documentation for the stable version.
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../integration/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Integration
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
@@ -820,6 +846,8 @@ You're not viewing the documentation for the stable version.
             Integration
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -943,6 +971,10 @@ You're not viewing the documentation for the stable version.
     
       
         
+          
+        
+      
+        
       
         
       
@@ -985,16 +1017,24 @@ You're not viewing the documentation for the stable version.
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../project/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Project Reference
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
@@ -1002,6 +1042,8 @@ You're not viewing the documentation for the stable version.
             Project Reference
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
             
               
                 
@@ -8489,7 +8531,7 @@ You're not viewing the documentation for the stable version.
 <h2 id="spatial-audio-hrtf-and-ambisonic-rendering">Spatial Audio, HRTF, and Ambisonic Rendering<a class="headerlink" href="#spatial-audio-hrtf-and-ambisonic-rendering" title="Permanent link">&para;</a></h2>
 <p>Amplitude can play audio sources in 2D environments, as well in 3D environments too. For 3D environments, you can use the traditional stereo-panning, or use the advanced binaural rendering using your HRTF assets. With the later the listener will be able to feel the exact position of the played source.</p>
 <h2 id="data-driven-development">Data-driven Development<a class="headerlink" href="#data-driven-development" title="Permanent link">&para;</a></h2>
-<p>Uses <code>.json</code> files to define everything, from a simple sound file to a complex switch container. Each <code>.json</code> file is in a dedicated directory according to its usage (<code>events</code>, <code>effects</code>, <code>sounds</code>, <code>collections</code>, etc.). Amplitude will compile them into binary files, which can now be registered into <a href="#soundbanks-management">sound banks</a> and loaded in the game at runtime.</p>
+<p>Uses <code>.json</code> files to define everything, from a simple sound file to a complex switch container. Each <code>.json</code> file is in a dedicated directory according to its usage (<code>events</code>, <code>effects</code>, <code>sounds</code>, <code>collections</code>, etc.). Amplitude will compile them into binary files, which can now be registered into <a href="#sound-banks-management">sound banks</a> and loaded in the game at runtime.</p>
 <h2 id="plugin-architecture">Plugin Architecture<a class="headerlink" href="#plugin-architecture" title="Permanent link">&para;</a></h2>
 <p>You are able to create plugins and add custom codecs, filters, resampling algorithms, drivers, fading algorithms, and more. Each plugin can be built as a separate library and loaded in the game at runtime.</p>
 <h2 id="drivers-and-codecs">Drivers and Codecs<a class="headerlink" href="#drivers-and-codecs" title="Permanent link">&para;</a></h2>
@@ -8658,7 +8700,7 @@ You're not viewing the documentation for the stable version.
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Home">
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Index">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -8668,7 +8710,7 @@ You're not viewing the documentation for the stable version.
                 Previous
               </span>
               <div class="md-ellipsis">
-                Home
+                Index
               </div>
             </div>
           </a>
