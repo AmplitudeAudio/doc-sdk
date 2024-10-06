@@ -65,6 +65,10 @@
          <lastmod>2024-10-06</lastmod>
     </url>
     <url>
+         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/AmVersion/</loc>
+         <lastmod>2024-10-06</lastmod>
+    </url>
+    <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/AudioBuffer/</loc>
          <lastmod>2024-10-06</lastmod>
     </url>
@@ -114,10 +118,6 @@
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/SoundFormat/</loc>
-         <lastmod>2024-10-06</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/Version/</loc>
          <lastmod>2024-10-06</lastmod>
     </url>
     <url>
@@ -690,6 +690,10 @@
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/tutorials/custom-codec/</loc>
+         <lastmod>2024-10-06</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.amplitudeaudiosdk.com/nightly/tutorials/custom-driver/</loc>
          <lastmod>2024-10-06</lastmod>
     </url>
     <url>
