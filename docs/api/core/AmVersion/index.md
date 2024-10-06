@@ -1,13 +1,13 @@
 ---
-title: Version
+title: AmVersion
 description: A structure containing the version number of the library.
 generator: doxide
 ---
 
 
-# Version
+# AmVersion
 
-**struct Version**
+**struct AmVersion**
 
 
 A structure containing the version number of the library.

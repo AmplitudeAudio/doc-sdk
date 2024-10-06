@@ -15,6 +15,7 @@ Core functionalities of the SDK
 | ---- | ----------- |
 | [AmAlignedReal32Buffer](AmAlignedReal32Buffer/index.md) | Class that handles aligned allocations to support vectorized operations. |
 | [AmThreadHandle](AmThreadHandle/index.md) | The AmThreadFunction signature is used to create threads. |
+| [AmVersion](AmVersion/index.md) | A structure containing the version number of the library. |
 | [AudioBuffer](AudioBuffer/index.md) | Represents an audio buffer containing multiple channels. |
 | [AudioBufferChannel](AudioBufferChannel/index.md) | Represents a view to a single channel in an `AudioBuffer`. |
 | [AwaitablePoolTask](AwaitablePoolTask/index.md) | A pool task that allows a thread to wait until it finishes. |
@@ -28,8 +29,6 @@ Core functionalities of the SDK
 | [PoolTask](PoolTask/index.md) | Base class for pool tasks. |
 | [RefCounter](RefCounter/index.md) | Holds the number of references to an object. |
 | [SoundFormat](SoundFormat/index.md) | Describe the format of an audio sample. |
-| [Version](Version/index.md) | A structure containing the version number of the library. |
-| [Version](Version/index.md) | Returns the version. |
 | [eAudioSampleFormat](eAudioSampleFormat/index.md) | Enumerates the list of possible sample formats handled by Amplitude. |
 | [eErrorCode](eErrorCode/index.md) | Enumerates the list of possible errors encountered by the library. |
 | [eHRIRSphereSamplingMode](eHRIRSphereSamplingMode/index.md) | Defines how the HRIR sphere is sampled when doing Ambisonics binauralization. |
@@ -86,6 +85,7 @@ Core functionalities of the SDK
 | [DestroyMutex](#DestroyMutex) | Destroys a mutex object. |
 | [GetCurrentThreadId](#GetCurrentThreadId) | Gets the handle of the calling thread. |
 | [GetTimeMillis](#GetTimeMillis) | Gets the total execution time in milliseconds for the calling thread. |
+| [GetVersion](#GetVersion) | Returns the version. |
 | [LockMutex](#LockMutex) | Takes ownership of a mutex. |
 | [Release](#Release) | Manually stops a thread execution. |
 | [Sleep](#Sleep) | Makes the calling thread sleep for the given amount of milliseconds. |
@@ -562,6 +562,20 @@ Core functionalities of the SDK
     
     
             
+    
+
+### GetVersion<a name="GetVersion"></a>
+!!! function "const AmVersion&amp; GetVersion()"
+
+    
+    Returns the version.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The current SDK version.
+    
+    
+        
     
 
 ### LockMutex<a name="LockMutex"></a>

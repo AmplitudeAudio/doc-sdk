@@ -1,4 +1,5 @@
 ---
+title: Integration
 template: redirect.html
 url: cmake-setup/
 social:
