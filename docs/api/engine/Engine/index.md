@@ -45,6 +45,8 @@ amEngine->Deinitialize();
 | [TryFinalizeCloseFileSystem](#TryFinalizeCloseFileSystem) | Checks if the file system has been fully closed. |
 | [AdvanceFrame](#AdvanceFrame) | Updates the engine state for the given number of milliseconds. |
 | [OnNextFrame](#OnNextFrame) | Executes the given callback on the next frame. |
+| [WaitUntilNextFrame](#WaitUntilNextFrame) | Waits until the next frame is ready. |
+| [WaitUntilFrames](#WaitUntilFrames) | Waits until the specified number of frames are ready. |
 | [GetTotalTime](#GetTotalTime) | Gets the total elapsed time in milliseconds since the start of the engine. |
 | [LoadSoundBank](#LoadSoundBank) | Loads a sound bank from a binary asset file (`.ambank`). |
 | [LoadSoundBank](#LoadSoundBank) | Loads a sound bank from a binary asset file (`.ambank`). |
@@ -2733,6 +2735,30 @@ amEngine->Deinitialize();
     
     :material-keyboard-return: **Return**
     :    The version string structure
+            
+    
+
+### WaitUntilFrames<a name="WaitUntilFrames"></a>
+!!! function "virtual void WaitUntilFrames(AmUInt64 frameCount) const = 0"
+
+    
+    Waits until the specified number of frames are ready.
+    
+    This method blocks the current thread until the specified number of frames are ready.
+    
+    
+    :material-location-enter: **Parameter** `frameCount`
+    :    The number of frames to wait until.
+                
+    
+
+### WaitUntilNextFrame<a name="WaitUntilNextFrame"></a>
+!!! function "virtual void WaitUntilNextFrame() const = 0"
+
+    
+    Waits until the next frame is ready.
+    
+    This method blocks the current thread until the next frame is ready.
             
     
 

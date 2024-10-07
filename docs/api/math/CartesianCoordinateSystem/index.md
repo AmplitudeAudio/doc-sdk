@@ -37,12 +37,14 @@ Amplitude to convert incoming data to the internal coordinate system.
 | [RightHandedZUp](#RightHandedZUp) | Creates a right-handed, Z-up cartesian coordinate system. |
 | [LeftHandedZUp](#LeftHandedZUp) | Creates a left-handed, Z-up cartesian coordinate system. |
 | [Convert](#Convert) | Converts a vector from one coordinate system to another. |
+| [Convert](#Convert) | Converts a quaternion rotation from one coordinate system to another. |
+| [Convert](#Convert) | Converts a scalar from one coordinate system to another. |
 | [ConvertToDefault](#ConvertToDefault) | Converts a vector from one coordinate system to the default coordinate system. |
 | [GetVector](#GetVector) | Gets a vector corresponding to the given axis. |
 | [CartesianCoordinateSystem](#CartesianCoordinateSystem) | Creates a new cartesian coordinate system with the given axes. |
-| [GetRightVector](#GetRightVector) | Gets the vector corresponding to the coordinate system's right axis. * @return The coordinate system's right vector.  |
-| [GetForwardVector](#GetForwardVector) | Gets the vector corresponding to the coordinate system's forward axis. * @return The coordinate system's forward vector.  |
-| [GetUpVector](#GetUpVector) | Gets the vector corresponding to the coordinate system's up axis. * @return The coordinate system's up vector.  |
+| [GetRightVector](#GetRightVector) | Gets the vector corresponding to the coordinate system's right axis. |
+| [GetForwardVector](#GetForwardVector) | Gets the vector corresponding to the coordinate system's forward axis. |
+| [GetUpVector](#GetUpVector) | Gets the vector corresponding to the coordinate system's up axis. |
 | [Convert](#Convert) | Converts a vector from one coordinate system to the current one. |
 | [Convert](#Convert) | Converts a quaternion from one coordinate system to the current one. |
 | [Convert](#Convert) | Converts a scalar from one coordinate system to the current one. |
@@ -98,6 +100,48 @@ Amplitude to convert incoming data to the internal coordinate system.
     
     :material-keyboard-return: **Return**
     :    The converted vector.
+            
+    
+
+!!! function "static AmQuat Convert(const AmQuat&amp; rotation, const CartesianCoordinateSystem&amp; from, const CartesianCoordinateSystem&amp; to)"
+
+    
+    Converts a quaternion rotation from one coordinate system to another.
+    
+    
+    :material-location-enter: **Parameter** `rotation`
+    :    The rotation to convert.
+        
+    :material-location-enter: **Parameter** `from`
+    :    The source coordinate system.
+        
+    :material-location-enter: **Parameter** `to`
+    :    The destination coordinate system.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The converted rotation.
+            
+    
+
+!!! function "static AmReal32 Convert(AmReal32 scalar, const CartesianCoordinateSystem&amp; from, const CartesianCoordinateSystem&amp; to)"
+
+    
+    Converts a scalar from one coordinate system to another.
+    
+    
+    :material-location-enter: **Parameter** `scalar`
+    :    The scalar to convert.
+        
+    :material-location-enter: **Parameter** `from`
+    :    The source coordinate system.
+        
+    :material-location-enter: **Parameter** `to`
+    :    The destination coordinate system.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The converted scalar.
             
     
 
@@ -191,10 +235,11 @@ Amplitude to convert incoming data to the internal coordinate system.
 
     
     Gets the vector corresponding to the coordinate system's forward axis.
-             * @return The coordinate system's forward vector.
-             
     
     
+    :material-keyboard-return: **Return**
+    :    The coordinate system's forward vector.
+            
     
 
 ### GetRightVector<a name="GetRightVector"></a>
@@ -202,10 +247,11 @@ Amplitude to convert incoming data to the internal coordinate system.
 
     
     Gets the vector corresponding to the coordinate system's right axis.
-             * @return The coordinate system's right vector.
-             
     
     
+    :material-keyboard-return: **Return**
+    :    The coordinate system's right vector.
+            
     
 
 ### GetUpVector<a name="GetUpVector"></a>
@@ -213,10 +259,11 @@ Amplitude to convert incoming data to the internal coordinate system.
 
     
     Gets the vector corresponding to the coordinate system's up axis.
-             * @return The coordinate system's up vector.
-             
     
     
+    :material-keyboard-return: **Return**
+    :    The coordinate system's up vector.
+            
     
 
 ### GetVector<a name="GetVector"></a>
