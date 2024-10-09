@@ -1,11 +1,6 @@
 ---
 title: Initializing the Engine
 description: Learn how to initialize the Amplitude Engine with a given project at runtime through this tutorial.
-menu:
-  docs:
-    parent: integration
-weight: 203
-toc: true
 ---
 
 !!! note
