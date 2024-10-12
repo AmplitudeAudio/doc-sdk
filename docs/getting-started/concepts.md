@@ -153,7 +153,12 @@ In Amplitude, the maximum number of channels is limited, and determined at the E
 
 Amplitude will manage the prioritization of sound objects and will automatically drop the least important channels when too many sound objects are playing simultaneously. This is reason behind the concept of active and virtual channels. The active channels are the channels which are actually playing and rendering audio, while the virtual channels are also playing audio but are not rendering it, and are only used to track low priority sounds which are still playing.
 
-When requesting to play a sound object, the Engine will pick a channel in the list of free active channels. If there is no free channel, the Engine will pick a channel in the list of free virtual channels. If there is still no free channel, the Engine will drop the least important sound object. If the sound object to play is actually the one with the lowest priority, it will not be played.
+When requesting to play a sound object:
+
+1. The Engine will pick a channel in the list of free active channels.
+2. If there is no free channel, the Engine will pick a channel in the list of free virtual channels.
+3. If there is still no free channel, the Engine will drop the least important sound object.
+4. If the sound object to play is actually the one with the lowest priority, it will not be played.
 
 ## Sound Instances
 
