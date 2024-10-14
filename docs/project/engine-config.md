@@ -286,6 +286,6 @@ The following example describes an engine configuration file:
 ```
 
 [Listener]: ../api/engine/Listener/index.md
-[Entity]: ../api/engine/Engine/index.md
+[Entity]: ../api/engine/Entity/index.md
 [Environment]: ../api/engine/Environment/index.md
 [Room]: ../api/engine/Room/index.md

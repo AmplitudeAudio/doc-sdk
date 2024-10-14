@@ -63,6 +63,18 @@ Channel sound = amEngine->Play(handle);
 !!! tip
     Playing a sound object using a handle is always faster than using its name or its ID. Thus, it's recommended to prefer using handles for sound objects you plan to frequently play.
 
+For sound sources configured with [Position spatialization](../project/sound-object.md#spatialization) enabled, you can play them in the world by giving an initial location:
+
+```cpp
+// Play a sound source at a given position
+Channel sound = amEngine->Play("voice_01", AM_V3(10, 20, 30));
+```
+
+The given position can be updated later in realtime using the [Channel API](../api/engine/Channel/index.md).
+
+!!! note
+    For sound sources configured with any other spatialization other than `Position`, you should use an `Entity` to play them. Read the [Managing Game Objects](./managing-game-objects.md#entities) documentation to learn more.
+
 When you obtain a Channel for a sound object, it's recommended to check if the returned Channel is valid before using it.
 
 ```cpp

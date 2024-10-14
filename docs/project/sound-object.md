@@ -53,19 +53,20 @@ This property affects how the engine will prioritize this sound object relative 
 
 `Spatialization` `default: None`
 
-The `spatialization` property specifies how the sound object's gain should be adjusted based on its distance from the attached listener. It can have the following values:
+The `spatialization` property specifies how the sound object's will be rendered in the 3D space, by applying effects like sound attenuation and panning:
 
-| ID  | Name                | Description                                                                                                                                                                          |
-| --- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 0   | None                | No spatialization is made, sound objects are played at their regular gain.                                                                                                           |
-| 1   | Position            | The gain is adjusted based on the distance to the attached listener.                                                                                                                 |
-| 2   | PositionOrientation | The gain is adjusted based on the distance to the attached listener and the entity's orientation. This means that the [scope](#scope) of this sound object should be set to `Entity` |
+| ID  | Name                | Description                                                                                                                                                                                                                                    |
+| --- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | None                | No spatialization is made, sound objects are played at their regular gain.                                                                                                                                                                     |
+| 1   | Position            | 2D spatialization. The sound source is spatialized by using only its position (sound attenuation and stereo panning can be applied to it).                                                                                                     |
+| 2   | PositionOrientation | 2D spatialization. The sound source is spatialized by using its position and orientation (sound attenuation and stereo panning can be applied to it). This means that the [scope](#scope) of this sound object should be set to `Entity`.      |
+| 3   | HRTF                | 3D spatialization. The sound source is spatialized by using its position and orientation, through an [HRIR Sphere](../api/core/HRIRSphere/index.md) asset. This means that the [scope](#scope) of this sound object should be set to `Entity`. |
 
 ## attenuation
 
 `uint64` `default: 0`
 
-Specifies the ID of the [Attenuation Model](./attenuation-model.md) to use on the sound object. This property takes effect only if the sound is spatialized (the `spatialization` property is set to a value different from `None`). A value of `0` means that no attenuation will be performed, even if the sound is spatialized.
+Specifies the ID of the [Attenuation Model](./attenuation-model.md) to use on the sound object. This property takes effect only if the sound is spatialized (the `spatialization` property is set to a value different from `None`). A value of `0` disables sound attenuation, even if the sound is spatialized.
 
 ## scope
 
@@ -73,10 +74,10 @@ Specifies the ID of the [Attenuation Model](./attenuation-model.md) to use on th
 
 With the `scope` property, you can control how the playback data is shared between each sound instance. The allowed values are:
 
-| ID  | Name   | Description                                                                                                           |
-| --- | ------ | --------------------------------------------------------------------------------------------------------------------- |
-| 0   | World  | All sound instances will be treated as one object, so they will share the same sound data.                            |
-| 1   | Entity | Each sound instance will be treated as one object per entity, and will only share sound data within that same entity. |
+| ID  | Name   | Description                                                                                                          |
+| --- | ------ | -------------------------------------------------------------------------------------------------------------------- |
+| 0   | World  | All sound instances will be treated as one object, so they will share the same sound data.                           |
+| 1   | Entity | Each sound instance will be treated as one object per entity, and will only share sound data within the same entity. |
 
 ## fader
 
@@ -85,11 +86,13 @@ With the `scope` property, you can control how the playback data is shared betwe
 The `fader` property can be used to specify the fading animation to apply when the playback starts and stops. Its value should be a string containing the name of the animation. Amplitude comes shipped with a various set of faders:
 
 - `Constant`
-- `ExponentialSharp`
-- `ExponentialSmooth`
+- `Ease`
+- `EaseIn`
+- `EaseInOut`
+- `EaseOut`
 - `Linear`
-- `SCurveSharp`
 - `SCurveSmooth`
+- `SCurveSharp`
 
 !!! info
     You can create more faders as you wish and register them in the engine as plugins. Refer to the [Custom Fader](../tutorials/custom-fader.md) guide to learn more.

@@ -12,6 +12,7 @@
     - [Loading Sound Banks](integration/loading-sound-banks.md)
     - [The rendering loop](integration/the-rendering-loop.md)
     - [Playing audio](integration/playing-audio.md)
+    - [Managing Game Objects](integration/managing-game-objects.md)
 - [Project Reference](project/index.md)
     - [Project Architecture](project/project-architecture.md)
     - [Engine Configuration](project/engine-config.md)
