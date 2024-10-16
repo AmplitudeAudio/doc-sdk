@@ -7,7 +7,7 @@ generator: doxide
 
 # BarycentricCoordinates
 
-**struct BarycentricCoordinates**
+**struct  BarycentricCoordinates**
 
 
 Represents barycentric coordinates between a point and 3 vertices of a triangle.

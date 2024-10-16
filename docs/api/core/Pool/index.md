@@ -34,11 +34,12 @@ macro. The default value is `1024`
 | [GetThreadCount](#GetThreadCount) | Gets the number of threads this pool is using. |
 | [IsRunning](#IsRunning) | Indicates that the pool is running. |
 | [HasTasks](#HasTasks) | Indicates that has tasks pending. |
+| [GetTaskCount](#GetTaskCount) | Gets the number of tasks in the pool. |
 
 ## Function Details
 
 ### AddTask<a name="AddTask"></a>
-!!! function "void AddTask(const std::shared_ptr&lt;PoolTask&gt;&amp; task)"
+!!! function "void AddTask(std::shared_ptr&lt;PoolTask&gt; task)"
 
     
     Add a task to the tasks list.
@@ -47,6 +48,18 @@ macro. The default value is `1024`
     :material-location-enter: **Parameter** `task`
     :    The `PoolTask` to add. The task is not automatically deleted when the work is done.
                     
+    
+
+### GetTaskCount<a name="GetTaskCount"></a>
+!!! function "[[nodiscard]] AmInt32 GetTaskCount() const"
+
+    
+    Gets the number of tasks in the pool.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The number of tasks in the pool.
+                
     
 
 ### GetThreadCount<a name="GetThreadCount"></a>

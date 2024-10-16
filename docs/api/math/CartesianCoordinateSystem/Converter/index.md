@@ -7,7 +7,7 @@ generator: doxide
 
 # Converter
 
-**class Converter**
+**class  Converter**
 
 
 Converts values from one cartesian coordinate system to another.

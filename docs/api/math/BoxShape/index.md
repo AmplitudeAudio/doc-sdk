@@ -16,6 +16,13 @@ A box shape, defined by a width, an height, and a depth.
     
 
 
+## Operators
+
+| Name | Description |
+| ---- | ----------- |
+| [operator==](#operator_u003d_u003d) | Compares this shape with another shape for equality. |
+| [operator!=](#operator_u0021_u003d) | Compares this shape with another shape for inequality. |
+
 ## Functions
 
 | Name | Description |
@@ -35,6 +42,51 @@ A box shape, defined by a width, an height, and a depth.
 | [GetShortestDistanceToEdge](#GetShortestDistanceToEdge) | Gets the shortest distance to the edge of this shape. |
 | [Contains](#Contains) | Checks if the given position is contained in this shape. |
 | [GetClosestPoint](#GetClosestPoint) | Gets the closest point to the given location. |
+| [GetCorners](#GetCorners) | Gets the corners of the box shape. |
+
+## Operator Details
+
+### operator!=<a name="operator_u0021_u003d"></a>
+
+!!! function "bool operator!=(const BoxShape&amp; other) const"
+
+    
+    Compares this shape with another shape for inequality.
+    
+    
+    !!! note
+         Shapes are equal if they have the same dimensions, the position, and the same orientation.
+    
+    
+    :material-location-enter: **Parameter** `other`
+    :    The other shape to compare with.
+    
+    
+    :material-keyboard-return: **Return**
+    :    `false` if the shapes are equal, `true` otherwise.
+            
+    
+
+### operator==<a name="operator_u003d_u003d"></a>
+
+!!! function "bool operator==(const BoxShape&amp; other) const"
+
+    
+    Compares this shape with another shape for equality.
+    
+    
+    !!! note
+         Shapes are equal if they have the same dimensions, the position, and the same orientation.
+    
+    
+    :material-location-enter: **Parameter** `other`
+    :    The other shape to compare with.
+    
+    
+    :material-keyboard-return: **Return**
+    :    `true` if the shapes are equal, `false` otherwise.
+            
+    
 
 ## Function Details
 
@@ -116,6 +168,28 @@ A box shape, defined by a width, an height, and a depth.
     
     :material-keyboard-return: **Return**
     :    The closest point to the given location.
+            
+    
+
+### GetCorners<a name="GetCorners"></a>
+!!! function "[[nodiscard]] std::array&lt;AmVec3, 8&gt; GetCorners() const"
+
+    
+    Gets the corners of the box shape.
+    
+    The returned corners are arranged in the following order:
+    
+        6 - - - - 4
+        | \       | \
+        |   3 - - - - 5
+        |   |     |   |
+         1  | - - 7   |
+          \ |       \ |
+            0 - - - - 2
+    
+    
+    :material-keyboard-return: **Return**
+    :    The corners of the box shape.
             
     
 

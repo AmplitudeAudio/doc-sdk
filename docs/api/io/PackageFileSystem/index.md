@@ -33,6 +33,7 @@ A `FileSystem` implementation that provides access to an Amplitude package file.
 | [TryFinalizeOpenFileSystem](#TryFinalizeOpenFileSystem) |  @inherit  |
 | [StartCloseFileSystem](#StartCloseFileSystem) |  @inherit  |
 | [TryFinalizeCloseFileSystem](#TryFinalizeCloseFileSystem) |  @inherit  |
+| [IsValid](#IsValid) | Returns if the package file is valid and loaded. |
 
 ## Function Details
 
@@ -57,6 +58,18 @@ A `FileSystem` implementation that provides access to an Amplitude package file.
 
     
     @inherit
+            
+    
+
+### IsValid<a name="IsValid"></a>
+!!! function "[[nodiscard]] bool IsValid() const"
+
+    
+    Returns if the package file is valid and loaded.
+    
+    
+    :material-keyboard-return: **Return**
+    :    `true` if the package file is valid and loaded, `false` otherwise.
             
     
 

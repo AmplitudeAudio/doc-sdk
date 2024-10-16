@@ -37,7 +37,7 @@ Engine-specific functionalities
 | [Listener](Listener/index.md) | A object which can render sound sources. |
 | [PlaybackOutputChannels](PlaybackOutputChannels/index.md) | The playback output channel layout of the device. |
 | [PlaybackOutputFormat](PlaybackOutputFormat/index.md) | The playback output format of the device. |
-| [Room](Room/index.md) | The absorption coefficients of the material. Represents a physical space where sound waves can propagate. |
+| [Room](Room/index.md) | Represents a physical space where sound waves can propagate. |
 | [RoomMaterial](RoomMaterial/index.md) | Represents the material of a `Room` wall. |
 | [RoomMaterialType](RoomMaterialType/index.md) | Defines the material type of a `Room` wall. |
 | [RoomWall](RoomWall/index.md) | Enumerates the walls of a `Room`. |

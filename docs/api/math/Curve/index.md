@@ -22,6 +22,7 @@ A `Curve` which describe the variation of a value (on the Y-axis) according to a
 | ---- | ----------- |
 | [Curve](#Curve) | Creates an empty `Curve`.  |
 | [Initialize](#Initialize) | Initializes curve parts from the given definition. |
+| [Initialize](#Initialize) | Initializes curve parts from the given vector. |
 | [Get](#Get) | Get the curve value corresponding to the given X value. |
 
 ## Function Details
@@ -61,6 +62,17 @@ A `Curve` which describe the variation of a value (on the Y-axis) according to a
     
     :material-location-enter: **Parameter** `definition`
     :    The curve definition data.
+                
+    
+
+!!! function "void Initialize(const std::vector&lt;CurvePart&gt;&amp; parts)"
+
+    
+    Initializes curve parts from the given vector.
+    
+    
+    :material-location-enter: **Parameter** `parts`
+    :    The vector of curve parts.
                 
     
 

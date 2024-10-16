@@ -1,6 +1,6 @@
 ---
 title: Room
-description: The absorption coefficients of the material. Represents a physical space where sound waves can propagate.
+description: Represents a physical space where sound waves can propagate.
 generator: doxide
 ---
 
@@ -8,11 +8,6 @@ generator: doxide
 # Room
 
 **class  Room**
-
-
-The absorption coefficients of the material.
-         
-
 
 
 Represents a physical space where sound waves can propagate.
@@ -51,6 +46,7 @@ This class is a lightweight wrapper around the internal `RoomInternalState` clas
 | [SetGain](#SetGain) | Sets the room effects gain. |
 | [GetGain](#GetGain) | Gets the room effects gain. |
 | [GetVolume](#GetVolume) | Gets the volume of the `Room` in m3. |
+| [GetDimensions](#GetDimensions) | Gets the dimensions of the `Room` in meters. |
 | [GetSurfaceArea](#GetSurfaceArea) | Gets the surface area of a specific wall of this `Room`. |
 | [Update](#Update) | Updates the state of this `Room`. |
 | [GetState](#GetState) | Gets the internal state of the `Room`. |
@@ -71,6 +67,18 @@ This class is a lightweight wrapper around the internal `RoomInternalState` clas
     ```cpp
     amEngine->RemoveRoom(1234); // You should provide the room ID
     ```
+            
+    
+
+### GetDimensions<a name="GetDimensions"></a>
+!!! function "[[nodiscard]] AmVec3 GetDimensions() const"
+
+    
+    Gets the dimensions of the `Room` in meters.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The dimensions of the room's shape.
             
     
 

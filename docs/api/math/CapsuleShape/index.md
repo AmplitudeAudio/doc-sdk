@@ -16,6 +16,13 @@ A capsule shape, defined by a radius and an height.
     
 
 
+## Operators
+
+| Name | Description |
+| ---- | ----------- |
+| [operator==](#operator_u003d_u003d) | Compares this shape with another shape for equality. |
+| [operator!=](#operator_u0021_u003d) | Compares this shape with another shape for inequality. |
+
 ## Functions
 
 | Name | Description |
@@ -30,6 +37,50 @@ A capsule shape, defined by a radius and an height.
 | [SetHalfHeight](#SetHalfHeight) | Sets the half height of the capsule shape. |
 | [GetShortestDistanceToEdge](#GetShortestDistanceToEdge) | Gets the shortest distance to the edge of this shape. |
 | [Contains](#Contains) | Checks if the given position is contained in this shape. |
+
+## Operator Details
+
+### operator!=<a name="operator_u0021_u003d"></a>
+
+!!! function "bool operator!=(const CapsuleShape&amp; other) const"
+
+    
+    Compares this shape with another shape for inequality.
+    
+    
+    !!! note
+         Shapes are equal if they have the same dimensions, the position, and the same orientation.
+    
+    
+    :material-location-enter: **Parameter** `other`
+    :    The other shape to compare with.
+    
+    
+    :material-keyboard-return: **Return**
+    :    `false` if the shapes are equal, `true` otherwise.
+            
+    
+
+### operator==<a name="operator_u003d_u003d"></a>
+
+!!! function "bool operator==(const CapsuleShape&amp; other) const"
+
+    
+    Compares this shape with another shape for equality.
+    
+    
+    !!! note
+         Shapes are equal if they have the same dimensions, the position, and the same orientation.
+    
+    
+    :material-location-enter: **Parameter** `other`
+    :    The other shape to compare with.
+    
+    
+    :material-keyboard-return: **Return**
+    :    `true` if the shapes are equal, `false` otherwise.
+            
+    
 
 ## Function Details
 
