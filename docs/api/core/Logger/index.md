@@ -31,6 +31,7 @@ log messages wherever they are needed.
 | [Warning](#Warning) | Logs a warning message. |
 | [Error](#Error) | Logs an error message. |
 | [Critical](#Critical) | Logs a critical message. |
+| [Success](#Success) | Logs a success message. |
 | [Log](#Log) | Logs a message with the given level. |
 
 ## Function Details
@@ -149,6 +150,24 @@ log messages wherever they are needed.
     
     :material-location-enter: **Parameter** `loggerInstance`
     :    The logger instance.
+                
+    
+
+### Success<a name="Success"></a>
+!!! function "void Success(const char&#42; file, int line, const AmString&amp; message)"
+
+    
+    Logs a success message.
+    
+    
+    :material-location-enter: **Parameter** `file`
+    :    The file where the message was logged.
+        
+    :material-location-enter: **Parameter** `line`
+    :    The line where the message was logged.
+        
+    :material-location-enter: **Parameter** `message`
+    :    The message to log.
                 
     
 

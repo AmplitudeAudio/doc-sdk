@@ -7,7 +7,7 @@ generator: doxide
 
 # ChannelEventInfo
 
-**struct ChannelEventInfo**
+**struct  ChannelEventInfo**
 
 
 The event info passed to the channel event listener.

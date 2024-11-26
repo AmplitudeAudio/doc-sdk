@@ -7,7 +7,7 @@ generator: doxide
 
 # AmUniquePtr
 
-**template&lt;MemoryPoolKind Pool, class T&gt; using AmUniquePtr = std::unique_ptr&lt;T, am_delete&lt;Pool, T&gt;&gt;**
+**template&lt;eMemoryPoolKind Pool, class T&gt; using AmUniquePtr = std::unique_ptr&lt;T, am_delete&lt;Pool, T&gt;&gt;**
 
 
 Unique pointer type.

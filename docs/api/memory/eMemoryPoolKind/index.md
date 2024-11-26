@@ -1,13 +1,13 @@
 ---
-title: MemoryPoolKind
+title: eMemoryPoolKind
 description: Available memory pools.
 generator: doxide
 ---
 
 
-# MemoryPoolKind
+# eMemoryPoolKind
 
-**enum class MemoryPoolKind : AmUInt8**
+**enum eMemoryPoolKind : AmUInt8**
 
 
 Available memory pools.
@@ -16,7 +16,7 @@ Available memory pools.
     
 
 
-**Engine**
+**eMemoryPoolKind_Engine**
 :   
 Amplitude Engine allocations.
          
@@ -24,7 +24,7 @@ Amplitude Engine allocations.
 
 
 
-**Amplimix**
+**eMemoryPoolKind_Amplimix**
 :   
 Amplimix allocations.
          
@@ -32,7 +32,7 @@ Amplimix allocations.
 
 
 
-**SoundData**
+**eMemoryPoolKind_SoundData**
 :   
 Sound data and streams.
          
@@ -40,7 +40,7 @@ Sound data and streams.
 
 
 
-**Filtering**
+**eMemoryPoolKind_Filtering**
 :   
 Filters related allocations.
          
@@ -48,14 +48,14 @@ Filters related allocations.
 
 
 
-**Codec**
+**eMemoryPoolKind_Codec**
 :   
 Encoding/Decoding allocations.
 
         
 
 
-**IO**
+**eMemoryPoolKind_IO**
 :   
 I/O and filesystem related allocations.
          
@@ -63,7 +63,7 @@ I/O and filesystem related allocations.
 
 
 
-**Default**
+**eMemoryPoolKind_Default**
 :   
 Default allocations pool. Use this when the allocated memory pool is not available.
 
@@ -73,7 +73,7 @@ Default allocations pool. Use this when the allocated memory pool is not availab
             
 
 
-**COUNT**
+**eMemoryPoolKind_COUNT**
 :   
 The total number of memory pools.
          

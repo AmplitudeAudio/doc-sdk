@@ -1,6 +1,6 @@
 ---
 title: Transition
-description: Create an animation transition function using * a one-dimensional cubic bezier curve.
+description: Create an animation transition function using * a one-dimensional cubic Bézier curve.
 generator: doxide
 ---
 
@@ -11,10 +11,10 @@ generator: doxide
 
 
 Create an animation transition function using
-         * a one-dimensional cubic bezier curve.
+         * a one-dimensional cubic Bézier curve.
 
 This use the exact same algorithm as in CSS. The first and last
-control points of the cubic bezier curve are fixed to (0,0)
+control points of the cubic Bézier curve are fixed to (0,0)
 and (1,1) respectively.
         
 
@@ -37,7 +37,7 @@ and (1,1) respectively.
 
 ### m_controlPoints<a name="m_controlPoints"></a>
 
-!!! variable "BeizerCurveControlPoints m_controlPoints"
+!!! variable "BezierCurveControlPoints m_controlPoints"
 
     
     The control points.
@@ -86,7 +86,7 @@ and (1,1) respectively.
                     
     
 
-!!! function "Transition(const BeizerCurveControlPoints&amp; controlPoints)"
+!!! function "Transition(const BezierCurveControlPoints&amp; controlPoints)"
 
     
     Constructs a new Transition curve.

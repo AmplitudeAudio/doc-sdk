@@ -38,4 +38,8 @@ This is used to determine the importance of a log message.
 :   Critical messages.
 
 
+**eLogMessageLevel_Success = 5**
+:   Success messages.
+
+
 

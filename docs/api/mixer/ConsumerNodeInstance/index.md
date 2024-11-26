@@ -20,6 +20,7 @@ Interface for Amplimix pipeline nodes that can consume audio data from an input 
 
 | Name | Description |
 | ---- | ----------- |
+| [~ConsumerNodeInstance](#_u007eConsumerNodeInstance) | Default destructor.  |
 | [Consume](#Consume) | Consumes audio data from the provider node. |
 | [Connect](#Connect) | Sets the input provider node ID for this node. |
 
@@ -43,7 +44,17 @@ Interface for Amplimix pipeline nodes that can consume audio data from an input 
     
     Consumes audio data from the provider node.
     
-    The provider node should be  specified with the call of [`Connect()`.](#Connect)
+    The provider node should be specified with the call of [`Connect()`.](#Connect)
             
+    
+
+### ~ConsumerNodeInstance<a name="_u007eConsumerNodeInstance"></a>
+!!! function "virtual ~ConsumerNodeInstance() = default"
+
+    
+    Default destructor.
+             
+    
+    
     
 

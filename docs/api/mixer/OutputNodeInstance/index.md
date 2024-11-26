@@ -7,7 +7,7 @@ generator: doxide
 
 # OutputNodeInstance
 
-**class  OutputNodeInstance final : public NodeInstance , public ConsumerNodeInstance**
+**class  OutputNodeInstance : public NodeInstance , public ConsumerNodeInstance**
 
 
 Class used to mark the output of the pipeline.

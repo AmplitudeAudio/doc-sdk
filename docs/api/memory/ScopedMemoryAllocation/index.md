@@ -24,8 +24,8 @@ automatically when the scope ends.
 | Name | Description |
 | ---- | ----------- |
 | [ScopedMemoryAllocation](#ScopedMemoryAllocation) | Default constructor.  |
-| [ScopedMemoryAllocation](#ScopedMemoryAllocation) | Creates a new new scoped memory allocation. |
-| [ScopedMemoryAllocation](#ScopedMemoryAllocation) | Creates a new new scoped aligned memory allocation. |
+| [ScopedMemoryAllocation](#ScopedMemoryAllocation) | Creates a new scoped memory allocation. |
+| [ScopedMemoryAllocation](#ScopedMemoryAllocation) | Creates a new scoped aligned memory allocation. |
 | [~ScopedMemoryAllocation](#_u007eScopedMemoryAllocation) | Releases the allocated memory.  |
 | [PointerOf](#PointerOf) | Gets the allocated memory address. |
 | [As](#As) | Converts the allocated memory address to a different type. |
@@ -79,10 +79,10 @@ automatically when the scope ends.
     
     
 
-!!! function "ScopedMemoryAllocation(MemoryPoolKind pool, AmSize size, const char&#42; file, AmUInt32 line)"
+!!! function "ScopedMemoryAllocation(eMemoryPoolKind pool, AmSize size, const char&#42; file, AmUInt32 line)"
 
     
-    Creates a new new scoped memory allocation.
+    Creates a new scoped memory allocation.
     
     
     :material-location-enter: **Parameter** `pool`
@@ -99,10 +99,10 @@ automatically when the scope ends.
                 
     
 
-!!! function "ScopedMemoryAllocation(MemoryPoolKind pool, AmSize size, AmUInt32 alignment, const char&#42; file, AmUInt32 line)"
+!!! function "ScopedMemoryAllocation(eMemoryPoolKind pool, AmSize size, AmUInt32 alignment, const char&#42; file, AmUInt32 line)"
 
     
-    Creates a new new scoped aligned memory allocation.
+    Creates a new scoped aligned memory allocation.
     
     
     :material-location-enter: **Parameter** `pool`

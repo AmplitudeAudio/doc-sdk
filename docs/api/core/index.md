@@ -47,6 +47,7 @@ Core functionalities of the SDK
 | [amLogDebug](#amLogDebug) | Logs a debug message. |
 | [amLogError](#amLogError) | Logs an error message. |
 | [amLogInfo](#amLogInfo) | Logs an informational message. |
+| [amLogSuccess](#amLogSuccess) | Logs a success message. |
 | [amLogWarning](#amLogWarning) | Logs a warning message. |
 | [amLogger](#amLogger) | The global logger instance. |
 | [amVersion](#amVersion) | Gets the current Amplitude SDK version. |
@@ -212,6 +213,24 @@ Core functionalities of the SDK
 
     
     Logs an informational message.
+    
+    
+    :material-location-enter: **Parameter** `_message_`
+    :    The message to log.
+        
+    :material-location-enter: **Parameter** `The`
+    :    arguments to format the message with.
+    
+    
+    
+    
+
+### amLogSuccess<a name="amLogSuccess"></a>
+
+!!! macro "#define amLogSuccess(_message_,...)"
+
+    
+    Logs a success message.
     
     
     :material-location-enter: **Parameter** `_message_`

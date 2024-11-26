@@ -40,7 +40,7 @@ and register them to the `Engine` by inheriting from this class, and by implemen
 | [GetName](#GetName) | Gets the name of this resampler. |
 | [Register](#Register) | Registers a new resampler. |
 | [Unregister](#Unregister) | Unregisters a resampler. |
-| [Construct](#Construct) | Creates a new instance of the the resampler with the given name and returns its pointer. |
+| [Construct](#Construct) | Creates a new instance of the resampler with the given name and returns its pointer. |
 | [Destruct](#Destruct) | Destroys the given resampler instance. |
 | [LockRegistry](#LockRegistry) | Locks the resamplers registry. |
 | [UnlockRegistry](#UnlockRegistry) | Unlocks the resamplers registry. |
@@ -64,7 +64,7 @@ and register them to the `Engine` by inheriting from this class, and by implemen
 !!! function "static ResamplerInstance&#42; Construct(const AmString&amp; name)"
 
     
-    Creates a new instance of the the resampler with the given name and returns its pointer.
+    Creates a new instance of the resampler with the given name and returns its pointer.
     
     
     !!! note
@@ -170,7 +170,7 @@ and register them to the `Engine` by inheriting from this class, and by implemen
     
     
     :material-location-enter: **Parameter** `name`
-    :    The resampler name. eg. "MiniAudioLinear".
+    :    The resampler name. e.g. "MiniAudioLinear".
                 
     
 

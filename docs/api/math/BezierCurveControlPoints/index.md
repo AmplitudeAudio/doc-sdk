@@ -1,16 +1,16 @@
 ---
-title: BeizerCurveControlPoints
-description: A structure containing control points for a Bezier curve.
+title: BezierCurveControlPoints
+description: A structure containing control points for a Bézier curve.
 generator: doxide
 ---
 
 
-# BeizerCurveControlPoints
+# BezierCurveControlPoints
 
-**struct BeizerCurveControlPoints**
+**struct BezierCurveControlPoints**
 
 
-A structure containing control points for a Bezier curve.
+A structure containing control points for a Bézier curve.
 
 
     

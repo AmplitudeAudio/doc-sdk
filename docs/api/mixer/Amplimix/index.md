@@ -30,6 +30,7 @@ The resulting audio stream are next handled by the `Driver` for playback or reco
 | [~Amplimix](#_u007eAmplimix) | Default Destructor.  |
 | [UpdateDevice](#UpdateDevice) | Saves the information about the rendering audio device. |
 | [IsInitialized](#IsInitialized) | Checks if the mixer is initialized. |
+| [SetAfterMixCallback](#SetAfterMixCallback) | Sets the callback function to be called after the audio data is mixed. |
 | [Mix](#Mix) | Processes the audio data by mixing multiple audio sources for the specified number of frames. |
 | [GetDeviceDescription](#GetDeviceDescription) | Gets the description of the rendering audio device. |
 
@@ -76,6 +77,18 @@ The resulting audio stream are next handled by the `Driver` for playback or reco
     :material-keyboard-return: **Return**
     :    The number of processed frames.
             
+    
+
+### SetAfterMixCallback<a name="SetAfterMixCallback"></a>
+!!! function "virtual void SetAfterMixCallback(AfterMixCallback callback) = 0"
+
+    
+    Sets the callback function to be called after the audio data is mixed.
+    
+    
+    :material-location-enter: **Parameter** `callback`
+    :    The callback function.
+                
     
 
 ### UpdateDevice<a name="UpdateDevice"></a>

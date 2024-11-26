@@ -7,7 +7,7 @@ generator: doxide
 
 # am_delete
 
-**template&lt;MemoryPoolKind Pool, class T&gt; struct am_delete**
+**template&lt;eMemoryPoolKind Pool, class T&gt; struct am_delete**
 
 
 Deleter for unique pointers.

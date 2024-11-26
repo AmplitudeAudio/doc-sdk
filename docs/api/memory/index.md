@@ -14,12 +14,12 @@ Memory management and allocation
 | Name | Description |
 | ---- | ----------- |
 | [AmUniquePtr](AmUniquePtr/index.md) | Unique pointer type. |
-| [MemoryManager](MemoryManager/index.md) | Manages memory allocations inside the engine. |
-| [MemoryManagerConfig](MemoryManagerConfig/index.md) | Configures the memory management system. |
-| [MemoryPoolKind](MemoryPoolKind/index.md) | Available memory pools. |
+| [DefaultMemoryAllocator](DefaultMemoryAllocator/index.md) | Default memory allocator. |
+| [MemoryAllocator](MemoryAllocator/index.md) | Memory Allocator Interface. |
 | [MemoryPoolStats](MemoryPoolStats/index.md) | Collects the statistics about the memory allocations * for a specific pool |
 | [ScopedMemoryAllocation](ScopedMemoryAllocation/index.md) | Allocates a block of memory with the given size in the given pool. |
 | [am_delete](am_delete/index.md) | Deleter for unique pointers. |
+| [eMemoryPoolKind](eMemoryPoolKind/index.md) | Available memory pools. |
 
 ## Macros
 

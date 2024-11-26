@@ -20,7 +20,7 @@ A Fader instance. An object of this class will be created each time a `Fader` is
 
 | Name | Description |
 | ---- | ----------- |
-| [Transition](Transition/index.md) | Create an animation transition function using * a one-dimensional cubic bezier curve. |
+| [Transition](Transition/index.md) | Create an animation transition function using * a one-dimensional cubic Bézier curve. |
 
 ## Functions
 

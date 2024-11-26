@@ -20,6 +20,7 @@ Interface for Amplimix pipeline nodes that can provide audio data to an output b
 
 | Name | Description |
 | ---- | ----------- |
+| [~ProviderNodeInstance](#_u007eProviderNodeInstance) | Default destructor.  |
 | [Provide](#Provide) | Produces audio data ready to be taken as input from a consumer node. |
 
 ## Function Details
@@ -38,5 +39,15 @@ Interface for Amplimix pipeline nodes that can provide audio data to an output b
     :material-eye-outline: **See**
     :    [AudioBuffer](../../core/AudioBuffer/index.md)
             
+    
+
+### ~ProviderNodeInstance<a name="_u007eProviderNodeInstance"></a>
+!!! function "virtual ~ProviderNodeInstance() = default"
+
+    
+    Default destructor.
+             
+    
+    
     
 

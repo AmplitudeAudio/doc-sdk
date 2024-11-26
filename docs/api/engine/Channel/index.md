@@ -164,7 +164,7 @@ underlying data.
     
 
 ### GetPlaybackState<a name="GetPlaybackState"></a>
-!!! function "[[nodiscard]] ChannelPlaybackState GetPlaybackState() const"
+!!! function "[[nodiscard]] eChannelPlaybackState GetPlaybackState() const"
 
     
     Returns the playback state of this `Channel`.

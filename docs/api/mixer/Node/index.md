@@ -39,12 +39,17 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
 | [CreateInstance](#CreateInstance) | Creates a new instance of the node. |
 | [DestroyInstance](#DestroyInstance) | Destroys the specified instance of the node. |
 | [GetName](#GetName) | Returns the name of the node.  |
+| [CanConsume](#CanConsume) | Returns `true` if the node can consume audio data. |
+| [CanProduce](#CanProduce) | Returns `true` if the node can produce audio data. |
+| [GetMaxInputCount](#GetMaxInputCount) | Returns the maximum number of input connections the node can have. |
+| [GetMinInputCount](#GetMinInputCount) | Returns the minimum number of input connections the node can have. |
 | [Register](#Register) | Registers a new node. |
 | [Unregister](#Unregister) | Unregisters a node. |
-| [Construct](#Construct) | Creates a new instance of the the node with the given name * and returns its pointer. The returned pointer should be deleted using Node::Destruct(). |
+| [Construct](#Construct) | Creates a new instance of the node with the given name * and returns its pointer. The returned pointer should be deleted using Node::Destruct(). |
 | [Destruct](#Destruct) | Destroys the given node instance. |
-| [LockRegistry](#LockRegistry) | Locks the nodes registry. |
-| [UnlockRegistry](#UnlockRegistry) | Unlocks the nodes registry. |
+| [LockRegistry](#LockRegistry) | Locks the nodes' registry. |
+| [UnlockRegistry](#UnlockRegistry) | Unlocks the nodes' registry. |
+| [GetRegistry](#GetRegistry) | Gets the list of registered nodes. |
 
 ## Variable Details
 
@@ -61,11 +66,35 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
 
 ## Function Details
 
+### CanConsume<a name="CanConsume"></a>
+!!! function "[[nodiscard]] virtual bool CanConsume() const = 0"
+
+    
+    Returns `true` if the node can consume audio data.
+    
+    
+    :material-keyboard-return: **Return**
+    :    `true` if the node can consume audio data, `false` otherwise.
+            
+    
+
+### CanProduce<a name="CanProduce"></a>
+!!! function "[[nodiscard]] virtual bool CanProduce() const = 0"
+
+    
+    Returns `true` if the node can produce audio data.
+    
+    
+    :material-keyboard-return: **Return**
+    :    `true` if the node can produce audio data, `false` otherwise.
+            
+    
+
 ### Construct<a name="Construct"></a>
 !!! function "static NodeInstance&#42; Construct(const AmString&amp; name)"
 
     
-    Creates a new instance of the the node with the given name
+    Creates a new instance of the node with the given name
              * and returns its pointer. The returned pointer should be deleted using Node::Destruct().
     
     
@@ -83,16 +112,6 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
 
     
     Creates a new instance of the node.
-    
-    
-    :material-location-enter: **Parameter** `id`
-    :    Unique identifier for the new instance.
-        
-    :material-location-enter: **Parameter** `layer`
-    :    The Amplimix layer associated with the new instance.
-        
-    :material-location-enter: **Parameter** `pipeline`
-    :    The pipeline associated with the new instance.
     
     
     :material-keyboard-return: **Return**
@@ -127,6 +146,30 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
                 
     
 
+### GetMaxInputCount<a name="GetMaxInputCount"></a>
+!!! function "[[nodiscard]] virtual AmSize GetMaxInputCount() const = 0"
+
+    
+    Returns the maximum number of input connections the node can have.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The maximum number of input connections the node can have.
+            
+    
+
+### GetMinInputCount<a name="GetMinInputCount"></a>
+!!! function "[[nodiscard]] virtual AmSize GetMinInputCount() const = 0"
+
+    
+    Returns the minimum number of input connections the node can have.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The minimum number of input connections the node can have.
+            
+    
+
 ### GetName<a name="GetName"></a>
 !!! function "[[nodiscard]] const AmString&amp; GetName() const"
 
@@ -137,11 +180,23 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
     
     
 
+### GetRegistry<a name="GetRegistry"></a>
+!!! function "static const std::map&lt;AmString, Node&#42;&gt;&amp; GetRegistry()"
+
+    
+    Gets the list of registered nodes.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The registry of nodes.
+            
+    
+
 ### LockRegistry<a name="LockRegistry"></a>
 !!! function "static void LockRegistry()"
 
     
-    Locks the nodes registry.
+    Locks the nodes' registry.
     
     
     !!! warning
@@ -152,7 +207,7 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
     
 
 ### Node<a name="Node"></a>
-!!! function "Node(AmString name)"
+!!! function "explicit Node(AmString name)"
 
     
     Node constructor.
@@ -179,7 +234,7 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
 !!! function "static void UnlockRegistry()"
 
     
-    Unlocks the nodes registry.
+    Unlocks the nodes' registry.
     
     
     !!! warning

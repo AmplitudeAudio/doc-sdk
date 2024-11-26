@@ -77,7 +77,7 @@ Collects the statistics about the memory allocations
 
 ### pool<a name="pool"></a>
 
-!!! variable "MemoryPoolKind pool"
+!!! variable "eMemoryPoolKind pool"
 
     
     The pool for which this statistics is for.
@@ -113,7 +113,7 @@ Collects the statistics about the memory allocations
     
     
 
-!!! function "explicit MemoryPoolStats(MemoryPoolKind pool)"
+!!! function "explicit MemoryPoolStats(eMemoryPoolKind pool)"
 
     
     Creates a new `MemoryPoolStats` object.

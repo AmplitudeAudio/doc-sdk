@@ -16,7 +16,7 @@ A switch is a collection of states which can change the sounds played from a `Sw
 
 For example, you can have a switch named `SurfaceType` which have `wood`, `grass`, `metal` and `water` as states. A
 `SwitchContainer` using this switch can group sounds per switch states, so when a state is active, all the sounds of
-that state are played. Changing the state of a `Switch` will updated ALL the `SwitchContainer` objects that use this `Switch`.
+that state are played. Changing the state of a `Switch` will update ALL the `SwitchContainer` objects that use this `Switch`.
 
 The `Switch` is a shared object between sound sources. They are used only by `SwitchContainer` objects.
 
@@ -72,7 +72,7 @@ The `Switch` is a shared object between sound sources. They are used only by `Sw
     
     
     !!! note
-         Changing the state of a `Switch` will updated ALL the `SwitchContainer` objects that use this `Switch`.
+         Changing the state of a `Switch` will update ALL the `SwitchContainer` objects that use this `Switch`.
     
     
     :material-location-enter: **Parameter** `state`
@@ -87,7 +87,7 @@ The `Switch` is a shared object between sound sources. They are used only by `Sw
     
     
     !!! note
-         Changing the state of a `Switch` will updated ALL the `SwitchContainer` objects that use this `Switch`.
+         Changing the state of a `Switch` will update ALL the `SwitchContainer` objects that use this `Switch`.
     
     
     :material-location-enter: **Parameter** `id`
@@ -103,7 +103,7 @@ The `Switch` is a shared object between sound sources. They are used only by `Sw
     
     
     !!! note
-         Changing the state of a `Switch` will updated ALL the `SwitchContainer` objects that use this `Switch`.
+         Changing the state of a `Switch` will update ALL the `SwitchContainer` objects that use this `Switch`.
     
     
     :material-location-enter: **Parameter** `name`

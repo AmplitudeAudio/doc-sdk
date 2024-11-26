@@ -20,7 +20,6 @@ Engine-specific functionalities
 | [ChannelEventCallback](ChannelEventCallback/index.md) | A callback function for handling channel events. |
 | [ChannelEventInfo](ChannelEventInfo/index.md) | The event info passed to the channel event listener. |
 | [ChannelEventListener](ChannelEventListener/index.md) | Channel Event listener. |
-| [ChannelPlaybackState](ChannelPlaybackState/index.md) | Enumerates the playback states for a `Channel`. |
 | [Codec](Codec/index.md) | Audio file reader and writer. |
 | [DeviceDescription](DeviceDescription/index.md) | The device description. |
 | [DeviceNotification](DeviceNotification/index.md) | The possible device notification types. |
@@ -45,6 +44,7 @@ Engine-specific functionalities
 | [SoundObject](SoundObject/index.md) | Base class for Amplitude sound objects. |
 | [SwitchContainerItem](SwitchContainerItem/index.md) | Describes a single item within a `SwitchContainer`. |
 | [SwitchState](SwitchState/index.md) | A switch state. |
+| [eChannelPlaybackState](eChannelPlaybackState/index.md) | Enumerates the playback states for a `Channel`. |
 | [eFaderState](eFaderState/index.md) | Enumerates the list of states in a fader. |
 
 ## Macros

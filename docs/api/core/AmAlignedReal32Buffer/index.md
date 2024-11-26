@@ -38,6 +38,10 @@ Class that handles aligned allocations to support vectorized operations.
 | [CopyFrom](#CopyFrom) | Copies data from another buffer. |
 | [Resize](#Resize) | Resizes the buffer to the specified size. |
 | [Swap](#Swap) | Swaps two buffers. |
+| [begin](#begin) | Returns an iterator to the beginning of the buffer. |
+| [end](#end) | Returns an iterator to the end of the buffer. |
+| [begin](#begin) | Returns an iterator to the beginning of the buffer. |
+| [end](#end) | Returns an iterator to the end of the buffer. |
 
 ## Operator Details
 
@@ -201,6 +205,52 @@ Class that handles aligned allocations to support vectorized operations.
     :material-location-enter::material-location-exit: **Parameter** `b`
     :    The second buffer.
                 
+    
+
+### begin<a name="begin"></a>
+!!! function "[[nodiscard]] inline const AmReal32&#42; begin() const"
+
+    
+    Returns an iterator to the beginning of the buffer.
+    
+    
+    :material-keyboard-return: **Return**
+    :    An iterator to the beginning of the buffer.
+            
+    
+
+!!! function "[[nodiscard]] inline AmReal32&#42; begin()"
+
+    
+    Returns an iterator to the beginning of the buffer.
+    
+    
+    :material-keyboard-return: **Return**
+    :    An iterator to the beginning of the buffer.
+            
+    
+
+### end<a name="end"></a>
+!!! function "[[nodiscard]] inline const AmReal32&#42; end() const"
+
+    
+    Returns an iterator to the end of the buffer.
+    
+    
+    :material-keyboard-return: **Return**
+    :    An iterator to the end of the buffer.
+            
+    
+
+!!! function "[[nodiscard]] inline AmReal32&#42; end()"
+
+    
+    Returns an iterator to the end of the buffer.
+    
+    
+    :material-keyboard-return: **Return**
+    :    An iterator to the end of the buffer.
+            
     
 
 ### ~AmAlignedReal32Buffer<a name="_u007eAmAlignedReal32Buffer"></a>

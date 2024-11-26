@@ -83,7 +83,7 @@ Base class for Amplimix pipeline nodes that can process audio data in-place.
     
 
 ### ProcessorNodeInstance<a name="ProcessorNodeInstance"></a>
-!!! function "ProcessorNodeInstance(bool processOnEmptyBuffer = false)"
+!!! function "explicit ProcessorNodeInstance(bool processOnEmptyBuffer = false)"
 
     
     PropertyNodeInstance constructor.

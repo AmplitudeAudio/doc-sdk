@@ -30,32 +30,12 @@ Mixer & Pipeline API
 
 | Name | Description |
 | ---- | ----------- |
-| [AM_CALLBACK](#AM_CALLBACK) | Called just before the mixer process audio data. |
 | [AM_CALLBACK](#AM_CALLBACK) | Called just after the mixer process audio data. |
 
 ## Function Details
 
 ### AM_CALLBACK<a name="AM_CALLBACK"></a>
-!!! function "AM_CALLBACK(void, BeforeMixCallback)(Amplimix&#42; mixer, AmVoidPtr buffer, AmUInt32 frames)"
-
-    
-    Called just before the mixer process audio data.
-    
-    
-    :material-location-enter: **Parameter** `mixer`
-    :    The Amplimix instance.
-        
-    :material-location-enter: **Parameter** `buffer`
-    :    The audio buffer to be mixed.
-        
-    :material-location-enter: **Parameter** `frames`
-    :    The number of audio frames to be mixed.
-    
-    
-        
-    
-
-!!! function "AM_CALLBACK(void, AfterMixCallback)(Amplimix&#42; mixer, AmVoidPtr buffer, AmUInt32 frames)"
+!!! function "AM_CALLBACK(void, AfterMixCallback)(const Amplimix&#42; mixer, const AudioBuffer&#42; buffer, AmUInt32 frames)"
 
     
     Called just after the mixer process audio data.

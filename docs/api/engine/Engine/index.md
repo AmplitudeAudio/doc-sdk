@@ -57,6 +57,9 @@ amEngine->Deinitialize();
 | [UnloadSoundBank](#UnloadSoundBank) | Unloads a sound bank given its filename. |
 | [UnloadSoundBank](#UnloadSoundBank) | Unloads a sound bank given its ID. |
 | [UnloadSoundBanks](#UnloadSoundBanks) | Unloads all the loaded sound banks.  |
+| [HasLoadedSoundBank](#HasLoadedSoundBank) | Checks if a sound bank with the given filename has been loaded. |
+| [HasLoadedSoundBank](#HasLoadedSoundBank) | Checks if a sound bank with the given ID has been loaded. |
+| [HasLoadedSoundBanks](#HasLoadedSoundBanks) | Checks if any sound banks have been loaded. |
 | [StartLoadSoundFiles](#StartLoadSoundFiles) | Starts the loading of sound files referenced in loaded sound banks. |
 | [TryFinalizeLoadSoundFiles](#TryFinalizeLoadSoundFiles) | Checks if the loading of sound files has been completed, and releases used resources. |
 | [GetSwitchContainerHandle](#GetSwitchContainerHandle) | Gets a `SwitchContainerHandle` given its name as defined in its asset file (`.amswitchcontainer`). |
@@ -141,7 +144,8 @@ amEngine->Deinitialize();
 | [Play](#Play) | Plays a sound object associated with the given ID in an Entity scope. |
 | [StopAll](#StopAll) | Stops all playing sound objects. |
 | [Trigger](#Trigger) | Triggers the event associated to the given handle. |
-| [Trigger](#Trigger) | Triggers the event associated to the given handle. |
+| [Trigger](#Trigger) | Triggers the event associated to the given name. |
+| [Trigger](#Trigger) | Triggers the event associated to the given ID. |
 | [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
 | [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
 | [SetSwitchState](#SetSwitchState) | Sets the active state of the defined `Switch`. |
@@ -1230,6 +1234,49 @@ amEngine->Deinitialize();
     
     :material-keyboard-return: **Return**
     :    The total elapsed time in milliseconds since the start of the engine.
+            
+    
+
+### HasLoadedSoundBank<a name="HasLoadedSoundBank"></a>
+!!! function "[[nodiscard]] virtual bool HasLoadedSoundBank(const AmOsString&amp; filename) const = 0"
+
+    
+    Checks if a sound bank with the given filename has been loaded.
+    
+    
+    :material-location-enter: **Parameter** `filename`
+    :    The file to check.
+    
+    
+    :material-keyboard-return: **Return**
+    :    `true` if the sound bank has been loaded, `false` otherwise.
+            
+    
+
+!!! function "[[nodiscard]] virtual bool HasLoadedSoundBank(AmBankID id) const = 0"
+
+    
+    Checks if a sound bank with the given ID has been loaded.
+    
+    
+    :material-location-enter: **Parameter** `id`
+    :    The sound bank id to check.
+    
+    
+    :material-keyboard-return: **Return**
+    :    `true` if the sound bank has been loaded, `false` otherwise.
+            
+    
+
+### HasLoadedSoundBanks<a name="HasLoadedSoundBanks"></a>
+!!! function "[[nodiscard]] virtual bool HasLoadedSoundBanks() const = 0"
+
+    
+    Checks if any sound banks have been loaded.
+    
+    
+    :material-keyboard-return: **Return**
+    :    `true` if any sound banks have been loaded, `false` otherwise.
             
     
 
@@ -2576,7 +2623,7 @@ amEngine->Deinitialize();
 !!! function "[[nodiscard]] virtual EventCanceler Trigger(const AmString&amp; name, const Entity&amp; entity) const = 0"
 
     
-    Triggers the event associated to the given handle.
+    Triggers the event associated to the given name.
     
     
     !!! tip
@@ -2586,6 +2633,29 @@ amEngine->Deinitialize();
     
     :material-location-enter: **Parameter** `name`
     :    The name of event to trigger.
+        
+    :material-location-enter: **Parameter** `entity`
+    :    The entity on which trigger the event.
+    
+    
+    :material-keyboard-return: **Return**
+    :    An `EventCanceler` object which may be used to cancel the execution of the event.
+            
+    
+
+!!! function "[[nodiscard]] virtual EventCanceler Trigger(AmEventID id, const Entity&amp; entity) const = 0"
+
+    
+    Triggers the event associated to the given ID.
+    
+    
+    !!! tip
+         Triggering an event with its `EventHandle` is faster than using the
+        event ID as using the ID requires an internal lookup.
+    
+    
+    :material-location-enter: **Parameter** `id`
+    :    The ID of event to trigger.
         
     :material-location-enter: **Parameter** `entity`
     :    The entity on which trigger the event.

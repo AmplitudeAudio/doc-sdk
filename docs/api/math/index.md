@@ -14,7 +14,7 @@ Math libraries and utilities
 | Name | Description |
 | ---- | ----------- |
 | [BarycentricCoordinates](BarycentricCoordinates/index.md) | Represents barycentric coordinates between a point and 3 vertices of a triangle. |
-| [BeizerCurveControlPoints](BeizerCurveControlPoints/index.md) | A structure containing control points for a Bezier curve. |
+| [BezierCurveControlPoints](BezierCurveControlPoints/index.md) | A structure containing control points for a Bézier curve. |
 | [BoxShape](BoxShape/index.md) | A box shape, defined by a width, an height, and a depth. |
 | [BoxZone](BoxZone/index.md) | A `Zone` built with an inner `BoxShape` and an outer `BoxShape`. |
 | [CapsuleShape](CapsuleShape/index.md) | A capsule shape, defined by a radius and an height. |
@@ -335,7 +335,7 @@ Math libraries and utilities
     
     
     :material-code-tags: **Template parameter** `T`
-    :    An integer type, a floating-point type, or a any other type where operator *= is defined.
+    :    An integer type, a floating-point type, or any other type where operator *= is defined.
     
     
     :material-location-enter: **Parameter** `base`

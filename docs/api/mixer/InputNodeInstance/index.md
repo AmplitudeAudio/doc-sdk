@@ -7,7 +7,7 @@ generator: doxide
 
 # InputNodeInstance
 
-**class  InputNodeInstance final : public NodeInstance , public ProviderNodeInstance**
+**class  InputNodeInstance : public NodeInstance , public ProviderNodeInstance**
 
 
 Class used to mark the input of the pipeline.

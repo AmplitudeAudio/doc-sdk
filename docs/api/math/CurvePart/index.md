@@ -20,11 +20,18 @@ from the start point to the end point.
     
 
 
+## Operators
+
+| Name | Description |
+| ---- | ----------- |
+| [operator=](#operator_u003d) | Copy assignment operator. |
+
 ## Functions
 
 | Name | Description |
 | ---- | ----------- |
 | [CurvePart](#CurvePart) | Creates an empty `CurvePart`.  |
+| [CurvePart](#CurvePart) | Copy constructor. |
 | [~CurvePart](#_u007eCurvePart) | Destroys this `CurvePart`.  |
 | [Initialize](#Initialize) | Initializes this `CurvePart` from a definition. |
 | [GetStart](#GetStart) | Returns the start point of this `CurvePart`. |
@@ -34,6 +41,25 @@ from the start point to the end point.
 | [GetFader](#GetFader) | Returns the Fader of this `CurvePart`. |
 | [SetFader](#SetFader) | Sets the fader of this `CurvePart`. |
 | [Get](#Get) | Gets the Y coordinates of a point given its coordinates over the X axis. |
+
+## Operator Details
+
+### operator=<a name="operator_u003d"></a>
+
+!!! function "CurvePart&amp; operator=(const CurvePart&amp; other)"
+
+    
+    Copy assignment operator.
+    
+    
+    :material-location-enter: **Parameter** `other`
+    :    The other `CurvePart` to copy.
+    
+    
+    :material-keyboard-return: **Return**
+    :    A copy of this `CurvePart`.
+            
+    
 
 ## Function Details
 
@@ -45,6 +71,17 @@ from the start point to the end point.
              
     
     
+    
+
+!!! function "CurvePart(const CurvePart&amp; other)"
+
+    
+    Copy constructor.
+    
+    
+    :material-location-enter: **Parameter** `other`
+    :    The `CurvePart` to copy.
+                
     
 
 ### Get<a name="Get"></a>

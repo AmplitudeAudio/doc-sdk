@@ -38,10 +38,10 @@ during an amount of time and according to a fading algorithm.
 | [GetControlPoints](#GetControlPoints) | Gets the control points of the transition curve used by this Fader. |
 | [Register](#Register) | Registers a new fader. |
 | [Unregister](#Unregister) | Unregister a fader. |
-| [Construct](#Construct) | Creates a new instance of the the fader with the given name and returns its pointer. |
+| [Construct](#Construct) | Creates a new instance of the fader with the given name and returns its pointer. |
 | [Destruct](#Destruct) | Destroys the given fader instance. |
 | [LockRegistry](#LockRegistry) | Locks the faders registry. |
-| [UnlockRegistry](#UnlockRegistry) | Unlocks the faders registry. |
+| [UnlockRegistry](#UnlockRegistry) | Unlocks the fader's registry. |
 | [GetRegistry](#GetRegistry) | Gets the list of registered Faders. |
 
 ## Variable Details
@@ -63,7 +63,7 @@ during an amount of time and according to a fading algorithm.
 !!! function "static FaderInstance&#42; Construct(const AmString&amp; name)"
 
     
-    Creates a new instance of the the fader with the given name and returns its pointer.
+    Creates a new instance of the fader with the given name and returns its pointer.
     
     
     !!! note
@@ -144,7 +144,7 @@ during an amount of time and according to a fading algorithm.
     
 
 ### GetControlPoints<a name="GetControlPoints"></a>
-!!! function "[[nodiscard]] virtual BeizerCurveControlPoints GetControlPoints() const = 0"
+!!! function "[[nodiscard]] virtual BezierCurveControlPoints GetControlPoints() const = 0"
 
     
     Gets the control points of the transition curve used by this Fader.
@@ -209,7 +209,7 @@ during an amount of time and according to a fading algorithm.
 !!! function "static void UnlockRegistry()"
 
     
-    Unlocks the faders registry.
+    Unlocks the fader's registry.
     
     
     !!! warning
