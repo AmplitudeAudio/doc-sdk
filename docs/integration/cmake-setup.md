@@ -39,7 +39,6 @@ find_package(AmplitudeAudioSDK REQUIRED)
 The script will try to automatically detect your platform. If you want to set the platform yourself, you can use the `AM_SDK_PLATFORM` CMake variable with the following values:
 
 - `x64-windows`
-- `x64-mingw-static`
 - `x64-linux`
 - `x64-osx`
 - `arm64-osx`
