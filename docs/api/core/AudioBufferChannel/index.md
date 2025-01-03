@@ -38,8 +38,8 @@ Represents a view to a single channel in an `AudioBuffer`.
 | Name | Description |
 | ---- | ----------- |
 | [size](#size) | Gets the size of the buffer. |
-| [begin](#begin) | Returns a float pointer to the begin of the channel data. |
-| [begin](#begin) | Returns a const float pointer to the begin of the channel data. |
+| [begin](#begin) | Returns a float pointer to the beginning of the channel data. |
+| [begin](#begin) | Returns a const float pointer to the beginning of the channel data. |
 | [end](#end) | Returns a float pointer to the end of the channel data. |
 | [end](#end) | Returns a const float pointer to the end of the channel data. |
 | [clear](#clear) | Clears the channel data with zero.  |
@@ -183,22 +183,22 @@ Represents a view to a single channel in an `AudioBuffer`.
 !!! function "AmReal32&#42; begin()"
 
     
-    Returns a float pointer to the begin of the channel data.
+    Returns a float pointer to the beginning of the channel data.
     
     
     :material-keyboard-return: **Return**
-    :    A float pointer to the begin of the channel data.
+    :    A float pointer to the beginning of the channel data.
             
     
 
 !!! function "[[nodiscard]] const AmReal32&#42; begin() const"
 
     
-    Returns a const float pointer to the begin of the channel data.
+    Returns a const float pointer to the beginning of the channel data.
     
     
     :material-keyboard-return: **Return**
-    :    A const float pointer to the begin of the channel data.
+    :    A const float pointer to the beginning of the channel data.
             
     
 

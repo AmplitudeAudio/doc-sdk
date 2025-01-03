@@ -64,6 +64,7 @@ Engine-specific functionalities
 | [AM_CALLBACK](#AM_CALLBACK) | The device notification callback. |
 | [CallDeviceNotificationCallback](#CallDeviceNotificationCallback) | Calls the registered device notification callback. |
 | [RegisterDeviceNotificationCallback](#RegisterDeviceNotificationCallback) | Registers a callback to listen to device state changes. |
+| [UnregisterDeviceNotificationCallback](#UnregisterDeviceNotificationCallback) | Unregisters the registered device notification callback. |
 
 ## Macro Details
 
@@ -181,6 +182,16 @@ Engine-specific functionalities
     
     :material-location-enter: **Parameter** `callback`
     :    The callback to register.
+    
+    
+        
+    
+
+### UnregisterDeviceNotificationCallback<a name="UnregisterDeviceNotificationCallback"></a>
+!!! function "void UnregisterDeviceNotificationCallback()"
+
+    
+    Unregisters the registered device notification callback.
     
     
         

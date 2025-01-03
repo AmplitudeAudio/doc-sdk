@@ -27,6 +27,8 @@ Base class for Amplitude sound objects.
 | [GetEffect](#GetEffect) | Gets the Effect object associated with this sound object. |
 | [GetAttenuation](#GetAttenuation) | Gets the Attenuation object associated with this sound object. |
 | [GetBus](#GetBus) | Returns the bus this sound object will play on. |
+| [GetSpatialization](#GetSpatialization) | Returns the spatialization mode of the sound object. |
+| [GetScope](#GetScope) | Returns the scope of the sound object. |
 
 ## Function Details
 
@@ -99,6 +101,30 @@ Base class for Amplitude sound objects.
     
     :material-keyboard-return: **Return**
     :    The sound object priority.
+            
+    
+
+### GetScope<a name="GetScope"></a>
+!!! function "[[nodiscard]] virtual eScope GetScope() const = 0"
+
+    
+    Returns the scope of the sound object.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The scope of the sound object.
+            
+    
+
+### GetSpatialization<a name="GetSpatialization"></a>
+!!! function "[[nodiscard]] virtual eSpatialization GetSpatialization() const = 0"
+
+    
+    Returns the spatialization mode of the sound object.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The spatialization mode of the sound object.
             
     
 

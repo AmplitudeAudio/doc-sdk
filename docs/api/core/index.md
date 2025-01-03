@@ -34,6 +34,7 @@ Core functionalities of the SDK
 | [eHRIRSphereSamplingMode](eHRIRSphereSamplingMode/index.md) | Defines how the HRIR sphere is sampled when doing Ambisonics binauralization. |
 | [eLogMessageLevel](eLogMessageLevel/index.md) | The level of a log message. |
 | [ePanningMode](ePanningMode/index.md) | Enumerates the list of available panning modes. |
+| [eScope](eScope/index.md) | Enumerates the list of available scopes for sound objects. |
 | [eSpatialization](eSpatialization/index.md) | Enumerates the list of available spatialization modes. |
 
 ## Macros
