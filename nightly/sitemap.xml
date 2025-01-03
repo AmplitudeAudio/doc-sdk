@@ -2,714 +2,714 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/assets/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/assets/Asset/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/assets/Attenuation/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/assets/Collection/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/assets/Effect/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/assets/Event/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/assets/Rtpc/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/assets/Sound/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/assets/SoundBank/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/assets/Switch/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/assets/SwitchContainer/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/AmAlignedReal32Buffer/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/AmThreadHandle/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/AmVersion/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/AudioBuffer/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/AudioBufferChannel/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/AwaitablePoolTask/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/ConsoleLogger/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/HRIRSphere/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/HRIRSphereDatasetModel/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/HRIRSphereFileHeaderDescription/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/HRIRSphereVertex/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/Logger/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/Pool/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/PoolTask/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/RefCounter/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/SoundFormat/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/eAudioSampleFormat/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/eErrorCode/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/eHRIRSphereSamplingMode/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/eLogMessageLevel/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/ePanningMode/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/eScope/</loc>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/core/eSpatialization/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/dsp/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/dsp/AudioConverter/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/dsp/AudioConverter/Settings/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/dsp/Convolver/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/dsp/FFT/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/dsp/Filter/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/dsp/Filter/ParameterType/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/dsp/FilterInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/dsp/Resampler/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/dsp/ResamplerInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/dsp/SplitComplex/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/AttenuationZone/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Bus/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Channel/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/ChannelEvent/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/ChannelEventCallback/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/ChannelEventInfo/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/ChannelEventListener/</loc>
-         <lastmod>2024-10-14</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/ChannelPlaybackState/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Codec/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Codec/Decoder/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Codec/Encoder/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/DeviceDescription/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/DeviceNotification/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/DeviceState/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Driver/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/EffectInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Engine/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Entity/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Environment/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/EventCanceler/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/EventInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Fader/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/FaderInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/FaderInstance/Transition/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Listener/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/PlaybackOutputChannels/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/PlaybackOutputFormat/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/Room/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/RoomMaterial/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/RoomMaterialType/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/RoomWall/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/RtpcValue/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/SoundObject/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/SwitchContainerItem/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/SwitchState/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/eChannelPlaybackState/</loc>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/engine/eFaderState/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/DiskFile/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/DiskFileSystem/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/File/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/FileSystem/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/MemoryFile/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/PackageFileHeaderDescription/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/PackageFileItemDescription/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/PackageFileSystem/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/PackageItemFile/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/Resource/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/eFileOpenKind/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/eFileOpenMode/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/eFileSeekOrigin/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/io/ePackageFileCompressionAlgorithm/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/BarycentricCoordinates/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
-         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/BeizerCurveControlPoints/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/BezierCurveControlPoints/</loc>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/BoxShape/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/BoxZone/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/CapsuleShape/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/CapsuleZone/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/CartesianCoordinateSystem/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/CartesianCoordinateSystem/Axis/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/CartesianCoordinateSystem/Converter/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/ConeShape/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/ConeZone/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/Curve/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/CurvePart/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/CurvePoint/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/Edge/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/Face/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/Orientation/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/Shape/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/SphereShape/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/SphereZone/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/SphericalPosition/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/math/Zone/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/AmUniquePtr/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
-         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/MemoryManager/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/DefaultMemoryAllocator/</loc>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
-         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/MemoryManager/Allocation/</loc>
-         <lastmod>2024-10-14</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/MemoryManagerConfig/</loc>
-         <lastmod>2024-10-14</lastmod>
-    </url>
-    <url>
-         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/MemoryPoolKind/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/MemoryAllocator/</loc>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/MemoryPoolStats/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/ScopedMemoryAllocation/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/am_delete/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.amplitudeaudiosdk.com/nightly/api/memory/eMemoryPoolKind/</loc>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/Amplimix/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/AmplimixLayer/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/ConsumerNodeInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/InputNodeInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/MixerNodeInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/Node/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/NodeInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/OutputNodeInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/Pipeline/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/PipelineInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/ProcessorNodeInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/api/mixer/ProviderNodeInstance/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/getting-started/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/getting-started/concepts/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/getting-started/installation/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/getting-started/introduction/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/getting-started/official-integrations/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/getting-started/studio/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/integration/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/integration/cmake-setup/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/integration/compiling-amplitude-project/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/integration/initializing-the-engine/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/integration/loading-sound-banks/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/integration/managing-game-objects/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/integration/playing-audio/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/integration/the-rendering-loop/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/api/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/attenuation-model/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/buses-config/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/collection/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/effect/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/engine-config/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/event/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/pipeline/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/project-architecture/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/rtpc/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/sound-bank/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/sound-object/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/sound/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/switch-container/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/project/switch/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/tutorials/custom-codec/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/tutorials/custom-driver/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/tutorials/custom-effect/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
     <url>
          <loc>https://docs.amplitudeaudiosdk.com/nightly/tutorials/custom-fader/</loc>
-         <lastmod>2024-10-14</lastmod>
+         <lastmod>2025-01-03</lastmod>
     </url>
 </urlset>
