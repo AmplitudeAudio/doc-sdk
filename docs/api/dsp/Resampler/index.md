@@ -44,6 +44,7 @@ and register them to the `Engine` by inheriting from this class, and by implemen
 | [Destruct](#Destruct) | Destroys the given resampler instance. |
 | [LockRegistry](#LockRegistry) | Locks the resamplers registry. |
 | [UnlockRegistry](#UnlockRegistry) | Unlocks the resamplers registry. |
+| [GetRegistry](#GetRegistry) | Gets the list of registered Resamplers. |
 
 ## Variable Details
 
@@ -136,6 +137,18 @@ and register them to the `Engine` by inheriting from this class, and by implemen
             
     
 
+### GetRegistry<a name="GetRegistry"></a>
+!!! function "static const std::map&lt;AmString, std::shared_ptr&lt;Resampler&gt;&gt;&amp; GetRegistry()"
+
+    
+    Gets the list of registered Resamplers.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The registry of Resamplers.
+            
+    
+
 ### LockRegistry<a name="LockRegistry"></a>
 !!! function "static void LockRegistry()"
 
@@ -151,7 +164,7 @@ and register them to the `Engine` by inheriting from this class, and by implemen
     
 
 ### Register<a name="Register"></a>
-!!! function "static void Register(Resampler&#42; resampler)"
+!!! function "static void Register(std::shared_ptr&lt;Resampler&gt; resampler)"
 
     
     Registers a new resampler.
@@ -198,7 +211,7 @@ and register them to the `Engine` by inheriting from this class, and by implemen
     
 
 ### Unregister<a name="Unregister"></a>
-!!! function "static void Unregister(const Resampler&#42; resampler)"
+!!! function "static void Unregister(std::shared_ptr&lt;const Resampler&gt; resampler)"
 
     
     Unregisters a resampler.

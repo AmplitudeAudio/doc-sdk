@@ -49,7 +49,7 @@ If the game object is outside the outer shape (thus, outside the zone), the [fac
 
 ### m_innerShape<a name="m_innerShape"></a>
 
-!!! variable "Shape&#42; m_innerShape"
+!!! variable "std::shared_ptr&lt;Shape&gt; m_innerShape"
 
     
     The inner shape of the zone.
@@ -60,7 +60,7 @@ If the game object is outside the outer shape (thus, outside the zone), the [fac
 
 ### m_outerShape<a name="m_outerShape"></a>
 
-!!! variable "Shape&#42; m_outerShape"
+!!! variable "std::shared_ptr&lt;Shape&gt; m_outerShape"
 
     
     The outer shape of the zone.
@@ -202,7 +202,7 @@ If the game object is outside the outer shape (thus, outside the zone), the [fac
     
 
 ### Zone<a name="Zone"></a>
-!!! function "explicit Zone(Shape&#42; inner, Shape&#42; outer)"
+!!! function "explicit Zone(std::shared_ptr&lt;Shape&gt; inner, std::shared_ptr&lt;Shape&gt; outer)"
 
     
     Creates a new `Zone` from the given inner and outer shapes.
@@ -217,7 +217,7 @@ If the game object is outside the outer shape (thus, outside the zone), the [fac
     
 
 ### ~Zone<a name="_u007eZone"></a>
-!!! function "virtual ~Zone() = default"
+!!! function "virtual ~Zone()"
 
     
     Default destructor.

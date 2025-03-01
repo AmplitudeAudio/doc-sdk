@@ -168,7 +168,7 @@ during an amount of time and according to a fading algorithm.
     
 
 ### GetRegistry<a name="GetRegistry"></a>
-!!! function "static const std::map&lt;AmString, Fader&#42;&gt;&amp; GetRegistry()"
+!!! function "static const std::map&lt;AmString, std::shared_ptr&lt;Fader&gt;&gt;&amp; GetRegistry()"
 
     
     Gets the list of registered Faders.
@@ -194,7 +194,7 @@ during an amount of time and according to a fading algorithm.
     
 
 ### Register<a name="Register"></a>
-!!! function "static void Register(Fader&#42; fader)"
+!!! function "static void Register(std::shared_ptr&lt;Fader&gt; fader)"
 
     
     Registers a new fader.
@@ -220,7 +220,7 @@ during an amount of time and according to a fading algorithm.
     
 
 ### Unregister<a name="Unregister"></a>
-!!! function "static void Unregister(const Fader&#42; fader)"
+!!! function "static void Unregister(std::shared_ptr&lt;const Fader&gt; fader)"
 
     
     Unregister a fader.

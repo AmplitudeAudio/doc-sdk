@@ -205,7 +205,7 @@ which is managed by the `Engine`.
     
 
 ### GetZone<a name="GetZone"></a>
-!!! function "[[nodiscard]] Zone&#42; GetZone() const"
+!!! function "[[nodiscard]] std::shared_ptr&lt;Zone&gt; GetZone() const"
 
     
     Gets the `Zone` linked to this environment.
@@ -275,7 +275,7 @@ which is managed by the `Engine`.
     
 
 ### SetZone<a name="SetZone"></a>
-!!! function "void SetZone(Zone&#42; zone) const"
+!!! function "void SetZone(std::shared_ptr&lt;Zone&gt; zone) const"
 
     
     Sets the `Zone` for this environment.

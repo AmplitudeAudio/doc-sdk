@@ -139,7 +139,7 @@ A box shape, defined by a width, an height, and a depth.
     
 
 ### Create<a name="Create"></a>
-!!! function "static BoxShape&#42; Create(const BoxShapeDefinition&#42; definition)"
+!!! function "static std::shared_ptr&lt;BoxShape&gt; Create(const BoxShapeDefinition&#42; definition)"
 
     
     Creates a new `BoxShape` from a definition.

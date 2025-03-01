@@ -26,7 +26,7 @@ A `Zone` built with an inner `BoxShape` and an outer `BoxShape`.
 ## Function Details
 
 ### BoxZone<a name="BoxZone"></a>
-!!! function "BoxZone(BoxShape&#42; inner, BoxShape&#42; outer)"
+!!! function "BoxZone(std::shared_ptr&lt;BoxShape&gt; inner, std::shared_ptr&lt;BoxShape&gt; outer)"
 
     
     Constructs a new `BoxZone`.

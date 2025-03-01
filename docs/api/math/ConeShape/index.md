@@ -115,7 +115,7 @@ A cone shape, defined by a radius and an height.
     
 
 ### Create<a name="Create"></a>
-!!! function "static ConeShape&#42; Create(const ConeShapeDefinition&#42; definition)"
+!!! function "static std::shared_ptr&lt;ConeShape&gt; Create(const ConeShapeDefinition&#42; definition)"
 
     
     Creates a new ConeShape from a definition.

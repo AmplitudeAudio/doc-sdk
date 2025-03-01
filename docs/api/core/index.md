@@ -228,7 +228,7 @@ Core functionalities of the SDK
 
 ### amLogSuccess<a name="amLogSuccess"></a>
 
-!!! macro "#define amLogSuccess(_message_,...)"
+!!! macro "#define amLogSuccess(_message_, ...)"
 
     
     Logs a success message.

@@ -37,13 +37,14 @@ Amplitude Audio SDK public API reference and documentation.
 
 | Name | Description |
 | ---- | ----------- |
-| [AM_ID_CHAR_FMT](#AM_ID_CHAR_FMT) | Compiling for a Linux platform Defines the format used to print AmObjectId value  |
+| [AM_ID_CHAR_FMT](#AM_ID_CHAR_FMT) | Defines the format used to print AmObjectId value  |
 | [AM_STRING_EXPAND](#AM_STRING_EXPAND) | Turn X into a string literal. |
+| [AM_ID_CHAR_FMT](#AM_ID_CHAR_FMT) | Defines the format used to print AmObjectId value  |
 | [AM_LIB_EXPORT](#AM_LIB_EXPORT) | Call policy  |
 | [AM_OS_CHAR_FMT](#AM_OS_CHAR_FMT) | Defines the format used to print AmOsString text  |
 | [AM_OS_STRING](#AM_OS_STRING) | Macro used to convert a string literal to an AmOsString string at compile-time  |
 | [AM_OS_STRING_TO_STRING](#AM_OS_STRING_TO_STRING) | Conversion between OS strings and default strings  |
-| [AM_ID_CHAR_FMT](#AM_ID_CHAR_FMT) | Compiling for an Apple platform Compiling for iOS or tvOS (iPhone, iPad, iPod, Apple TV. |
+| [AM_ID_CHAR_FMT](#AM_ID_CHAR_FMT) | Defines the format used to print AmObjectId value  |
 | [M_PI](#M_PI) | Define the value of Pi if the platform doesn't do that  |
 | [AM_MAX_THREAD_POOL_TASKS](#AM_MAX_THREAD_POOL_TASKS) | Maximum number of tasks in a single pool  |
 
@@ -53,7 +54,6 @@ Amplitude Audio SDK public API reference and documentation.
 
 !!! macro "#define AM_ID_CHAR_FMT"
 
-    Compiling for a Linux platform
     Defines the format used to print AmObjectId value
     
 
@@ -61,9 +61,13 @@ Amplitude Audio SDK public API reference and documentation.
 
 !!! macro "#define AM_ID_CHAR_FMT"
 
-    Compiling for an Apple platform
-    Compiling for iOS or tvOS (iPhone, iPad, iPod, Apple TV...)
-    Compiling for Mac OS X
+    Defines the format used to print AmObjectId value
+    
+
+### AM_ID_CHAR_FMT<a name="AM_ID_CHAR_FMT"></a>
+
+!!! macro "#define AM_ID_CHAR_FMT"
+
     Defines the format used to print AmObjectId value
     
 

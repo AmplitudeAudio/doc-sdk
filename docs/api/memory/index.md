@@ -13,12 +13,14 @@ Memory management and allocation
 
 | Name | Description |
 | ---- | ----------- |
+| [AmFakeSharedPtr](AmFakeSharedPtr/index.md) | Fake shared pointer. |
+| [AmSharedPtr](AmSharedPtr/index.md) | Shared pointer type. |
 | [AmUniquePtr](AmUniquePtr/index.md) | Unique pointer type. |
 | [DefaultMemoryAllocator](DefaultMemoryAllocator/index.md) | Default memory allocator. |
 | [MemoryAllocator](MemoryAllocator/index.md) | Memory Allocator Interface. |
 | [MemoryPoolStats](MemoryPoolStats/index.md) | Collects the statistics about the memory allocations * for a specific pool |
 | [ScopedMemoryAllocation](ScopedMemoryAllocation/index.md) | Allocates a block of memory with the given size in the given pool. |
-| [am_delete](am_delete/index.md) | Deleter for unique pointers. |
+| [am_delete](am_delete/index.md) | Deleter for unique/shared pointers. |
 | [eMemoryPoolKind](eMemoryPoolKind/index.md) | Available memory pools. |
 
 ## Macros

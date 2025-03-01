@@ -89,7 +89,7 @@ be localized. Shapes are used in many places of the engine, like to define a sou
     
 
 ### Create<a name="Create"></a>
-!!! function "static Shape&#42; Create(const ShapeDefinition&#42; definition)"
+!!! function "static std::shared_ptr&lt;Shape&gt; Create(const ShapeDefinition&#42; definition)"
 
     
     Creates a new `Shape` from a definition.

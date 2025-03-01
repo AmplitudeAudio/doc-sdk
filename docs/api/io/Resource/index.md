@@ -39,7 +39,7 @@ This base class represents a resource (sound files, assets, etc.) in a `FileSyst
     
 
 ### Load<a name="Load"></a>
-!!! function "virtual void Load(const FileSystem&#42; loader) = 0"
+!!! function "virtual void Load(std::shared_ptr&lt;const FileSystem&gt; loader) = 0"
 
     
     Loads the resource from the given FileSystem.

@@ -26,7 +26,7 @@ A `Zone` built with an inner `ConeShape` and an outer `ConeShape`.
 ## Function Details
 
 ### ConeZone<a name="ConeZone"></a>
-!!! function "ConeZone(ConeShape&#42; inner, ConeShape&#42; outer)"
+!!! function "ConeZone(std::shared_ptr&lt;ConeShape&gt; inner, std::shared_ptr&lt;ConeShape&gt; outer)"
 
     
     Constructs a new `ConeZone`.

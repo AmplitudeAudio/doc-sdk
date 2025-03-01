@@ -181,7 +181,7 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
     
 
 ### GetRegistry<a name="GetRegistry"></a>
-!!! function "static const std::map&lt;AmString, Node&#42;&gt;&amp; GetRegistry()"
+!!! function "static const std::map&lt;AmString, std::shared_ptr&lt;Node&gt;&gt;&amp; GetRegistry()"
 
     
     Gets the list of registered nodes.
@@ -219,7 +219,7 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
     
 
 ### Register<a name="Register"></a>
-!!! function "static void Register(Node&#42; node)"
+!!! function "static void Register(std::shared_ptr&lt;Node&gt; node)"
 
     
     Registers a new node.
@@ -245,7 +245,7 @@ and [`DestroyInstance()`](#DestroyInstance) methods.
     
 
 ### Unregister<a name="Unregister"></a>
-!!! function "static void Unregister(const Node&#42; node)"
+!!! function "static void Unregister(std::shared_ptr&lt;const Node&gt; node)"
 
     
     Unregisters a node.

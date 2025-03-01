@@ -51,6 +51,7 @@ allow to build decoders and encoders.
 | [FindCodecForFile](#FindCodecForFile) | Finds the codec which can handle the given file. |
 | [LockRegistry](#LockRegistry) | Locks the codecs registry. |
 | [UnlockRegistry](#UnlockRegistry) | Unlocks the codecs registry. |
+| [GetRegistry](#GetRegistry) | Gets the list of registered Codecs. |
 
 ## Variable Details
 
@@ -145,7 +146,7 @@ allow to build decoders and encoders.
     
 
 ### Find<a name="Find"></a>
-!!! function "static Codec&#42; Find(const AmString&amp; name)"
+!!! function "static std::shared_ptr&lt;Codec&gt; Find(const AmString&amp; name)"
 
     
     Look up a codec by name.
@@ -161,7 +162,7 @@ allow to build decoders and encoders.
     
 
 ### FindCodecForFile<a name="FindCodecForFile"></a>
-!!! function "static Codec&#42; FindCodecForFile(std::shared_ptr&lt;File&gt; file)"
+!!! function "static std::shared_ptr&lt;Codec&gt; FindCodecForFile(std::shared_ptr&lt;File&gt; file)"
 
     
     Finds the codec which can handle the given file.
@@ -188,6 +189,18 @@ allow to build decoders and encoders.
             
     
 
+### GetRegistry<a name="GetRegistry"></a>
+!!! function "static const std::map&lt;AmString, std::shared_ptr&lt;Codec&gt;&gt;&amp; GetRegistry()"
+
+    
+    Gets the list of registered Codecs.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The registry of Codecs.
+            
+    
+
 ### LockRegistry<a name="LockRegistry"></a>
 !!! function "static void LockRegistry()"
 
@@ -203,7 +216,7 @@ allow to build decoders and encoders.
     
 
 ### Register<a name="Register"></a>
-!!! function "static void Register(Codec&#42; codec)"
+!!! function "static void Register(std::shared_ptr&lt;Codec&gt; codec)"
 
     
     Registers a new audio codec.
@@ -229,7 +242,7 @@ allow to build decoders and encoders.
     
 
 ### Unregister<a name="Unregister"></a>
-!!! function "static void Unregister(const Codec&#42; codec)"
+!!! function "static void Unregister(std::shared_ptr&lt;const Codec&gt; codec)"
 
     
     Unregisters a audio codec.

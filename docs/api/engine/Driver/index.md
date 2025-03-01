@@ -44,6 +44,7 @@ receive data from the microphone.
 | [SetDefault](#SetDefault) | Set the default diver to use in the engine. |
 | [LockRegistry](#LockRegistry) | Locks the drivers registry. |
 | [UnlockRegistry](#UnlockRegistry) | Unlocks the drivers registry. |
+| [GetRegistry](#GetRegistry) | Gets the list of registered Drivers. |
 
 ## Variable Details
 
@@ -84,7 +85,7 @@ receive data from the microphone.
     
 
 ### Default<a name="Default"></a>
-!!! function "static Driver&#42; Default()"
+!!! function "static std::shared_ptr&lt;Driver&gt; Default()"
 
     
     Choose the most preferred audio driver.
@@ -125,7 +126,7 @@ receive data from the microphone.
     
 
 ### Find<a name="Find"></a>
-!!! function "static Driver&#42; Find(const AmString&amp; name)"
+!!! function "static std::shared_ptr&lt;Driver&gt; Find(const AmString&amp; name)"
 
     
     Look up a driver by name.
@@ -164,6 +165,18 @@ receive data from the microphone.
             
     
 
+### GetRegistry<a name="GetRegistry"></a>
+!!! function "static const std::map&lt;AmString, std::shared_ptr&lt;Driver&gt;&gt;&amp; GetRegistry()"
+
+    
+    Gets the list of registered Drivers.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The registry of Drivers.
+            
+    
+
 ### LockRegistry<a name="LockRegistry"></a>
 !!! function "static void LockRegistry()"
 
@@ -195,7 +208,7 @@ receive data from the microphone.
     
 
 ### Register<a name="Register"></a>
-!!! function "static void Register(Driver&#42; driver)"
+!!! function "static void Register(std::shared_ptr&lt;Driver&gt; driver)"
 
     
     Registers a new audio driver.
@@ -233,7 +246,7 @@ receive data from the microphone.
     
 
 ### Unregister<a name="Unregister"></a>
-!!! function "static void Unregister(const Driver&#42; driver)"
+!!! function "static void Unregister(std::shared_ptr&lt;const Driver&gt; driver)"
 
     
     Unregisters an audio driver.

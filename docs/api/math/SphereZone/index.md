@@ -34,7 +34,7 @@ A `Zone` built with an inner `SphereShape` and an outer `SphereShape`.
     
 
 ### SphereZone<a name="SphereZone"></a>
-!!! function "SphereZone(SphereShape&#42; inner, SphereShape&#42; outer)"
+!!! function "SphereZone(std::shared_ptr&lt;SphereShape&gt; inner, std::shared_ptr&lt;SphereShape&gt; outer)"
 
     
     Constructs a new `SphereZone`.

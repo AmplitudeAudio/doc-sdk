@@ -26,7 +26,7 @@ A `Zone` built with an inner `CapsuleShape` and an outer `CapsuleShape`.
 ## Function Details
 
 ### CapsuleZone<a name="CapsuleZone"></a>
-!!! function "CapsuleZone(CapsuleShape&#42; inner, CapsuleShape&#42; outer)"
+!!! function "CapsuleZone(std::shared_ptr&lt;CapsuleShape&gt; inner, std::shared_ptr&lt;CapsuleShape&gt; outer)"
 
     
     Constructs a new `CapsuleZone`.

@@ -98,7 +98,7 @@ A sphere shape, defined by a radius.
     
 
 ### Create<a name="Create"></a>
-!!! function "static SphereShape&#42; Create(const SphereShapeDefinition&#42; definition)"
+!!! function "static std::shared_ptr&lt;SphereShape&gt; Create(const SphereShapeDefinition&#42; definition)"
 
     
     Creates a new SphereShape from a definition.

@@ -149,7 +149,7 @@ by inheriting from this class, and by implementing the necessary dependencies.
     
 
 ### Find<a name="Find"></a>
-!!! function "static Filter&#42; Find(const AmString&amp; name)"
+!!! function "static std::shared_ptr&lt;Filter&gt; Find(const AmString&amp; name)"
 
     
     Look up a filter by name.
@@ -249,7 +249,7 @@ by inheriting from this class, and by implementing the necessary dependencies.
     
 
 ### GetRegistry<a name="GetRegistry"></a>
-!!! function "static const std::map&lt;AmString, Filter&#42;&gt;&amp; GetRegistry()"
+!!! function "static const std::map&lt;AmString, std::shared_ptr&lt;Filter&gt;&gt;&amp; GetRegistry()"
 
     
     Gets the list of registered filters.
@@ -275,7 +275,7 @@ by inheriting from this class, and by implementing the necessary dependencies.
     
 
 ### Register<a name="Register"></a>
-!!! function "static void Register(Filter&#42; filter)"
+!!! function "static void Register(std::shared_ptr&lt;Filter&gt; filter)"
 
     
     Registers a new filter.
@@ -301,7 +301,7 @@ by inheriting from this class, and by implementing the necessary dependencies.
     
 
 ### Unregister<a name="Unregister"></a>
-!!! function "static void Unregister(const Filter&#42; filter)"
+!!! function "static void Unregister(std::shared_ptr&lt;const Filter&gt; filter)"
 
     
     Unregisters a filter.

@@ -116,7 +116,7 @@ A capsule shape, defined by a radius and an height.
     
 
 ### Create<a name="Create"></a>
-!!! function "static CapsuleShape&#42; Create(const CapsuleShapeDefinition&#42; definition)"
+!!! function "static std::shared_ptr&lt;CapsuleShape&gt; Create(const CapsuleShapeDefinition&#42; definition)"
 
     
     Creates a new `CapsuleShape` from a definition.

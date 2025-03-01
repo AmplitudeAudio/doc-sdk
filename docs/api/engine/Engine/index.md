@@ -176,8 +176,10 @@ amEngine->Deinitialize();
 | [LoadPlugin](#LoadPlugin) | Loads a plugin library from the given path. |
 | [AddPluginSearchPath](#AddPluginSearchPath) | Adds a path in the plugins search paths list. |
 | [RemovePluginSearchPath](#RemovePluginSearchPath) | Removes a path from the plugins search paths list. |
-| [RegisterDefaultPlugins](#RegisterDefaultPlugins) | Register all default plugins.  |
-| [UnregisterDefaultPlugins](#UnregisterDefaultPlugins) | Unregister all default plugins.  |
+| [RegisterDefaultExtensions](#RegisterDefaultExtensions) | Register all default plugins.  |
+| [UnregisterDefaultExtensions](#UnregisterDefaultExtensions) | Unregister all default plugins.  |
+| [RegisterExtension](#RegisterExtension) | Registers a plugin into Amplitude. |
+| [UnregisterExtension](#UnregisterExtension) | Unregisters a plugin from Amplitude. |
 | [GetInstance](#GetInstance) | Returns a unique instance of the Amplitude Engine.  |
 | [DestroyInstance](#DestroyInstance) | Destroys the unique instance of the Amplitude Engine.  |
 
@@ -484,7 +486,7 @@ amEngine->Deinitialize();
     
 
 ### GetDriver<a name="GetDriver"></a>
-!!! function "&#42; GetDriver() const"
+!!! function "[[nodiscard]] virtual std::shared_ptr&lt;Driver&gt; GetDriver() const = 0"
 
     
     Gets the audio driver used by the Engine.
@@ -656,7 +658,7 @@ amEngine->Deinitialize();
     
 
 ### GetFileSystem<a name="GetFileSystem"></a>
-!!! function "&#42; GetFileSystem() const"
+!!! function "[[nodiscard]] virtual std::shared_ptr&lt;const FileSystem&gt; GetFileSystem() const = 0"
 
     
     Gets the file system implementation used by the engine.
@@ -669,7 +671,7 @@ amEngine->Deinitialize();
     
 
 ### GetHRIRSphere<a name="GetHRIRSphere"></a>
-!!! function "&#42; GetHRIRSphere() const"
+!!! function "[[nodiscard]] virtual std::shared_ptr&lt;const HRIRSphere&gt; GetHRIRSphere() const = 0"
 
     
     Gets the HRIR sphere defined in the loaded engine configuration.
@@ -2201,14 +2203,35 @@ amEngine->Deinitialize();
             
     
 
-### RegisterDefaultPlugins<a name="RegisterDefaultPlugins"></a>
-!!! function "static bool RegisterDefaultPlugins()"
+### RegisterDefaultExtensions<a name="RegisterDefaultExtensions"></a>
+!!! function "static bool RegisterDefaultExtensions()"
 
     
     Register all default plugins.
              
     
     
+    
+
+### RegisterExtension<a name="RegisterExtension"></a>
+!!! function "template&lt;typename T, class... Args&gt; static std::shared_ptr&lt;T&gt; RegisterExtension(Args&amp;&amp;... args)"
+
+    
+    Registers a plugin into Amplitude.
+    
+    
+    !!! note
+         Amplitude will automatically create a new instance of the plugin by calling
+        the class constructor with the specified arguments.
+    
+    
+    :material-location-enter: **Parameter** `args`
+    :    The arguments to pass to the plugin class constructor.
+    
+    
+    :material-keyboard-return: **Return**
+    :    The registered plugin.
+            
     
 
 ### RemoveEntity<a name="RemoveEntity"></a>
@@ -2355,7 +2378,7 @@ amEngine->Deinitialize();
     
 
 ### SetFileSystem<a name="SetFileSystem"></a>
-!!! function "virtual void SetFileSystem(FileSystem&#42; fs) = 0"
+!!! function "virtual void SetFileSystem(std::shared_ptr&lt;FileSystem&gt; fs) = 0"
 
     
     Sets a file system implementation to be used by the engine.
@@ -2786,14 +2809,27 @@ amEngine->Deinitialize();
     
     
 
-### UnregisterDefaultPlugins<a name="UnregisterDefaultPlugins"></a>
-!!! function "static bool UnregisterDefaultPlugins()"
+### UnregisterDefaultExtensions<a name="UnregisterDefaultExtensions"></a>
+!!! function "static bool UnregisterDefaultExtensions()"
 
     
     Unregister all default plugins.
              
     
     
+    
+
+### UnregisterExtension<a name="UnregisterExtension"></a>
+!!! function "template&lt;typename T&gt; static void UnregisterExtension(std::shared_ptr&lt;T&gt;&amp; plugin)"
+
+    
+    Unregisters a plugin from Amplitude.
+    
+    
+    :material-location-enter: **Parameter** `plugin`
+    :    The plugin to unregister. The pointer will automatically be
+        discarded by calling this method.
+                
     
 
 ### Version<a name="Version"></a>
