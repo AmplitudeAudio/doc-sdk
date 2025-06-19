@@ -187,7 +187,7 @@ The `buses_file` property defines the path to the binary (`.ambus`) file that co
 
 `string` `required`
 
-The `driver` property indicates the name of the audio [Driver](../api/engine/Driver/index.md) implementation to use for communication with the physical audio device. You can implement multiple audio drivers as needed and register them in the engine with the plugin API.
+The `driver` property indicates the name of the audio [Driver](../api/engine/Driver.md) implementation to use for communication with the physical audio device. You can implement multiple audio drivers as needed and register them in the engine with the plugin API.
 
 ## Example
 
@@ -285,7 +285,7 @@ The following example describes an engine configuration file:
 }
 ```
 
-[Listener]: ../api/engine/Listener/index.md
-[Entity]: ../api/engine/Entity/index.md
-[Environment]: ../api/engine/Environment/index.md
-[Room]: ../api/engine/Room/index.md
+[Listener]: ../api/engine/Listener.md
+[Entity]: ../api/engine/Entity.md
+[Environment]: ../api/engine/Environment.md
+[Room]: ../api/engine/Room.md

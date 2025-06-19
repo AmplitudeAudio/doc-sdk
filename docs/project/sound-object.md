@@ -60,7 +60,7 @@ The `spatialization` property specifies how the sound object's will be rendered 
 | 0   | None                | No spatialization is made, sound objects are played at their regular gain.                                                                                                                                                                     |
 | 1   | Position            | 2D spatialization. The sound source is spatialized by using only its position (sound attenuation and stereo panning can be applied to it).                                                                                                     |
 | 2   | PositionOrientation | 2D spatialization. The sound source is spatialized by using its position and orientation (sound attenuation and stereo panning can be applied to it). This means that the [scope](#scope) of this sound object should be set to `Entity`.      |
-| 3   | HRTF                | 3D spatialization. The sound source is spatialized by using its position and orientation, through an [HRIR Sphere](../api/core/HRIRSphere/index.md) asset. This means that the [scope](#scope) of this sound object should be set to `Entity`. |
+| 3   | HRTF                | 3D spatialization. The sound source is spatialized by using its position and orientation, through an [HRIR Sphere](../api/core/HRIRSphere.md) asset. This means that the [scope](#scope) of this sound object should be set to `Entity`. |
 
 ## attenuation
 

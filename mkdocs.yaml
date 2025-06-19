@@ -3,7 +3,7 @@ site_description: A cross-platform audio engine designed with the needs of games
 repo_url: https://github.com/AmplitudeAudio/sdk
 repo_name: AmplitudeAudio/sdk
 copyright: >
-  Copyright © 2021 - 2024 Sparky Studios. All Rights Reserved.
+  Copyright © 2021 - 2025 Sparky Studios. All Rights Reserved.
   <a href="#__consent">Change cookie settings</a>
 site_url: https://docs.amplitudeaudiosdk.com/
 edit_uri: edit/main/docs/
@@ -151,6 +151,30 @@ plugins:
       minify_css: true
       htmlmin_opts:
         remove_comments: true
+  - mkdoxy:
+      projects:
+        api:
+          src-dirs: ../sdk/include
+          full-doc: True
+          template-dir: templates
+          doxy-cfg:
+            FILE_PATTERNS: "*.h*"
+            EXAMPLE_PATH: examples
+            RECURSIVE: True
+            ENABLE_PREPROCESSING: YES
+            MACRO_EXPANSION: YES
+            SHOW_NAMESPACES: NO
+            EXPAND_ONLY_PREDEF: YES
+            PREDEFINED: "AM_INLINE=inline AM_API_PUBLIC= AM_API_PRIVATE= AM_PLATFORM_ANDROID=1"
+            STRIP_FROM_PATH: ../sdk
+            MAPPING_FILE: doxygen_mapping.txt
+            SHOW_USED_FILES: NO
+            SOURCE_BROWSER: NO
+            CLANG_ASSISTED_PARSING: YES
+      save-api: .mkdoxy
+      full-doc: True
+      debug: False
+      ignore-errors: False
 
 extra_css:
   - static/doxide.css

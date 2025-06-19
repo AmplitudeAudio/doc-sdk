@@ -18,7 +18,7 @@ CollectionHandle gunFires = amEngine->GetCollectionHandle("ak47_gunfires");
 SwitchContainerHandle footsteps = amEngine->GetSwitchContainerHandle("footsteps");
 ```
 
-In the case you don't care about your sound object type and want a generic sound object handle, you can do it by using the [`GetSoundObjectHandle()`](../api/engine/Engine/index.md#GetSoundObjectHandle) method. The returned handle will be one of the previous ones, according to the type of sound object you are querying.
+In the case you don't care about your sound object type and want a generic sound object handle, you can do it by using the [`GetSoundObjectHandle()`](../api/engine/Engine.md#GetSoundObjectHandle) method. The returned handle will be one of the previous ones, according to the type of sound object you are querying.
 
 ```cpp
 // Get a generic sound handle
@@ -46,7 +46,7 @@ if (!AM_IS_VALID_HANDLE(handle))
 
 Each time you play a [sound object], you have a [Channel] that will help you manage the playback of that sound object.
 
-To play an audio, you need either its name, its ID, or a [handle](#handles) to its sound object instance, and then use any overrides of the [`Play()`](../api/engine/Engine/index.md#Play) method in the `Engine`
+To play an audio, you need either its name, its ID, or a [handle](#handles) to its sound object instance, and then use any overrides of the [`Play()`](../api/engine/Engine.md#Play) method in the `Engine`
 
 ```cpp
 // Using the name
@@ -70,7 +70,7 @@ For sound sources configured with [Position spatialization](../project/sound-obj
 Channel sound = amEngine->Play("voice_01", AM_V3(10, 20, 30));
 ```
 
-The given position can be updated later in realtime using the [Channel API](../api/engine/Channel/index.md).
+The given position can be updated later in realtime using the [Channel API](../api/engine/Channel.md).
 
 !!! note
     For sound sources configured with any other spatialization other than `Position`, you should use an `Entity` to play them. Read the [Managing Game Objects](./managing-game-objects.md#entities) documentation to learn more.
@@ -115,7 +115,7 @@ ChannelPlaybackState state = channel.GetPlaybackState(); // Either Playing, Paus
 ```
 
 !!! tip "API Reference available"
-    Check out the [API Reference](../api/engine/Channel/index.md) to see the complete list of methods you can use with a Channel.
+    Check out the [API Reference](../api/engine/Channel.md) to see the complete list of methods you can use with a Channel.
 
 ## Playback Events
 
@@ -154,7 +154,7 @@ channel.On(ChannelEvent::End, [](ChannelEventInfo info) {
 ```
 
 !!! tip "API Reference available"
-    You can also pass arbitrary data to the method and access it in the callback using the event `info`. Check out the [Channel API Reference](../api/engine/Channel/index.md#on) and the [ChannelEventInfo API Reference](../api/engine/ChannelEventInfo/index.md) to lean more.
+    You can also pass arbitrary data to the method and access it in the callback using the event `info`. Check out the [Channel API Reference](../api/engine/Channel.md#on) and the [ChannelEventInfo API Reference](../api/engine/ChannelEventInfo.md) to lean more.
 
 [sound object]: ../project/sound-object.md
 [Channel]: ../getting-started/concepts.md#channels

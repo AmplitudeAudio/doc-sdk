@@ -9,5 +9,4 @@ Amplitude Studio is the official authoring tool for your Amplitude projects. The
 ![Amplitude Studio](../static/studio_logo_t.svg){ height="96px" }
 </figure>
 
-Amplitude Studio is still in active development and will be released soon. Join [our Discord server](https://discord.gg/QR2uBpzJ5f) to not miss
-any announcements!
+Amplitude Studio is currently in EAP (Early Access Program) phase! Head to the [Amplitude Studio](https://studio.amplitudeaudiosdk.com) to learn more.

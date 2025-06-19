@@ -15,7 +15,7 @@ cmake -DAM_SDK_PATH=/path/to/amplitude/sdk -S /path/to/sources -B /path/to/build
 Or directly in your `CMakeLists.txt` file:
 
 ```cmake
-set(AM_SDK_PATH "/path/to/amplitude" CACHE PATH "The path to Amplitude Audio SDK libraries.")
+set(AM_SDK_PATH "/path/to/amplitude/sdk" CACHE PATH "The path to Amplitude Audio SDK libraries.")
 ```
 
 After the `AM_SDK_PATH` variable is set, you should add the path to CMake scripts provided by the SDK to the current `CMAKE_MODULE_PATH` variable. For example:
@@ -28,15 +28,37 @@ list(APPEND CMAKE_MODULE_PATH "$ENV{AM_SDK_PATH}/cmake")
 list(APPEND CMAKE_MODULE_PATH "${AM_SDK_PATH}/cmake")
 ```
 
-This will make available the `FindAmplitudeAudioSDK.cmake` and the `DetectAmplitudeVersion.cmake` scripts.
+This will make available the `FindAmplitudeAudioSDK.cmake`, the `DetectPlatform.cmake`, and the `DetectAmplitudeVersion.cmake` scripts.
 
-You can now call the `find_package` CMake function to make the SDK libraries available to your project:
+!!! note
+    The `DetectAmplitudeVersion.cmake` script can be used to detect the version of the Amplitude Audio SDK libraries. It sets the `AM_SDK_VERSION` variable to the version number (as a string value, e.g. `"1.0.0"`).
+
+You should first use the `DetectPlatform` script to initialize all the CMake variables Amplitude will use to properly detect the target platform. You may also make use of these variables to customize the build process. The generated variables are:
+
+- `AM_PLATFORM_WIN`
+- `AM_PLATFORM_LINUX`
+- `AM_PLATFORM_APPLE`
+- `AM_PLATFORM_MACOS`
+- `AM_PLATFORM_IOS`
+- `AM_PLATFORM_ANDROID`
+- `AM_PLATFORM_UNIX`
+- `AM_PLATFORM_EMSCRIPTEN`
+- `AM_COMPILER_CLANG`
+- `AM_COMPILER_GCC`
+- `AM_COMPILER_MSVC`
+- `AM_ARCH_X86`
+- `AM_ARCH_X86_64`
+- `AM_ARCH_ARM_64`
+- `AM_ARCH_ARM_V7`
+- `AM_ARCH_ARM`
+
+Once the platform is detected, you can now call the `find_package` CMake function to make the SDK libraries available to your project:
 
 ```cmake
 find_package(AmplitudeAudioSDK REQUIRED)
 ```
 
-The script will try to automatically detect your platform. If you want to set the platform yourself, you can use the `AM_SDK_PLATFORM` CMake variable with the following values:
+The script will try to automatically detect the host platform. If you want to set the platform yourself, you can use the `AM_SDK_PLATFORM` CMake variable with the following values:
 
 - `x64-windows`
 - `x64-linux`
@@ -53,7 +75,7 @@ set(AM_SDK_PLATFORM ${VCPKG_TARGET_TRIPLET} CACHE STRING "The platform to use fo
     If defined, the `AM_SDK_PLATFORM` variable should be set before to call the CMake `find_package` function.
 
 !!! info
-    You have to make sure your SDK installation have the libraries for the requested platform.
+    You need to make sure your SDK installation have the libraries for the requested platform.
 
 After the call to `find_package`, 2 libraries will be available:
 

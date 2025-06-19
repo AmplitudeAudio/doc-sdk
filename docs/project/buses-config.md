@@ -65,7 +65,7 @@ For the `master` bus to work properly, you may want to feed his `child_buses` pr
 This property stores the name of the fader algorithm that will be used when the gain of this bus is manually updated at runtime.
 
 !!! info
-    Fader and fader settings help you to control how a property should move from one value to another. You can learn more about faders in the [Fader](../api/engine/Fader/index.md) API reference.
+    Fader and fader settings help you to control how a property should move from one value to another. You can learn more about faders in the [Fader](../api/engine/Fader.md) API reference.
 
 ## Example
 

@@ -48,7 +48,7 @@ This value stores the definition of the type of shape you want for the attenuati
 - Sphere Shape
 
 !!! info
-    To learn more about shapes and their properties, please refer to the [Shape](../api/math/Shape/index.md) API reference.
+    To learn more about shapes and their properties, please refer to the [Shape](../api/math/Shape.md) API reference.
 
 ### max_attenuation_factor
 

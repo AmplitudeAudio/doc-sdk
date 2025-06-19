@@ -81,11 +81,11 @@ The `switch_containers` directory contains configuration files for [SwitchContai
 
 The `switches` directory contains configuration files for [Switch] objects, that will be used in [SwitchContainer]s. Each `.json` file of this directory should match this [flatbuffers schema](https://github.com/AmplitudeAudio/sdk/blob/main/schemas/switch_definition.fbs). Learn more about switches and switch containers in the [Switch State](./switch.md) guide.
 
-[Attenuation]: ../api/assets/Attenuation/index.md
-[Collection]: ../api/assets/Collection/index.md
-[Effect]: ../api/assets/Effect/index.md
-[Event]: ../api/assets/Event/index.md
-[RTPC]: ../api/assets/Rtpc/index.md
-[Sound]: ../api/assets/Sound/index.md
-[SwitchContainer]: ../api/assets/SwitchContainer/index.md
-[Switch]: ../api/assets/Switch/index.md
+[Attenuation]: ../api/assets/Attenuation.md
+[Collection]: ../api/assets/Collection.md
+[Effect]: ../api/assets/Effect.md
+[Event]: ../api/assets/Event.md
+[RTPC]: ../api/assets/Rtpc.md
+[Sound]: ../api/assets/Sound.md
+[SwitchContainer]: ../api/assets/SwitchContainer.md
+[Switch]: ../api/assets/Switch.md

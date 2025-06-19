@@ -12,7 +12,7 @@ Amplitude has various items labeled as game objects: [Entities](#entities), [Lis
 
 Entities are game objects used to spatialize a sound source. Entities share with the sound sources they are playing spatial properties like position, orientation, and directivity.
 
-To create a new Entity, you should use the [`AddEntity()`](../api/engine/Engine/index.md#addentity) method from the Engine:
+To create a new Entity, you should use the [`AddEntity()`](../api/engine/Engine.md#addentity) method from the Engine:
 
 ```cpp
 // Adding an entity
@@ -39,12 +39,12 @@ Channel gunfire = amEngine->Play("weapons/ak47/gunfires", gun);
 // Now the gun entity will feed the sound source with spatial properties...
 ```
 !!! warning
-    Note that the played sound source must be configured with either [Position](../api/core/eSpatialization/index.md), [PositionOrientation](../api/core/eSpatialization/index.md), or [HRTF](../api/core/eSpatialization/index.md) spatialization before to accept any spatial data coming from the entity. Learn more about configuring spatialization for sound sources [here](../project/sound-object.md#spatialization).
+    Note that the played sound source must be configured with either [Position](../api/core/eSpatialization.md), [PositionOrientation](../api/core/eSpatialization.md), or [HRTF](../api/core/eSpatialization.md) spatialization before to accept any spatial data coming from the entity. Learn more about configuring spatialization for sound sources [here](../project/sound-object.md#spatialization).
 
 !!! info
     Learn more about channels and other ways to play audio in the [Playing Audio](./playing-audio.md) integration guide.
 
-If you want to get a reference to an existing entity, You should use the [`GetEntity()`](../api/engine/Engine/index.md#getentity) method from the Engine:
+If you want to get a reference to an existing entity, You should use the [`GetEntity()`](../api/engine/Engine.md#getentity) method from the Engine:
 
 ```cpp
 // Get an existing entity
@@ -62,7 +62,7 @@ if (!speaker.Valid())
     amLogError("Unable to find an entity with ID: 1234");
 ```
 
-When it's time to remove an Entity, you should call the [`RemoveEntity()`](../api/engine/Engine/index.md#removeentity) method from the Engine:
+When it's time to remove an Entity, you should call the [`RemoveEntity()`](../api/engine/Engine.md#removeentity) method from the Engine:
 
 ```cpp
 // Remove an existing entity using its ID
@@ -75,7 +75,7 @@ amEngine->RemoveEntity(&gun);
 If the entity to remove was already removed, calling this method will do nothing.
 
 !!! tip "API Reference available"
-    Check out the [API reference](../api/engine/Entity/index.md) for the complete list of methods you can use with an Entity.
+    Check out the [API reference](../api/engine/Entity.md) for the complete list of methods you can use with an Entity.
 
 ## Listeners
 

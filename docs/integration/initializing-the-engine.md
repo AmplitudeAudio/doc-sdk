@@ -10,7 +10,7 @@ Amplitude is built with several components, which should be initialized separate
 
 ## Logger
 
-Amplitude comes with a default [`ConsoleLogger`](../api/core/ConsoleLogger/index.md) and a set of shortcut macros for you to use. You are able to change the default logger by implementing the [`Logger`](../api/core/Logger/index.md) interface.
+Amplitude comes with a default [`ConsoleLogger`](../api/io/ConsoleLogger.md) and a set of shortcut macros for you to use. You are able to change the default logger by implementing the [`Logger`](../api/io/Logger.md) interface.
 
 ```cpp
 // Implement the Logger interface
@@ -32,9 +32,11 @@ Logger::SetDefault(&gLogger);
 
 Setting the logger is optional, as it is not a required component. But if you want to use it, it is usually better to initialize it first, as it is used in every part of the SDK.
 
-## MemoryManager
+## Memory Manager
 
 The memory manager is the first **required** component to initialize. It is responsible for all the allocations occurring in the SDK (even the ones due to other components' initialization), and in your application.
+
+Before initializing the memory manager, you need to create an implementation of the [`MemoryAllocator`](../api/memory/MemoryAllocator.md) interface.
 
 While initializing the memory manager, you can customize the allocation functions through the `MemoryManagerConfig` structure. You should either set all the functions, or none of them.
 
