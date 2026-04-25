@@ -5,7 +5,7 @@ description: Learn the different elements and terms used in the SDK, and see how
 
 !!! note
     For Amplitude's new users, we highly recommend reading this Concepts documentation page, as it describes the
-    internal of the audio engine. If you just want to set up your environment, you can skip this part and go to the
+    internals of the audio engine. If you just want to set up your environment, you can skip this part and go to the
     [Installation](./installation.md).
 
 This page describes the different components of the library and how they are interacting together.
@@ -106,20 +106,20 @@ flowchart TB
 Through its Codec API (extensible via plugins), Amplitude is able to read any audio file and to convert it to a sound
 object. An audio file can be read only if the Engine has a registered codec supporting it.
 
-According to the [sound object definition](../project/sound-object.md), audio files can be streamed at runtime or preloaded. Each codec
+According to the [sound object definition](../project/sound-object.md), audio files can be streamed or preloaded in memory at runtime. Each codec
 implementation must always read audio samples as **32-bit floating integer** (`AmReal32`), since it is the default
 sample format used in the Engine.
 
 At the moment, Amplitude comes shipped with the following codecs:
 
-- [WAV](https://en.wikipedia.org/wiki/WAV), a lossy audio codec.
+- [WAV](https://en.wikipedia.org/wiki/WAV), a lossless audio codec.
 - [MP3](https://en.wikipedia.org/wiki/MP3), a lossy audio codec.
 - AMS (Amplitude Audio Sample), a WAV-like codec built for Amplitude. It uses a high-quality [ADPCM](https://en.wikipedia.org/wiki/Adaptive_differential_pulse-code_modulation) compression.
 
 Additional codecs are available via plugins:
 
-- [FLAC](https://xiph.org/flac/), a lossless audio codec.
-- [OGG](https://www.xiph.org/ogg/), a lossy audio codec.
+- [FLAC](https://xiph.org/flac/) via the [flac plugin](https://github.com/AmplitudeAudio/plugin-flac), a lossless audio codec.
+- [OGG](https://www.xiph.org/ogg/) via the [vorbis plugin](https://github.com/AmplitudeAudio/plugin-vorbis), a lossy audio codec.
 
 !!! warning
     The AMS codec implementation is subject to changes.
@@ -190,7 +190,7 @@ When requesting to play a sound object:
 
 The [SoundInstance] is the real place where the Engine is consuming audio data for mixing. When playing a same sound
 object multiple times, multiple sound instances will be created for each play request, but all of them will share the
-same audio data since it belong to that sound object. Sound instances only share audio data, and not properties like
+same audio data since it belongs to that sound object. Sound instances only share audio data, and not properties like
 gain, pan, pitch, location, or priority which are instead managed through the Channel in which they are playing.
 
 It's only in cases of streamed audio that each sound instance owns the audio data.
@@ -220,7 +220,7 @@ Real Channels are internally managed channels that communicate directly with Amp
 
 ## Amplimix
 
-Amplimix is the part of Amplitude doing sound mixing. It is composed of two (02) parts linked together to render audio:
+Amplimix is the part of Amplitude doing sound mixing. It is composed of two parts linked together to render audio:
 the mixer layers, and the pipeline.
 
 ### Mixer Layers

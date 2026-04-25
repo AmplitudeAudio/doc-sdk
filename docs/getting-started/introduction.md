@@ -3,24 +3,22 @@ title: Introduction
 description: Browse the main features of the Amplitude Audio SDK and discover why this open-source library will be useful for your next game.
 ---
 
-!!! note
-    Amplitude is still in active development. While it already provides a lot of stable features, the documentation for
-    them is not complete. If you have questions, we encourage you to join our [Discord server](https://discord.gg/QR2uBpzJ5f)
-    to ask them in the forum.
+!!! tip "Join the Community"
+    Have questions or want to share your experience with Amplitude? Join our [Discord server](https://discord.gg/QR2uBpzJ5f) to connect with other developers and the team.
 
 Amplitude is a cross-platform audio engine for games. It provides a wide set of features allowing you to play audio
 files from any sources in any environments (2D, 3D, VR/AR) with an immersive spatial rendering. This page will give you
-an overview of the library core features.
+an overview of the library's core features.
 
 ## Spatial Audio, HRTF, and Ambisonic Rendering
 
 Amplitude can play audio sources in 2D environments, as well as in 3D environments too. For 3D environments, you can use
 the traditional stereo-panning or the advanced binaural rendering using your HRTF assets. With the later the listener
-will be able to feel the exact position of the played source.
+will be able to feel the exact position of the audio source.
 
 ## Data-driven Development
 
-Uses `.json` files to define everything, from a simple sound file to a complex switch container. Each `.json` file is in
+Use `.json` files to define everything, from a simple sound file to a complex switch container. Each `.json` file is in
 a dedicated directory according to its usage (`events`, `effects`, `sounds`, `collections`, etc.). Amplitude will
 compile them into binary files, which can be registered into [sound banks](#sound-banks-management) and loaded in the
 game at runtime.
@@ -47,7 +45,7 @@ how and when Amplitude processes filters, room effects, or advanced spatializati
 
 A sound bank is a unit where all the data you need for your game is loaded. The choice remains to you on how sound banks
 are organized. For example, it can be per level (`level1.ambank`) or per categories (`weapon-fires.ambank`,
-`explosions.ambank`). Each sound object loaded from a sound bank is reference-counted, so even if you load more than one
+`explosions.ambank`). Each sound object loaded from a sound bank is reference-counted across sound banks, so even if you load more than one
 sound bank having a reference to the same sound object, that one will be loaded only once.
 
 ## Sound Objects

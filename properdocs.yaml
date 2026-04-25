@@ -156,7 +156,7 @@ plugins:
         api:
           src-dirs: ../sdk/include
           full-doc: True
-          template-dir: templates
+          # template-dir: templates
           doxy-cfg:
             FILE_PATTERNS: "*.h*"
             EXAMPLE_PATH: examples
@@ -165,9 +165,9 @@ plugins:
             MACRO_EXPANSION: YES
             SHOW_NAMESPACES: NO
             EXPAND_ONLY_PREDEF: YES
-            PREDEFINED: "AM_INLINE=inline AM_API_PUBLIC= AM_API_PRIVATE= AM_PLATFORM_ANDROID=1"
+            PREDEFINED: "AM_INLINE=inline AM_API_PUBLIC= AM_API_PRIVATE= AM_PLATFORM_ANDROID=1 AM_PLATFORM_IOS=1"
             STRIP_FROM_PATH: ../sdk
-            MAPPING_FILE: doxygen_mapping.txt
+            # MAPPING_FILE: doxygen_mapping.txt
             SHOW_USED_FILES: NO
             SOURCE_BROWSER: NO
             CLANG_ASSISTED_PARSING: YES
