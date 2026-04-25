@@ -122,7 +122,7 @@ Additional codecs are available via plugins:
 - [OGG](https://www.xiph.org/ogg/) via the [vorbis plugin](https://github.com/AmplitudeAudio/plugin-vorbis), a lossy audio codec.
 
 !!! warning
-    The AMS codec implementation is subject to changes.
+    The AMS codec is Amplitude's custom ADPCM compression format. It is stable and production-ready.
 
 You can implement your own codec and register it to the Engine by following [this tutorial](../tutorials/custom-codec.md).
 

@@ -110,7 +110,7 @@ function:
 
 ```cpp
 // Register all the default plugins shipped with the engine
-Engine::RegisterDefaultPlugins();
+Engine::RegisterDefaultExtensions();
 ```
 
 !!! info
@@ -208,7 +208,7 @@ int main(int argc, char* argv[])
       Thread::Sleep(1); // Wait for the file system to open
 
   // Register all the default plugins shipped with the engine
-  Engine::RegisterDefaultPlugins();
+  Engine::RegisterDefaultExtensions();
 
   // The path is relative to the working directory, which is usually the same path as the executable.
   Engine::AddPluginSearchPath(AM_OS_STRING("./my_project/plugins"));

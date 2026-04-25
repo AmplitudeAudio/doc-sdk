@@ -17,7 +17,7 @@ You have access to nightly builds through [GitHub Actions](https://github.com/Am
 ## Build from sources
 
 !!! warning Caution
-    Amplitude is in active development, so the installation process here may be outdated. If you are facing issues, we encourage you to [join our Discord server](https://discord.gg/QR2uBpzJ5f) and ask for support.
+    If you are facing issues during installation, we encourage you to [join our Discord server](https://discord.gg/QR2uBpzJ5f) and ask for support.
 
 To build Amplitude from sources, you first need to install some dependencies:
 

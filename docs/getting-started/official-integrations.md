@@ -16,6 +16,6 @@ Amplitude has officially supported integrations for the following game engines.
 ## Godot
 
 !!! warning
-    The Godot integration is currently in development. We accept support through pull requests!
+    The Godot integration is actively maintained. Community contributions are welcome through pull requests!
 
 [Godot](https://godotengine.org) is a free and open source game engine for 2D and 3D games. Amplitude is available on Godot with an [official plugin](https://github.com/AmplitudeAudio/integration-godot). The plugin supports Godot 4+ only.

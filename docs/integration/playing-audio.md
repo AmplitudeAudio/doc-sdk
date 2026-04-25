@@ -154,7 +154,7 @@ channel.On(ChannelEvent::End, [](ChannelEventInfo info) {
 ```
 
 !!! tip "API Reference available"
-    You can also pass arbitrary data to the method and access it in the callback using the event `info`. Check out the [Channel API Reference](../api/engine/Channel.md#on) and the [ChannelEventInfo API Reference](../api/engine/ChannelEventInfo.md) to lean more.
+    You can also pass arbitrary data to the method and access it in the callback using the event `info`. Check out the [Channel API Reference](../api/engine/Channel.md#on) and the [ChannelEventInfo API Reference](../api/engine/ChannelEventInfo.md) to learn more.
 
 [sound object]: ../project/sound-object.md
 [Channel]: ../getting-started/concepts.md#channels
