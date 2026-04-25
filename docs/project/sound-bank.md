@@ -1,6 +1,8 @@
 ---
 title: Sound Bank
 description: Sound banks are units that bundle together all the audio assets your game needs to load and play at runtime.
+diataxis: reference
+
 ---
 
 A sound bank groups together references to all the assets your game needs at runtime — sounds, collections, switch containers, events, effects, attenuations, switches, and RTPCs. By loading a sound bank, the engine registers all its referenced assets and makes them available for playback.

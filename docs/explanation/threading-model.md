@@ -1,6 +1,7 @@
 ---
 title: Threading Model
 description: Understand how Amplitude uses threads, command queues, and synchronization for real-time audio.
+diataxis: explanation
 ---
 
 Amplitude's threading model is designed to deliver glitch-free audio while minimizing contention with the game thread. This document explains the threads, queues, and synchronization mechanisms that make this possible.

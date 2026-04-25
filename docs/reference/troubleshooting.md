@@ -1,23 +1,25 @@
 ---
 title: Troubleshooting
 description: Common issues and solutions when integrating and using the Amplitude Audio SDK.
+diataxis: reference
+
 ---
 
 This reference documents common issues encountered when using the Amplitude Audio SDK and their recommended solutions.
 
 ## Engine Initialization
 
-### Issue: Engine::Init() returns false
+### Issue: `amEngine->Initialize()` returns false
 
 | Cause | Solution |
 |-------|----------|
-| File system not initialized | Call `StartOpenFileSystem()` and `TryFinalizeOpenFileSystem()` before `Engine::Init()`. |
+| File system not initialized | Call `StartOpenFileSystem()` and `TryFinalizeOpenFileSystem()` before `amEngine->Initialize()`. |
 | Missing engine config file | Verify the path to `config.json` and ensure it exists. |
 | Invalid JSON in config | Validate the config against the [Engine Configuration schema](../project/engine-config.md). |
-| Codec/Driver registry locked | Register extensions **before** `Engine::Init()`. |
+| Codec/Driver registry locked | Register extensions **before** `amEngine->Initialize()`. |
 | Memory manager not initialized | Call `MemoryManager::Initialize()` first. |
 
-### Issue: Crash during Engine::Init()
+### Issue: Crash during `amEngine->Initialize()`
 
 | Cause | Solution |
 |-------|----------|
@@ -113,7 +115,7 @@ This reference documents common issues encountered when using the Amplitude Audi
 
 | Cause | Solution |
 |-------|----------|
-| Codec not registered | Register the codec before `Engine::Init()`. |
+| Codec not registered | Register the codec before `amEngine->Initialize()`. |
 | Wrong file extension | Ensure the file extension matches a registered codec. |
 | Corrupt audio file | Re-encode the source file. |
 
@@ -124,7 +126,7 @@ This reference documents common issues encountered when using the Amplitude Audi
 | Cause | Solution |
 |-------|----------|
 | Custom allocator missing `Free()` | Verify your allocator frees all memory. |
-| Sound banks not unloaded | Call `Engine::UnloadSoundBank()` before `Engine::Deinit()`. |
+| Sound banks not unloaded | Call `amEngine->UnloadSoundBank()` before `amEngine->Deinitialize()`. |
 | Objects not destroyed | Use `amdelete` / `ampooldelete` for all `amnew` / `ampoolnew` allocations. |
 
 ### Issue: Out of memory on mobile

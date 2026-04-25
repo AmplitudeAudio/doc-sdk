@@ -1,6 +1,7 @@
 ---
 title: Custom File System
 description: Implement a custom FileSystem to load audio assets from network, archives, or proprietary storage.
+diataxis: how-to
 ---
 
 This guide explains how to implement a custom `FileSystem` for Amplitude. A custom file system allows you to load audio assets from non-standard sources such as network streams, encrypted archives, or proprietary package formats.
@@ -33,20 +34,20 @@ public:
     explicit NetworkFile(const AmOsString& url);
     ~NetworkFile() override;
 
-    AmSize Read(AmUInt8Buffer buffer, AmSize bytes) override;
+    AmSize Read(AmUInt8Buffer buffer, AmSize bytes) const override;
     AmSize Write(AmConstUInt8Buffer buffer, AmSize bytes) override;
-    bool Seek(AmInt64 offset, eFileSeekOrigin origin) override;
-    AmUInt64 Length() override;
-    AmUInt64 Position() override;
-    bool Eof() override;
+    void Seek(AmInt64 offset, eFileSeekOrigin origin) override;
+    AmSize Length() const override;
+    AmSize Position() const override;
+    bool Eof() const override;
     void Close() override;
-    bool IsValid() override;
-    AmOsString GetPath() override;
+    bool IsValid() const override;
+    AmOsString GetPath() const override;
 
 private:
     AmOsString _url;
     std::vector<AmUInt8> _data;
-    AmUInt64 _position;
+    AmSize _position;
     bool _valid;
 };
 ```
@@ -73,7 +74,7 @@ NetworkFile::~NetworkFile()
     Close();
 }
 
-AmSize NetworkFile::Read(AmUInt8Buffer buffer, AmSize bytes)
+AmSize NetworkFile::Read(AmUInt8Buffer buffer, AmSize bytes) const
 {
     const AmSize remaining = _data.size() - _position;
     const AmSize toRead = AM_MIN(bytes, remaining);
@@ -88,7 +89,7 @@ AmSize NetworkFile::Write(AmConstUInt8Buffer buffer, AmSize bytes)
     return 0;
 }
 
-bool NetworkFile::Seek(AmInt64 offset, eFileSeekOrigin origin)
+void NetworkFile::Seek(AmInt64 offset, eFileSeekOrigin origin)
 {
     AmInt64 newPos = 0;
     switch (origin)
@@ -103,23 +104,21 @@ bool NetworkFile::Seek(AmInt64 offset, eFileSeekOrigin origin)
             newPos = static_cast<AmInt64>(_data.size()) + offset;
             break;
     }
-    if (newPos < 0 || newPos > static_cast<AmInt64>(_data.size()))
-        return false;
-    _position = static_cast<AmUInt64>(newPos);
-    return true;
+    if (newPos >= 0 && newPos <= static_cast<AmInt64>(_data.size()))
+        _position = static_cast<AmSize>(newPos);
 }
 
-AmUInt64 NetworkFile::Length()
+AmSize NetworkFile::Length() const
 {
     return _data.size();
 }
 
-AmUInt64 NetworkFile::Position()
+AmSize NetworkFile::Position() const
 {
     return _position;
 }
 
-bool NetworkFile::Eof()
+bool NetworkFile::Eof() const
 {
     return _position >= _data.size();
 }
@@ -130,12 +129,12 @@ void NetworkFile::Close()
     _valid = false;
 }
 
-bool NetworkFile::IsValid()
+bool NetworkFile::IsValid() const
 {
     return _valid;
 }
 
-AmOsString NetworkFile::GetPath()
+AmOsString NetworkFile::GetPath() const
 {
     return _url;
 }
@@ -209,7 +208,7 @@ while (!fs->TryFinalizeOpenFileSystem())
     Thread::Sleep(1);
 ```
 
-For file reads, the engine supports async open/close via `StartOpenFile()` / `TryFinalizeOpenFile()` if your `FileSystem` implements them. The base `FileSystem` class provides default synchronous implementations.
+The `FileSystem` interface exposes `StartOpenFileSystem()` / `TryFinalizeOpenFileSystem()` and `StartCloseFileSystem()` / `TryFinalizeCloseFileSystem()` for async lifecycle management. There is no per-file async open API on the `FileSystem` base class.
 
 ## Built-in File Systems
 
@@ -219,7 +218,6 @@ Amplitude includes several built-in file system implementations:
 |------------|-------------|----------|
 | `DiskFileSystem` | Standard OS file I/O | Desktop and mobile default |
 | `PackageFileSystem` | Reads from `.ampk` packages | Distributed builds |
-| `MemoryFileSystem` | In-memory buffers | Tests, procedurally generated data |
 | `AndroidAssetManagerFileSystem` | Android `AAssetManager` | Android native apps |
 | `NSFileSystem` | iOS `NSBundle` | iOS native apps |
 
@@ -233,6 +231,6 @@ Amplitude includes several built-in file system implementations:
 
 ## Next Steps
 
-- Review the [FileSystem API Reference](../api/io/FileSystem.md).
-- Learn how to use the [PackageFileSystem](../api/io/PackageFileSystem.md) for `.ampk` files.
-- Explore the [DiskFileSystem API Reference](../api/io/DiskFileSystem.md) for the default implementation.
+- Review the [FileSystem API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_file_system.md).
+- Learn how to use the [PackageFileSystem](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_package_file_system.md) for `.ampk` files.
+- Explore the [DiskFileSystem API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_disk_file_system.md) for the default implementation.

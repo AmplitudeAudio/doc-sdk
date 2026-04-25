@@ -1,6 +1,8 @@
 ---
 title: Sound
 description: A Sound is the most basic sound object handled by the engine. This page helps you create sound assets for your Amplitude project.
+diataxis: reference
+
 ---
 
 Sound is where you define sources for any sound objects that will be used in the runtime. They also represent the most basic form of sound objects, allowing you to trigger audio directly from a file.
@@ -41,7 +43,7 @@ Specifies the number of times the sound should loop until it is automatically st
 This value points to the source file of the sound. The file may be of any format supported by the engine (MP3, WAV, or AMS), or from a format you have created a Codec plugin for.
 
 !!! note
-    Additional formats such as OGG and FLAC are available through plugins. See the [Audio Files and Codecs](../getting-started/concepts.md#audio-files-and-codecs) section for more details.
+    Additional formats such as OGG and FLAC are available through plugins. See the [Audio Files and Codecs](../explanation/concepts.md#audio-files-and-codecs) section for more details.
 
 ## Example
 

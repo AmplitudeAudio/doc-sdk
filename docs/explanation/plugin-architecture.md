@@ -1,6 +1,7 @@
 ---
 title: Plugin Architecture
 description: Understand how Amplitude's plugin system enables extensible codecs, drivers, effects, faders, and pipeline nodes.
+diataxis: explanation
 ---
 
 Amplitude is built around a plugin architecture that allows you to extend the engine with custom codecs, drivers, filters, faders, resamplers, and pipeline nodes without modifying the engine source code.
@@ -37,7 +38,7 @@ Each plugin type has:
 
 ## Registration
 
-Plugins are registered before `Engine::Init()`:
+Plugins are registered before `amEngine->Initialize()`:
 
 ```cpp
 // Register built-in extensions
@@ -48,8 +49,8 @@ Codec::Register(std::make_shared<MyCodec>());
 Filter::Register(std::make_shared<MyFilter>());
 Fader::Register(std::make_shared<MyFader>());
 
-// Lock happens automatically during Engine::Init()
-Engine::Init(config);
+// Lock happens automatically during Engine initialization
+amEngine->Initialize(AM_OS_STRING("config.amconfig"));
 ```
 
 Once the engine is initialized, the registry is locked. Attempting to register a new plugin will silently fail.
@@ -85,7 +86,7 @@ Linked directly into the executable at compile time:
 int main()
 {
     Codec::Register(std::make_shared<MyCustomCodec>());
-    Engine::Init(config);
+    amEngine->Initialize(AM_OS_STRING("config.amconfig"));
 }
 ```
 
@@ -99,7 +100,7 @@ Loaded from shared libraries at runtime:
 ```cpp
 Engine::AddPluginSearchPath(AM_OS_STRING("./plugins"));
 Engine::LoadPlugin(AM_OS_STRING("vorbis_plugin"));
-Engine::Init(config);
+amEngine->Initialize(AM_OS_STRING("config.amconfig"));
 ```
 
 - **Pros**: Can be updated without recompiling the game.
@@ -140,7 +141,7 @@ Individual plugin instances may be called from the audio thread. Methods like `D
 ## Best Practices
 
 - **One plugin per library**: Keep dynamic plugins focused on a single extension type.
-- **Fail gracefully**: If `AmplitudeRegisterPlugin()` cannot register, log an error but do not crash.
+- **Fail gracefully**: If `RegisterPlugin()` cannot register, log an error but do not crash.
 - **Document dependencies**: List any third-party libraries your plugin requires.
 - **Use unique names**: Prefix custom plugin names to avoid collisions (e.g., `MyGame_Tremolo`).
 

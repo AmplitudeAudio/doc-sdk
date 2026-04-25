@@ -1,6 +1,8 @@
 ---
 title: Common API
 description: Browse the API of common types and enumerations shared between Amplitude assets.
+diataxis: reference
+
 ---
 
 ## CurveDefinition {#curve-definition}

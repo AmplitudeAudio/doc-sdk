@@ -1,6 +1,7 @@
 ---
 title: Sample Projects
 description: Overview of the sample projects included with the Amplitude Audio SDK.
+diataxis: explanation
 ---
 
 The Amplitude Audio SDK includes two sample projects that demonstrate different aspects of the engine. This document explains what each sample covers and how to run them.

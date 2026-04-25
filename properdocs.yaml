@@ -135,6 +135,10 @@ plugins:
         font_family: DM Sans
   - git-revision-date-localized:
       enable_creation_date: true
+      fallback_to_build_date: true
+      strict: false
+      exclude:
+        - api/*
   - literate-nav:
       nav_file: SUMMARY.md
   - mike:
@@ -156,7 +160,7 @@ plugins:
         api:
           src-dirs: ../sdk/include
           full-doc: True
-          # template-dir: templates
+          template-dir: templates
           doxy-cfg:
             FILE_PATTERNS: "*.h*"
             EXAMPLE_PATH: examples
@@ -167,7 +171,6 @@ plugins:
             EXPAND_ONLY_PREDEF: YES
             PREDEFINED: "AM_INLINE=inline AM_API_PUBLIC= AM_API_PRIVATE= AM_PLATFORM_ANDROID=1 AM_PLATFORM_IOS=1"
             STRIP_FROM_PATH: ../sdk
-            # MAPPING_FILE: doxygen_mapping.txt
             SHOW_USED_FILES: NO
             SOURCE_BROWSER: NO
             CLANG_ASSISTED_PARSING: YES
@@ -181,6 +184,7 @@ extra_css:
 
 extra_javascript:
   - static/consent.js
+  - static/versioned-links.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 

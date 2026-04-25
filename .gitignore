@@ -3,3 +3,5 @@ venv/
 site/
 .mkdoxy/
 __pycache__/
+.omc/
+.omk/

@@ -1,6 +1,7 @@
 ---
 title: Compiling Amplitude Projects
 description: Before using the engine, you need to compile your Amplitude project into binaries.
+diataxis: how-to
 ---
 
 !!! note

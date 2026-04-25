@@ -1,6 +1,7 @@
 ---
 title: Ambisonics
 description: Understand how Amplitude uses Ambisonics for spatial audio encoding, mixing, and decoding.
+diataxis: explanation
 ---
 
 Ambisonics is a full-sphere surround sound technique that represents a 3D sound field mathematically using spherical harmonics. Unlike traditional channel-based audio (stereo, 5.1, 7.1), Ambisonics separates the sound field capture from the reproduction, allowing the same audio content to be decoded for headphones, stereo speakers, or arbitrary multi-speaker arrays.

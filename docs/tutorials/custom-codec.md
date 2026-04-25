@@ -1,6 +1,8 @@
 ---
 title: Custom Codec
 description: Learn how to extend the Engine by implementing a custom audio Codec for reading and writing audio files.
+diataxis: tutorial
+
 ---
 
 This tutorial walks you through creating a custom audio codec for the Amplitude engine. You will build a **Raw PCM codec** — a simple reader for uncompressed raw audio data — and learn how to register it as a plugin so the engine can load your files at runtime.
@@ -122,7 +124,7 @@ public:
                 for (AmUInt64 i = 0; i < framesToRead; ++i)
                 {
                     const AmInt16 sample = pcmData[i * m_format.GetNumChannels() + ch];
-                    out->GetData()[ch][bufferOffset + i] = AmInt16ToReal32(sample);
+                    (*out)[ch][bufferOffset + i] = AmInt16ToReal32(sample);
                 }
             }
 
@@ -181,7 +183,7 @@ public:
             {
                 for (AmUInt64 i = 0; i < length; ++i)
                 {
-                    pcmData[i * channels + ch] = AmReal32ToInt16(in->GetData()[ch][offset + i]);
+                    pcmData[i * channels + ch] = AmReal32ToInt16((*in)[ch][offset + i]);
                 }
             }
 
@@ -240,14 +242,14 @@ int main(int argc, char* argv[])
     Codec::Register(std::make_shared<RawPCMCodec>());
 
     // Now initialize the engine
-    Engine::Init(config);
+    amEngine->Initialize(AM_OS_STRING("pc.config.amconfig"));
 
     // The engine will automatically use the RawPCMCodec for any .raw files
 }
 ```
 
 !!! tip "Registration order"
-    Codecs must be registered **before** `Engine::Init()` is called. Once the engine is initialized, the codec registry is locked.
+    Codecs must be registered **before** `amEngine->Initialize()` is called. Once the engine is initialized, the codec registry is locked.
 
 ## Step 3: Create a Sound Asset
 
@@ -298,5 +300,5 @@ Both `Decoder::Stream()` and `Encoder::Write()` may be called from the audio pro
 ## Next Steps
 
 - Learn how to write [custom effects](custom-effect.md) to process audio at runtime.
-- Explore the [Codec API Reference](../api/engine/Codec.md) for the full interface.
+- Explore the [Codec API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_codec.md) for the full interface.
 - Look at the built-in WAV and MP3 codecs in the SDK source for production-ready examples.

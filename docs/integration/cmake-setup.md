@@ -1,6 +1,7 @@
 ---
 title: CMake Setup
 description: Amplitude provides scripts to quickly be integrated in any CMake-based projects.
+diataxis: how-to
 ---
 
 !!! note

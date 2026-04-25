@@ -1,6 +1,7 @@
 ---
 title: HRTF and Binaural Audio
 description: Understand how Amplitude uses Head-Related Transfer Functions to create immersive 3D audio over headphones.
+diataxis: explanation
 ---
 
 Head-Related Transfer Function (HRTF) processing is the foundation of Amplitude's 3D binaural audio. This document explains the science behind HRTF, how Amplitude implements it, and how to get the best results.

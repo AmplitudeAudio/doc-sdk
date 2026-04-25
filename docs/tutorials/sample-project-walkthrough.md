@@ -1,6 +1,8 @@
 ---
 title: Sample Project Walkthrough
 description: A step-by-step walkthrough of building and running the Amplitude sample projects.
+diataxis: tutorial
+
 ---
 
 This tutorial walks you through building, configuring, and running the Amplitude Audio SDK sample projects from scratch. By the end, you will understand the complete workflow from project setup to hearing spatialized audio.

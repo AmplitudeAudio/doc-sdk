@@ -1,6 +1,7 @@
 ---
 title: Explanation
 description: Deep dives into Amplitude's architecture, concepts, and design decisions.
+diataxis: explanation
 ---
 
 # Explanation
@@ -9,8 +10,8 @@ This section contains in-depth explanations of Amplitude's architecture and conc
 
 ## Fundamentals
 
-- **[Introduction](../getting-started/introduction.md)** - Overview of Amplitude's features
-- **[Concepts](../getting-started/concepts.md)** - Engine architecture and data flow
+- **[Introduction](introduction.md)** - Overview of Amplitude's features
+- **[Concepts](concepts.md)** - Engine architecture and data flow
 - **[Project Architecture](../project/project-architecture.md)** - How Amplitude projects are organized
 
 ## Architecture

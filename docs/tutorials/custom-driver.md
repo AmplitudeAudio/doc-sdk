@@ -1,6 +1,8 @@
 ---
 title: Custom Driver
 description: Learn how to extend the Engine by implementing a custom audio Driver for outputting sound to a physical device.
+diataxis: tutorial
+
 ---
 
 This tutorial walks you through creating a custom audio driver for the Amplitude engine. You will build a **Timer Driver** — a simple cross-platform driver that feeds audio to the mixer on a fixed interval — and learn how to register it so the engine can use it for playback.
@@ -78,8 +80,9 @@ static void timer_mix_thread(void* param)
         if (engine->IsStopping())
             break;
 
-        // Mix one buffer of audio. The mixer fills the buffer with the next chunk of audio.
-        mixer->Mix(nullptr, driver->GetDeviceDescription().mOutputBufferSize);
+        // Mix one buffer of audio. The mixer fills pOutputBuffer with the next chunk of audio.
+        AudioBuffer* pOutputBuffer = nullptr;
+        mixer->Mix(&pOutputBuffer, driver->GetDeviceDescription().mOutputBufferSize);
 
         // Sleep for roughly one buffer duration (e.g., 10ms for a 480-sample buffer at 48kHz)
         Thread::Sleep(10);
@@ -146,12 +149,12 @@ bool TimerDriver::EnumerateDevices(std::vector<DeviceDescription>& devices)
 {
     // Report a single virtual device
     DeviceDescription desc;
-    desc.mName = "Timer Virtual Device";
-    desc.mId = 0;
-    desc.mState = eDeviceState_Closed;
+    desc.mDeviceName = "Timer Virtual Device";
+    desc.mDeviceID = 0;
+    desc.mDeviceState = eDeviceState_Closed;
     desc.mOutputBufferSize = 480; // 10ms at 48kHz
-    desc.mOutputChannels = eAudioSampleChannelCount_Stereo;
-    desc.mOutputSampleRate = 48000;
+    desc.mDeviceOutputChannels = PlaybackOutputChannels::Stereo;
+    desc.mDeviceOutputSampleRate = 48000;
 
     devices.push_back(desc);
     return true;
@@ -176,7 +179,7 @@ int main(int argc, char* argv[])
     Driver::SetDefault("Timer");
 
     // Now initialize the engine
-    Engine::Init(config);
+    amEngine->Initialize(AM_OS_STRING("pc.config.amconfig"));
 }
 ```
 
@@ -209,10 +212,11 @@ The engine uses these notifications to update internal state and to forward them
 The heart of any driver is the mix loop. In the example above, a dedicated thread repeatedly calls:
 
 ```cpp
-mixer->Mix(nullptr, bufferSize);
+AudioBuffer* pOutputBuffer = nullptr;
+mixer->Mix(&pOutputBuffer, bufferSize);
 ```
 
-The `Mix()` method pulls audio data from the engine's pipeline and mixes all active voices into a single output buffer. The first parameter is the output buffer; passing `nullptr` tells the mixer to use an internal buffer.
+The `Mix()` method pulls audio data from the engine's pipeline and mixes all active voices into a single output buffer. The first parameter is a pointer-to-pointer to an `AudioBuffer`; the mixer sets `*pOutputBuffer` to its internal buffer on return.
 
 In a real driver, you would copy the mixed audio from the internal buffer to the audio hardware's ring buffer. The exact mechanism depends on your platform's audio API (e.g., CoreAudio, WASAPI, AAudio, ALSA).
 
@@ -237,7 +241,7 @@ However, you must ensure that your driver's `Open()` and `Close()` methods are o
 
 ## Next Steps
 
-- Review the [Null Driver](../sdk/src/Core/Drivers/Null/Driver.cpp) in the SDK for the simplest possible reference implementation.
-- Review the [MiniAudio Driver](../sdk/src/Core/Drivers/MiniAudio/Driver.cpp) for a full-featured cross-platform example.
-- Explore the [Driver API Reference](../api/engine/Driver.md) for the full interface.
+- Review the [Null Driver](https://github.com/AmplitudeAudio/sdk/blob/main/src/Core/Drivers/Null/Driver.cpp) in the SDK for the simplest possible reference implementation.
+- Review the [MiniAudio Driver](https://github.com/AmplitudeAudio/sdk/blob/main/src/Core/Drivers/MiniAudio/Driver.cpp) for a full-featured cross-platform example.
+- Explore the [Driver API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_driver.md) for the full interface.
 - Learn how to write [custom codecs](custom-codec.md) so your driver can play new audio formats.

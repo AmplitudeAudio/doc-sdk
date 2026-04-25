@@ -1,6 +1,7 @@
 ---
 title: HRTF Setup
 description: Configure Head-Related Transfer Function (HRTF) spatialization for immersive 3D binaural audio.
+diataxis: how-to
 ---
 
 This guide explains how to set up HRTF (Head-Related Transfer Function) spatialization in your Amplitude project for immersive 3D binaural audio. HRTF uses measured or simulated impulse responses from human ears to reproduce spatial audio over standard stereo headphones.
@@ -31,14 +32,14 @@ Amplitude supports multiple HRIR datasets:
 Amplitude uses its own optimized `.amir` format for HRIR data. You can generate one from supported datasets using the `amir` CLI tool:
 
 ```bash
-# Convert a SOFA file to AMIR
-amir --dataset-model SOFA input.sofa output.amir
+# Convert a SOFA file to AMIR (model 3 = SOFA)
+amir -m 3 input.sofa output.amir
 
-# Convert IRCAM data to AMIR
-amir --dataset-model IRCAM input.wav output.amir
+# Convert IRCAM data to AMIR (model 0 = IRCAM)
+amir -m 0 /path/to/ircam/ output.amir
 
-# Enable resampling to a target sample rate
-amir --dataset-model MIT --resample --target-sample-rate 48000 input.wav output.amir
+# Resample to a target sample rate during conversion (model 1 = MIT)
+amir -m 1 -r 48000 /path/to/mit_kemar/ output.amir
 ```
 
 The `amir` tool will:
@@ -158,8 +159,8 @@ The default pipeline includes HRTF processing through the `AmbisonicBinauralDeco
 You can query and configure HRTF settings at runtime:
 
 ```cpp
-// Get the current HRIR sphere
-auto* sphere = amEngine->GetHRIRSphere();
+// Get the current HRIR sphere (returns std::shared_ptr<const HRIRSphere>)
+auto sphere = amEngine->GetHRIRSphere();
 
 // Check if the sphere is loaded
 if (sphere != nullptr && sphere->IsLoaded())
@@ -167,8 +168,8 @@ if (sphere != nullptr && sphere->IsLoaded())
     amLogInfo("HRIR sphere loaded with %u vertices", sphere->GetVertexCount());
 }
 
-// Change the sampling mode at runtime
-sphere->SetSamplingMode(eHRIRSphereSamplingMode_Bilinear);
+// Query the current sampling mode
+eHRIRSphereSamplingMode mode = amEngine->GetHRIRSphereSamplingMode();
 ```
 
 ## Performance Considerations
@@ -192,5 +193,5 @@ sphere->SetSamplingMode(eHRIRSphereSamplingMode_Bilinear);
 ## Next Steps
 
 - Learn about [ambisonic spatialization](ambisonic-setup.md) for speaker-based VR setups.
-- Explore the [HRIRSphere API Reference](../api/core/HRIRSphere.md).
+- Explore the [HRIRSphere API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_h_r_i_r_sphere.md).
 - Learn how to build custom HRIR datasets with the [`amir` CLI tool](../reference/cli-tools.md#amir).

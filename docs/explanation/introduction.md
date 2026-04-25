@@ -1,6 +1,8 @@
 ---
 title: Introduction
 description: Browse the main features of the Amplitude Audio SDK and discover why this open-source library will be useful for your next game.
+diataxis: explanation
+
 ---
 
 !!! tip "Join the Community"

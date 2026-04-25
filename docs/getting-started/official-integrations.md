@@ -1,6 +1,8 @@
 ---
 title: Official Integrations
 description: Amplitude has official integrations for some game engines, check if your preferred one is supported!
+diataxis: explanation
+
 ---
 
 Amplitude has officially supported integrations for the following game engines.

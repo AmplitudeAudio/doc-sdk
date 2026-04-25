@@ -1,12 +1,14 @@
 ---
 title: Concepts
 description: Learn the different elements and terms used in the SDK, and see how to bring them together in your project. Start here if you are new to Amplitude.
+diataxis: explanation
+
 ---
 
 !!! note
     For Amplitude's new users, we highly recommend reading this Concepts documentation page, as it describes the
     internals of the audio engine. If you just want to set up your environment, you can skip this part and go to the
-    [Installation](./installation.md).
+    [Installation](../getting-started/installation.md).
 
 This page describes the different components of the library and how they are interacting together.
 

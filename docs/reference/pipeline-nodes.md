@@ -1,6 +1,8 @@
 ---
 title: Built-in Pipeline Nodes
 description: Reference for all built-in nodes available in the Amplimix audio processing pipeline.
+diataxis: reference
+
 ---
 
 This reference documents every built-in pipeline node in the Amplitude Audio SDK. Pipeline nodes are the building blocks of the audio processing graph executed by Amplimix each frame.
@@ -227,4 +229,4 @@ You can implement custom pipeline nodes by subclassing `Node` and `NodeInstance`
 
 - Review the [Pipeline Reference](../project/pipeline.md) for DAG architecture and rules.
 - Learn how to create [custom pipeline nodes](../tutorials/custom-pipeline-node.md).
-- Explore the [Node API Reference](../api/mixer/Node.md).
+- Explore the [Node API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_node.md).

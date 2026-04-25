@@ -1,6 +1,7 @@
 ---
 title: Memory Management
 description: Understand how Amplitude manages memory with pools, aligned allocations, and leak detection.
+diataxis: explanation
 ---
 
 Amplitude includes a custom memory management system designed for predictable performance, debugging, and integration with game engine memory budgets. This document explains how it works and how to use it effectively.
@@ -150,4 +151,4 @@ Always align audio buffers to at least 16 bytes (32 bytes for AVX).
 ## Next Steps
 
 - Review the [Memory Tuning Guide](../integration/memory-pool-tuning.md).
-- Explore the [MemoryManager API Reference](../api/memory/MemoryManager.md).
+- Explore the [MemoryManager API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_memory_manager.md).

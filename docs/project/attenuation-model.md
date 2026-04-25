@@ -1,6 +1,8 @@
 ---
 title: Attenuation Model
 description: Attenuation models are settings that describe how the gain of a sound object should fade according to the distance from its listener and a given shape. Read this article to learn more about them.
+diataxis: reference
+
 ---
 
 Attenuation models are a way to specify how the gain of a sound object is affected by its position in space (in the case of spatialized sounds), and its distance from the attached listener.
@@ -48,7 +50,7 @@ This value stores the definition of the type of shape you want for the attenuati
 - Sphere Shape
 
 !!! info
-    To learn more about shapes and their properties, please refer to the [Shape](../api/math/Shape.md) API reference.
+    To learn more about shapes and their properties, please refer to the [Shape](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_shape.md) API reference.
 
 ### max_attenuation_factor
 

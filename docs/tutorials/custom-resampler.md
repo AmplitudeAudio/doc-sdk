@@ -1,6 +1,8 @@
 ---
 title: Custom Resampler
 description: Learn how to extend the Engine by implementing a custom audio resampler for sample rate conversion.
+diataxis: tutorial
+
 ---
 
 This tutorial walks you through creating a custom resampler for the Amplitude engine. You will build a **Linear Resampler** — a simple sample rate converter using linear interpolation — and learn how to register it so codecs and the mixer can use it for runtime sample rate conversion.
@@ -19,10 +21,18 @@ classDiagram
     }
 
     class ResamplerInstance {
-        +Process(in, out, frames, inputSampleRate, outputSampleRate) AmUInt64
-        +SetSampleRate(sampleRate)
+        +Initialize(channelCount, sampleRateIn, sampleRateOut)
+        +Process(in, inputFrames, out, outputFrames) bool
+        +SetSampleRate(sampleRateIn, sampleRateOut)
+        +GetSampleRateIn() AmUInt32
+        +GetSampleRateOut() AmUInt32
+        +GetChannelCount() AmUInt16
+        +GetRequiredInputFrames(outputFrameCount) AmUInt64
+        +GetExpectedOutputFrames(inputFrameCount) AmUInt64
         +GetInputLatency() AmUInt64
         +GetOutputLatency() AmUInt64
+        +Reset()
+        +Clear()
     }
 
     Resampler --> ResamplerInstance : creates
@@ -49,21 +59,25 @@ public:
     LinearResamplerInstance();
     ~LinearResamplerInstance() override = default;
 
-    void SetSampleRate(AmUInt32 sampleRate) override;
+    void Initialize(AmUInt16 channelCount, AmUInt32 sampleRateIn, AmUInt32 sampleRateOut) override;
+    bool Process(const AudioBuffer& input, AmUInt64& inputFrames, AudioBuffer& output, AmUInt64& outputFrames) override;
+    void SetSampleRate(AmUInt32 sampleRateIn, AmUInt32 sampleRateOut) override;
 
-    AmUInt64 Process(
-        const AudioBuffer* in,
-        AudioBuffer* out,
-        AmUInt64 inFrames,
-        AmUInt32 inputSampleRate,
-        AmUInt32 outputSampleRate) override;
-
+    [[nodiscard]] AmUInt32 GetSampleRateIn() const override { return _sampleRateIn; }
+    [[nodiscard]] AmUInt32 GetSampleRateOut() const override { return _sampleRateOut; }
+    [[nodiscard]] AmUInt16 GetChannelCount() const override { return _channelCount; }
+    [[nodiscard]] AmUInt64 GetRequiredInputFrames(AmUInt64 outputFrameCount) const override;
+    [[nodiscard]] AmUInt64 GetExpectedOutputFrames(AmUInt64 inputFrameCount) const override;
     [[nodiscard]] AmUInt64 GetInputLatency() const override { return 0; }
     [[nodiscard]] AmUInt64 GetOutputLatency() const override { return 0; }
 
+    void Reset() override {}
+    void Clear() override {}
+
 private:
-    AmReal64 _phase;
-    AmUInt32 _outputSampleRate;
+    AmUInt16 _channelCount;
+    AmUInt32 _sampleRateIn;
+    AmUInt32 _sampleRateOut;
 };
 
 class LinearResampler final : public Resampler
@@ -88,58 +102,77 @@ public:
 #include "LinearResampler.h"
 
 LinearResamplerInstance::LinearResamplerInstance()
-    : _phase(0.0)
-    , _outputSampleRate(48000)
+    : _channelCount(0)
+    , _sampleRateIn(48000)
+    , _sampleRateOut(48000)
 {}
 
-void LinearResamplerInstance::SetSampleRate(AmUInt32 sampleRate)
+void LinearResamplerInstance::Initialize(AmUInt16 channelCount, AmUInt32 sampleRateIn, AmUInt32 sampleRateOut)
 {
-    _outputSampleRate = sampleRate;
+    _channelCount = channelCount;
+    _sampleRateIn = sampleRateIn;
+    _sampleRateOut = sampleRateOut;
 }
 
-AmUInt64 LinearResamplerInstance::Process(
-    const AudioBuffer* in,
-    AudioBuffer* out,
-    AmUInt64 inFrames,
-    AmUInt32 inputSampleRate,
-    AmUInt32 outputSampleRate)
+void LinearResamplerInstance::SetSampleRate(AmUInt32 sampleRateIn, AmUInt32 sampleRateOut)
 {
-    if (inputSampleRate == outputSampleRate)
+    _sampleRateIn = sampleRateIn;
+    _sampleRateOut = sampleRateOut;
+}
+
+AmUInt64 LinearResamplerInstance::GetRequiredInputFrames(AmUInt64 outputFrameCount) const
+{
+    const AmReal64 ratio = static_cast<AmReal64>(_sampleRateIn) / _sampleRateOut;
+    return static_cast<AmUInt64>(std::ceil(outputFrameCount * ratio));
+}
+
+AmUInt64 LinearResamplerInstance::GetExpectedOutputFrames(AmUInt64 inputFrameCount) const
+{
+    const AmReal64 ratio = static_cast<AmReal64>(_sampleRateOut) / _sampleRateIn;
+    return static_cast<AmUInt64>(inputFrameCount * ratio);
+}
+
+bool LinearResamplerInstance::Process(
+    const AudioBuffer& input, AmUInt64& inputFrames,
+    AudioBuffer& output, AmUInt64& outputFrames)
+{
+    if (_sampleRateIn == _sampleRateOut)
     {
         // No conversion needed; copy directly
-        out->CopyFrom(in, 0, 0, inFrames);
-        return inFrames;
+        for (AmUInt16 ch = 0; ch < _channelCount; ++ch)
+        {
+            const AmAudioSample* src = input[ch].begin();
+            AmAudioSample* dst = output[ch].begin();
+            std::copy(src, src + inputFrames, dst);
+        }
+        outputFrames = inputFrames;
+        return true;
     }
 
-    const AmReal64 ratio = static_cast<AmReal64>(inputSampleRate) / outputSampleRate;
-    const AmUInt16 channels = in->GetChannelCount();
+    const AmReal64 ratio = static_cast<AmReal64>(_sampleRateIn) / _sampleRateOut;
+    const AmUInt64 outFrames = GetExpectedOutputFrames(inputFrames);
 
-    // Estimate output frames (conservative)
-    const AmUInt64 outFrames = static_cast<AmUInt64>(inFrames / ratio);
-
-    out->SetChannelCount(channels);
-    out->SetFrameCount(outFrames);
-
-    for (AmUInt16 ch = 0; ch < channels; ++ch)
+    for (AmUInt16 ch = 0; ch < _channelCount; ++ch)
     {
-        const AmAudioSample* src = in->GetData()[ch];
-        AmAudioSample* dst = out->GetData()[ch];
+        const AmAudioSample* src = input[ch].begin();
+        AmAudioSample* dst = output[ch].begin();
 
         AmReal64 readPos = 0.0;
         for (AmUInt64 i = 0; i < outFrames; ++i)
         {
             const AmUInt64 idx = static_cast<AmUInt64>(readPos);
-            const AmReal64 frac = readPos - idx;
+            const AmReal64 frac = readPos - static_cast<AmReal64>(idx);
 
-            const AmAudioSample s0 = src[AM_MIN(idx, inFrames - 1)];
-            const AmAudioSample s1 = src[AM_MIN(idx + 1, inFrames - 1)];
+            const AmAudioSample s0 = src[AM_MIN(idx, inputFrames - 1)];
+            const AmAudioSample s1 = src[AM_MIN(idx + 1, inputFrames - 1)];
 
             dst[i] = static_cast<AmAudioSample>(s0 + frac * (s1 - s0));
             readPos += ratio;
         }
     }
 
-    return outFrames;
+    outputFrames = outFrames;
+    return true;
 }
 ```
 
@@ -159,12 +192,12 @@ int main(int argc, char* argv[])
 
     // Register other extensions and initialize the engine
     Engine::RegisterDefaultExtensions();
-    Engine::Init(config);
+    amEngine->Initialize(AM_OS_STRING("pc.config.amconfig"));
 }
 ```
 
 !!! tip "Registration order"
-    Resamplers must be registered **before** `Engine::Init()` is called. Once the engine is initialized, the resampler registry is locked.
+    Resamplers must be registered **before** `amEngine->Initialize()` is called. Once the engine is initialized, the resampler registry is locked.
 
 ## How Resampling is Triggered
 
@@ -200,6 +233,6 @@ The built-in `Default` resampler in Amplitude uses a high-quality algorithm suit
 
 ## Next Steps
 
-- Review the [Resampler API Reference](../api/dsp/Resampler.md).
+- Review the [Resampler API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_resampler.md).
 - Explore the built-in resampler implementation in the SDK source.
 - Learn how to write [custom codecs](../tutorials/custom-codec.md) that use your resampler.

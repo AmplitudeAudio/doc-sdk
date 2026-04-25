@@ -1,6 +1,8 @@
 ---
 title: Custom Effect
 description: Learn how to extend the Engine by implementing a custom Filter (effect) in a plugin.
+diataxis: tutorial
+
 ---
 
 This tutorial walks you through creating a custom audio effect for the Amplitude engine. You will build a **Tremolo** effect — an amplitude modulation that periodically varies the volume of a sound — and learn how to register it as a plugin, define its asset file, and use it at runtime.
@@ -204,7 +206,7 @@ namespace MyGame
 
         // Compute the modulation: a sine wave oscillating between (1-depth) and 1
         const auto modulation =
-            static_cast<AmReal32>(1.0 - depth * 0.5 * (1.0 - std::sin(2.0 * AM_PI64 * m_phase)));
+            static_cast<AmReal32>(1.0 - depth * 0.5 * (1.0 - std::sin(2.0 * AM_PI * m_phase)));
 
         // Advance the phase (only on channel 0 to keep channels in sync)
         if (channel == 0)

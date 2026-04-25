@@ -1,6 +1,8 @@
 ---
 title: Event
 description: Amplitude allows you to create and trigger a sequence of actions at runtime with events.
+diataxis: reference
+
 ---
 
 An event is a set of actions Amplitude has to execute once it has been triggered at runtime, during your game. Event assets are described with the following properties:

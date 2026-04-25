@@ -1,6 +1,8 @@
 ---
 title: Buses Configuration
 description: Buses are the places where sound objects are routed before being processed by the mixer. This page contains details about how to configure buses for your project.
+diataxis: reference
+
 ---
 
 This configuration file allows you to register the list of buses Amplitude will use at runtime. For each bus, you can configure settings for auto-ducking between them.
@@ -65,7 +67,7 @@ For the `master` bus to work properly, you may want to feed its `child_buses` pr
 This property stores the name of the fader algorithm that will be used when the gain of this bus is manually updated at runtime.
 
 !!! info
-    Fader and fader settings help you to control how a property should move from one value to another. You can learn more about faders in the [Fader](../api/engine/Fader.md) API reference.
+    Fader and fader settings help you to control how a property should move from one value to another. You can learn more about faders in the [Fader](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_fader.md) API reference.
 
 ## Example
 

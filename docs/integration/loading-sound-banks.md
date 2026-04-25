@@ -1,6 +1,7 @@
 ---
 title: Loading sound banks
 description: Sound banks are units storing the data your game will need to play audio. The page will show you how to load sound banks from an Amplitude project.
+diataxis: how-to
 ---
 
 When the engine is [fully initialized](./initializing-the-engine.md), you have to load a [sound bank](../project/sound-bank.md) to be able to play any sound or interact with your Amplitude project at runtime.
@@ -42,7 +43,7 @@ while (!amEngine->TryFinalizeLoadSoundFiles())
 ```
 
 !!! note
-    Audio data loaded in memory are shared across every [sound instances](../getting-started/concepts.md#sound-instances).
+    Audio data loaded in memory are shared across every [sound instances](../explanation/concepts.md#sound-instances).
 
 ## Unloading sound banks
 
@@ -50,7 +51,7 @@ To unload a sound bank, you just need to call an `Engine` method with the name o
 
 ```cpp
 // Unload a sound bank with name
-amEngine->UnloadSoundBank("init.ambank");
+amEngine->UnloadSoundBank(AM_OS_STRING("init.ambank"));
 
 // Unload a sound bank with id
 amEngine->UnloadSoundBank(1234);

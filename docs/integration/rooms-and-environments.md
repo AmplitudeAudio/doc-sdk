@@ -1,6 +1,7 @@
 ---
 title: Rooms and Environments
 description: Configure reverberation zones, room acoustics, and environment effects for realistic spatial audio.
+diataxis: how-to
 ---
 
 This guide explains how to use Amplitude's **Room** and **Environment** systems to create realistic acoustic spaces. Rooms simulate early reflections and reverberation based on physical dimensions and wall materials, while Environments apply DSP effects to sounds within defined zones.
@@ -40,8 +41,10 @@ Environment env = amEngine->GetEnvironment(100);
 env.SetLocation(AmVector3(10.0f, 0.0f, 10.0f));
 env.SetOrientation(Orientation::FromLookAt(AmVector3(0, 0, 1), AmVector3(0, 1, 0)));
 
-// Define the zone shape (e.g., a sphere with 5m radius)
-auto zone = std::make_shared<SphereShape>(5.0f);
+// Define the zone shape (e.g., a sphere with inner 4m radius and outer 5m radius)
+auto innerShape = std::make_shared<SphereShape>(4.0f);
+auto outerShape = std::make_shared<SphereShape>(5.0f);
+auto zone = std::make_shared<SphereZone>(innerShape, outerShape);
 env.SetZone(zone);
 
 // Assign a reverb effect
@@ -64,14 +67,14 @@ The factor transitions smoothly at the zone boundary, creating natural crossfade
 
 ### Zone Shapes
 
-Environments support the same shape types as attenuation models:
+Environments support zones built from inner and outer shape pairs. Pass a `Zone` subclass to `SetZone()`:
 
-| Shape | Description |
-|-------|-------------|
-| `Box` | Axis-aligned box defined by dimensions |
-| `Sphere` | Spherical zone defined by radius |
-| `Capsule` | Capsule zone defined by radius and height |
-| `Cone` | Conical zone defined by radius and angle |
+| Zone Class | Inner/Outer Shape | Description |
+|------------|-------------------|-------------|
+| `BoxZone` | `BoxShape` | Box zone defined by half-width, half-height, half-depth |
+| `SphereZone` | `SphereShape` | Spherical zone defined by radius |
+| `CapsuleZone` | `CapsuleShape` | Capsule zone defined by radius and half-height |
+| `ConeZone` | `ConeShape` | Conical zone defined by radius and height |
 
 ## Rooms
 
@@ -239,7 +242,7 @@ office.SetGain(0.4f);
 amEngine->AddEnvironment(100);
 Environment cave = amEngine->GetEnvironment(100);
 cave.SetLocation(AmVector3(100.0f, -5.0f, 50.0f));
-cave.SetZone(std::make_shared<SphereShape>(30.0f));
+cave.SetZone(std::make_shared<SphereZone>(std::make_shared<SphereShape>(25.0f), std::make_shared<SphereShape>(30.0f)));
 cave.SetEffect("cave_reverb");
 ```
 

@@ -1,6 +1,7 @@
 ---
 title: Memory Pool Tuning
 description: Configure and monitor Amplitude's pool-based memory allocator for optimal performance.
+diataxis: how-to
 ---
 
 This guide explains how to configure and tune Amplitude's **memory pools** for your game's specific needs. Proper tuning ensures efficient allocation, reduces fragmentation, and helps you stay within platform memory budgets.
@@ -85,15 +86,16 @@ AmSharedPtr<MyClass, eMemoryPoolKind_Engine> shared = AmSharedPtr<MyClass, eMemo
 Query memory usage at runtime to monitor pools:
 
 ```cpp
-MemoryManagerStats stats = amMemory->GetStats();
-
 for (AmUInt32 i = 0; i < eMemoryPoolKind_COUNT; ++i)
 {
     const auto pool = static_cast<eMemoryPoolKind>(i);
-    const MemoryPoolStats& poolStats = stats.GetPoolStats(pool);
+    const MemoryPoolStats& poolStats = amMemory->GetStats(pool);
 
-    amLogInfo("Pool %d: allocated=%zu, used=%zu, free=%zu",
-        i, poolStats.mAllocated, poolStats.mUsed, poolStats.mFree);
+    amLogInfo("Pool %s: maxMemoryUsed=%zu, allocCount=%llu, freeCount=%llu",
+        MemoryManager::GetMemoryPoolName(pool).c_str(),
+        poolStats.maxMemoryUsed.load(),
+        poolStats.allocCount.load(),
+        poolStats.freeCount.load());
 }
 ```
 
@@ -111,8 +113,8 @@ Use `ScopedMemoryAllocation` for temporary buffers that should be freed automati
 
 ```cpp
 {
-    ScopedMemoryAllocation scoped(eMemoryPoolKind_Amplimix, 4096);
-    void* tempBuffer = scoped.GetPointer();
+    ScopedMemoryAllocation scoped(eMemoryPoolKind_Amplimix, 4096, __FILE__, __LINE__);
+    void* tempBuffer = scoped.Address();
 
     // Use tempBuffer...
 
@@ -127,35 +129,35 @@ You can provide a custom `MemoryAllocator` implementation:
 class MyAllocator final : public MemoryAllocator
 {
 public:
-    void* Malloc(AmSize size, const char* file, AmUInt32 line) override
+    AmVoidPtr Malloc(eMemoryPoolKind pool, AmSize size) override
     {
         return std::malloc(size);
     }
 
-    void* Malign(AmSize size, AmSize alignment, const char* file, AmUInt32 line) override
+    AmVoidPtr Malign(eMemoryPoolKind pool, AmSize size, AmUInt32 alignment) override
     {
         return aligned_alloc(alignment, size);
     }
 
-    void* Realloc(void* ptr, AmSize size, const char* file, AmUInt32 line) override
+    AmVoidPtr Realloc(eMemoryPoolKind pool, AmVoidPtr address, AmSize size) override
     {
-        return std::realloc(ptr, size);
+        return std::realloc(address, size);
     }
 
-    void* Realign(void* ptr, AmSize size, AmSize alignment, const char* file, AmUInt32 line) override
+    AmVoidPtr Realign(eMemoryPoolKind pool, AmVoidPtr address, AmSize size, AmUInt32 alignment) override
     {
-        auto* newPtr = Malign(size, alignment, file, line);
-        std::memcpy(newPtr, ptr, size); // Simplified; real impl would copy old size
-        Free(ptr);
+        auto* newPtr = Malign(pool, size, alignment);
+        std::memcpy(newPtr, address, size); // Simplified; real impl would copy old size
+        Free(pool, address);
         return newPtr;
     }
 
-    void Free(void* ptr) override
+    void Free(eMemoryPoolKind pool, AmVoidPtr address) override
     {
-        std::free(ptr);
+        std::free(address);
     }
 
-    AmSize SizeOf(void* ptr) override
+    AmSize SizeOf(eMemoryPoolKind pool, AmVoidPtr address) override
     {
         // Platform-specific; return 0 if unsupported
         return 0;
@@ -181,7 +183,7 @@ MemoryManager::Initialize(std::make_shared<MyAllocator>());
 While Amplitude v1.0 does not enforce hard memory limits per pool, you can implement budgeting in your custom allocator:
 
 ```cpp
-void* MyAllocator::Malloc(AmSize size, const char* file, AmUInt32 line)
+AmVoidPtr MyAllocator::Malloc(eMemoryPoolKind pool, AmSize size)
 {
     if (mCurrentUsage + size > mBudget)
     {
@@ -197,5 +199,5 @@ Future versions of Amplitude will include built-in memory budget enforcement.
 
 ## Next Steps
 
-- Review the [Memory Management API Reference](../api/memory/MemoryManager.md).
+- Review the [Memory Management API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_memory_manager.md).
 - Learn how to implement [custom allocators](../tutorials/custom-codec.md) in your codecs.

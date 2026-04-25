@@ -1,6 +1,8 @@
 ---
 title: Collection
 description: A collection is a container sound object. It plays sounds registered in it based on the specified scheduler.
+diataxis: reference
+
 ---
 
 The Collection is the first container sound object and the simplest. It organizes and schedules a list of [Sounds](./sound.md), which can then be played randomly or sequentially according to a scheduler.

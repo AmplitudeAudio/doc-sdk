@@ -1,3 +1,7 @@
+---
+diataxis: reference
+---
+
 # API Reference
 
 Auto-generated reference for the Amplitude Audio SDK public C++ API.

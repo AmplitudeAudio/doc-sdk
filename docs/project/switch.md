@@ -1,6 +1,8 @@
 ---
 title: Switch
 description: A switch maintains a single state at a time during the runtime. Changes to that state are tracked by switch containers, allowing them to update playing sounds accordingly.
+diataxis: reference
+
 ---
 
 A switch is an object maintaining a single state at a time during runtime. Its main purpose is to send feedback to [Switch Container](./switch-container.md) objects, so they can play the right sounds for the current state. For example, you could create a switch for a terrain or any walkable area, with states like grass, ice, or wood, and link it to a switch container playing footstep sounds according to the current state.

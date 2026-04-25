@@ -1,6 +1,7 @@
 ---
 title: Ambisonic Setup
 description: Configure Ambisonic encoding, mixing, and decoding for immersive spatial audio on speakers and headphones.
+diataxis: how-to
 ---
 
 This guide explains how to set up Ambisonic spatialization in your Amplitude project. Ambisonics is a full-sphere surround sound technique that captures and reproduces sound fields in 3D space, making it ideal for VR, AR, and multi-speaker installations.
@@ -49,7 +50,6 @@ Amplitude's default pipeline already includes Ambisonic processing. For a custom
 | `AmbisonicRotator` | Rotates the Ambisonic field to match listener head orientation. |
 | `AmbisonicMixer` | Mixes multiple Ambisonic streams together. |
 | `AmbisonicBinauralDecoder` | Decodes the Ambisonic field to binaural stereo using HRIR convolution. |
-| `AmbisonicDecoder` | Decodes the Ambisonic field to a multi-speaker layout. |
 
 ## Step 2: Configure Sound Objects
 
@@ -93,7 +93,7 @@ Ensure your engine config supports the required channel counts. For third-order 
 ```
 
 !!! note "Speaker output"
-    For speaker arrays instead of headphones, set `panning_mode` to `Stereo` and use the `AmbisonicDecoder` node in your pipeline with the appropriate speaker preset.
+    For speaker arrays instead of headphones, set `panning_mode` to `Stereo` and use the `StereoPanning` and `StereoMixer` nodes in your pipeline instead of the Ambisonic binaural chain.
 
 ## Step 4: Update Listeners in Your Game Loop
 
@@ -109,9 +109,9 @@ listener.SetOrientation(headOrientation);
 
 The `AmbisonicRotator` node applies a spherical harmonic rotation matrix so that sounds appear stable in world space as the listener turns their head.
 
-## Speaker Presets
+## Output Channel Presets
 
-When using `AmbisonicDecoder`, choose a speaker preset that matches your output setup:
+The engine's `output` configuration accepts the following `ePlaybackOutputChannels` values to control how many output channels the audio device uses:
 
 | Preset | Channels | Description |
 |--------|----------|-------------|
@@ -120,18 +120,13 @@ When using `AmbisonicDecoder`, choose a speaker preset that matches your output 
 | `Quad` | 4 | Front-left, front-right, back-left, back-right |
 | `Surround_5_1` | 6 | Standard 5.1 surround |
 | `Surround_7_1` | 8 | Standard 7.1 surround |
-| `Cube` | 8 | Cube speaker array |
-| `Dodecahedron` | 12 | Dodecahedron speaker array |
-| `LebedevGrid` | Variable | Lebedev quadrature grid (variable count) |
+
+<!-- FIXME: unverified - Cube, Dodecahedron, and LebedevGrid output presets are not confirmed in ePlaybackOutputChannels; they were removed from this table -->
 
 ## Shelf Filtering
 
-Amplitude applies a shelf filter to compensate for the energy loss that occurs at higher Ambisonic orders. The `AmbisonicShelfFilter` node (included in the default pipeline) applies:
-
-- **Max-RE weighting** for horizontal plane optimization
-- **Linkwitz-Riley crossover** for smooth band splitting
-
-This ensures that decoded audio has consistent loudness regardless of the Ambisonic order.
+<!-- FIXME: unverified - AmbisonicShelfFilter is not a registered pipeline node in the SDK source; shelf filtering behaviour may be internal to AmbisonicBinauralDecoder -->
+Amplitude internally compensates for energy loss at higher Ambisonic orders during the binaural decoding stage. This ensures that decoded audio has consistent loudness regardless of the Ambisonic order.
 
 ## B-Format Channels
 
@@ -169,4 +164,4 @@ For headphone output, Amplitude uses **Ambisonic binauralization**: sounds are e
 
 - Review the [Pipeline Reference](../project/pipeline.md) for node configuration details.
 - Learn about [HRTF setup](hrtf-setup.md) for binaural decoding.
-- Explore the [AmbisonicBinauralDecoder API Reference](../api/mixer/AmbisonicBinauralDecoderNode.md).
+- Explore the [AmbisonicBinauralDecoder API Reference](../api/group__mixer.md).

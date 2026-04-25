@@ -1,6 +1,8 @@
 ---
 title: Built-in Codecs
 description: Reference for the audio codecs included with the Amplitude Audio SDK.
+diataxis: reference
+
 ---
 
 This reference documents the audio codecs built into the Amplitude Audio SDK, including supported formats, capabilities, and usage notes.
@@ -147,5 +149,5 @@ This allows the engine to track codec memory usage and enforce budgets in future
 ## Next Steps
 
 - Learn how to write a [custom codec](../tutorials/custom-codec.md).
-- Review the [Codec API Reference](../api/engine/Codec.md).
+- Review the [Codec API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_codec.md).
 - Explore the [AMS codec tool](cli-tools.md#amac).

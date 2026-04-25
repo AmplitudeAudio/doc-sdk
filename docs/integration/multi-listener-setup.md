@@ -1,6 +1,7 @@
 ---
 title: Multi-Listener Setup
 description: Configure multiple simultaneous listeners for split-screen, multiplayer, and broadcast audio scenarios.
+diataxis: how-to
 ---
 
 This guide explains how to set up and manage multiple listeners in Amplitude. Multiple listeners are essential for split-screen multiplayer, broadcast cameras, and any scenario where more than one point of audition exists in the game world.
@@ -31,8 +32,12 @@ First, ensure the engine is configured to support multiple listeners:
 
 | Mode | Behavior |
 |------|----------|
+| `None` | No listener is fetched; all audio is muted but processing continues. |
 | `Nearest` | Each entity uses the closest listener for spatialization calculations. |
-| `First` | All entities use the first listener (useful for single-player with a debug camera). |
+| `Farthest` | Each entity uses the farthest listener. |
+| `Default` | All entities use the listener set via `Engine::SetDefaultListener()`. |
+| `First` | All entities use the first registered listener. |
+| `Last` | All entities use the last registered listener. |
 
 ## Creating Listeners
 
@@ -56,12 +61,10 @@ Update each listener's position and orientation every frame:
 // Player 1 (top half of screen)
 player1.SetLocation(player1Position);
 player1.SetOrientation(player1Orientation);
-player1.SetVelocity(player1Velocity);
 
 // Player 2 (bottom half of screen)
 player2.SetLocation(player2Position);
 player2.SetOrientation(player2Orientation);
-player2.SetVelocity(player2Velocity);
 ```
 
 ## Per-Listener Settings

@@ -1,6 +1,8 @@
 ---
 title: Reference
 description: Quick reference for tools, codecs, faders, pipeline nodes, and troubleshooting.
+diataxis: reference
+
 ---
 
 # Reference

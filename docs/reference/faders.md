@@ -1,6 +1,8 @@
 ---
 title: Built-in Faders
 description: Reference for the fade curves included with the Amplitude Audio SDK.
+diataxis: reference
+
 ---
 
 This reference documents the fader curves built into the Amplitude Audio SDK. Faders control how values transition over time for volume, gain, pitch, and other parameters.
@@ -124,5 +126,5 @@ If the built-in curves do not meet your needs, you can implement a custom fader 
 ## Next Steps
 
 - Learn how to create a [custom fader](../tutorials/custom-fader.md).
-- Review the [Fader API Reference](../api/engine/Fader.md).
+- Review the [Fader API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_fader.md).
 - Explore the [Buses Configuration Reference](../project/buses-config.md) for ducking setup.

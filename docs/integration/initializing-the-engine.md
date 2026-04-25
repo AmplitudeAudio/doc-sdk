@@ -1,6 +1,7 @@
 ---
 title: Initializing the Engine
 description: Learn how to initialize the Amplitude Engine with a given project at runtime through this tutorial.
+diataxis: how-to
 ---
 
 !!! note
@@ -10,7 +11,7 @@ Amplitude is built with several components, which should be initialized separate
 
 ## Logger
 
-Amplitude comes with a default [`ConsoleLogger`](../api/io/ConsoleLogger.md) and a set of shortcut macros for you to use. You are able to change the default logger by implementing the [`Logger`](../api/io/Logger.md) interface.
+Amplitude comes with a default [`ConsoleLogger`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_console_logger.md) and a set of shortcut macros for you to use. You are able to change the default logger by implementing the [`Logger`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_logger.md) interface.
 
 ```cpp
 // Implement the Logger interface
@@ -36,7 +37,7 @@ Setting the logger is optional, as it is not a required component. But if you wa
 
 The memory manager is the first **required** component to initialize. It is responsible for all the allocations occurring in the SDK (even the ones due to other components' initialization), and in your application.
 
-Before initializing the memory manager, you need to create an implementation of the [`MemoryAllocator`](../api/memory/MemoryAllocator.md) interface.
+Before initializing the memory manager, you need to create an implementation of the [`MemoryAllocator`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_memory_allocator.md) interface.
 
 While initializing the memory manager, you can customize the allocation functions through the `MemoryManagerConfig` structure. You should either set all the functions, or none of them.
 
@@ -49,17 +50,10 @@ using namespace SparkyStudios::Audio::Amplitude;
 
 int main(int argc, char* argv[])
 {
-  // Initialize the memory manager
-  // Note that for custom configs, all the functions should be defined
-  MemoryManagerConfig config{};
-  // config.alignedMalloc = my_malign;
-  // config.alignedRealloc = my_realign;
-  // config.free = my_free;
-  // config.malloc = my_malloc;
-  // config.realloc = my_realloc;
-  // config.sizeOf = my_sizeof;
-  // config.totalReservedMemorySize = my_total_mem_size;
-  MemoryManager::Initialize(config); // Using the memory manager configuration.
+  // Initialize the memory manager with the default allocator.
+  // To use a custom allocator, pass a std::unique_ptr<MemoryAllocator> to Initialize().
+  // Example: MemoryManager::Initialize(std::make_unique<MyCustomAllocator>());
+  MemoryManager::Initialize();
 
   // ... your code ...
 
@@ -76,10 +70,10 @@ The file system component is responsible to read/write resources as needed by th
 The used file system implementation should be set as the default one in the engine after the initialization. For example, if you use the `DiskFileSystem` implementation, a typical usage will look like:
 
 ```cpp
-DiskFileSystem fs;
-fs.SetBasePath(AM_OS_STRING("./my_project")); // Set the base path of the file system. For the DiskFileSystem, this path is the path to your Amplitude project build files.
+auto fs = std::make_shared<DiskFileSystem>();
+fs->SetBasePath(AM_OS_STRING("./my_project")); // Set the base path of the file system. For the DiskFileSystem, this path is the path to your Amplitude project build files.
 
-amEngine->SetFileSystem(&fs); // Set the file system implementation to use in the engine.
+amEngine->SetFileSystem(fs); // Set the file system implementation to use in the engine.
 ```
 
 According to the implementation, the file system may be opened in a background thread to do an heavy operation (eg: unpacking an archive). If it's the case for you, it is necessary to wait for the file system to load before to continue. You can do this using the following code:
@@ -182,25 +176,17 @@ int main(int argc, char* argv[])
   // Set your logger as the default one
   Logger::SetDefault(&gLogger);
 
-  // Initialize the memory manager
-  // Note that for custom configs, all the functions should be set if one of them is specified
-  MemoryManagerConfig config{};
-  // config.alignedMalloc = my_malign;
-  // config.alignedRealloc = my_realign;
-  // config.free = my_free;
-  // config.malloc = my_malloc;
-  // config.realloc = my_realloc;
-  // config.sizeOf = my_sizeof;
-  // config.totalReservedMemorySize = my_total_mem_size;
-  MemoryManager::Initialize(config); // Using the memory manager configuration.
+  // Initialize the memory manager with the default allocator.
+  // Pass a std::unique_ptr<MemoryAllocator> to use a custom allocator.
+  MemoryManager::Initialize();
 
-  DiskFileSystem fs;
+  auto fs = std::make_shared<DiskFileSystem>();
 
   // Set the base path of the file system. Usually the path to your Amplitude project.
-  fs.SetBasePath(AM_OS_STRING("./my_project"));
+  fs->SetBasePath(AM_OS_STRING("./my_project"));
 
   // Set the file system implementation to use in the engine.
-  amEngine->SetFileSystem(&fs);
+  amEngine->SetFileSystem(fs);
 
   // Open the file system
   amEngine->StartOpenFileSystem();
@@ -230,8 +216,8 @@ int main(int argc, char* argv[])
   while (!amEngine->TryFinalizeCloseFileSystem()) // While the file system is still closing
       Thread::Sleep(1); // Wait for the file system to close
 
-  // Unregister all default plugins
-  Engine::UnregisterDefaultPlugins();
+  // Unregister all default extensions
+  Engine::UnregisterDefaultExtensions();
 
   // Destroy the Amplitude engine instance
   amEngine->DestroyInstance();

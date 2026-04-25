@@ -1,6 +1,8 @@
 ---
 title: Custom Fader
 description: Learn how to extend the Engine by implementing a custom Fader for volume and parameter transitions.
+diataxis: tutorial
+
 ---
 
 This tutorial walks you through creating a custom fader for the Amplitude engine. You will build a **Bounce Fader** — a fade curve that overshoots the target and settles back, like a bouncing ball — and learn how to register it so sound objects and buses can use it for smooth transitions.
@@ -96,12 +98,12 @@ int main(int argc, char* argv[])
     Fader::Register(std::make_shared<BounceFader>());
 
     // Now initialize the engine
-    Engine::Init(config);
+    amEngine->Initialize(AM_OS_STRING("pc.config.amconfig"));
 }
 ```
 
 !!! tip "Registration order"
-    Faders must be registered **before** `Engine::Init()` is called. Once the engine is initialized, the fader registry is locked.
+    Faders must be registered **before** `amEngine->Initialize()` is called. Once the engine is initialized, the fader registry is locked.
 
 ## Step 3: Use the Fader in a Project Asset
 
@@ -205,5 +207,5 @@ The fader instance is automatically destroyed when the transition completes or w
 ## Next Steps
 
 - Learn how to write [custom effects](custom-effect.md) to process audio with DSP.
-- Explore the [Fader API Reference](../api/engine/Fader.md) for the full interface.
+- Explore the [Fader API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_fader.md) for the full interface.
 - Experiment with the [Bézier curve visualizer](https://cubic-bezier.com/) to design your own curves.

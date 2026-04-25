@@ -1,6 +1,7 @@
 ---
 title: Dynamic Plugins
 description: Load and use dynamic plugins at runtime to extend codec, driver, filter, and fader support.
+diataxis: how-to
 ---
 
 This guide explains how to load and use **dynamic plugins** with Amplitude. Dynamic plugins are shared libraries (`.dll` on Windows, `.so` on Linux, `.dylib` on macOS) that extend the engine with new codecs, drivers, filters, faders, or pipeline nodes at runtime.
@@ -23,11 +24,12 @@ A dynamic plugin is a shared library that exports a single registration function
 using namespace SparkyStudios::Audio::Amplitude;
 
 // The engine calls this function when the plugin is loaded
-extern "C" AM_API_PUBLIC void AmplitudeRegisterPlugin()
+extern "C" AM_API_PUBLIC bool RegisterPlugin(Engine* engine, MemoryManager* memoryManager)
 {
     // Register your extensions
     Codec::Register(std::make_shared<MyCustomCodec>());
     Filter::Register(std::make_shared<MyCustomFilter>());
+    return true;
 }
 ```
 
@@ -84,21 +86,16 @@ Engine::LoadPlugin(AM_OS_STRING("vorbis_plugin"));
 
 ### Loading All Plugins in a Directory
 
-Load every plugin found in the search paths:
-
-```cpp
-Engine::LoadPlugins();
-```
-
-This scans all registered search paths and attempts to load every shared library that exports `AmplitudeRegisterPlugin`.
+<!-- FIXME: unverified - Engine::LoadPlugins() does not exist in the public API; load each plugin individually with Engine::LoadPlugin() -->
+Load each plugin individually using `Engine::LoadPlugin()`. There is no bulk `LoadPlugins()` helper in the public API.
 
 ## Registration Order
 
-The engine locks all registries during `Engine::Init()`. Therefore:
+The engine locks all registries during `Engine::Initialize()`. Therefore:
 
-1. Set plugin search paths **before** calling `Engine::Init()`.
-2. Load plugins **before** calling `Engine::Init()`.
-3. After `Engine::Init()`, no new plugins can be registered.
+1. Set plugin search paths **before** calling `amEngine->Initialize()`.
+2. Load plugins **before** calling `amEngine->Initialize()`.
+3. After `amEngine->Initialize()`, no new plugins can be registered.
 
 ```cpp
 int main()
@@ -114,7 +111,7 @@ int main()
     Engine::LoadPlugin(AM_OS_STRING("vorbis_plugin"));
 
     // Now initialize the engine (registries are locked after this)
-    Engine::Init(config);
+    amEngine->Initialize(AM_OS_STRING("config.amconfig"));
 }
 ```
 
@@ -123,7 +120,7 @@ int main()
 | Phase | Action |
 |-------|--------|
 | **Load** | The engine calls `dlopen`/`LoadLibrary` on the shared library. |
-| **Register** | The engine calls `AmplitudeRegisterPlugin()` to register extensions. |
+| **Register** | The engine calls `RegisterPlugin()` to register extensions. |
 | **Active** | The plugin's codecs, filters, etc. are available for use. |
 | **Unload** | When the engine shuts down, the library is automatically unloaded. |
 
@@ -160,7 +157,7 @@ If a plugin fails to load, check the engine log for error messages:
 
 ```
 [ERROR] Failed to load plugin 'vorbis_plugin': Plugin not found
-[ERROR] Failed to load plugin 'my_plugin': Symbol 'AmplitudeRegisterPlugin' not found
+[ERROR] Failed to load plugin 'my_plugin': Symbol 'RegisterPlugin' not found
 ```
 
 Common issues:
@@ -168,15 +165,15 @@ Common issues:
 | Issue | Cause | Solution |
 |-------|-------|----------|
 | Plugin not found | Wrong search path or missing file | Verify the path and file extension |
-| Symbol not found | Function not exported with `extern "C"` | Add `extern "C"` and `AM_API_PUBLIC` |
+| Symbol not found | `RegisterPlugin` not exported with `extern "C"` | Add `extern "C"` and `AM_API_PUBLIC` |
 | Crash on load | ABI mismatch | Rebuild with the same compiler/settings |
-| Codec not used | Registration after `Engine::Init()` | Load plugins before engine init |
+| Codec not used | Registration after `amEngine->Initialize()` | Load plugins before engine init |
 
 ## Best Practices
 
 - **Version your plugins**: Include the Amplitude SDK version in your plugin's build to avoid ABI mismatches.
 - **Keep plugins small**: Each plugin should focus on one extension type (one codec, one filter, etc.).
-- **Handle errors gracefully**: If `AmplitudeRegisterPlugin()` fails partially, log the error but do not crash.
+- **Handle errors gracefully**: If `RegisterPlugin()` fails partially, log the error and return `false` rather than crashing.
 - **Document dependencies**: If your plugin depends on third-party libraries, list them clearly.
 
 ## Next Steps

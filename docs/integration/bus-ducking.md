@@ -1,6 +1,7 @@
 ---
 title: Bus Ducking
 description: Configure automatic bus ducking to lower the volume of background audio when important sounds play.
+diataxis: how-to
 ---
 
 This guide explains how to configure **bus ducking** in Amplitude. Ducking automatically reduces the gain of one or more buses when a specific bus becomes active, ensuring that dialogue, voiceovers, or critical SFX remain audible over background music and ambience.
@@ -11,14 +12,17 @@ Ducking is configured in the **buses file** (`*.buses.json`). When a bus with `d
 
 ## Basic Ducking Setup
 
-Here's a simple example where the `voices` bus ducks the `music` and `ambience` buses:
+Here's a simple example where the `voices` bus ducks the `music` and `ambience` buses. Each bus is defined as a top-level entry in the `buses` array; `child_buses` holds the IDs of child buses, and `duck_buses` entries reference target buses by their numeric `id`:
 
 ```json
 {
-  "id": 1,
-  "name": "master",
-  "gain": 1.0,
-  "child_buses": [
+  "buses": [
+    {
+      "id": 1,
+      "name": "master",
+      "gain": 1.0,
+      "child_buses": [2, 3, 4]
+    },
     {
       "id": 2,
       "name": "music",
@@ -35,26 +39,26 @@ Here's a simple example where the `voices` bus ducks the `music` and `ambience` 
       "gain": 1.0,
       "duck_buses": [
         {
-          "target_bus": "music",
+          "id": 2,
           "target_gain": 0.3,
           "fade_in": {
-            "duration": 200,
+            "duration": 0.2,
             "fader": "EaseIn"
           },
           "fade_out": {
-            "duration": 800,
+            "duration": 0.8,
             "fader": "EaseOut"
           }
         },
         {
-          "target_bus": "ambience",
+          "id": 3,
           "target_gain": 0.5,
           "fade_in": {
-            "duration": 100,
+            "duration": 0.1,
             "fader": "Linear"
           },
           "fade_out": {
-            "duration": 1000,
+            "duration": 1.0,
             "fader": "Linear"
           }
         }
@@ -68,11 +72,11 @@ Here's a simple example where the `voices` bus ducks the `music` and `ambience` 
 
 | Parameter | Description |
 |-----------|-------------|
-| `target_bus` | The name of the bus to duck. |
+| `id` | The numeric ID of the bus to duck. Must match an existing bus `id`. |
 | `target_gain` | The gain level to fade down to (0.0 = silent, 1.0 = no change). |
-| `fade_in.duration` | Time in milliseconds to fade the target bus down when ducking starts. |
+| `fade_in.duration` | Duration in seconds to fade the target bus down when ducking starts. |
 | `fade_in.fader` | The fader curve for the fade-in (duck-down) transition. |
-| `fade_out.duration` | Time in milliseconds to fade the target bus back up when ducking ends. |
+| `fade_out.duration` | Duration in seconds to fade the target bus back up when ducking ends. |
 | `fade_out.fader` | The fader curve for the fade-out (restore) transition. |
 
 ## Fader Curves
@@ -105,8 +109,8 @@ master (gain: 1.0)
 You can also trigger ducking manually at runtime:
 
 ```cpp
-Bus voicesBus = amEngine->GetBus("voices");
-Bus musicBus = amEngine->GetBus("music");
+Bus voicesBus = amEngine->FindBus("voices");
+Bus musicBus = amEngine->FindBus("music");
 
 // Manually duck music when a cutscene starts
 musicBus.SetGain(0.2f);

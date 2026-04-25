@@ -1,6 +1,8 @@
 ---
 title: Effect
 description: Effects allows you to apply sound effects to any sound object. Effects are applied at the playback time through a pipeline processor.
+diataxis: reference
+
 ---
 
 Effects allow you to apply sound effects to any sound object. Effects are applied at the playback time through a pipeline processor.

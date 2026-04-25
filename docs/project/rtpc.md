@@ -1,6 +1,8 @@
 ---
 title: Real-Time Parameter Control
 description: A RTPC allows you to synchronize a value between your game and Amplitude. This page explains how to set up RTPC assets.
+diataxis: reference
+
 ---
 
 A RTPC allows you to synchronize a value between your game and Amplitude. With Amplitude, you can update several values automatically through RTPC, such as sound object gain and priority, as well as effect parameters.

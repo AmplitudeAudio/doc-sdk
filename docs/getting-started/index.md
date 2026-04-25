@@ -1,7 +1,9 @@
 ---
 title: Getting Started
 template: redirect.html
-url: introduction/
+url: quick-start/
 social:
   cards: false
+
+diataxis: tutorial
 ---

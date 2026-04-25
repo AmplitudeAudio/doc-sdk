@@ -1,6 +1,8 @@
 ---
 title: Switch Container
 description: A switch container is a special container sound object that automatically plays or schedules sounds when a specific switch changes its state.
+diataxis: reference
+
 ---
 
 A switch container is a special container sound object that automatically plays or schedules sounds when a specific [Switch] changes its state.

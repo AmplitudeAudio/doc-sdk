@@ -1,6 +1,8 @@
 ---
 title: Custom Pipeline Node
 description: Learn how to extend the Amplimix pipeline with custom audio processing nodes.
+diataxis: tutorial
+
 ---
 
 This tutorial walks you through creating a custom pipeline node for the Amplitude engine. You will build a **Gain LFO Node** — a node that modulates the gain of a sound with a low-frequency oscillator — and learn how to register it so it can be used in any pipeline asset.
@@ -64,14 +66,12 @@ public:
     GainLFONodeInstance();
     ~GainLFONodeInstance() override = default;
 
-    bool Initialize(const AmString& name, const AmUInt32 id, const PipelineInstance* pipeline) override;
+    void Initialize(AmObjectID id, const AmplimixLayer* layer, const PipelineInstance* pipeline, AmSize paramCount) override;
     void Reset() override;
-    AmUInt64 GetOutputFrameCount() const override;
-    AmUInt16 GetOutputChannelCount() const override;
     bool ShouldSkip() const override;
 
 protected:
-    AmUInt64 Process(AudioBuffer* out, AmUInt64 outFrameOffset, AmUInt64 neededFrames) override;
+    const AudioBuffer* Process(const AudioBuffer* input) override;
 
 private:
     AmReal32 _phase;
@@ -86,7 +86,7 @@ public:
         : Node("GainLFO")
     {}
 
-    std::shared_ptr<NodeInstance> CreateInstance() override
+    std::shared_ptr<NodeInstance> CreateInstance() const override
     {
         return ampoolshared(eMemoryPoolKind_Amplimix, GainLFONodeInstance);
     }
@@ -108,27 +108,15 @@ GainLFONodeInstance::GainLFONodeInstance()
     , _depth(0.1f)
 {}
 
-bool GainLFONodeInstance::Initialize(const AmString& name, const AmUInt32 id, const PipelineInstance* pipeline)
+void GainLFONodeInstance::Initialize(AmObjectID id, const AmplimixLayer* layer, const PipelineInstance* pipeline, AmSize paramCount)
 {
     // You can read custom configuration here if your node supports parameters
-    return ProcessorNodeInstance::Initialize(name, id, pipeline);
+    NodeInstance::Initialize(id, layer, pipeline, paramCount);
 }
 
 void GainLFONodeInstance::Reset()
 {
     _phase = 0.0f;
-}
-
-AmUInt64 GainLFONodeInstance::GetOutputFrameCount() const
-{
-    // Pass-through: output frame count equals input frame count
-    return GetInputFrameCount();
-}
-
-AmUInt16 GainLFONodeInstance::GetOutputChannelCount() const
-{
-    // Pass-through: channel count is unchanged
-    return GetInputChannelCount();
 }
 
 bool GainLFONodeInstance::ShouldSkip() const
@@ -137,12 +125,19 @@ bool GainLFONodeInstance::ShouldSkip() const
     return _depth <= 0.0f;
 }
 
-AmUInt64 GainLFONodeInstance::Process(AudioBuffer* out, AmUInt64 outFrameOffset, AmUInt64 neededFrames)
+const AudioBuffer* GainLFONodeInstance::Process(const AudioBuffer* input)
 {
-    const AmUInt16 channels = out->GetChannelCount();
-    const AmUInt32 sampleRate = GetSampleRate();
+    if (input == nullptr)
+        return nullptr;
 
-    for (AmUInt64 i = 0; i < neededFrames; ++i)
+    const AmUInt16 channels = input->GetChannelCount();
+    const AmUInt64 frames = input->GetFrameCount();
+    const AmUInt32 sampleRate = amEngine->GetMixer()->GetSampleRate();
+
+    // Copy input into the pre-allocated output buffer
+    _output = *input;
+
+    for (AmUInt64 i = 0; i < frames; ++i)
     {
         // Compute LFO value: sine wave [-1, 1]
         const AmReal32 lfo = std::sin(2.0f * AM_PI * _phase);
@@ -153,16 +148,16 @@ AmUInt64 GainLFONodeInstance::Process(AudioBuffer* out, AmUInt64 outFrameOffset,
         // Apply gain to all channels
         for (AmUInt16 ch = 0; ch < channels; ++ch)
         {
-            out->GetData()[ch][outFrameOffset + i] *= gain;
+            _output[ch][i] *= gain;
         }
 
         // Advance phase
-        _phase += _rate / sampleRate;
+        _phase += _rate / static_cast<AmReal32>(sampleRate);
         if (_phase >= 1.0f)
             _phase -= 1.0f;
     }
 
-    return neededFrames;
+    return &_output;
 }
 ```
 
@@ -184,12 +179,12 @@ int main(int argc, char* argv[])
     Engine::RegisterDefaultExtensions();
 
     // Now initialize the engine
-    Engine::Init(config);
+    amEngine->Initialize(AM_OS_STRING("pc.config.amconfig"));
 }
 ```
 
 !!! tip "Registration order"
-    Nodes must be registered **before** `Engine::Init()` is called. Once the engine is initialized, the node registry is locked.
+    Nodes must be registered **before** `amEngine->Initialize()` is called. Once the engine is initialized, the node registry is locked.
 
 ## Step 5: Use the Node in a Pipeline
 
@@ -223,19 +218,17 @@ Assign this pipeline to a sound object or the engine mixer configuration:
 
 ## Key Concepts
 
-### Frame Counts and Offsets
+### Process Signature
 
-The `Process()` method receives:
+The `Process()` method for a `ProcessorNodeInstance` receives:
 
-- `out`: The output buffer (also the input buffer for in-place processors)
-- `outFrameOffset`: Where to start writing in the buffer
-- `neededFrames`: How many frames to process
+- `input`: The input audio buffer provided by the upstream node (may be `nullptr` if upstream is skipped)
 
-Always process exactly `neededFrames` unless you reach the end of the source data.
+It must return a pointer to the output `AudioBuffer`. For in-place processors, copy `*input` into the pre-allocated `_output` member, apply your transformation, and return `&_output`.
 
 ### Channel Count
 
-Your node can change the channel count (e.g., mono-to-stereo panning) or preserve it (like our gain LFO). Return the correct count from `GetOutputChannelCount()`.
+Your node can change the channel count (e.g., mono-to-stereo panning) or preserve it (like our gain LFO). Override `GetOutputChannelCount()` on `NodeInstance` to return a different value; the default returns `m_inputChannelCount` (pass-through).
 
 ### ShouldSkip()
 
@@ -266,14 +259,14 @@ void Reset() override
 To make your node configurable from the pipeline asset, read parameters during `Initialize()`:
 
 ```cpp
-bool GainLFONodeInstance::Initialize(const AmString& name, const AmUInt32 id, const PipelineInstance* pipeline)
+void GainLFONodeInstance::Initialize(AmObjectID id, const AmplimixLayer* layer, const PipelineInstance* pipeline, AmSize paramCount)
 {
     // Access the pipeline asset definition
     auto* def = pipeline->GetDefinition();
     // Read custom parameters from the asset JSON
     // (requires extending the FlatBuffers schema)
 
-    return ProcessorNodeInstance::Initialize(name, id, pipeline);
+    NodeInstance::Initialize(id, layer, pipeline, paramCount);
 }
 ```
 
@@ -304,5 +297,5 @@ If you need to communicate with the game thread, use atomic variables or lock-fr
 ## Next Steps
 
 - Review the [Pipeline Reference](../project/pipeline.md) for the full DAG architecture.
-- Explore the [Node API Reference](../api/mixer/Node.md).
+- Explore the [Node API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_node.md).
 - Look at the built-in nodes in `sdk/src/Mixer/Nodes/` for production examples.

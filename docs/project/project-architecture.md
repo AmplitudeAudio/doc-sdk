@@ -1,6 +1,8 @@
 ---
 title: Project Architecture
 description: An Amplitude project is just a set of organized JSON files, each of them with a specific schema. This page will break down the Amplitude project architecture.
+diataxis: reference
+
 ---
 
 An Amplitude project is composed of a set of `.json` files organized in dedicated directories. The complete architecture of an Amplitude project can be described by this hierarchy:
@@ -81,11 +83,11 @@ The `switch_containers` directory contains configuration files for [SwitchContai
 
 The `switches` directory contains configuration files for [Switch] objects, that will be used in [SwitchContainer]s. Each `.json` file of this directory should match this [flatbuffers schema](https://github.com/AmplitudeAudio/sdk/blob/main/schemas/switch_definition.fbs). Learn more about switches and switch containers in the [Switch State](./switch.md) guide.
 
-[Attenuation]: ../api/assets/Attenuation.md
-[Collection]: ../api/assets/Collection.md
-[Effect]: ../api/assets/Effect.md
-[Event]: ../api/assets/Event.md
-[RTPC]: ../api/assets/Rtpc.md
-[Sound]: ../api/assets/Sound.md
-[SwitchContainer]: ../api/assets/SwitchContainer.md
-[Switch]: ../api/assets/Switch.md
+[Attenuation]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_attenuation.md
+[Collection]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_collection.md
+[Effect]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_effect.md
+[Event]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_event.md
+[RTPC]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_rtpc.md
+[Sound]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_sound.md
+[SwitchContainer]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_switch_container.md
+[Switch]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_switch.md

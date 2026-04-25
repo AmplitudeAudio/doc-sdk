@@ -1,6 +1,7 @@
 ---
 title: The Rendering Loop
 description: Amplitude has been built in a way it will adapt to your game framerate, through its update procedure.
+diataxis: how-to
 ---
 
 Amplitude has been built in a way it will adapt to your game framerate. For that, any update to the internal state is done in a _rendering loop_ (which may be your main game loop), where you provide to the engine the time elapsed since the last update.
@@ -18,9 +19,9 @@ while (true)
 
   // ... Update Amplitude state ...
 
-  AmTime fps = 1.0 / 60.0; // Limit to 60 frames per seconds
-  amEngine->AdvanceFrame(fps); // Apply the engine state updates
-  Thread::Sleep(static_cast<AmInt32>(fps * kAmSecond)); // Wait for the next frame to start
+  AmTime frameMs = kAmSecond / 60.0; // ~16.67 ms per frame at 60 FPS
+  amEngine->AdvanceFrame(frameMs); // Apply the engine state updates (delta in milliseconds)
+  Thread::Sleep(static_cast<AmInt32>(frameMs)); // Wait for the next frame to start
 }
 ```
 
@@ -50,21 +51,21 @@ The `AdvanceFrame()` method is the heartbeat of the Amplitude engine. It updates
 
 ## Frame Timing
 
-The `delta` parameter you pass to `AdvanceFrame()` represents the time elapsed since the last frame, in seconds:
+The `delta` parameter you pass to `AdvanceFrame()` represents the time elapsed since the last frame, **in milliseconds** (`AmTime` is `AmReal64`):
 
 ```cpp
 // Using a fixed timestep
-AmTime fixedDelta = 1.0 / 60.0; // 60 FPS
+AmTime fixedDelta = kAmSecond / 60.0; // ~16.67 ms at 60 FPS
 amEngine->AdvanceFrame(fixedDelta);
 
 // Using actual elapsed time
-AmTime actualDelta = timer.GetElapsedSeconds();
+AmTime actualDelta = timer.GetElapsedMilliseconds();
 timer.Reset();
 amEngine->AdvanceFrame(actualDelta);
 ```
 
 !!! warning
-    Passing inconsistent or very large delta values can cause audio artifacts or timing issues. For best results, use consistent frame timing or cap your delta value to a reasonable maximum (e.g., 1/30 second).
+    Passing inconsistent or very large delta values can cause audio artifacts or timing issues. For best results, use consistent frame timing or cap your delta value to a reasonable maximum (e.g., `kAmSecond / 30.0` ≈ 33 ms).
 
 ## Thread Safety
 

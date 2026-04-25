@@ -1,6 +1,7 @@
 ---
 title: Amplitude Audio SDK
 description: A cross-platform audio engine designed with the needs of games in mind.
+diataxis: explanation
 hide:
   - navigation
   - toc
@@ -16,7 +17,7 @@ Welcome to the official Amplitude Audio SDK documentation.
 
     C++ SDK features, basic concepts and installation process overview.
 
-    [:octicons-arrow-right-24: Getting started](./getting-started/introduction.md)
+    [:octicons-arrow-right-24: Getting started](./explanation/introduction.md)
 
 -   :material-package-variant:{ .lg .middle } __Integration__
 

@@ -1,6 +1,8 @@
 ---
 title: Engine Configuration
 description: Amplitude has been built to let you have complete freedom on the behavior of the engine at runtime, and everything is specified in the configuration file.
+diataxis: reference
+
 ---
 
 Amplitude has been built in a way to let you have complete freedom on the behavior of the engine at runtime. You can create several configuration files per device (PC, mobile, console), per platform (Windows, Android, XBOX, PlayStation), or any other criteria your project has to suit, then pick and load the right settings file at runtime.
@@ -187,7 +189,7 @@ The `buses_file` property defines the path to the binary (`.ambus`) file that co
 
 `string` `required`
 
-The `driver` property indicates the name of the audio [Driver](../api/engine/Driver.md) implementation to use for communication with the physical audio device. You can implement multiple audio drivers as needed and register them in the engine with the plugin API.
+The `driver` property indicates the name of the audio [Driver](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_driver.md) implementation to use for communication with the physical audio device. You can implement multiple audio drivers as needed and register them in the engine with the plugin API.
 
 ## Example
 
@@ -285,7 +287,7 @@ The following example describes an engine configuration file:
 }
 ```
 
-[Listener]: ../api/engine/Listener.md
-[Entity]: ../api/engine/Entity.md
-[Environment]: ../api/engine/Environment.md
-[Room]: ../api/engine/Room.md
+[Listener]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_listener.md
+[Entity]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_entity.md
+[Environment]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_environment.md
+[Room]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_room.md

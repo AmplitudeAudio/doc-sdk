@@ -1,6 +1,8 @@
 ---
 title: Package Files
 description: Reference for the Amplitude package file format (.ampk).
+diataxis: reference
+
 ---
 
 The `.ampk` format is Amplitude's package file format for distributing project assets. This reference documents the file structure, compression options, and runtime usage.
@@ -86,4 +88,4 @@ LZ4 is recommended for mobile and console builds where storage space is limited.
 ## Next Steps
 
 - Review the [`ampk` CLI tool reference](cli-tools.md#ampk).
-- Explore the [PackageFileSystem API Reference](../api/io/PackageFileSystem.md).
+- Explore the [PackageFileSystem API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_package_file_system.md).

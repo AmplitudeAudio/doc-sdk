@@ -1,3 +1,6 @@
+---
+diataxis: tutorial
+---
 # Tutorials
 
 This section contains step-by-step tutorials to help you extend Amplitude Audio SDK with custom components and get started with the engine.

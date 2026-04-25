@@ -1,6 +1,7 @@
 ---
 title: RTPC Curves in Practice
 description: Learn how to map game parameters to audio properties using Real-Time Parameter Control curves.
+diataxis: how-to
 ---
 
 This guide explains how to use **RTPCs (Real-Time Parameter Controls)** with curves to dynamically adjust audio properties based on game state. RTPCs allow game values like player health, speed, or altitude to control gain, pitch, priority, and effect parameters in real time.
@@ -26,8 +27,14 @@ Define the RTPC in your project:
   "default_value": 0.0,
   "fade_settings": {
     "enabled": true,
-    "fade_attack": 50,
-    "fade_release": 200
+    "fade_attack": {
+      "duration": 0.05,
+      "fader": "Linear"
+    },
+    "fade_release": {
+      "duration": 0.2,
+      "fader": "Linear"
+    }
   }
 }
 ```
@@ -37,7 +44,7 @@ Define the RTPC in your project:
 | `min_value` | Minimum expected game value. |
 | `max_value` | Maximum expected game value. |
 | `default_value` | Value used before the game sets it. |
-| `fade_settings` | Smooths abrupt value changes with attack/release times (in ms). |
+| `fade_settings` | Smooths abrupt value changes. `fade_attack` and `fade_release` are `FadeTransitionSettings` objects with `duration` (seconds) and `fader` fields. |
 
 ## Mapping Curves in Sound Assets
 
@@ -122,10 +129,10 @@ Update the RTPC value from your game code each frame:
 
 ```cpp
 // Get the RTPC handle
-Rtpc playerSpeed = amEngine->GetRtpc("player_speed");
+RtpcHandle playerSpeed = amEngine->GetRtpcHandle("player_speed");
 
 // Set the value based on game state
-playerSpeed.SetValue(player.GetCurrentSpeed());
+playerSpeed->SetValue(player.GetCurrentSpeed());
 ```
 
 The engine automatically applies the curve to all sound objects that reference this RTPC.
@@ -137,7 +144,7 @@ The engine automatically applies the curve to all sound objects that reference t
 Map vehicle speed to engine pitch and volume:
 
 ```cpp
-rtpc.SetValue(vehicle.GetRPM());
+rtpc->SetValue(vehicle.GetRPM());
 ```
 
 ### Health-Based Audio
@@ -145,7 +152,7 @@ rtpc.SetValue(vehicle.GetRPM());
 Lower music volume and add a heartbeat effect as health decreases:
 
 ```cpp
-rtpc.SetValue(player.GetHealthPercent());
+rtpc->SetValue(player.GetHealthPercent());
 ```
 
 ### Altitude Wind
@@ -153,7 +160,7 @@ rtpc.SetValue(player.GetHealthPercent());
 Increase wind volume and pitch as the player climbs:
 
 ```cpp
-rtpc.SetValue(player.GetAltitude());
+rtpc->SetValue(player.GetAltitude());
 ```
 
 ### Proximity Warning
@@ -161,7 +168,7 @@ rtpc.SetValue(player.GetAltitude());
 Map distance to enemy as a warning tone pitch:
 
 ```cpp
-rtpc.SetValue(nearestEnemy.GetDistance());
+rtpc->SetValue(nearestEnemy.GetDistance());
 ```
 
 ## Effect Parameter RTPCs
@@ -200,7 +207,7 @@ As the player goes deeper underwater, the low-pass filter cutoff drops from 20kH
 Use the engine's logging to verify RTPC values:
 
 ```cpp
-amLogInfo("Player speed RTPC: %.2f", playerSpeed.GetValue());
+amLogInfo("Player speed RTPC: %.2f", playerSpeed->GetValue());
 ```
 
 ## Best Practices

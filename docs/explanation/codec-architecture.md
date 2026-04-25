@@ -1,6 +1,7 @@
 ---
 title: Codec Architecture
 description: Understand how Amplitude's codec system handles audio file decoding and encoding.
+diataxis: explanation
 ---
 
 Amplitude's codec architecture provides a flexible, plugin-based system for reading and writing audio files. This document explains the design, key classes, and how data flows through the codec system.
@@ -157,4 +158,4 @@ Codecs should handle errors gracefully:
 
 - Learn how to write a [custom codec](../tutorials/custom-codec.md).
 - Review the [built-in codecs](../reference/codecs.md).
-- Explore the [Codec API Reference](../api/engine/Codec.md).
+- Explore the [Codec API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_codec.md).

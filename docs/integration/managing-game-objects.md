@@ -1,6 +1,7 @@
 ---
 title: Managing Game Objects
 description: You can add game objects like entities, listeners, environments and rooms in your 3D environments, manage their lifetime and synchronize them with your game through Amplitude.
+diataxis: how-to
 ---
 
 Amplitude has various items labeled as game objects: [Entities](#entities), [Listeners](#listeners), [Environments](#environments), and [Rooms](#rooms).
@@ -9,7 +10,7 @@ Amplitude has various items labeled as game objects: [Entities](#entities), [Lis
 
 Entities are game objects used to spatialize sound sources. Entities share with the sound sources they are playing spatial properties like position, orientation, and directivity.
 
-To create a new Entity, you should use the [`AddEntity()`](../api/engine/Engine.md#addentity) method from the Engine:
+To create a new Entity, you should use the [`AddEntity()`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_engine.md#public-functions) method from the Engine:
 
 ```cpp
 // Adding an entity
@@ -36,12 +37,12 @@ Channel gunfire = amEngine->Play("weapons/ak47/gunfires", gun);
 // Now the gun entity will feed the sound source with spatial properties...
 ```
 !!! warning
-    Note that the played sound source must be configured with either [Position](../api/core/eSpatialization.md), [PositionOrientation](../api/core/eSpatialization.md), or [HRTF](../api/core/eSpatialization.md) spatialization before to accept any spatial data coming from the entity. Learn more about configuring spatialization for sound sources [here](../project/sound-object.md#spatialization).
+    Note that the played sound source must be configured with either [Position](../api/group__core.md#public-types), [PositionOrientation](../api/group__core.md#public-types), or [HRTF](../api/group__core.md#public-types) spatialization before to accept any spatial data coming from the entity. Learn more about configuring spatialization for sound sources [here](../project/sound-object.md#spatialization).
 
 !!! info
     Learn more about channels and other ways to play audio in the [Playing Audio](./playing-audio.md) integration guide.
 
-If you want to get a reference to an existing entity, You should use the [`GetEntity()`](../api/engine/Engine.md#getentity) method from the Engine:
+If you want to get a reference to an existing entity, You should use the [`GetEntity()`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_engine.md#public-functions) method from the Engine:
 
 ```cpp
 // Get an existing entity
@@ -59,7 +60,7 @@ if (!speaker.Valid())
     amLogError("Unable to find an entity with ID: 1234");
 ```
 
-When it's time to remove an Entity, you should call the [`RemoveEntity()`](../api/engine/Engine.md#removeentity) method from the Engine:
+When it's time to remove an Entity, you should call the [`RemoveEntity()`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_engine.md#public-functions) method from the Engine:
 
 ```cpp
 // Remove an existing entity using its ID
@@ -72,7 +73,7 @@ amEngine->RemoveEntity(&gun);
 If the entity to remove was already removed, calling this method will do nothing.
 
 !!! tip "API Reference available"
-    Check out the [API reference](../api/engine/Entity.md) for the complete list of methods you can use with an Entity.
+    Check out the [API reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_entity.md) for the complete list of methods you can use with an Entity.
 
 ## Listeners
 
@@ -80,7 +81,7 @@ Listeners are the "ears" of your audio scene - they represent points in 3D space
 
 ### Creating and Removing Listeners
 
-To create a new Listener, use the [`AddListener()`](../api/engine/Engine.md#addlistener) method from the Engine:
+To create a new Listener, use the [`AddListener()`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_engine.md#public-functions) method from the Engine:
 
 ```cpp
 // Adding a listener with a unique ID
@@ -92,7 +93,7 @@ You must provide a unique ID for the Listener. Attempting to create another List
 !!! warning
     The maximum number of listeners you can add is restricted by the loaded [engine configuration](../project/engine-config.md#listeners). Please make sure to set the appropriate value for your project.
 
-To retrieve an existing Listener, use the [`GetListener()`](../api/engine/Engine.md#getlistener) method:
+To retrieve an existing Listener, use the [`GetListener()`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_engine.md#public-functions) method:
 
 ```cpp
 // Get an existing listener
@@ -179,7 +180,7 @@ player2Listener.SetLocation(player2Camera.GetPosition());
 ```
 
 !!! tip "API Reference available"
-    Check out the [API reference](../api/engine/Listener.md) for the complete list of methods you can use with a Listener.
+    Check out the [API reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_listener.md) for the complete list of methods you can use with a Listener.
 
 ## Environments
 
@@ -298,7 +299,7 @@ AmReal32 entityFactor = caveEnvironment.GetFactor(player);
     By default, Amplitude automatically computes environment factors using the zones you define. However, if your game has its own spatial awareness system (e.g., a custom physics or zone system), you can disable automatic computation by setting `track_environments: false` in your [engine configuration](../project/engine-config.md). When disabled, your game is responsible for computing and sending environment levels to the engine, and any zones defined in environments will be ignored. See the [engine configuration schema](../project/api.md) for more details.
 
 !!! tip "API Reference available"
-    Check out the [API reference](../api/engine/Environment.md) for the complete list of methods you can use with an Environment.
+    Check out the [API reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_environment.md) for the complete list of methods you can use with an Environment.
 
 ## Rooms
 
@@ -455,4 +456,4 @@ AmReal32 floorArea = concertHall.GetSurfaceArea(eRoomWall_Floor); // Wall surfac
 When multiple rooms exist in a scene, Amplitude processes them in order of volume (largest first). This ensures that the most significant acoustic spaces take priority when computational resources are limited.
 
 !!! tip "API Reference available"
-    Check out the [API reference](../api/engine/Room.md) for the complete list of methods you can use with a Room.
+    Check out the [API reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_room.md) for the complete list of methods you can use with a Room.
