@@ -4,9 +4,9 @@ description: Amplitude provides scripts to quickly be integrated in any CMake-ba
 ---
 
 !!! note
-    Make sure you followed the [installation instructions](../getting-started/installation.md) first before to continue this setup. If you encounter problems, please ask for support in our [Discord server](https://discord.gg/QR2uBpzJ5f).
+    Make sure you followed the [installation instructions](../getting-started/installation.md) first before continuing this setup. If you encounter problems, please ask for support in our [Discord server](https://discord.gg/QR2uBpzJ5f).
 
-After the SDK has been successfully installed, it can be used into any CMake-based projects. You should make sure the `AM_SDK_PATH` environment variable is set before to configure your project. If not, you can manually set it as a CMake variable using the CLI:
+After the SDK has been successfully installed, it can be used into any CMake-based projects. You should make sure the `AM_SDK_PATH` environment variable is set before configuring your project. If not, you can manually set it as a CMake variable using the CLI:
 
 ```bash
 cmake -DAM_SDK_PATH=/path/to/amplitude/sdk -S /path/to/sources -B /path/to/build
@@ -33,7 +33,7 @@ This will make available the `FindAmplitudeAudioSDK.cmake`, the `DetectPlatform.
 !!! note
     The `DetectAmplitudeVersion.cmake` script can be used to detect the version of the Amplitude Audio SDK libraries. It sets the `AM_SDK_VERSION` variable to the version number (as a string value, e.g. `"1.0.0"`).
 
-You should first use the `DetectPlatform` script to initialize all the CMake variables Amplitude will use to properly detect the target platform. You may also make use of these variables to customize the build process. The generated variables are:
+You should first use the `DetectPlatform` script to initialize all the CMake variables Amplitude will use to properly detect the target platform, and enable platform-specific features. You may also make use of these variables to customize the build process. The generated variables are:
 
 - `AM_PLATFORM_WIN`
 - `AM_PLATFORM_LINUX`
@@ -64,18 +64,22 @@ The script will try to automatically detect the host platform. If you want to se
 - `x64-linux`
 - `x64-osx`
 - `arm64-osx`
+- `x64-android`
+- `x86-android`
+- `arm64-android`
+- `arm-neon-android`
 
-For vcpkg users, it's preferred to let Amplitude use the same vcpkg triplet as the project. This can be done in the `CMakeLists.txt` file:
+For vcpkg users, it's preferred to let Amplitude use the same vcpkg's target triplet as the project. This can be done in the `CMakeLists.txt` file:
 
 ```cmake
 set(AM_SDK_PLATFORM ${VCPKG_TARGET_TRIPLET} CACHE STRING "The platform to use for the Amplitude Audio SDK libraries.")
 ```
 
 !!! warning
-    If defined, the `AM_SDK_PLATFORM` variable should be set before to call the CMake `find_package` function.
+    If defined, the `AM_SDK_PLATFORM` variable should be set before calling the CMake `find_package` function.
 
 !!! info
-    You need to make sure your SDK installation have the libraries for the requested platform.
+    You need to make sure your SDK installation has the libraries for the requested platform.
 
 After the call to `find_package`, 2 libraries will be available:
 

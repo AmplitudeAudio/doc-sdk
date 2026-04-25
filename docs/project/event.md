@@ -3,7 +3,7 @@ title: Event
 description: Amplitude allows you to create and trigger a sequence of actions at runtime with events.
 ---
 
-An event is a set of actions Amplitude have to execute once it has been triggered at runtime, during your game. Event assets are described with the following properties:
+An event is a set of actions Amplitude has to execute once it has been triggered at runtime, during your game. Event assets are described with the following properties:
 
 !!! info
     The flatbuffers schema of this file can be found [here](https://github.com/AmplitudeAudio/sdk/blob/main/schemas/event_definition.fbs).
@@ -35,6 +35,7 @@ This specifies the type of action to execute. The possible values of this enumer
 | ID        | Description                                                                                          |
 | --------- | ---------------------------------------------------------------------------------------------------- |
 | None      | _noop_ action.                                                                                       |
+| Wait      | Waits for the given amount of time. The `targets` property should contain a single value representing the number of milliseconds to wait. |
 | Play      | Plays the sound objects with the identifiers given in the `targets` property.                        |
 | Pause     | Pauses the sound objects with the identifiers given in the `targets` property.                       |
 | Resume    | Resumes the sound objects with the identifiers given in the `targets` property.                      |

@@ -3,7 +3,7 @@ title: Project Architecture
 description: An Amplitude project is just a set of organized JSON files, each of them with a specific schema. This page will break down the Amplitude project architecture.
 ---
 
-An Amplitude project is resumed to a set of `.json` files organized in dedicated directories. The complete architecture of an Amplitude project can be described by this hierarchy:
+An Amplitude project is composed of a set of `.json` files organized in dedicated directories. The complete architecture of an Amplitude project can be described by this hierarchy:
 
 ```text
 📁 amplitude_project_name/
@@ -36,7 +36,7 @@ The config files store all the needed settings for the audio device setup, memor
 
 An Amplitude project should have a file (or files) where the different buses used at runtime are defined. In our previous example, the `buses.json` file plays this role.
 
-You can only use one bus file per engine configuration, by setting his path in that engine configuration file. Learn more on how to configure buses in the [Buses Configuration](./buses-config.md) page.
+You can only use one bus file per engine configuration, by setting its path in that engine configuration file. Learn more on how to configure buses in the [Buses Configuration](./buses-config.md) page.
 
 !!! info
     At least one buses file is expected in an Amplitude project. If no file is specified in the engine settings, the default expected path is `./buses.json`. If the buses file is not found during the engine initialization, the library will throw an exception.

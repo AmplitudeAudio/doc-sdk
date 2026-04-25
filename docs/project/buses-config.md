@@ -45,7 +45,7 @@ The final gain of a bus is calculated by multiplying this value with the parent 
 
 The `child_buses` property stores a list of integer values, each value representing the `id` of a bus that should be considered as a child of this one. Child buses are affected by the parent bus' final gain. So if the parent bus is muted (gain = 0.0), then all the children of this bus will be muted too.
 
-For the `master` bus to work properly, you may want to feed his `child_buses` property with all the root buses (buses with no parent) of your configuration. That way, the `master` bus will correctly control the gain of all the other buses.
+For the `master` bus to work properly, you may want to feed its `child_buses` property with all the root buses (buses with no parent) of your configuration. That way, the `master` bus will correctly control the gain of all the other buses.
 
 ### duck_buses
 

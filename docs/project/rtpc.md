@@ -1,6 +1,6 @@
 ---
 title: Real-Time Parameter Control
-description: A RTPC allows you to synchronize a value between your game and Amplitude. This page will explain you how to setup RTPC assets.
+description: A RTPC allows you to synchronize a value between your game and Amplitude. This page explains how to set up RTPC assets.
 ---
 
 A RTPC allows you to synchronize a value between your game and Amplitude. With Amplitude, you can update several values automatically through RTPC, such as sound object gain and priority, as well as effect parameters.
@@ -38,7 +38,7 @@ The maximum value the RTPC is allowed to have.
 
 `double` `default: 0.0`
 
-The default value assigned to the RTPC at initialization. If this value is outer of the range `[min_value, max_value]`, it will be clamped in that range.
+The default value assigned to the RTPC at initialization. If this value is outside the range `[min_value, max_value]`, it will be clamped in that range.
 
 ## fade_settings
 

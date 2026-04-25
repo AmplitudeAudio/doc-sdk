@@ -80,7 +80,7 @@ Specifies the maximum number of virtual channels to use in addition to active ch
 
 `enum` `default: Stereo`
 
-The `panning_mode` attribute defines how Amplitude will render spatial sounds to speakers. It can take as value the name of the panning mode, or its ID. There are four (04) values available:
+The `panning_mode` attribute defines how Amplitude will render spatial sounds to speakers. It can take as value the name of the panning mode, or its ID. There are four values available:
 
 | ID  | Name                  | Description                                                                                                                                                                                                     |
 | --- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -175,7 +175,7 @@ The `occlusion` property works the same as the `obstruction` property, but it's 
 
 Defines whether the game is tracking environments. This means that the game will compute and send the environment amounts to the engine. This implies that the shapes defined in environments (if any) will not be used.
 
-Setting this value to `false` will instruct Amplitude to track environment amounts by himself. This way, Amplitude will use environment shapes and sound positions to compute the environment amounts.
+Setting this value to `false` will instruct Amplitude to track environment amounts by itself. This way, Amplitude will use environment shapes and sound positions to compute the environment amounts.
 
 ## buses_file
 
@@ -281,7 +281,7 @@ The following example describes an engine configuration file:
     }
   },
   "buses_file": "pc.buses.ambus",
-  "driver": "miniaudio",
+  "driver": "miniaudio"
 }
 ```
 

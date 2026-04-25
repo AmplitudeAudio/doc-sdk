@@ -19,7 +19,7 @@ The `scheduler` property defines the behavior of the sound scheduler of this col
 - **`mode`**: The scheduler mode can be either `Random` or `Sequence`.
 - **`config`**: An object containing the configuration of the selected mode.
 
-Amplitude supports 02 (two) scheduler modes for collections, and for each mode a specific configuration:
+Amplitude supports two scheduler modes for collections, and for each mode a specific configuration:
 
 ### Random Scheduler
 
@@ -104,7 +104,6 @@ This property is used only when the collection scheduler [mode](#scheduler) is s
   },
   "bus": 2,
   "sounds_type": [
-    "Random",
     "Random",
     "Random",
     "Random",

@@ -38,7 +38,10 @@ Specifies the number of times the sound should loop until it is automatically st
 
 `string` `required`
 
-This value points to the source file of the sound. The file may be of any format supported by the engine (MP3, OGG, FLAC, WAV, or AMS), or from a format you have created a Codec plugin for.
+This value points to the source file of the sound. The file may be of any format supported by the engine (MP3, WAV, or AMS), or from a format you have created a Codec plugin for.
+
+!!! note
+    Additional formats such as OGG and FLAC are available through plugins. See the [Audio Files and Codecs](../getting-started/concepts.md#audio-files-and-codecs) section for more details.
 
 ## Example
 

@@ -48,6 +48,6 @@ Welcome to the official Amplitude Audio SDK documentation.
 
     C++ SDK use case guides and implementation tutorials.
 
-    [:octicons-arrow-right-24: Tutorials](#)
+    [:octicons-arrow-right-24: Tutorials](./tutorials/index.md)
 
 </div>

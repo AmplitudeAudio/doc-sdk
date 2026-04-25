@@ -1,3 +1,5 @@
 .cache/
 venv/
 site/
+.mkdoxy/
+__pycache__/

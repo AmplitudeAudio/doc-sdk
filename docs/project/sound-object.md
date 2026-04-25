@@ -5,7 +5,7 @@ description: Sound objects are the core assets of an Amplitude project. They def
 
 Sound objects are the core assets of an Amplitude project. They define the various audio samples to be played and how to play them.
 
-Amplitude supports 03 (three) kinds of sound objects:
+Amplitude supports three kinds of sound objects:
 
 - [Sound](./sound.md): The most basic sound object. It references a single audio file.
 - [Collection](./collection.md): A container sound object. It manages a set of sounds and decides how and when to play them through a [scheduler](./collection.md#scheduler).
@@ -53,7 +53,7 @@ This property affects how the engine will prioritize this sound object relative 
 
 `Spatialization` `default: None`
 
-The `spatialization` property specifies how the sound object's will be rendered in the 3D space, by applying effects like sound attenuation and panning:
+The `spatialization` property specifies how the sound object will be rendered in the 3D space, by applying effects like sound attenuation and panning:
 
 | ID  | Name                | Description                                                                                                                                                                                                                                    |
 | --- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

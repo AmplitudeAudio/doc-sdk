@@ -169,14 +169,18 @@ Check the [RtpcParameter] section for more information.
 
 ### Example {#rtpc-compatible-value-example}
 
+An RTPC-compatible value with a static value:
+
 ```json
-// An example of RTPC-compatible value with a static value
 {
   "kind": "Static",
   "value": 5
 }
+```
 
-// An example of RTPC-compatible value with a RTPC value
+An RTPC-compatible value with an RTPC parameter:
+
+```json
 {
   "kind": "RTPC",
   "rtpc": {
@@ -245,17 +249,45 @@ The curve to use when converting values from the RTPC object. It stores as value
 
 ## BoxShapeDefinition {#box-shape-definition}
 
+Defines a box-shaped zone used in [Attenuation](./attenuation-model.md) models.
+
+| Property      | Type    | Description                           |
+| ------------- | ------- | ------------------------------------- |
+| `half_width`  | `float` | Half the width of the box (X-axis).   |
+| `half_height` | `float` | Half the height of the box (Y-axis).  |
+| `half_depth`  | `float` | Half the depth of the box (Z-axis).   |
+
 ---
 
 ## CapsuleShapeDefinition {#capsule-shape-definition}
+
+Defines a capsule-shaped zone used in [Attenuation](./attenuation-model.md) models.
+
+| Property      | Type    | Description                                  |
+| ------------- | ------- | -------------------------------------------- |
+| `radius`      | `float` | The radius of the capsule's hemispheres.     |
+| `half_height` | `float` | Half the height of the capsule's cylinder.   |
 
 ---
 
 ## ConeShapeDefinition {#cone-shape-definition}
 
+Defines a cone-shaped zone used in [Attenuation](./attenuation-model.md) models.
+
+| Property | Type    | Description                  |
+| -------- | ------- | ---------------------------- |
+| `radius` | `float` | The radius of the cone base. |
+| `height` | `float` | The height of the cone.      |
+
 ---
 
 ## SphereShapeDefinition {#sphere-shape-definition}
+
+Defines a sphere-shaped zone used in [Attenuation](./attenuation-model.md) models.
+
+| Property | Type    | Description                |
+| -------- | ------- | -------------------------- |
+| `radius` | `float` | The radius of the sphere.  |
 
 ---
 
