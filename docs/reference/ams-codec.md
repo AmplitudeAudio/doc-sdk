@@ -17,7 +17,7 @@ The AMS (Amplitude Media Stream) codec is Amplitude's custom audio compression f
 
 ## Encoding
 
-Use the [`amac`](cli-tools.md#amac-amplitude-audio-compressor) CLI tool to create AMS files:
+Use the [`amac`](cli-tools.md#amac) CLI tool to create AMS files:
 
 ```bash
 # Basic encoding
@@ -112,5 +112,5 @@ AMS is **not** suitable for:
 
 ## Next Steps
 
-- Use [`amac`](cli-tools.md#amac-amplitude-audio-compressor) to encode your audio.
+- Use [`amac`](cli-tools.md#amac) to encode your audio.
 - Learn about the [built-in codecs](codecs.md) for other format options.

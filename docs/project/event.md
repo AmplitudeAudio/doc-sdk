@@ -86,4 +86,4 @@ Set the [Scope] in which this action will be executed. If this value is set to `
 
 [Sound Objects]: ./sound-object.md
 [Buses]: ./buses-config.md
-[Scope]: ./api.md#scope
+[Scope]: ./api.md

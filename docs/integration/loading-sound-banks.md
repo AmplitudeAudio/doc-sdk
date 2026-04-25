@@ -22,7 +22,7 @@ if (!amEngine->LoadSoundBank(AM_OS_STRING("init.ambank"), bankId))
 ```
 
 !!! info
-    You can load as many sound bank as you want. If one of your asset (sound object, effects, attenuation, etc.) has been registered in more than one loaded sound bank, that asset will be loaded only once, and reference counted. The reference count will decrement each time you [unload sound banks](#unloading-a-sound-bank), and the asset's memory will be totally released once the last sound bank referencing it is unloaded.
+    You can load as many sound bank as you want. If one of your asset (sound object, effects, attenuation, etc.) has been registered in more than one loaded sound bank, that asset will be loaded only once, and reference counted. The reference count will decrement each time you [unload sound banks](#unloading-sound-banks), and the asset's memory will be totally released once the last sound bank referencing it is unloaded.
 
 ## Loading sound files
 

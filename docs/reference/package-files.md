@@ -19,7 +19,7 @@ An `.ampk` file is a single binary archive that contains an entire Amplitude pro
 
 ## Creating Packages
 
-Use the [`ampk`](cli-tools.md#ampk-amplitude-packager) CLI tool:
+Use the [`ampk`](cli-tools.md#ampk) CLI tool:
 
 ```bash
 # Uncompressed (fastest loading)
@@ -85,5 +85,5 @@ LZ4 is recommended for mobile and console builds where storage space is limited.
 
 ## Next Steps
 
-- Review the [`ampk` CLI tool reference](cli-tools.md#ampk-amplitude-packager).
+- Review the [`ampk` CLI tool reference](cli-tools.md#ampk).
 - Explore the [PackageFileSystem API Reference](../api/io/PackageFileSystem.md).

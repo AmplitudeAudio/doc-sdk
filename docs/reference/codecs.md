@@ -85,7 +85,7 @@ The AMS (Amplitude Media Stream) codec is Amplitude's custom ADPCM compression f
 
 ### Creating AMS Files
 
-Use the [`amac`](cli-tools.md#amac-amplitude-audio-compressor) CLI tool to encode WAV or MP3 to AMS:
+Use the [`amac`](cli-tools.md#amac) CLI tool to encode WAV or MP3 to AMS:
 
 ```bash
 amac -e input.wav output.ams
@@ -148,4 +148,4 @@ This allows the engine to track codec memory usage and enforce budgets in future
 
 - Learn how to write a [custom codec](../tutorials/custom-codec.md).
 - Review the [Codec API Reference](../api/engine/Codec.md).
-- Explore the [AMS codec tool](cli-tools.md#amac-amplitude-audio-compressor).
+- Explore the [AMS codec tool](cli-tools.md#amac).

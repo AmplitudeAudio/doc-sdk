@@ -17,7 +17,9 @@ All tools follow a consistent CLI style and support `--verbose`, `--no-logo`, an
 
 ---
 
-## amac — Amplitude Audio Compressor
+## amac {#amac}
+
+Amplitude Audio Compressor
 
 `amac` encodes standard audio files into Amplitude's custom AMS ADPCM format, or decodes AMS files back to WAV.
 
@@ -67,7 +69,9 @@ amac -e --resample --target-sample-rate 48000 input.wav output.ams
 
 ---
 
-## amir — Amplitude HRIR Sphere Builder
+## amir {#amir}
+
+Amplitude HRIR Sphere Builder
 
 `amir` converts HRIR (Head-Related Impulse Response) datasets into Amplitude's optimized `.amir` sphere format for runtime HRTF spatialization.
 
@@ -130,7 +134,9 @@ The `.amir` file contains:
 
 ---
 
-## ampk — Amplitude Packager
+## ampk {#ampk}
+
+Amplitude Packager
 
 `ampk` packs an entire Amplitude project directory into a single `.ampk` file for efficient distribution and loading at runtime.
 

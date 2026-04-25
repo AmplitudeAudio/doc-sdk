@@ -10,7 +10,7 @@ This guide explains how to set up HRTF (Head-Related Transfer Function) spatiali
 Before you begin, ensure you have:
 
 - Amplitude Audio SDK v1.0 or later
-- An `.amir` HRIR sphere file (see [Generating an AMIR file](#generating-an-amir-file))
+- An `.amir` HRIR sphere file (see [Generating an AMIR file](#step-1-generate-or-obtain-an-amir-file))
 - Headphones for testing (HRTF is optimized for headphone playback)
 
 ## What is HRTF?
