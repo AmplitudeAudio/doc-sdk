@@ -2,7 +2,6 @@
 title: Custom Pipeline Node
 description: Learn how to extend the Amplimix pipeline with custom audio processing nodes.
 diataxis: tutorial
-
 ---
 
 This tutorial walks you through creating a custom pipeline node for the Amplitude engine. You will build a **Gain LFO Node** — a node that modulates the gain of a sound with a low-frequency oscillator — and learn how to register it so it can be used in any pipeline asset.
@@ -74,9 +73,10 @@ protected:
     const AudioBuffer* Process(const AudioBuffer* input) override;
 
 private:
+    // Parameter indices (must match the Node factory below).
+    enum eParam : AmSize { kRate = 0, kDepth = 1, kCount = 2 };
+
     AmReal32 _phase;
-    AmReal32 _rate;
-    AmReal32 _depth;
 };
 
 class GainLFONode final : public Node
@@ -90,6 +90,14 @@ public:
     {
         return ampoolshared(eMemoryPoolKind_Amplimix, GainLFONodeInstance);
     }
+
+    // Parameter declaration. Amplimix uses these to validate `parameters: [...]`
+    // entries in the pipeline asset and to surface parameter metadata to tools.
+    AmSize GetParameterCount() const override                   { return GainLFONodeInstance::kCount; }
+    AmString GetParameterName(AmSize index) const override      { return index == GainLFONodeInstance::kRate ? "rate" : "depth"; }
+    eParameterType GetParameterType(AmSize) const override      { return eParameterType_Float; }
+    AmReal32 GetParameterMin(AmSize index) const override       { return 0.0f; }
+    AmReal32 GetParameterMax(AmSize index) const override       { return index == GainLFONodeInstance::kRate ? 50.0f : 1.0f; }
 };
 ```
 
@@ -104,13 +112,12 @@ public:
 
 GainLFONodeInstance::GainLFONodeInstance()
     : _phase(0.0f)
-    , _rate(5.0f)
-    , _depth(0.1f)
 {}
 
 void GainLFONodeInstance::Initialize(AmObjectID id, const AmplimixLayer* layer, const PipelineInstance* pipeline, AmSize paramCount)
 {
-    // You can read custom configuration here if your node supports parameters
+    // The base implementation copies the `parameters: [...]` array from the
+    // pipeline asset into `m_parameters`. Always forward the call.
     NodeInstance::Initialize(id, layer, pipeline, paramCount);
 }
 
@@ -121,8 +128,8 @@ void GainLFONodeInstance::Reset()
 
 bool GainLFONodeInstance::ShouldSkip() const
 {
-    // Skip if depth is zero (no audible effect)
-    return _depth <= 0.0f;
+    // Skip when depth is zero (the node would be a no-op).
+    return GetParameter(kDepth) <= 0.0f;
 }
 
 const AudioBuffer* GainLFONodeInstance::Process(const AudioBuffer* input)
@@ -134,6 +141,10 @@ const AudioBuffer* GainLFONodeInstance::Process(const AudioBuffer* input)
     const AmUInt64 frames = input->GetFrameCount();
     const AmUInt32 sampleRate = amEngine->GetMixer()->GetSampleRate();
 
+    // Read the live parameter values for this layer.
+    const AmReal32 rate = GetParameter(kRate);
+    const AmReal32 depth = GetParameter(kDepth);
+
     // Copy input into the pre-allocated output buffer
     _output = *input;
 
@@ -143,7 +154,7 @@ const AudioBuffer* GainLFONodeInstance::Process(const AudioBuffer* input)
         const AmReal32 lfo = std::sin(2.0f * AM_PI * _phase);
 
         // Map to gain range [1 - depth, 1 + depth]
-        const AmReal32 gain = 1.0f + lfo * _depth;
+        const AmReal32 gain = 1.0f + lfo * depth;
 
         // Apply gain to all channels
         for (AmUInt16 ch = 0; ch < channels; ++ch)
@@ -152,7 +163,7 @@ const AudioBuffer* GainLFONodeInstance::Process(const AudioBuffer* input)
         }
 
         // Advance phase
-        _phase += _rate / static_cast<AmReal32>(sampleRate);
+        _phase += rate / static_cast<AmReal32>(sampleRate);
         if (_phase >= 1.0f)
             _phase -= 1.0f;
     }
@@ -160,6 +171,9 @@ const AudioBuffer* GainLFONodeInstance::Process(const AudioBuffer* input)
     return &_output;
 }
 ```
+
+!!! tip "Parameters change at runtime"
+    `GetParameter(index)` always returns the latest value. You can also call `SetParameter(index, value)` from outside `Process()` (for example from a custom RTPC binding) and the next frame will pick it up.
 
 ## Step 4: Register the Node
 
@@ -188,7 +202,7 @@ int main(int argc, char* argv[])
 
 ## Step 5: Use the Node in a Pipeline
 
-Create a pipeline asset JSON file that includes your custom node:
+Create a pipeline asset JSON file that includes your custom node and configures its parameters via the `parameters` array:
 
 ```json
 {
@@ -197,12 +211,14 @@ Create a pipeline asset JSON file that includes your custom node:
   "nodes": [
     { "id": 1, "name": "Input", "consume": [] },
     { "id": 2, "name": "Attenuation", "consume": [1] },
-    { "id": 3, "name": "GainLFO", "consume": [2] },
+    { "id": 3, "name": "GainLFO", "consume": [2], "parameters": [5.0, 0.1] },
     { "id": 4, "name": "StereoPanning", "consume": [3] },
     { "id": 5, "name": "Output", "consume": [4] }
   ]
 }
 ```
+
+The `parameters` array is positional: index `0` is the rate (`5.0` Hz), index `1` is the depth (`0.1`). The order must match the parameter indices declared in `GainLFONodeInstance::eParam`.
 
 Assign this pipeline to a sound object or the engine mixer configuration:
 
@@ -237,7 +253,7 @@ Implement `ShouldSkip()` to let the mixer bypass your node when it has no audibl
 ```cpp
 bool ShouldSkip() const override
 {
-    return _depth <= 0.0f || _enabled == false;
+    return GetParameter(kDepth) <= 0.0f;
 }
 ```
 
@@ -256,21 +272,13 @@ void Reset() override
 
 ## Parameters
 
-To make your node configurable from the pipeline asset, read parameters during `Initialize()`:
+The pipeline schema declares an optional `parameters: [float]` array per node. Amplimix copies this array into the instance's `m_parameters` buffer during `Initialize()`, so all you need to do is:
 
-```cpp
-void GainLFONodeInstance::Initialize(AmObjectID id, const AmplimixLayer* layer, const PipelineInstance* pipeline, AmSize paramCount)
-{
-    // Access the pipeline asset definition
-    auto* def = pipeline->GetDefinition();
-    // Read custom parameters from the asset JSON
-    // (requires extending the FlatBuffers schema)
+1. Declare how many parameters the node accepts and their metadata on the **`Node` factory** by overriding `GetParameterCount()`, `GetParameterName()`, `GetParameterType()`, `GetParameterMin()`, and `GetParameterMax()`.
+2. Read live values from inside `Process()` via `GetParameter(index)`.
+3. Optionally update values at runtime with `SetParameter(index, value)` (the next frame picks them up).
 
-    NodeInstance::Initialize(id, layer, pipeline, paramCount);
-}
-```
-
-Full parameter support requires extending the pipeline FlatBuffers schema. For simple hard-coded behavior, compile-time constants are sufficient.
+The `GainLFONode` example above uses this pattern to expose `rate` (Hz) and `depth` ([0, 1]) as configurable parameters. No FlatBuffers schema extension is required — `parameters: [...]` is already part of `pipeline_definition.fbs`.
 
 ## Memory Management
 

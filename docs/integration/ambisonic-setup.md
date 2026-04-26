@@ -121,12 +121,8 @@ The engine's `output` configuration accepts the following `ePlaybackOutputChanne
 | `Surround_5_1` | 6 | Standard 5.1 surround |
 | `Surround_7_1` | 8 | Standard 7.1 surround |
 
-<!-- FIXME: unverified - Cube, Dodecahedron, and LebedevGrid output presets are not confirmed in ePlaybackOutputChannels; they were removed from this table -->
-
-## Shelf Filtering
-
-<!-- FIXME: unverified - AmbisonicShelfFilter is not a registered pipeline node in the SDK source; shelf filtering behaviour may be internal to AmbisonicBinauralDecoder -->
-Amplitude internally compensates for energy loss at higher Ambisonic orders during the binaural decoding stage. This ensures that decoded audio has consistent loudness regardless of the Ambisonic order.
+!!! note
+    The output channel layouts above are the only values exposed by `ePlaybackOutputChannels` in `Core/Device.h`. The `panning_mode` (Stereo / Binaural*) controls how Ambisonic decoding maps onto these channels — see [`AmbisonicBinauralDecoder`](../api/group__mixer.md) for the underlying virtual-loudspeaker arrays.
 
 ## B-Format Channels
 

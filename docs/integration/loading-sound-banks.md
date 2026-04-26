@@ -10,7 +10,7 @@ When the engine is [fully initialized](./initializing-the-engine.md), you have t
 
 By loading a sound bank, the engine will also load all the associated data (effects, attenuation, events, etc.).
 
-The process of loading a sound bank is basicaly the following:
+The process of loading a sound bank is basically the following:
 
 ```cpp
 AmBankID bankId = kAmInvalidObjectId;
@@ -43,7 +43,7 @@ while (!amEngine->TryFinalizeLoadSoundFiles())
 ```
 
 !!! note
-    Audio data loaded in memory are shared across every [sound instances](../explanation/concepts.md#sound-instances).
+    Audio data loaded in memory are shared across every [sound instances](../deep-dive/concepts.md#sound-instances).
 
 ## Unloading sound banks
 

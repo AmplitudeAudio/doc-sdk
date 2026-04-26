@@ -125,4 +125,4 @@ amEngine->RemoveListener(2);
 ## Next Steps
 
 - Review the [Managing Game Objects](managing-game-objects.md) guide for entity setup.
-- Learn about [Rooms and Environments](rooms-and-environments.md) to add acoustics to each listener's space.
+- Learn about [Rooms and Environments](managing-game-objects.md#acoustic-spaces) to add acoustics to each listener's space.

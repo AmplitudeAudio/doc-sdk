@@ -1,10 +1,10 @@
 ---
-title: Explanation
+title: Deep Dive
 description: Deep dives into Amplitude's architecture, concepts, and design decisions.
 diataxis: explanation
 ---
 
-# Explanation
+# Deep Dive
 
 This section contains in-depth explanations of Amplitude's architecture and concepts.
 

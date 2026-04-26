@@ -2,7 +2,6 @@
 title: AMS Codec
 description: Reference for the Amplitude Media Stream (AMS) ADPCM compression format.
 diataxis: reference
-
 ---
 
 The AMS (Amplitude Media Stream) codec is Amplitude's custom audio compression format. It provides a good balance between compression ratio, decode speed, and audio quality for game sound effects and music.

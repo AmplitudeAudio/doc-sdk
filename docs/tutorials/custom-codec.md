@@ -2,7 +2,6 @@
 title: Custom Codec
 description: Learn how to extend the Engine by implementing a custom audio Codec for reading and writing audio files.
 diataxis: tutorial
-
 ---
 
 This tutorial walks you through creating a custom audio codec for the Amplitude engine. You will build a **Raw PCM codec** — a simple reader for uncompressed raw audio data — and learn how to register it as a plugin so the engine can load your files at runtime.

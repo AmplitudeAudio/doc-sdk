@@ -78,7 +78,7 @@ The `Encoder` base class handles writing:
 
 ```
 Sound Bank Load
-    --> Codec::FindForFile() matches extension / header
+    --> Codec::CanHandleFile() matches extension / header
     --> Codec::CreateDecoder()
     --> Decoder::Open(file)
     --> Decoder::Load(buffer)
@@ -89,7 +89,7 @@ Sound Bank Load
 
 ```
 Playback Requested
-    --> Codec::FindForFile()
+    --> Codec::CanHandleFile()
     --> Codec::CreateDecoder()
     --> Decoder::Open(file)
 

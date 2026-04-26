@@ -2,7 +2,6 @@
 title: Glossary
 description: Definitions of common terms used in the Amplitude Audio SDK documentation.
 diataxis: reference
-
 ---
 
 ## A

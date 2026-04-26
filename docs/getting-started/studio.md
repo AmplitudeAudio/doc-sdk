@@ -2,7 +2,6 @@
 title: Amplitude Studio
 description: Amplitude Studio is the official authoring tool for your Amplitude projects.
 diataxis: explanation
-
 ---
 
 Amplitude Studio is the official authoring tool for your Amplitude projects. The tool offers a graphical user interface and some command line utilities to create, manage, and ship your projects with ease.

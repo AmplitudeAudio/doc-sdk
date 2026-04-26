@@ -2,7 +2,6 @@
 title: Custom Driver
 description: Learn how to extend the Engine by implementing a custom audio Driver for outputting sound to a physical device.
 diataxis: tutorial
-
 ---
 
 This tutorial walks you through creating a custom audio driver for the Amplitude engine. You will build a **Timer Driver** — a simple cross-platform driver that feeds audio to the mixer on a fixed interval — and learn how to register it so the engine can use it for playback.

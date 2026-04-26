@@ -2,7 +2,6 @@
 title: Sound Objects
 description: Sound objects are the core assets of an Amplitude project. They define the various audio samples to be played and how to play them.
 diataxis: reference
-
 ---
 
 Sound objects are the core assets of an Amplitude project. They define the various audio samples to be played and how to play them.
@@ -38,6 +37,12 @@ With this property you can specify a special [effect](./effect.md) to apply to t
 `RtpcCompatibleValue` `required`
 
 The `gain` property stores the value of the gain (the volume) of the sound object. The value should match the schema of a [RtpcCompatibleValue] object.
+
+## pitch
+
+`RtpcCompatibleValue` `optional`
+
+The `pitch` property applies a custom pitch multiplier to the sound object on top of the runtime pitch (e.g., from the Doppler effect). The value should match the schema of a [RtpcCompatibleValue] object. A value of `1.0` is neutral.
 
 ## bus
 

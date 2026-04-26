@@ -35,7 +35,7 @@ Separating allocations by pool allows:
 
 - **Accurate statistics**: See exactly which subsystem uses memory.
 - **Targeted optimization**: Optimize the allocator per pool.
-- **Budget enforcement**: Limit memory per subsystem (planned for v1.3).
+- **Budget enforcement**: Limit memory per subsystem.
 
 ## Allocation Macros
 
@@ -90,7 +90,7 @@ MemoryManager::Initialize(std::make_shared<MyAllocator>());
 
 ## Leak Detection
 
-When statistics are enabled (the default), the memory manager tracks every allocation with its file and line number:
+When statistics are enabled (the default on debug builds), the memory manager tracks every allocation with its file and line number:
 
 ```cpp
 // This allocation is tracked
@@ -98,7 +98,7 @@ void* buffer = ampoolmalloc(eMemoryPoolKind_Engine, 1024);
 // File: MyGame.cpp, Line: 42
 ```
 
-On shutdown, if any allocations remain, the memory manager logs them:
+On shutdown, if any allocations remain, you can log them using `MemoryManager::InspectMemoryLeaks()`:
 
 ```
 [WARN] Memory leak detected: 1024 bytes allocated at MyGame.cpp:42
@@ -145,7 +145,6 @@ Always align audio buffers to at least 16 bytes (32 bytes for AVX).
 - **Always use pool macros**: Never use raw `malloc`/`free` for Amplitude-related allocations.
 - **Choose the right pool**: This makes debugging and optimization much easier.
 - **Use scoped allocations for temporaries**: Prevents leaks and simplifies code.
-- **Align to 32 bytes**: Enables AVX optimizations on x86 and NEON on ARM.
 - **Check stats in development**: Monitor pool usage to catch unexpected growth.
 
 ## Next Steps

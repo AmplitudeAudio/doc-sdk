@@ -121,6 +121,9 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+        - name: vegalite
+          class: vegalite
+          format: !!python/name:mkdocs_charts_plugin.fences.fence_vegalite
   - pymdownx.tabbed:
       alternate_style: true
   - toc:
@@ -149,6 +152,7 @@ plugins:
       version_selector: true
       css_dir: static
       javascript_dir: static
+  - charts
   - minify:
       minify_html: true
       minify_js: true
@@ -187,6 +191,10 @@ extra_javascript:
   - static/versioned-links.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/vega@5
+  - https://cdn.jsdelivr.net/npm/vega-lite@5
+  - https://cdn.jsdelivr.net/npm/vega-embed@6
 
 exclude_docs: |
   SUMMARY.md
+  _audit/

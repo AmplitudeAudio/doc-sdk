@@ -5,5 +5,5 @@ url: quick-start/
 social:
   cards: false
 
-diataxis: tutorial
+diataxis: how-to
 ---

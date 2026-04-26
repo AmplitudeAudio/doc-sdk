@@ -37,7 +37,7 @@ Channel gunfire = amEngine->Play("weapons/ak47/gunfires", gun);
 // Now the gun entity will feed the sound source with spatial properties...
 ```
 !!! warning
-    Note that the played sound source must be configured with either [Position](../api/group__core.md#public-types), [PositionOrientation](../api/group__core.md#public-types), or [HRTF](../api/group__core.md#public-types) spatialization before to accept any spatial data coming from the entity. Learn more about configuring spatialization for sound sources [here](../project/sound-object.md#spatialization).
+    Note that the played sound source must be configured with either `Position`, `PositionOrientation`, or `HRTF` [spatialization](../project/sound-object.md#spatialization) before accepting any spatial data coming from the entity.
 
 !!! info
     Learn more about channels and other ways to play audio in the [Playing Audio](./playing-audio.md) integration guide.
@@ -182,6 +182,26 @@ player2Listener.SetLocation(player2Camera.GetPosition());
 !!! tip "API Reference available"
     Check out the [API reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_listener.md) for the complete list of methods you can use with a Listener.
 
+## Acoustic Spaces
+
+Amplitude provides two complementary systems for spatial acoustics:
+
+| System          | Purpose                                                  | Best For                                       |
+| --------------- | -------------------------------------------------------- | ---------------------------------------------- |
+| **Environment** | Zone-based effect application (reverb, delay, EQ)        | Outdoor areas, caves, irregular zones          |
+| **Room**        | Physically modelled early reflections and reverberation  | Indoor spaces with well-defined geometry       |
+
+```mermaid
+graph LR
+    A[Sound Source] --> B{Inside Room?}
+    B -->|Yes| C[Room Processing<br/>Early Reflections + Reverb]
+    B -->|No| D[Environment Processing<br/>Zone-based Effects]
+    C --> E[Output]
+    D --> E
+```
+
+The two systems complement each other: use Rooms for buildings, vehicles, and corridors; use Environments for caves, forests, and underwater pockets. Both are sized by the corresponding fields in your [engine configuration](../project/engine-config.md#game) (`environments`, `rooms`, `track_environments`).
+
 ## Environments
 
 Environments are spatial zones that apply audio effects to sounds playing within them. They combine a geometric zone definition with an audio effect, creating areas where sounds are processed differently - such as a cave with reverb or an underwater area with muffled audio.
@@ -296,7 +316,7 @@ AmReal32 entityFactor = caveEnvironment.GetFactor(player);
     Amplitude caches environment factors and only recalculates them when an entity moves or an environment changes. This is handled automatically during `AdvanceFrame()`.
 
 !!! note "Custom Environment Tracking"
-    By default, Amplitude automatically computes environment factors using the zones you define. However, if your game has its own spatial awareness system (e.g., a custom physics or zone system), you can disable automatic computation by setting `track_environments: false` in your [engine configuration](../project/engine-config.md). When disabled, your game is responsible for computing and sending environment levels to the engine, and any zones defined in environments will be ignored. See the [engine configuration schema](../project/api.md) for more details.
+    By default, Amplitude automatically computes environment factors using the zones you define. However, if your game has its own spatial awareness system (e.g., a custom physics or zone system), you can disable automatic computation by setting `track_environments: false` in your [engine configuration](../project/engine-config.md#track_environments). When disabled, your game is responsible for computing and sending environment levels to the engine, and any zones defined in environments will be ignored.
 
 !!! tip "API Reference available"
     Check out the [API reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_environment.md) for the complete list of methods you can use with an Environment.
@@ -455,5 +475,50 @@ AmReal32 floorArea = concertHall.GetSurfaceArea(eRoomWall_Floor); // Wall surfac
 
 When multiple rooms exist in a scene, Amplitude processes them in order of volume (largest first). This ensures that the most significant acoustic spaces take priority when computational resources are limited.
 
+### Pipeline Integration
+
+The default pipeline contains the nodes that drive room and environment processing. Customise them via the [pipeline asset](../project/pipeline.md):
+
+| Node                | Function                                                                  |
+| ------------------- | ------------------------------------------------------------------------- |
+| `EnvironmentEffect` | Applies the environment's assigned effect to sounds inside the zone.      |
+| `Reflections`       | Computes early reflections based on the room geometry.                    |
+| `Reverb`            | Applies late reverberation based on the room materials and dimensions.    |
+
+### Best Practices
+
+- **Use Rooms for indoor spaces** with well-defined geometry (buildings, vehicles, corridors).
+- **Use Environments for outdoor or irregular zones** (forests, underwater, caves).
+- **Keep room counts reasonable** — every active room adds CPU cost for reflection calculations.
+- **Prefer the predefined wall materials** when possible; they are based on real acoustic measurements.
+- **Test with headphones** for the most accurate spatial impression.
+
 !!! tip "API Reference available"
     Check out the [API reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_room.md) for the complete list of methods you can use with a Room.
+
+## Example: Multi-Room Building
+
+The snippet below combines several rooms with an exterior environment to model a small building opening onto a cave:
+
+```cpp
+// Lobby — large, reflective stone interior
+Room lobby = amEngine->AddRoom(1);
+lobby.SetDimensions({ 20.0f, 4.0f, 15.0f });
+lobby.SetAllWallMaterials(RoomWallMaterial(eRoomWallMaterialType_Marble));
+lobby.SetGain(0.6f);
+
+// Office — soft, dampened indoor space
+Room office = amEngine->AddRoom(2);
+office.SetDimensions({ 5.0f, 2.8f, 4.0f });
+office.SetAllWallMaterials(RoomWallMaterial(eRoomWallMaterialType_GypsumBoard));
+office.SetWallMaterial(eRoomWall_Floor, RoomWallMaterial(eRoomWallMaterialType_CarpetOnConcrete));
+office.SetGain(0.4f);
+
+// Cave — outdoor environment with a smooth fade-in
+Environment cave = amEngine->AddEnvironment(100);
+cave.SetLocation({ 100.0f, -5.0f, 50.0f });
+auto inner = amshared(SphereShape, 25.0f);
+auto outer = amshared(SphereShape, 30.0f);
+cave.SetZone(amshared(SphereZone, inner, outer));
+cave.SetEffect("cave_reverb");
+```

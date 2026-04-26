@@ -127,24 +127,9 @@ while (!fs->TryFinalizeOpenFileSystem())
 
 This pattern prevents hitches during engine initialization.
 
-## Thread Safety Rules
-
-| Object | Thread-Safe? | Notes |
-|--------|--------------|-------|
-| `Engine` | Yes (game thread only) | Most methods queue commands. |
-| `Entity` | Yes (game thread only) | Setters queue commands. |
-| `Listener` | Yes (game thread only) | Setters queue commands. |
-| `Channel` | Yes (game thread only) | Controls are queued. |
-| `Bus` | Yes (game thread only) | Gain changes are queued. |
-| `Codec::Stream()` | Yes | Called from audio thread; must not block. |
-| `Filter::Process()` | Yes | Called from audio thread; must not block. |
-| `Node::Process()` | Yes | Called from audio thread; must not block. |
-
 ## Best Practices
 
-- **Never call `malloc` from the audio thread**: Pre-allocate all buffers during initialization.
-- **Keep `AdvanceFrame()` fast**: If it takes longer than your frame budget, audio will glitch.
-- **Use async loading for all sound banks**: Never load banks synchronously during gameplay.
+- **Reduce `malloc` calls from the audio thread**: Pre-allocate all buffers during initialization.
 - **Avoid mutexes in custom plugins**: Use atomic operations or lock-free queues instead.
 
 ## Next Steps

@@ -2,7 +2,6 @@
 title: Introduction
 description: Browse the main features of the Amplitude Audio SDK and discover why this open-source library will be useful for your next game.
 diataxis: explanation
-
 ---
 
 !!! tip "Join the Community"
@@ -32,10 +31,10 @@ more. Each plugin can be built as a separate library and loaded in the game at r
 
 ## Drivers and Codecs
 
-You have total control over how to communicate with the physical audio device (using a [Driver](/api/structSparkyStudios_1_1Audio_1_1Amplitude_1_1Driver)
-implementation) and how to decode/encode audio samples (using [Codec](/api/structSparkyStudios_1_1Audio_1_1Amplitude_1_1Codec)
+You have total control over how to communicate with the physical audio device (using a [Driver](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_driver.md)
+implementation) and how to decode/encode audio samples (using [Codec](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_codec.md)
 implementations). The library provides you with a default Driver implementation using [MiniAudio](http://miniaud.io) for
-cross-platform support, and by default decodes MP3, and WAV audio samples.
+cross-platform support, and by default decodes MP3 and WAV audio samples.
 
 ## Customizable Pipeline
 

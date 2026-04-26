@@ -28,7 +28,7 @@ protected:
 MyLogger gLogger;
 
 // Set your logger as the default one
-Logger::SetDefault(&gLogger);
+Logger::SetLogger(&gLogger);
 ```
 
 Setting the logger is optional, as it is not a required component. But if you want to use it, it is usually better to initialize it first, as it is used in every part of the SDK.
@@ -39,7 +39,7 @@ The memory manager is the first **required** component to initialize. It is resp
 
 Before initializing the memory manager, you need to create an implementation of the [`MemoryAllocator`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_memory_allocator.md) interface.
 
-While initializing the memory manager, you can customize the allocation functions through the `MemoryManagerConfig` structure. You should either set all the functions, or none of them.
+When initializing the memory manager, you provide a concrete `MemoryAllocator` instance. The SDK calls into your allocator for every allocation, including allocations triggered by other engine components.
 
 A typical memory manager initialization code will look like this:
 
@@ -76,7 +76,7 @@ fs->SetBasePath(AM_OS_STRING("./my_project")); // Set the base path of the file 
 amEngine->SetFileSystem(fs); // Set the file system implementation to use in the engine.
 ```
 
-According to the implementation, the file system may be opened in a background thread to do an heavy operation (eg: unpacking an archive). If it's the case for you, it is necessary to wait for the file system to load before to continue. You can do this using the following code:
+According to the implementation, the file system may be opened in a background thread to do a heavy operation (e.g. unpacking an archive). If it's the case for you, it is necessary to wait for the file system to load before continuing. You can do this using the following code:
 
 ```cpp
 // Open the file system
@@ -122,7 +122,7 @@ The SDK allows you to set the paths in which to search for external plugins:
 Engine::AddPluginSearchPath(AM_OS_STRING("./my_project/plugins"));
 ```
 
-You must add all the search paths before to load plugins, as you cannot load a plugin using a path, either relative or absolute.
+You must add all the search paths before loading plugins, as you cannot load a plugin using a path, either relative or absolute.
 
 !!! info
     By default, the engine will search first in the working directory **before** to look in the added search paths.
@@ -130,7 +130,7 @@ You must add all the search paths before to load plugins, as you cannot load a p
 Once the search paths have been added, the engine can now load your plugins:
 
 ```cpp
-Engine::LoadPlugin(AM_OS_STRING("AmplitudeVorbisCodecPlugin")); // Official plugin for Vorbis/OGG codec
+Engine::LoadPlugin(AM_OS_STRING("vorbis_plugin")); // Official plugin for Vorbis/OGG codec
 Engine::LoadPlugin(AM_OS_STRING("MyCustomPlugin")); // Any other awesome plugin you will build
 ```
 
@@ -174,7 +174,7 @@ MyLogger gLogger;
 int main(int argc, char* argv[])
 {
   // Set your logger as the default one
-  Logger::SetDefault(&gLogger);
+  Logger::SetLogger(&gLogger);
 
   // Initialize the memory manager with the default allocator.
   // Pass a std::unique_ptr<MemoryAllocator> to use a custom allocator.
@@ -199,7 +199,7 @@ int main(int argc, char* argv[])
   // The path is relative to the working directory, which is usually the same path as the executable.
   Engine::AddPluginSearchPath(AM_OS_STRING("./my_project/plugins"));
 
-  Engine::LoadPlugin(AM_OS_STRING("AmplitudeVorbisCodecPlugin")); // Official plugin for Vorbis/OGG codec
+  Engine::LoadPlugin(AM_OS_STRING("vorbis_plugin")); // Official plugin for Vorbis/OGG codec
   Engine::LoadPlugin(AM_OS_STRING("MyCustomPlugin")); // Any other awesome plugin you will build
 
   // The path to the configuration file is relative to the base path of the file system
@@ -220,7 +220,7 @@ int main(int argc, char* argv[])
   Engine::UnregisterDefaultExtensions();
 
   // Destroy the Amplitude engine instance
-  amEngine->DestroyInstance();
+  Engine::DestroyInstance();
 
   // Deinitialize the memory manager
   MemoryManager::Deinitialize();

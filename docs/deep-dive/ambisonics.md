@@ -103,14 +103,14 @@ This produces a spatially accurate headphone experience.
 
 #### Speaker Decoding
 
-For speaker arrays, the `AmbisonicDecoderNode` uses a speaker-specific decoding matrix derived from the speaker positions. Amplitude includes presets for common layouts (mono, stereo, 5.1, 7.1, cube, dodecahedron).
+For speaker arrays, the `AmbisonicDecoderNode` uses a speaker-specific decoding matrix derived from the speaker positions. Amplitude includes presets for the standard layouts exposed by `ePlaybackOutputChannels` (mono, stereo, quad, 5.1, 7.1).
 
-## Shelf Filtering
+## Energy Compensation
 
-Higher-order Ambisonic channels contain less energy than lower-order ones. Without compensation, decoded audio can sound dull. The `AmbisonicShelfFilter` node applies frequency-dependent gain to restore spectral balance:
+Higher-order Ambisonic channels contain less energy than lower-order ones, and decoding to a finite virtual loudspeaker array can flatten the spectrum further. To keep loudness perception consistent across orders, Amplitude applies energy compensation **inside** `AmbisonicBinauralDecoder` rather than as a separate pipeline node:
 
-- **Max-RE weighting** optimizes the horizontal plane.
-- **Linkwitz-Riley crossover** ensures smooth band transitions.
+- **Max-rE weighting** optimizes the horizontal plane.
+- **In-place gain compensation** keeps overall loudness perceptually constant when switching between `BinauralLowQuality`, `BinauralMediumQuality`, and `BinauralHighQuality` panning modes.
 
 ## Advantages in Games
 

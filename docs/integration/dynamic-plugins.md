@@ -179,4 +179,4 @@ Common issues:
 ## Next Steps
 
 - Learn how to write [custom codecs](../tutorials/custom-codec.md), [effects](../tutorials/custom-effect.md), [drivers](../tutorials/custom-driver.md), and [faders](../tutorials/custom-fader.md).
-- Review the [Plugin Architecture](../explanation/plugin-architecture.md) explanation for deeper understanding.
+- Review the [Plugin Architecture](../deep-dive/plugin-architecture.md) explanation for deeper understanding.

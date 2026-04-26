@@ -2,7 +2,6 @@
 title: Quick Start
 description: Get up and running with Amplitude Audio SDK in your game project. This guide walks you through the essential steps to initialize the engine and play your first sound.
 diataxis: tutorial
-
 ---
 
 This guide walks you through the essential steps to initialize the Amplitude engine, load a sound bank, and play your first sound. By the end, you'll have a working audio loop integrated into your game.

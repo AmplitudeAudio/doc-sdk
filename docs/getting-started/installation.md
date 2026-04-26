@@ -2,7 +2,6 @@
 title: Installation
 description: Step by step process to install Amplitude in your machine and make the SDK available for your projects.
 diataxis: how-to
-
 ---
 
 Follow these steps to install Amplitude Audio SDK from official releases or by building from sources.

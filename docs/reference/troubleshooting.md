@@ -2,7 +2,6 @@
 title: Troubleshooting
 description: Common issues and solutions when integrating and using the Amplitude Audio SDK.
 diataxis: reference
-
 ---
 
 This reference documents common issues encountered when using the Amplitude Audio SDK and their recommended solutions.
@@ -14,7 +13,7 @@ This reference documents common issues encountered when using the Amplitude Audi
 | Cause | Solution |
 |-------|----------|
 | File system not initialized | Call `StartOpenFileSystem()` and `TryFinalizeOpenFileSystem()` before `amEngine->Initialize()`. |
-| Missing engine config file | Verify the path to `config.json` and ensure it exists. |
+| Missing engine config file | Verify the path to the loaded config file and ensure it exists. |
 | Invalid JSON in config | Validate the config against the [Engine Configuration schema](../project/engine-config.md). |
 | Codec/Driver registry locked | Register extensions **before** `amEngine->Initialize()`. |
 | Memory manager not initialized | Call `MemoryManager::Initialize()` first. |
@@ -25,7 +24,7 @@ This reference documents common issues encountered when using the Amplitude Audi
 |-------|----------|
 | Null file system pointer | Ensure `SetFileSystem()` is called with a valid pointer. |
 | Plugin ABI mismatch | Rebuild plugins with the same compiler and SDK version. |
-| Corrupt sound bank | Regenerate the bank with `build_project.py`. |
+| Corrupt project files | Try to regenerate project files with `build_project.py`. |
 
 ## Audio Playback
 
@@ -33,7 +32,7 @@ This reference documents common issues encountered when using the Amplitude Audi
 
 | Cause | Solution |
 |-------|----------|
-| Driver not found | Verify the `driver` field in the engine config. Try `"miniaudio"` or `"null"`. |
+| Driver not found | Verify the `driver` field in the engine config, and ensure its value is not `"null"` and references a registered driver. |
 | Master bus gain is 0 | Check bus configuration and `Bus::SetGain()`. |
 | Sound bank not loaded | Call `Engine::LoadSoundBank()` and verify the path. |
 | All channels virtualized | Increase `active_channels` in the mixer config or reduce concurrent sounds. |
@@ -77,7 +76,6 @@ This reference documents common issues encountered when using the Amplitude Audi
 
 | Cause | Solution |
 |-------|----------|
-| Wrong channel ordering | Amplitude uses ACN/SN3D (AmbiX). Convert FuMa or N3D content first. |
 | Missing `AmbisonicRotator` | Ensure the pipeline includes `AmbisonicRotator` after `AmbisonicPanning`. |
 
 ## Performance
@@ -117,7 +115,7 @@ This reference documents common issues encountered when using the Amplitude Audi
 |-------|----------|
 | Codec not registered | Register the codec before `amEngine->Initialize()`. |
 | Wrong file extension | Ensure the file extension matches a registered codec. |
-| Corrupt audio file | Re-encode the source file. |
+| Sound files not loaded | Sound files need to be manually loaded after sound bank. |
 
 ## Memory
 
@@ -133,7 +131,7 @@ This reference documents common issues encountered when using the Amplitude Audi
 
 | Cause | Solution |
 |-------|----------|
-| All sounds loaded into memory | Enable `stream: true` for large files. |
+| All sounds loaded into memory | Enable `stream: true` for large sound assets. |
 | Too many virtual channels | Reduce `virtual_channels` in the mixer config. |
 | Large HRIR sphere | Use a smaller `.amir` file or `NearestNeighbor` sampling. |
 
@@ -153,13 +151,6 @@ This reference documents common issues encountered when using the Amplitude Audi
 |-------|----------|
 | No audio after backgrounding | Re-initialize the audio session when returning to foreground. |
 | High latency | Enable low-latency mode in the audio session category. |
-
-### WebAssembly
-
-| Issue | Solution |
-|-------|----------|
-| No audio until user interaction | Browsers require a click/tap before AudioContext can start. Resume audio on first input. |
-| High latency | Use larger buffer sizes; Web Audio API has higher inherent latency. |
 
 ## Getting Help
 

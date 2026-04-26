@@ -180,7 +180,7 @@ MemoryManager::Initialize(std::make_shared<MyAllocator>());
 
 ## Memory Budgets
 
-While Amplitude v1.0 does not enforce hard memory limits per pool, you can implement budgeting in your custom allocator:
+While Amplitude does not enforce hard memory limits per pool, you can implement budgeting in your custom allocator:
 
 ```cpp
 AmVoidPtr MyAllocator::Malloc(eMemoryPoolKind pool, AmSize size)

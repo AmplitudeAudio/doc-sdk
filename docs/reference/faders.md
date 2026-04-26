@@ -2,14 +2,13 @@
 title: Built-in Faders
 description: Reference for the fade curves included with the Amplitude Audio SDK.
 diataxis: reference
-
 ---
 
 This reference documents the fader curves built into the Amplitude Audio SDK. Faders control how values transition over time for volume, gain, pitch, and other parameters.
 
 ## Overview
 
-Amplitude includes nine built-in faders. All faders use a fast cubic Bézier curve evaluator with fixed endpoints at `(0, 0)` and `(1, 1)`.
+Amplitude includes eight built-in faders. All faders use a fast cubic Bézier curve evaluator with fixed endpoints at `(0, 0)` and `(1, 1)`.
 
 | Fader | Control Points `(x1, y1, x2, y2)` | Behavior |
 |-------|-----------------------------------|----------|
@@ -24,16 +23,22 @@ Amplitude includes nine built-in faders. All faders use a fast cubic Bézier cur
 
 ## Curve Visualization
 
-```
-Constant    Linear      Ease        EaseIn      EaseOut     EaseInOut   Exponential SCurve
-│           │           │           │           │           │           │           │
-1●          │        ●●●│           │        ●●●│        ●●●│        ●●●│        ●●●│        ●●●
-│           │      ●│   │         ●●│      ●│   │      ●│   │    ●●│   │    ●●●│   │    ●●│   │
-│           │    ●│   │ │       ●│  │    ●│   │ │    ●│   │ │  ●│  │   │ │  ●│  │   │ │  ●│  │   │ │
-│           │  ●│   │   │     ●│    │  ●│   │   │  ●│   │   │●│   │   │   │●│   │   │   │●│   │   │   │
-│           │●│   │     │   ●│      │●│   │     │●│   │     ││   │     │   ││   │     │   ││   │     │   │
-0●──────────●│   │       │ ●│        ●│   │       ●│   │       │   │       │   │   │       │   │   │       │   │
- 0         1 0         1 0         1 0         1 0         1 0         1 0         1 0         1
+The seven non-constant faders are cubic Béziers between `(0, 0)` and `(1, 1)`. The chart below plots each curve over `t ∈ [0, 1]`. The `Constant` fader is omitted because it is an instant step rather than a curve.
+
+```vegalite
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Built-in Amplitude fader curves.",
+  "width": "container",
+  "height": 320,
+  "data": { "url": "/static/data/fader-curves.json" },
+  "mark": { "type": "line", "interpolate": "monotone", "strokeWidth": 2 },
+  "encoding": {
+    "x": { "field": "x", "type": "quantitative", "title": "t (input)", "scale": { "domain": [0, 1] } },
+    "y": { "field": "y", "type": "quantitative", "title": "value", "scale": { "domain": [0, 1] } },
+    "color": { "field": "fader", "type": "nominal", "title": "Fader" }
+  }
+}
 ```
 
 ## Usage in Assets
@@ -57,7 +62,7 @@ Faders are referenced by name in project assets:
 {
   "duck_buses": [
     {
-      "target_bus": "music",
+      "id": 7678456242523,
       "target_gain": 0.3,
       "fade_in": {
         "duration": 200,
@@ -100,7 +105,7 @@ auto fader = Fader::Find("EaseInOut");
 auto instance = fader->CreateInstance();
 
 // Configure the transition
-instance->Set(0.0, 1.0, 1000.0); // from 0.0 to 1.0 over 1000ms
+instance->Set(0.0, 1.0, 1000.0); // from 0.0 to 1.0 over 1000 ms
 instance->Start(0.0);
 
 // Query the value at a given time

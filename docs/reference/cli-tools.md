@@ -2,7 +2,6 @@
 title: CLI Tools
 description: Reference for the Amplitude Audio SDK command-line tools.
 diataxis: reference
-
 ---
 
 The Amplitude Audio SDK ships with three command-line tools for asset processing and pipeline management. This reference documents their usage, options, and exit codes.

@@ -28,11 +28,11 @@ Define the RTPC in your project:
   "fade_settings": {
     "enabled": true,
     "fade_attack": {
-      "duration": 0.05,
+      "duration": 50,
       "fader": "Linear"
     },
     "fade_release": {
-      "duration": 0.2,
+      "duration": 200,
       "fader": "Linear"
     }
   }
@@ -44,7 +44,7 @@ Define the RTPC in your project:
 | `min_value` | Minimum expected game value. |
 | `max_value` | Maximum expected game value. |
 | `default_value` | Value used before the game sets it. |
-| `fade_settings` | Smooths abrupt value changes. `fade_attack` and `fade_release` are `FadeTransitionSettings` objects with `duration` (seconds) and `fader` fields. |
+| `fade_settings` | Smooths abrupt value changes. `fade_attack` and `fade_release` are `FadeTransitionSettings` objects with `duration` (milliseconds) and `fader` fields. |
 
 ## Mapping Curves in Sound Assets
 

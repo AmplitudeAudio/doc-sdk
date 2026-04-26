@@ -2,7 +2,6 @@
 title: Concepts
 description: Learn the different elements and terms used in the SDK, and see how to bring them together in your project. Start here if you are new to Amplitude.
 diataxis: explanation
-
 ---
 
 !!! note
@@ -109,22 +108,19 @@ Through its Codec API (extensible via plugins), Amplitude is able to read any au
 object. An audio file can be read only if the Engine has a registered codec supporting it.
 
 According to the [sound object definition](../project/sound-object.md), audio files can be streamed or preloaded in memory at runtime. Each codec
-implementation must always read audio samples as **32-bit floating integer** (`AmReal32`), since it is the default
+implementation must always read audio samples as **32-bit floating-point** (`AmReal32`), since it is the default
 sample format used in the Engine.
 
 At the moment, Amplitude comes shipped with the following codecs:
 
 - [WAV](https://en.wikipedia.org/wiki/WAV), a lossless audio codec.
 - [MP3](https://en.wikipedia.org/wiki/MP3), a lossy audio codec.
-- AMS (Amplitude Audio Sample), a WAV-like codec built for Amplitude. It uses a high-quality [ADPCM](https://en.wikipedia.org/wiki/Adaptive_differential_pulse-code_modulation) compression.
+- AMS (Amplitude Media Stream), a WAV-like codec built for Amplitude. It uses a high-quality [ADPCM](https://en.wikipedia.org/wiki/Adaptive_differential_pulse-code_modulation) compression.
 
 Additional codecs are available via plugins:
 
 - [FLAC](https://xiph.org/flac/) via the [flac plugin](https://github.com/AmplitudeAudio/plugin-flac), a lossless audio codec.
 - [OGG](https://www.xiph.org/ogg/) via the [vorbis plugin](https://github.com/AmplitudeAudio/plugin-vorbis), a lossy audio codec.
-
-!!! warning
-    The AMS codec is Amplitude's custom ADPCM compression format. It is stable and production-ready.
 
 You can implement your own codec and register it to the Engine by following [this tutorial](../tutorials/custom-codec.md).
 
@@ -264,15 +260,14 @@ in Amplimix with the obtained values from the audio device.
 Amplimix will process the audio using the user-requested format and let to the driver the responsibility to convert the
 data to the device audio format.
 
-[SwitchState]: /api/structSparkyStudios_1_1Audio_1_1Amplitude_1_1SwitchState
-[RTPC]: /api/classSparkyStudios_1_1Audio_1_1Amplitude_1_1Rtpc
-[Entity]: /api/classSparkyStudios_1_1Audio_1_1Amplitude_1_1Entity
-[Listener]: /api/classSparkyStudios_1_1Audio_1_1Amplitude_1_1Listener
-[SoundInstance]: /api/classSparkyStudios_1_1Audio_1_1Amplitude_1_1SoundInstance
-[Sound]: /api/classSparkyStudios_1_1Audio_1_1Amplitude_1_1Sound
-[Collection]: /api/classSparkyStudios_1_1Audio_1_1Amplitude_1_1Collection
-[Bus]: /api/classSparkyStudios_1_1Audio_1_1Amplitude_1_1Bus
-[SwitchContainer]: /api/classSparkyStudios_1_1Audio_1_1Amplitude_1_1SwitchContainer
-[DeviceDescription]: /api/classSparkyStudios_1_1Audio_1_1Amplitude_1_1DeviceDescription
-[Driver]: /api/classSparkyStudios_1_1Audio_1_1Amplitude_1_1Driver
-[Node]: /api/classSparkyStudios_1_1Audio_1_1Amplitude_1_1Node
+[SwitchState]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_switch.md
+[RTPC]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_rtpc.md
+[Entity]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_entity.md
+[Listener]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_listener.md
+[Sound]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_sound.md
+[Collection]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_collection.md
+[Bus]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_bus.md
+[SwitchContainer]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_switch_container.md
+[DeviceDescription]: ../api/struct_sparky_studios_1_1_audio_1_1_amplitude_1_1_device_description.md
+[Driver]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_driver.md
+[Node]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_node.md

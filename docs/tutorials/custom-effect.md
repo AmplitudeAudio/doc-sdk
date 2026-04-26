@@ -2,7 +2,6 @@
 title: Custom Effect
 description: Learn how to extend the Engine by implementing a custom Filter (effect) in a plugin.
 diataxis: tutorial
-
 ---
 
 This tutorial walks you through creating a custom audio effect for the Amplitude engine. You will build a **Tremolo** effect — an amplitude modulation that periodically varies the volume of a sound — and learn how to register it as a plugin, define its asset file, and use it at runtime.

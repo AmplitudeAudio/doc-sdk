@@ -2,7 +2,6 @@
 title: Project Architecture
 description: An Amplitude project is just a set of organized JSON files, each of them with a specific schema. This page will break down the Amplitude project architecture.
 diataxis: reference
-
 ---
 
 An Amplitude project is composed of a set of `.json` files organized in dedicated directories. The complete architecture of an Amplitude project can be described by this hierarchy:

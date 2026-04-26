@@ -32,7 +32,7 @@ SoundObjectHandle handle = amEngine->GetSoundObjectHandle("dialogue_01");
 It's always safe to check if your handle is valid before using it. Once you get your handle, you can check for its validity by comparing it to the [`AM_INVALID_HANDLE`](../api/group__engine.md#macros) macro, or by directly using the [`AM_IS_VALID_HANDLE()`](../api/group__engine.md#macros) macro function.
 
 ```cpp
-// Get an handle
+// Get a handle
 auto handle = amEngine->GetSoundHandle("footsteps"); // This is instead a switch container, but we are querying it as a sound, which will return an invalid handle
 
 if (handle == AM_INVALID_HANDLE)
@@ -56,7 +56,7 @@ Channel sound = amEngine->Play("dialogue_01");
 // Using the ID
 Channel sound = amEngine->Play(1234);
 
-// Using an handle
+// Using a handle
 SoundHandle handle = amEngine->GetSoundHandle(1234); // or amEngine->GetSoundHandle("dialogue_01")
 Channel sound = amEngine->Play(handle);
 ```
@@ -158,4 +158,4 @@ channel.On(eChannelEvent_End, [](ChannelEventInfo info) {
     You can also pass arbitrary data to the method and access it in the callback using the event `info`. Check out the [Channel API Reference](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_channel.md#public-functions) and the [ChannelEventInfo API Reference](../api/struct_sparky_studios_1_1_audio_1_1_amplitude_1_1_channel_event_info.md) to learn more.
 
 [sound object]: ../project/sound-object.md
-[Channel]: ../explanation/concepts.md#channels
+[Channel]: ../deep-dive/concepts.md#channels

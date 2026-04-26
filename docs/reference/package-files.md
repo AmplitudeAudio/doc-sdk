@@ -2,7 +2,6 @@
 title: Package Files
 description: Reference for the Amplitude package file format (.ampk).
 diataxis: reference
-
 ---
 
 The `.ampk` format is Amplitude's package file format for distributing project assets. This reference documents the file structure, compression options, and runtime usage.
@@ -83,7 +82,6 @@ LZ4 is recommended for mobile and console builds where storage space is limited.
 
 - **Group projects by platform**: Create separate packages for each platform if asset sets differ.
 - **Use uncompressed for streaming**: LZ4 decompression adds a small CPU cost; uncompressed is better for streamed music.
-- **Split large projects**: If a package exceeds 1 GB, consider splitting into multiple packages by content type (music, SFX, voice).
 
 ## Next Steps
 

@@ -2,7 +2,6 @@
 title: Built-in Codecs
 description: Reference for the audio codecs included with the Amplitude Audio SDK.
 diataxis: reference
-
 ---
 
 This reference documents the audio codecs built into the Amplitude Audio SDK, including supported formats, capabilities, and usage notes.

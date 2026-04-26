@@ -2,7 +2,6 @@
 title: Built-in Pipeline Nodes
 description: Reference for all built-in nodes available in the Amplimix audio processing pipeline.
 diataxis: reference
-
 ---
 
 This reference documents every built-in pipeline node in the Amplitude Audio SDK. Pipeline nodes are the building blocks of the audio processing graph executed by Amplimix each frame.

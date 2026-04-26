@@ -2,7 +2,6 @@
 title: Pipeline
 description: Pipelines are node graphs where you decide how Amplitude will process the incoming audio data before it is consumed by the audio device.
 diataxis: reference
-
 ---
 
 Pipelines define how audio data flows through the Amplimix processing system before reaching the audio device. Using a node-graph architecture, pipelines allow you to chain together various processing nodes to create custom audio rendering paths.

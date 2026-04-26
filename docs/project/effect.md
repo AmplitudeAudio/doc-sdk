@@ -2,7 +2,6 @@
 title: Effect
 description: Effects allows you to apply sound effects to any sound object. Effects are applied at the playback time through a pipeline processor.
 diataxis: reference
-
 ---
 
 Effects allow you to apply sound effects to any sound object. Effects are applied at the playback time through a pipeline processor.
@@ -28,7 +27,7 @@ A unique name for the effect. This may be used in runtime to access the effect i
 
 `string` `required`
 
-The name of the effect to apply to the sound object. That name should have been registered in the engine through the Effect API. By default, the engine comes shipper with built-in effects:
+The name of the effect to apply to the sound object. That name should have been registered in the engine through the Effect API. By default, the engine comes shipped with built-in effects:
 
 - BassBoost
 - Delay

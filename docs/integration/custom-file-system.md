@@ -47,7 +47,7 @@ public:
 private:
     AmOsString _url;
     std::vector<AmUInt8> _data;
-    AmSize _position;
+    mutable AmSize _position;
     bool _valid;
 };
 ```

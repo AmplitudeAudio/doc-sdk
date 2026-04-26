@@ -2,7 +2,6 @@
 title: Sound
 description: A Sound is the most basic sound object handled by the engine. This page helps you create sound assets for your Amplitude project.
 diataxis: reference
-
 ---
 
 Sound is where you define sources for any sound objects that will be used in the runtime. They also represent the most basic form of sound objects, allowing you to trigger audio directly from a file.
@@ -11,6 +10,12 @@ Sound is where you define sources for any sound objects that will be used in the
     The flatbuffers schema of this file can be found [here](https://github.com/AmplitudeAudio/sdk/blob/main/schemas/sound_definition.fbs).
 
 Apart from the common properties of [sound object](./sound-object.md) assets, a sound asset contains the following properties:
+
+## near_field_gain
+
+`RtpcCompatibleValue` `optional`
+
+The `near_field_gain` property defines an additional linear gain (in the `[0.0, 1.0]` range) applied by the [`NearFieldEffect`](../reference/pipeline-nodes.md) pipeline node when the sound source is closer than 1 meter to the listener. The value should match the schema of a [RtpcCompatibleValue] object.
 
 ## stream
 
@@ -43,7 +48,7 @@ Specifies the number of times the sound should loop until it is automatically st
 This value points to the source file of the sound. The file may be of any format supported by the engine (MP3, WAV, or AMS), or from a format you have created a Codec plugin for.
 
 !!! note
-    Additional formats such as OGG and FLAC are available through plugins. See the [Audio Files and Codecs](../explanation/concepts.md#audio-files-and-codecs) section for more details.
+    Additional formats such as OGG and FLAC are available through plugins. See the [Audio Files and Codecs](../deep-dive/concepts.md#audio-files-and-codecs) section for more details.
 
 ## Example
 
@@ -56,10 +61,18 @@ This value points to the source file of the sound. The file may be of any format
     "kind": "Static",
     "value": 1
   },
+  "pitch": {
+    "kind": "Static",
+    "value": 1.0
+  },
   "bus": 2,
   "priority": {
     "kind": "Static",
     "value": 1.0
+  },
+  "near_field_gain": {
+    "kind": "Static",
+    "value": 0.0
   },
   "stream": true,
   "loop": {
@@ -72,3 +85,5 @@ This value points to the source file of the sound. The file may be of any format
   "path": "environment/AMB_Forest_ID_0100_BSB.wav"
 }
 ```
+
+[RtpcCompatibleValue]: ./api.md#rtpc-compatible-value

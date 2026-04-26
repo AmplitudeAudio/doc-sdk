@@ -2,7 +2,6 @@
 title: Official Integrations
 description: Amplitude has official integrations for some game engines, check if your preferred one is supported!
 diataxis: explanation
-
 ---
 
 Amplitude has officially supported integrations for the following game engines.
@@ -21,3 +20,7 @@ Amplitude has officially supported integrations for the following game engines.
     The Godot integration is actively maintained. Community contributions are welcome through pull requests!
 
 [Godot](https://godotengine.org) is a free and open source game engine for 2D and 3D games. Amplitude is available on Godot with an [official plugin](https://github.com/AmplitudeAudio/integration-godot). The plugin supports Godot 4+ only.
+
+## Flax Engine
+
+[Flax Engine](https://flaxengine.com/) is a high-performance C++ and C# game engine. Amplitude is available on Flax through an [official plugin](https://github.com/AmplitudeAudio/integration-flax) that hooks into Flax's [AudioSystem Plugin](https://github.com/SparkyStudios/FlaxAudioSystemPlugin) and routes Amplitude's memory, logging, and file I/O through Flax-native APIs. Refer to the plugin's repository for installation and configuration instructions.

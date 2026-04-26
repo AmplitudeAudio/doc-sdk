@@ -2,7 +2,6 @@
 title: Custom Fader
 description: Learn how to extend the Engine by implementing a custom Fader for volume and parameter transitions.
 diataxis: tutorial
-
 ---
 
 This tutorial walks you through creating a custom fader for the Amplitude engine. You will build a **Bounce Fader** — a fade curve that overshoots the target and settles back, like a bouncing ball — and learn how to register it so sound objects and buses can use it for smooth transitions.

@@ -2,7 +2,6 @@
 title: Custom Resampler
 description: Learn how to extend the Engine by implementing a custom audio resampler for sample rate conversion.
 diataxis: tutorial
-
 ---
 
 This tutorial walks you through creating a custom resampler for the Amplitude engine. You will build a **Linear Resampler** — a simple sample rate converter using linear interpolation — and learn how to register it so codecs and the mixer can use it for runtime sample rate conversion.

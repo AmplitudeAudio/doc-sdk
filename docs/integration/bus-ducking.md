@@ -42,11 +42,11 @@ Here's a simple example where the `voices` bus ducks the `music` and `ambience` 
           "id": 2,
           "target_gain": 0.3,
           "fade_in": {
-            "duration": 0.2,
+            "duration": 200,
             "fader": "EaseIn"
           },
           "fade_out": {
-            "duration": 0.8,
+            "duration": 800,
             "fader": "EaseOut"
           }
         },
@@ -54,11 +54,11 @@ Here's a simple example where the `voices` bus ducks the `music` and `ambience` 
           "id": 3,
           "target_gain": 0.5,
           "fade_in": {
-            "duration": 0.1,
+            "duration": 100,
             "fader": "Linear"
           },
           "fade_out": {
-            "duration": 1.0,
+            "duration": 1000,
             "fader": "Linear"
           }
         }
@@ -74,9 +74,9 @@ Here's a simple example where the `voices` bus ducks the `music` and `ambience` 
 |-----------|-------------|
 | `id` | The numeric ID of the bus to duck. Must match an existing bus `id`. |
 | `target_gain` | The gain level to fade down to (0.0 = silent, 1.0 = no change). |
-| `fade_in.duration` | Duration in seconds to fade the target bus down when ducking starts. |
+| `fade_in.duration` | Duration in milliseconds to fade the target bus down when ducking starts. |
 | `fade_in.fader` | The fader curve for the fade-in (duck-down) transition. |
-| `fade_out.duration` | Duration in seconds to fade the target bus back up when ducking ends. |
+| `fade_out.duration` | Duration in milliseconds to fade the target bus back up when ducking ends. |
 | `fade_out.fader` | The fader curve for the fade-out (restore) transition. |
 
 ## Fader Curves

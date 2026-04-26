@@ -2,7 +2,6 @@
 title: Switch Container
 description: A switch container is a special container sound object that automatically plays or schedules sounds when a specific switch changes its state.
 diataxis: reference
-
 ---
 
 A switch container is a special container sound object that automatically plays or schedules sounds when a specific [Switch] changes its state.
@@ -80,6 +79,12 @@ The fade transition to apply on the sound object when all the assigned states be
 
 A custom `gain` to apply on the sound object of this entry. The value should match the schema of an [RtpcCompatibleValue](./api.md#rtpc-compatible-value) object.
 
+### pitch
+
+`RtpcCompatibleValue` `optional`
+
+A custom `pitch` multiplier to apply on the sound object of this entry. The value should match the schema of an [RtpcCompatibleValue](./api.md#rtpc-compatible-value) object.
+
 ## Example
 
 ```json {title="footsteps.json"}
@@ -107,11 +112,11 @@ A custom `gain` to apply on the sound object of this entry. The value should mat
     "object": 1003,
     "continue_between_states": false,
     "fade_in": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "fade_out": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "gain": {
@@ -126,11 +131,11 @@ A custom `gain` to apply on the sound object of this entry. The value should mat
     "object": 1004,
     "continue_between_states": false,
     "fade_in": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "fade_out": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "gain": {
@@ -145,11 +150,11 @@ A custom `gain` to apply on the sound object of this entry. The value should mat
     "object": 1005,
     "continue_between_states": false,
     "fade_in": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "fade_out": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "gain": {
