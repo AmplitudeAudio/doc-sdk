@@ -1,128 +1,33 @@
 ---
-title: API Reference
-description: Amplitude Audio SDK public API reference and documentation.
-generator: doxide
+diataxis: reference
 ---
-
 
 # API Reference
 
-Amplitude Audio SDK public API reference and documentation.
+Auto-generated reference for the Amplitude Audio SDK public C++ API.
 
-:material-format-section: [Core](core/index.md)
-:   Core functionalities of the SDK
+The reference is produced by [mkdoxy](https://github.com/JakubAndrysek/MkDoxy) from the Doxygen comments in
+[`SparkyStudios/Audio/Amplitude`](https://github.com/AmplitudeAudio/sdk/tree/main/include/SparkyStudios/Audio/Amplitude).
 
-:material-format-section: [Engine](engine/index.md)
-:   Engine-specific functionalities
+## Browse by module
 
-:material-format-section: [Assets](assets/index.md)
-:   Assets API
+The API is organized by Doxygen `@defgroup` tags:
 
-:material-format-section: [IO](io/index.md)
-:   Input/Output API
+- [Assets](group__assets.md) — asset loading, sound banks, attenuation, collections, events
+- [Core](group__core.md) — engine lifecycle, logging, memory, threading primitives
+- [DSP](group__dsp.md) — digital signal processing blocks and effects
+- [Engine](group__engine.md) — the `Engine` facade and playback control
+- [IO](group__io.md) — file systems, resources, and package readers
+- [Math](group__math.md) — vectors, matrices, quaternions, shapes, utilities
+- [Memory](group__memory.md) — arena allocators and memory pools
+- [Mixer](group__mixer.md) — channels, buses, amplimix, and the audio graph
 
-:material-format-section: [Math](math/index.md)
-:   Math libraries and utilities
+## Browse by kind
 
-:material-format-section: [Memory](memory/index.md)
-:   Memory management and allocation
+- [Classes](annotated.md) — every class, struct, and union
+- [Namespaces](namespaces.md) — `SparkyStudios::Audio::Amplitude` and nested namespaces
+- [Files](files.md) — every public header
 
-:material-format-section: [DSP](dsp/index.md)
-:   Digital Signal Processing (DSP) API
+## Tips
 
-:material-format-section: [Mixer](mixer/index.md)
-:   Mixer & Pipeline API
-
-## Macros
-
-| Name | Description |
-| ---- | ----------- |
-| [AM_ID_CHAR_FMT](#AM_ID_CHAR_FMT) | Defines the format used to print AmObjectId value  |
-| [AM_STRING_EXPAND](#AM_STRING_EXPAND) | Turn X into a string literal. |
-| [AM_ID_CHAR_FMT](#AM_ID_CHAR_FMT) | Defines the format used to print AmObjectId value  |
-| [AM_LIB_EXPORT](#AM_LIB_EXPORT) | Call policy  |
-| [AM_OS_CHAR_FMT](#AM_OS_CHAR_FMT) | Defines the format used to print AmOsString text  |
-| [AM_OS_STRING](#AM_OS_STRING) | Macro used to convert a string literal to an AmOsString string at compile-time  |
-| [AM_OS_STRING_TO_STRING](#AM_OS_STRING_TO_STRING) | Conversion between OS strings and default strings  |
-| [AM_ID_CHAR_FMT](#AM_ID_CHAR_FMT) | Defines the format used to print AmObjectId value  |
-| [M_PI](#M_PI) | Define the value of Pi if the platform doesn't do that  |
-| [AM_MAX_THREAD_POOL_TASKS](#AM_MAX_THREAD_POOL_TASKS) | Maximum number of tasks in a single pool  |
-
-## Macro Details
-
-### AM_ID_CHAR_FMT<a name="AM_ID_CHAR_FMT"></a>
-
-!!! macro "#define AM_ID_CHAR_FMT"
-
-    Defines the format used to print AmObjectId value
-    
-
-### AM_ID_CHAR_FMT<a name="AM_ID_CHAR_FMT"></a>
-
-!!! macro "#define AM_ID_CHAR_FMT"
-
-    Defines the format used to print AmObjectId value
-    
-
-### AM_ID_CHAR_FMT<a name="AM_ID_CHAR_FMT"></a>
-
-!!! macro "#define AM_ID_CHAR_FMT"
-
-    Defines the format used to print AmObjectId value
-    
-
-### AM_LIB_EXPORT<a name="AM_LIB_EXPORT"></a>
-
-!!! macro "#define AM_LIB_EXPORT"
-
-    Call policy
-    
-
-### AM_MAX_THREAD_POOL_TASKS<a name="AM_MAX_THREAD_POOL_TASKS"></a>
-
-!!! macro "#define AM_MAX_THREAD_POOL_TASKS"
-
-    Maximum number of tasks in a single pool
-    
-
-### AM_OS_CHAR_FMT<a name="AM_OS_CHAR_FMT"></a>
-
-!!! macro "#define AM_OS_CHAR_FMT"
-
-    Defines the format used to print AmOsString text
-    
-
-### AM_OS_STRING<a name="AM_OS_STRING"></a>
-
-!!! macro "#define AM_OS_STRING(s)"
-
-    Macro used to convert a string literal to an AmOsString string at compile-time
-    
-
-### AM_OS_STRING_TO_STRING<a name="AM_OS_STRING_TO_STRING"></a>
-
-!!! macro "#define AM_OS_STRING_TO_STRING(s)"
-
-    Conversion between OS strings and default strings
-    
-
-### AM_STRING_EXPAND<a name="AM_STRING_EXPAND"></a>
-
-!!! macro "#define AM_STRING_EXPAND(X)"
-
-    
-    Turn X into a string literal.
-    
-    
-    :material-location-enter: **Parameter** `x`
-    :    The value to transform into a string literal
-        
-    
-
-### M_PI<a name="M_PI"></a>
-
-!!! macro "#define M_PI"
-
-    Define the value of Pi if the platform doesn't do that
-    
-
+- Anonymous-union fields (e.g. on `AmVector3`, `AmMatrix4`) show up as `variable-@...` anchors — this is a known Doxygen quirk; the fields themselves render correctly.

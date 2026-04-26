@@ -1,6 +1,7 @@
 ---
 title: Buses Configuration
 description: Buses are the places where sound objects are routed before being processed by the mixer. This page contains details about how to configure buses for your project.
+diataxis: reference
 ---
 
 This configuration file allows you to register the list of buses Amplitude will use at runtime. For each bus, you can configure settings for auto-ducking between them.
@@ -45,18 +46,37 @@ The final gain of a bus is calculated by multiplying this value with the parent 
 
 The `child_buses` property stores a list of integer values, each value representing the `id` of a bus that should be considered as a child of this one. Child buses are affected by the parent bus' final gain. So if the parent bus is muted (gain = 0.0), then all the children of this bus will be muted too.
 
-For the `master` bus to work properly, you may want to feed his `child_buses` property with all the root buses (buses with no parent) of your configuration. That way, the `master` bus will correctly control the gain of all the other buses.
+For the `master` bus to work properly, you may want to feed its `child_buses` property with all the root buses (buses with no parent) of your configuration. That way, the `master` bus will correctly control the gain of all the other buses.
 
 ### duck_buses
 
-`array` `optional`
+`DuckBusDefinition[]` `optional`
 
-`duck_buses` is an array of objects allowing you to set up a ducking behavior between two or more buses that play sound objects simultaneously. Each object of this array should have the following properties:
+`duck_buses` is an array of objects allowing you to set up a ducking behavior between two or more buses that play sound objects simultaneously. Each object of this array has the following properties:
 
-- **`id`**: This is the ID of the bus to control between the list of declared buses.
-- **`target_gain`**: This specifies the target gain the controlled bus should have after the ducking is done.
-- **`fade_in`**: This is the [fader setting](./api.md#fade-transition-settings) used when the controlled bus is being ducked to the target gain.
-- **`fade_out`**: This is the [fader setting](./api.md#fade-transition-settings) used when the controlled bus is being restored to its original gain.
+#### id
+
+`uint64` `required`
+
+The ID of the bus to control. The referenced bus must exist in the `buses` array.
+
+#### target_gain
+
+`float` `default: 0.0`
+
+The target linear gain the controlled bus should have while ducking is active. A value of `0.0` mutes the controlled bus when the parent bus plays.
+
+#### fade_in
+
+`FadeTransitionSettings` `required`
+
+The [fader setting](./api.md#fade-transition-settings) used when the controlled bus is being ducked to the target gain.
+
+#### fade_out
+
+`FadeTransitionSettings` `required`
+
+The [fader setting](./api.md#fade-transition-settings) used when the controlled bus is being restored to its original gain.
 
 ### fader
 
@@ -65,7 +85,7 @@ For the `master` bus to work properly, you may want to feed his `child_buses` pr
 This property stores the name of the fader algorithm that will be used when the gain of this bus is manually updated at runtime.
 
 !!! info
-    Fader and fader settings help you to control how a property should move from one value to another. You can learn more about faders in the [Fader](../api/engine/Fader/index.md) API reference.
+    Fader and fader settings help you to control how a property should move from one value to another. You can learn more about faders in the [Fader](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_fader.md) API reference.
 
 ## Example
 
@@ -93,11 +113,11 @@ An example of a bus configuration file may look like:
           "id": 7678456242523,
           "target_gain": 0.25,
           "fade_in": {
-            "duration": 3,
+            "duration": 3000,
             "fader": "SCurveSmooth"
           },
           "fade_out": {
-            "duration": 3,
+            "duration": 3000,
             "fader": "Linear"
           }
         }

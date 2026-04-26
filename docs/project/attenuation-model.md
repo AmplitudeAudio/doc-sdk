@@ -1,6 +1,7 @@
 ---
 title: Attenuation Model
 description: Attenuation models are settings that describe how the gain of a sound object should fade according to the distance from its listener and a given shape. Read this article to learn more about them.
+diataxis: reference
 ---
 
 Attenuation models are a way to specify how the gain of a sound object is affected by its position in space (in the case of spatialized sounds), and its distance from the attached listener.
@@ -38,17 +39,21 @@ The value of the `shape` property is an object with the following properties:
 
 ### zone
 
-`Zone` `required`
+`ZoneDefinition` `required`
 
-This value stores the definition of the type of shape you want for the attenuation model. The final attenuation behavior will depend on the specified shape. Amplitude made available the following shapes for attenuation models:
+This value stores the definition of the zone shape used by the attenuation model. The final attenuation behavior depends on the picked shape. Amplitude makes the following zone shapes available:
 
-- Box Shape
-- Capsule Shape
-- Cone Shape
-- Sphere Shape
+| Variant   | `zone_type`   | Inner / Outer fields                                                                                              |
+| --------- | ------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Box       | `BoxZone`     | `inner` / `outer`: `BoxShape` (`half_width`, `half_height`, `half_depth`).                                        |
+| Capsule   | `CapsuleZone` | `inner` / `outer`: `CapsuleShape` (`radius`, `half_height`).                                                      |
+| Cone      | `ConeZone`    | `inner` / `outer`: `ConeShape` (`radius`, `height`).                                                              |
+| Sphere    | `SphereZone`  | `inner` / `outer`: `SphereShape` (`radius`).                                                                      |
+
+This is encoded as a FlatBuffers union — the JSON representation requires both a discriminator field (`zone_type`) and a payload field (`zone`). See the [Union encoding](./api.md#flatbuffers-union-encoding) appendix for details.
 
 !!! info
-    To learn more about shapes and their properties, please refer to the [Shape](../api/math/Shape/index.md) API reference.
+    To learn more about shape values and their properties, please refer to [the common types reference](./api.md). At runtime, see the [Shape](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_shape.md) API reference.
 
 ### max_attenuation_factor
 
@@ -58,10 +63,28 @@ The `max_attenuation_factor` value defines the maximum amount of attenuation to 
 
 ## gain_curve
 
-`Curve` `required`
+`CurveDefinition` `required`
 
 This specifies the curve used to change the sound object's gain. The values over the X-axis of the curve are the distance between the sound object and the listener, and over the Y-axis of the curve is the gain of the sound object.
 For best results, the curve must fit in the range `[0, max_distance]` over the X-axis, and in the range `[0, 1]` over the Y-axis.
+
+## air_absorption
+
+`AttenuationAirAbsorptionDefinition` `optional`
+
+The `air_absorption` property configures a 3-band frequency-dependent gain reduction applied to the sound as a function of distance, simulating how high frequencies are attenuated by air more aggressively than low frequencies. This block is optional; when omitted, no air-absorption processing is applied.
+
+### enabled
+
+`bool` `default: true`
+
+Toggles the air-absorption processor for this attenuation model. When `false`, the `coefficients` array is ignored.
+
+### coefficients
+
+`float[]` `required when air_absorption is set`
+
+A 3-element array of attenuation coefficients (low, mid, high frequency bands) expressed in dB per meter. Positive values attenuate the band as distance grows. Reasonable real-world starting values are roughly `[0.0, 0.05, 0.50]` dB/m for outdoor air at 20°C and 50% relative humidity.
 
 ## Example
 

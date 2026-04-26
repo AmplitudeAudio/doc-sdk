@@ -1,6 +1,7 @@
 ---
 title: Engine Configuration
 description: Amplitude has been built to let you have complete freedom on the behavior of the engine at runtime, and everything is specified in the configuration file.
+diataxis: reference
 ---
 
 Amplitude has been built in a way to let you have complete freedom on the behavior of the engine at runtime. You can create several configuration files per device (PC, mobile, console), per platform (Windows, Android, XBOX, PlayStation), or any other criteria your project has to suit, then pick and load the right settings file at runtime.
@@ -12,12 +13,14 @@ The config file will let you customize:
 
 - The playback device ([output])
 - The Amplitude Mixer, called **Amplimix** ([mixer])
+- The HRTF and Ambisonics binauralization settings ([hrtf])
 - The synchronization with the game ([game])
 - The path to the buses file ([buses_file])
 - The name of the driver implementation to use ([driver])
 
 [output]: #output
 [mixer]: #mixer
+[hrtf]: #hrtf
 [game]: #game
 [buses_file]: #buses_file
 [driver]: #driver
@@ -36,9 +39,9 @@ The `frequency` property defines the audio frequency in Hertz (`Hz`) of the audi
 
 ### buffer_size
 
-`int` `default: 1024`
+`uint` `default: 1024`
 
-This value defines the number of audio bytes used per mix. The number of samples to produce for each output will be calculated automatically by dividing this value by the number of channels. It's highly recommended to use a multiple of 2 for the buffer size.
+This value defines the number of audio samples to process per output. It is highly recommended to use a power of two for the buffer size. Lower values reduce latency but increase the load on the audio thread; higher values are more tolerant to system jitter at the cost of latency.
 
 ### format
 
@@ -80,7 +83,7 @@ Specifies the maximum number of virtual channels to use in addition to active ch
 
 `enum` `default: Stereo`
 
-The `panning_mode` attribute defines how Amplitude will render spatial sounds to speakers. It can take as value the name of the panning mode, or its ID. There are four (04) values available:
+The `panning_mode` attribute defines how Amplitude will render spatial sounds to speakers. It can take as value the name of the panning mode, or its ID. There are four values available:
 
 | ID  | Name                  | Description                                                                                                                                                                                                     |
 | --- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -94,6 +97,29 @@ The `panning_mode` attribute defines how Amplitude will render spatial sounds to
 `string` `required`
 
 The property is used to set the name of the pipeline asset Amplimix will use. You should give the name of the binary pipeline asset (`.ampipeline`), with its extension. Amplitude will look up the asset in the appropriate directory.
+
+## hrtf
+
+`object` `optional`
+
+The `hrtf` property configures HRTF (Head-Related Transfer Function) and Ambisonics binauralization. This block is required as soon as the [`mixer.panning_mode`](#panning_mode) is set to one of the `Binaural*` values; otherwise it can be omitted.
+
+### amir_file
+
+`string` `required`
+
+The path to the AMIR (Amplitude Impulse Response) asset file containing the HRIR sphere data. AMIR files are produced from raw HRIR datasets using the `amit` CLI tool. See the [HRTF Setup](../integration/hrtf-setup.md) guide for details on generating and selecting an AMIR file.
+
+### hrir_sampling
+
+`enum` `default: NearestNeighbor`
+
+Defines how the engine samples the HRIR sphere when binauralizing Ambisonics output. The possible values of this enumeration are:
+
+| ID  | Name            | Description                                                                                                                                              |
+| --- | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | Bilinear        | Provides the most accurate binauralization. HRIR data are smoothly interpolated between sphere sample points.                                            |
+| 1   | NearestNeighbor | Provides the fastest binauralization. The closest sphere point to the current direction is always picked, with no interpolation. This is the default.    |
 
 ## game
 
@@ -175,7 +201,7 @@ The `occlusion` property works the same as the `obstruction` property, but it's 
 
 Defines whether the game is tracking environments. This means that the game will compute and send the environment amounts to the engine. This implies that the shapes defined in environments (if any) will not be used.
 
-Setting this value to `false` will instruct Amplitude to track environment amounts by himself. This way, Amplitude will use environment shapes and sound positions to compute the environment amounts.
+Setting this value to `false` will instruct Amplitude to track environment amounts by itself. This way, Amplitude will use environment shapes and sound positions to compute the environment amounts.
 
 ## buses_file
 
@@ -187,7 +213,7 @@ The `buses_file` property defines the path to the binary (`.ambus`) file that co
 
 `string` `required`
 
-The `driver` property indicates the name of the audio [Driver](../api/engine/Driver/index.md) implementation to use for communication with the physical audio device. You can implement multiple audio drivers as needed and register them in the engine with the plugin API.
+The `driver` property indicates the name of the audio [Driver](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_driver.md) implementation to use for communication with the physical audio device. You can implement multiple audio drivers as needed and register them in the engine with the plugin API.
 
 ## Example
 
@@ -205,6 +231,10 @@ The following example describes an engine configuration file:
     "active_channels": 50,
     "virtual_channels": 100,
     "pipeline": "default.ampipeline"
+  },
+  "hrtf": {
+    "amir_file": "default.amir",
+    "hrir_sampling": "NearestNeighbor"
   },
   "game": {
     "listener_fetch_mode": "Nearest",
@@ -281,11 +311,11 @@ The following example describes an engine configuration file:
     }
   },
   "buses_file": "pc.buses.ambus",
-  "driver": "miniaudio",
+  "driver": "miniaudio"
 }
 ```
 
-[Listener]: ../api/engine/Listener/index.md
-[Entity]: ../api/engine/Entity/index.md
-[Environment]: ../api/engine/Environment/index.md
-[Room]: ../api/engine/Room/index.md
+[Listener]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_listener.md
+[Entity]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_entity.md
+[Environment]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_environment.md
+[Room]: ../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_room.md

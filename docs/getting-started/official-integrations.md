@@ -1,17 +1,26 @@
 ---
 title: Official Integrations
 description: Amplitude has official integrations for some game engines, check if your preferred one is supported!
+diataxis: explanation
 ---
 
 Amplitude has officially supported integrations for the following game engines.
 
 ## O3DE
 
-[O3DE](https://o3de.org) is an open source game engine to build AAA games. Amplitude is available on O3DE with an official gem available in a [public GitHub repository](https://github.com/AmplitudeAudio/integration-o3de). The gem provides deep integration into the O3DE Audio System and allow seamless migration to and from other implementations.
+[O3DE](https://o3de.org) is an open source game engine to build AAA games. Amplitude has an official O3DE gem available in a [public GitHub repository](https://github.com/AmplitudeAudio/integration-o3de). The gem provides deep integration into the O3DE Audio System and allow seamless migration to and from other implementations.
 
-<!-- ## ezEngine
+## ezEngine
 
-[ezEngine](https://ezengine.net) is a free and open source game engine available on GitHub. A full support of Amplitude is available for
-ezEngine over our Audio System implementation on [our fork](https://github.com/SparkyStudios/ezEngine). You can pick the `AudioSystemPlugin` and
-`AmplitudeAudioPlugin` plugins from the `Code/EnginePlugins`, and also the `AmplitudeAudio` plugin in `Code/EditorPlugins`
-for editor support. -->
+[ezEngine](https://ezengine.net) is a free and open source C++ game engine. A full support of Amplitude is available for ezEngine over our Audio System implementation available in [our fork](https://github.com/SparkyStudios/ezEngine). You can pick the `AudioSystemPlugin` and `AmplitudeAudioPlugin` plugins from the `Code/EnginePlugins`, and also the `AmplitudeAudio` plugin in `Code/EditorPlugins` for editor support.
+
+## Godot
+
+!!! warning
+    The Godot integration is actively maintained. Community contributions are welcome through pull requests!
+
+[Godot](https://godotengine.org) is a free and open source game engine for 2D and 3D games. Amplitude is available on Godot with an [official plugin](https://github.com/AmplitudeAudio/integration-godot). The plugin supports Godot 4+ only.
+
+## Flax Engine
+
+[Flax Engine](https://flaxengine.com/) is a high-performance C++ and C# game engine. Amplitude is available on Flax through an [official plugin](https://github.com/AmplitudeAudio/integration-flax) that hooks into Flax's [AudioSystem Plugin](https://github.com/SparkyStudios/FlaxAudioSystemPlugin) and routes Amplitude's memory, logging, and file I/O through Flax-native APIs. Refer to the plugin's repository for installation and configuration instructions.

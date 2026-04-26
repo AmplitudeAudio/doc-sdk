@@ -1,6 +1,7 @@
 ---
 title: Initializing the Engine
 description: Learn how to initialize the Amplitude Engine with a given project at runtime through this tutorial.
+diataxis: how-to
 ---
 
 !!! note
@@ -10,7 +11,7 @@ Amplitude is built with several components, which should be initialized separate
 
 ## Logger
 
-Amplitude comes with a default [`ConsoleLogger`](../api/core/ConsoleLogger/index.md) and a set of shortcut macros for you to use. You are able to change the default logger by implementing the [`Logger`](../api/core/Logger/index.md) interface.
+Amplitude comes with a default [`ConsoleLogger`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_console_logger.md) and a set of shortcut macros for you to use. You are able to change the default logger by implementing the [`Logger`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_logger.md) interface.
 
 ```cpp
 // Implement the Logger interface
@@ -27,16 +28,18 @@ protected:
 MyLogger gLogger;
 
 // Set your logger as the default one
-Logger::SetDefault(&gLogger);
+Logger::SetLogger(&gLogger);
 ```
 
 Setting the logger is optional, as it is not a required component. But if you want to use it, it is usually better to initialize it first, as it is used in every part of the SDK.
 
-## MemoryManager
+## Memory Manager
 
 The memory manager is the first **required** component to initialize. It is responsible for all the allocations occurring in the SDK (even the ones due to other components' initialization), and in your application.
 
-While initializing the memory manager, you can customize the allocation functions through the `MemoryManagerConfig` structure. You should either set all the functions, or none of them.
+Before initializing the memory manager, you need to create an implementation of the [`MemoryAllocator`](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_memory_allocator.md) interface.
+
+When initializing the memory manager, you provide a concrete `MemoryAllocator` instance. The SDK calls into your allocator for every allocation, including allocations triggered by other engine components.
 
 A typical memory manager initialization code will look like this:
 
@@ -47,17 +50,10 @@ using namespace SparkyStudios::Audio::Amplitude;
 
 int main(int argc, char* argv[])
 {
-  // Initialize the memory manager
-  // Note that for custom configs, all the functions should be defined
-  MemoryManagerConfig config{};
-  // config.alignedMalloc = my_malign;
-  // config.alignedRealloc = my_realign;
-  // config.free = my_free;
-  // config.malloc = my_malloc;
-  // config.realloc = my_realloc;
-  // config.sizeOf = my_sizeof;
-  // config.totalReservedMemorySize = my_total_mem_size;
-  MemoryManager::Initialize(config); // Using the memory manager configuration.
+  // Initialize the memory manager with the default allocator.
+  // To use a custom allocator, pass a std::unique_ptr<MemoryAllocator> to Initialize().
+  // Example: MemoryManager::Initialize(std::make_unique<MyCustomAllocator>());
+  MemoryManager::Initialize();
 
   // ... your code ...
 
@@ -74,13 +70,13 @@ The file system component is responsible to read/write resources as needed by th
 The used file system implementation should be set as the default one in the engine after the initialization. For example, if you use the `DiskFileSystem` implementation, a typical usage will look like:
 
 ```cpp
-DiskFileSystem fs;
-fs.SetBasePath(AM_OS_STRING("./my_project")); // Set the base path of the file system. For the DiskFileSystem, this path is the path to your Amplitude project build files.
+auto fs = std::make_shared<DiskFileSystem>();
+fs->SetBasePath(AM_OS_STRING("./my_project")); // Set the base path of the file system. For the DiskFileSystem, this path is the path to your Amplitude project build files.
 
-amEngine->SetFileSystem(&fs); // Set the file system implementation to use in the engine.
+amEngine->SetFileSystem(fs); // Set the file system implementation to use in the engine.
 ```
 
-According to the implementation, the file system may be opened in a background thread to do an heavy operation (eg: unpacking an archive). If it's the case for you, it is necessary to wait for the file system to load before to continue. You can do this using the following code:
+According to the implementation, the file system may be opened in a background thread to do a heavy operation (e.g. unpacking an archive). If it's the case for you, it is necessary to wait for the file system to load before continuing. You can do this using the following code:
 
 ```cpp
 // Open the file system
@@ -108,7 +104,7 @@ function:
 
 ```cpp
 // Register all the default plugins shipped with the engine
-Engine::RegisterDefaultPlugins();
+Engine::RegisterDefaultExtensions();
 ```
 
 !!! info
@@ -126,7 +122,7 @@ The SDK allows you to set the paths in which to search for external plugins:
 Engine::AddPluginSearchPath(AM_OS_STRING("./my_project/plugins"));
 ```
 
-You must add all the search paths before to load plugins, as you cannot load a plugin using a path, either relative or absolute.
+You must add all the search paths before loading plugins, as you cannot load a plugin using a path, either relative or absolute.
 
 !!! info
     By default, the engine will search first in the working directory **before** to look in the added search paths.
@@ -134,7 +130,7 @@ You must add all the search paths before to load plugins, as you cannot load a p
 Once the search paths have been added, the engine can now load your plugins:
 
 ```cpp
-Engine::LoadPlugin(AM_OS_STRING("AmplitudeVorbisCodecPlugin")); // Official plugin for Vorbis/OGG codec
+Engine::LoadPlugin(AM_OS_STRING("vorbis_plugin")); // Official plugin for Vorbis/OGG codec
 Engine::LoadPlugin(AM_OS_STRING("MyCustomPlugin")); // Any other awesome plugin you will build
 ```
 
@@ -178,27 +174,19 @@ MyLogger gLogger;
 int main(int argc, char* argv[])
 {
   // Set your logger as the default one
-  Logger::SetDefault(&gLogger);
+  Logger::SetLogger(&gLogger);
 
-  // Initialize the memory manager
-  // Note that for custom configs, all the functions should be set if one of them is specified
-  MemoryManagerConfig config{};
-  // config.alignedMalloc = my_malign;
-  // config.alignedRealloc = my_realign;
-  // config.free = my_free;
-  // config.malloc = my_malloc;
-  // config.realloc = my_realloc;
-  // config.sizeOf = my_sizeof;
-  // config.totalReservedMemorySize = my_total_mem_size;
-  MemoryManager::Initialize(config); // Using the memory manager configuration.
+  // Initialize the memory manager with the default allocator.
+  // Pass a std::unique_ptr<MemoryAllocator> to use a custom allocator.
+  MemoryManager::Initialize();
 
-  DiskFileSystem fs;
+  auto fs = std::make_shared<DiskFileSystem>();
 
   // Set the base path of the file system. Usually the path to your Amplitude project.
-  fs.SetBasePath(AM_OS_STRING("./my_project"));
+  fs->SetBasePath(AM_OS_STRING("./my_project"));
 
   // Set the file system implementation to use in the engine.
-  amEngine->SetFileSystem(&fs);
+  amEngine->SetFileSystem(fs);
 
   // Open the file system
   amEngine->StartOpenFileSystem();
@@ -206,12 +194,12 @@ int main(int argc, char* argv[])
       Thread::Sleep(1); // Wait for the file system to open
 
   // Register all the default plugins shipped with the engine
-  Engine::RegisterDefaultPlugins();
+  Engine::RegisterDefaultExtensions();
 
   // The path is relative to the working directory, which is usually the same path as the executable.
   Engine::AddPluginSearchPath(AM_OS_STRING("./my_project/plugins"));
 
-  Engine::LoadPlugin(AM_OS_STRING("AmplitudeVorbisCodecPlugin")); // Official plugin for Vorbis/OGG codec
+  Engine::LoadPlugin(AM_OS_STRING("vorbis_plugin")); // Official plugin for Vorbis/OGG codec
   Engine::LoadPlugin(AM_OS_STRING("MyCustomPlugin")); // Any other awesome plugin you will build
 
   // The path to the configuration file is relative to the base path of the file system
@@ -228,11 +216,11 @@ int main(int argc, char* argv[])
   while (!amEngine->TryFinalizeCloseFileSystem()) // While the file system is still closing
       Thread::Sleep(1); // Wait for the file system to close
 
-  // Unregister all default plugins
-  Engine::UnregisterDefaultPlugins();
+  // Unregister all default extensions
+  Engine::UnregisterDefaultExtensions();
 
   // Destroy the Amplitude engine instance
-  amEngine->DestroyInstance();
+  Engine::DestroyInstance();
 
   // Deinitialize the memory manager
   MemoryManager::Deinitialize();

@@ -1,11 +1,12 @@
 ---
 title: Sound Objects
 description: Sound objects are the core assets of an Amplitude project. They define the various audio samples to be played and how to play them.
+diataxis: reference
 ---
 
 Sound objects are the core assets of an Amplitude project. They define the various audio samples to be played and how to play them.
 
-Amplitude supports 03 (three) kinds of sound objects:
+Amplitude supports three kinds of sound objects:
 
 - [Sound](./sound.md): The most basic sound object. It references a single audio file.
 - [Collection](./collection.md): A container sound object. It manages a set of sounds and decides how and when to play them through a [scheduler](./collection.md#scheduler).
@@ -37,6 +38,12 @@ With this property you can specify a special [effect](./effect.md) to apply to t
 
 The `gain` property stores the value of the gain (the volume) of the sound object. The value should match the schema of a [RtpcCompatibleValue] object.
 
+## pitch
+
+`RtpcCompatibleValue` `optional`
+
+The `pitch` property applies a custom pitch multiplier to the sound object on top of the runtime pitch (e.g., from the Doppler effect). The value should match the schema of a [RtpcCompatibleValue] object. A value of `1.0` is neutral.
+
 ## bus
 
 `uint64` `required`
@@ -53,14 +60,14 @@ This property affects how the engine will prioritize this sound object relative 
 
 `Spatialization` `default: None`
 
-The `spatialization` property specifies how the sound object's will be rendered in the 3D space, by applying effects like sound attenuation and panning:
+The `spatialization` property specifies how the sound object will be rendered in the 3D space, by applying effects like sound attenuation and panning:
 
 | ID  | Name                | Description                                                                                                                                                                                                                                    |
 | --- | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 0   | None                | No spatialization is made, sound objects are played at their regular gain.                                                                                                                                                                     |
 | 1   | Position            | 2D spatialization. The sound source is spatialized by using only its position (sound attenuation and stereo panning can be applied to it).                                                                                                     |
 | 2   | PositionOrientation | 2D spatialization. The sound source is spatialized by using its position and orientation (sound attenuation and stereo panning can be applied to it). This means that the [scope](#scope) of this sound object should be set to `Entity`.      |
-| 3   | HRTF                | 3D spatialization. The sound source is spatialized by using its position and orientation, through an [HRIR Sphere](../api/core/HRIRSphere/index.md) asset. This means that the [scope](#scope) of this sound object should be set to `Entity`. |
+| 3   | HRTF                | 3D spatialization. The sound source is spatialized by using its position and orientation, through an [HRIR Sphere](../api/class_sparky_studios_1_1_audio_1_1_amplitude_1_1_h_r_i_r_sphere.md) asset. This means that the [scope](#scope) of this sound object should be set to `Entity`. |
 
 ## attenuation
 

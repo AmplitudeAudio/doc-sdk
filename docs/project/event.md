@@ -1,9 +1,10 @@
 ---
 title: Event
 description: Amplitude allows you to create and trigger a sequence of actions at runtime with events.
+diataxis: reference
 ---
 
-An event is a set of actions Amplitude have to execute once it has been triggered at runtime, during your game. Event assets are described with the following properties:
+An event is a set of actions Amplitude has to execute once it has been triggered at runtime, during your game. Event assets are described with the following properties:
 
 !!! info
     The flatbuffers schema of this file can be found [here](https://github.com/AmplitudeAudio/sdk/blob/main/schemas/event_definition.fbs).
@@ -20,11 +21,25 @@ A unique value across event assets that represents the ID of this object. It may
 
 A unique value across event assets that represents the name of this object. It may be reused later to get the instance of this event from the engine at runtime.
 
+## run_mode
+
+`EventActionRunningMode` `default: Parallel`
+
+Specifies how the actions of this event should be scheduled when the event is triggered. The possible values of this enumeration are:
+
+| ID  | Name       | Description                                                                                                                                                                                       |
+| --- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 0   | Parallel   | All actions are executed at the same time, regardless of the order they are defined in the [`actions`](#actions) array. This is the default behavior.                                             |
+| 1   | Sequential | Actions are executed one after another, in the order they are defined in the [`actions`](#actions) array. Each action waits for the previous one to complete before starting (when applicable). |
+
+!!! info
+    Only the `Wait` action has a meaningful "completion" point under `Sequential`. Other actions (e.g., `Play`, `Pause`) dispatch their work to the engine and complete immediately, so the next action in the sequence runs right after.
+
 ## actions
 
 `EventActionDefinition[]` `required`
 
-An array of actions to execute. When this event will be triggered, each action will be executed sequentially in the order they are defined in this array. Each object of this is defined by the given properties:
+An array of actions to execute. The order of execution depends on the [`run_mode`](#run_mode) property. Each object of this array is defined by the given properties:
 
 ### type
 
@@ -35,6 +50,7 @@ This specifies the type of action to execute. The possible values of this enumer
 | ID        | Description                                                                                          |
 | --------- | ---------------------------------------------------------------------------------------------------- |
 | None      | _noop_ action.                                                                                       |
+| Wait      | Waits for the given amount of time. The `targets` property should contain a single value representing the number of milliseconds to wait. |
 | Play      | Plays the sound objects with the identifiers given in the `targets` property.                        |
 | Pause     | Pauses the sound objects with the identifiers given in the `targets` property.                       |
 | Resume    | Resumes the sound objects with the identifiers given in the `targets` property.                      |
@@ -85,4 +101,4 @@ Set the [Scope] in which this action will be executed. If this value is set to `
 
 [Sound Objects]: ./sound-object.md
 [Buses]: ./buses-config.md
-[Scope]: ./api.md#scope
+[Scope]: ./api.md

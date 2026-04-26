@@ -1,9 +1,10 @@
 ---
 title: Switch Container
-description: A switch container is a special container sound object that automatically play or schedule sounds when a specific switch changes his state.
+description: A switch container is a special container sound object that automatically plays or schedules sounds when a specific switch changes its state.
+diataxis: reference
 ---
 
-A switch container is a special container sound object that automatically play or schedule sounds when a specific [Switch] changes his state.
+A switch container is a special container sound object that automatically plays or schedules sounds when a specific [Switch] changes its state.
 
 !!! info
     The flatbuffers schema of this file can be found [here](https://github.com/AmplitudeAudio/sdk/blob/main/schemas/switch_container_definition.fbs).
@@ -26,12 +27,12 @@ The initial state of the switch. This value should be one of the available state
 
 `SwitchContainerUpdateBehavior` `required`
 
-With this property you can specify the behavior of the switch container when the tracked [Switch] object changes his state. The accepted values are:
+With this property you can specify the behavior of the switch container when the tracked [Switch] object changes its state. The accepted values are:
 
 | ID             | Description                                                                                                                                                                                                                                                                                                                                    |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| UpdateOnPlay   | The switch container will update the sounds on the next play request after the tracked switch has changed his state.                                                                                                                                                                                                                           |
-| UpdateOnChange | The switch container will update the sounds at the time the tracked switch has changed his state. That means if a sound from the container was already playing, it will be stopped and sounds registered for the new state will be played. If the currently playing sound was registered for the old and new states, it will continue playing. |
+| UpdateOnPlay   | The switch container will update the sounds on the next play request after the tracked switch has changed its state.                                                                                                                                                                                                                           |
+| UpdateOnChange | The switch container will update the sounds at the time the tracked switch has changed its state. That means if a sound from the container was already playing, it will be stopped and sounds registered for the new state will be played. If the currently playing sound was registered for the old and new states, it will continue playing. |
 
 ## entries
 
@@ -58,7 +59,7 @@ The list of states where this entry is assigned. That means the sound object of 
 Defines whether the sound object should continue playing when the switch state changes, and both new and old states are assigned to this entry.
 
 - If `true`, the sound object will continue to play when the state will change.
-- If `false`, the sound object will stop and start over after the switch has changed his state.
+- If `false`, the sound object will stop and start over after the switch has changed its state.
 
 ### fade_in
 
@@ -70,13 +71,19 @@ The fade transition to apply on the sound object when one of the assigned states
 
 `FadeTransitionSettings` `required`
 
-The fade transition to apply on the sound object when one all the assigned states becomes inactive. It takes as value a [FadeTransitionSettings] object.
+The fade transition to apply on the sound object when all the assigned states become inactive. It takes as value a [FadeTransitionSettings] object.
 
 ### gain
 
 `RtpcCompatibleValue` `required`
 
 A custom `gain` to apply on the sound object of this entry. The value should match the schema of an [RtpcCompatibleValue](./api.md#rtpc-compatible-value) object.
+
+### pitch
+
+`RtpcCompatibleValue` `optional`
+
+A custom `pitch` multiplier to apply on the sound object of this entry. The value should match the schema of an [RtpcCompatibleValue](./api.md#rtpc-compatible-value) object.
 
 ## Example
 
@@ -105,11 +112,11 @@ A custom `gain` to apply on the sound object of this entry. The value should mat
     "object": 1003,
     "continue_between_states": false,
     "fade_in": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "fade_out": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "gain": {
@@ -124,11 +131,11 @@ A custom `gain` to apply on the sound object of this entry. The value should mat
     "object": 1004,
     "continue_between_states": false,
     "fade_in": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "fade_out": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "gain": {
@@ -143,11 +150,11 @@ A custom `gain` to apply on the sound object of this entry. The value should mat
     "object": 1005,
     "continue_between_states": false,
     "fade_in": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "fade_out": {
-      "duration": 1,
+      "duration": 1000,
       "fader": "Linear"
     },
     "gain": {

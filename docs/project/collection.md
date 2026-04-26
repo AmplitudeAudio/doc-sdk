@@ -1,6 +1,7 @@
 ---
 title: Collection
 description: A collection is a container sound object. It plays sounds registered in it based on the specified scheduler.
+diataxis: reference
 ---
 
 The Collection is the first container sound object and the simplest. It organizes and schedules a list of [Sounds](./sound.md), which can then be played randomly or sequentially according to a scheduler.
@@ -19,7 +20,7 @@ The `scheduler` property defines the behavior of the sound scheduler of this col
 - **`mode`**: The scheduler mode can be either `Random` or `Sequence`.
 - **`config`**: An object containing the configuration of the selected mode.
 
-Amplitude supports 02 (two) scheduler modes for collections, and for each mode a specific configuration:
+Amplitude supports two scheduler modes for collections, and for each mode a specific configuration:
 
 ### Random Scheduler
 
@@ -68,7 +69,15 @@ Specifies how the sounds in the collection are played when a play request is sen
 
 `CollectionEntry[]` `required`
 
-This property contains the list of sounds registered to the collection. It's an array where each item is an object with the following properties:
+This property contains the list of sounds registered to the collection. `CollectionEntry` is a FlatBuffers union — each item must be paired with an entry in the parallel `sounds_type` array that picks the variant (see the [Union encoding](./api.md#flatbuffers-union-encoding) appendix). The available variants are:
+
+| Variant       | `sounds_type` value | When to use                                                                                                          |
+| ------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| `Default`     | `Default`           | The default entry shape. Use when the [scheduler](#scheduler) is the implicit play-mode shape (no extra fields).     |
+| `Random`      | `Random`            | Required when the scheduler `mode` is `Random` to expose the `weight` field below.                                   |
+| `Sequence`    | `Sequence`          | Required when the scheduler `mode` is `Sequence`. Identical to `Default` today; reserved for sequence-only fields.   |
+
+Each variant exposes the following common properties:
 
 ### sound
 
@@ -82,11 +91,17 @@ Provides the ID of a sound. That sound object should be defined as a [Sound](./s
 
 This property is used to override the default gain of the sound object. It stores an [RtpcCompatibleValue](./api.md#rtpc-compatible-value) object.
 
+### pitch
+
+`RtpcCompatibleValue` `optional`
+
+This property overrides the [pitch](./sound-object.md#pitch) of the sound object for this entry only. It stores an [RtpcCompatibleValue](./api.md#rtpc-compatible-value) object.
+
 ### weight
 
 `float` `default: 1.0`
 
-This property is used only when the collection scheduler [mode](#scheduler) is set to `Random`. The value is a floating number in the range `[0, 1]`, representing the probability (relative to other sounds of the same collection) of the sound to be picked by the random scheduler. The default value is `1.0`.
+Only present on the `Random` variant. The value is a floating number in the range `[0, 1]`, representing the probability (relative to other sounds of the same collection) of the sound to be picked by the random scheduler. The default value is `1.0`.
 
 ## Example
 
@@ -104,7 +119,6 @@ This property is used only when the collection scheduler [mode](#scheduler) is s
   },
   "bus": 2,
   "sounds_type": [
-    "Random",
     "Random",
     "Random",
     "Random",

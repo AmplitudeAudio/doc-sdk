@@ -1,6 +1,7 @@
 ---
 title: Loading sound banks
 description: Sound banks are units storing the data your game will need to play audio. The page will show you how to load sound banks from an Amplitude project.
+diataxis: how-to
 ---
 
 When the engine is [fully initialized](./initializing-the-engine.md), you have to load a [sound bank](../project/sound-bank.md) to be able to play any sound or interact with your Amplitude project at runtime.
@@ -9,7 +10,7 @@ When the engine is [fully initialized](./initializing-the-engine.md), you have t
 
 By loading a sound bank, the engine will also load all the associated data (effects, attenuation, events, etc.).
 
-The process of loading a sound bank is basicaly the following:
+The process of loading a sound bank is basically the following:
 
 ```cpp
 AmBankID bankId = kAmInvalidObjectId;
@@ -22,7 +23,7 @@ if (!amEngine->LoadSoundBank(AM_OS_STRING("init.ambank"), bankId))
 ```
 
 !!! info
-    You can load as many sound bank as you want. If one of your asset (sound object, effects, attenuation, etc.) has been registered in more than one loaded sound bank, that asset will be loaded only once, and reference counted. The reference count will decrement each time you [unload sound banks](#unloading-a-sound-bank), and the asset's memory will be totally released once the last sound bank referencing it is unloaded.
+    You can load as many sound bank as you want. If one of your asset (sound object, effects, attenuation, etc.) has been registered in more than one loaded sound bank, that asset will be loaded only once, and reference counted. The reference count will decrement each time you [unload sound banks](#unloading-sound-banks), and the asset's memory will be totally released once the last sound bank referencing it is unloaded.
 
 ## Loading sound files
 
@@ -42,7 +43,7 @@ while (!amEngine->TryFinalizeLoadSoundFiles())
 ```
 
 !!! note
-    Audio data loaded in memory are shared across every [sound instances](../getting-started/concepts.md#sound-instances).
+    Audio data loaded in memory are shared across every [sound instances](../deep-dive/concepts.md#sound-instances).
 
 ## Unloading sound banks
 
@@ -50,7 +51,7 @@ To unload a sound bank, you just need to call an `Engine` method with the name o
 
 ```cpp
 // Unload a sound bank with name
-amEngine->UnloadSoundBank("init.ambank");
+amEngine->UnloadSoundBank(AM_OS_STRING("init.ambank"));
 
 // Unload a sound bank with id
 amEngine->UnloadSoundBank(1234);
